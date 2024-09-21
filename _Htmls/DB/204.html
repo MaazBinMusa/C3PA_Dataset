@@ -1,0 +1,745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" slick-uniqueid="3"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+   
+      <base href="http://www.greatlakeslists.com/privacy-policy">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="privacy,rights,introduction,great,lakes,specific,information,about,management,processes,collects,click,notice,updated,please,effective,resident,california,_your_california_privacy">
+  <meta name="author" content="Super User">
+  <meta name="description" content="Effective Date: 10/13/2020 Date Last Updated: 10/18/2021 PRIVACY NOTICE /YOUR PRIVACY RIGHTS If you are a California resident, please click here (#_Your_California_Privacy) for more information about">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>Privacy Policy | Great Lakes List Management</title><link rel="stylesheet" href="http://www.greatlakeslists.com/plugins/system/popanymodule/popanymodule/assets/jquery.fancybox.css" type="text/css" media="screen"><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script><script type="text/javascript" src="http://www.greatlakeslists.com/plugins/system/popanymodule/popanymodule/assets/jquery.fancybox.js"></script><script type="text/javascript">
+					var ja= jQuery.noConflict();
+					ja(document).ready(function() {
+						ja('.fancybox-effects-a').fancybox({
+							openEffect : 'fade',
+							closeEffect : 'fade',
+							openSpeed : 'slow',
+							closeSpeed : 'slow',
+							helpers: {overlay : {opacity : 0.6}}
+						});
+					});
+					</script>
+  <link href="/templates/great_lakes_lists/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link href="http://www.example.com/privacy-policy" rel="canonical">
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/templates/great_lakes_lists/javascript/md_stylechanger.js" type="text/javascript" defer="defer"></script>
+  <script type="text/javascript">
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+  </script>
+
+        <link href="http://fonts.googleapis.com/css?family=Armata" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Magra" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/templates/system/css/system.css" type="text/css">
+    <link rel="stylesheet" href="/templates/great_lakes_lists/css/position.css" type="text/css" media="screen,projection">
+    <link rel="stylesheet" href="/templates/great_lakes_lists/css/layout.css" type="text/css" media="screen,projection">
+    <link rel="stylesheet" href="/templates/great_lakes_lists/css/print.css" type="text/css" media="Print">
+    <link rel="stylesheet" href="/templates/great_lakes_lists/css/beez5.css" type="text/css">
+    <link rel="stylesheet" href="/templates/great_lakes_lists/css/general.css" type="text/css">
+        <!--[if lte IE 6]>
+      <link href="/templates/great_lakes_lists/css/ieonly.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 7]>
+      <link href="/templates/great_lakes_lists/css/ie7only.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script type="text/javascript" src="/templates/great_lakes_lists/javascript/hide.js"></script>
+        <script type="text/javascript" src="/templates/great_lakes_lists/javascript/login-register.js"></script>
+        <script type="text/javascript" src="/templates/great_lakes_lists/javascript/approve-user.js"></script>
+        <script type="text/javascript">
+jQuery(document).ready(function ($) {
+
+    $(".account-details").live("click", function () {
+        getAccountDetails({email:$("#user-email").text()});
+    });
+
+    $(".save-account-details").live("click", function () {
+        saveAccountDetails(getUserInfo());
+    });
+
+    $(".upload-file").live("click", function () {
+        showUploadUI();
+    });
+
+    function getAccountDetails(userInput){
+        showHideLoading("show");
+        $.post("index.php?option=com_login&task=getAccountDetails&format=raw&controller=LoginController",userInput, function () {
+        },"json").done(function (data) {
+                if (!data.error) {
+                    switch (data.messageType) {
+                        case "showAccountDetails":
+                            showHideLoading("hide");
+                            $(".admin-actions").html(data.message);
+                            break;
+                    }
+                }
+            });
+    }
+
+    function saveAccountDetails(userInput){
+        showHideLoading("show");
+        $.post("index.php?option=com_login&task=saveAccountDetails&format=raw&controller=LoginController",userInput, function () {
+        },"json").done(function (data) {
+                if (!data.error) {
+                    switch (data.messageType) {
+                        case "saveAccountDetails":
+                            showHideLoading("hide");
+                            $(".account-details-message").html(data.message).css("color","green");
+                            console.log(data);
+                            $(".user-first-name").html(data.updatedUserInfo.firstName);
+                            $(".user-last-name").html(data.updatedUserInfo.lastName);
+                            $("#user-email").html(data.updatedUserInfo.email);
+                            break;
+                    }
+                }
+            });
+    }
+
+    function getUserInfo(){
+        return {
+            email: $("#email").val(),
+            firstName: $("#firstName").val(),
+            lastName: $("#lastName").val(),
+            company: $("#company").val(),
+            jobTitle: $("#jobTitle").val(),
+            address: $("#address").val(),
+            city: $("#city").val(),
+            state: $("#state").val(),
+            zip: $("#zip").val(),
+            phone: $("#phone").val()
+        }
+    }
+
+    function showUploadUI(){
+        $(".admin-actions").html("" +
+                        "<form action='/component/login/?task=uploadFile&amp;controller=LoginController' method='post' enctype='multipart/form-data'>" +
+            "<table>" +
+            "<tr>" +
+            "<td><input type='file' id='user-file' name='uploadedFile' /></td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td><input class='upload-file-submit' value='Upload File' type='submit'></td>" +
+            "</tr>" +
+            "</table>" +
+            "</form>");
+    }
+
+
+    function showHideLoading(action) {
+
+        var adminLoadingDIV = $(".admin-loading");
+
+        if (action == "show") {
+            adminLoadingDIV.html("<img src='http://greatlakes.ybclients.com/images/loading.gif' />");
+        } else if (action == "hide") {
+            adminLoadingDIV.html("");
+        }
+
+    }
+
+});
+</script>
+
+  </head>
+<body style="font-size: 100%;">
+
+<div id="all">
+  <div id="back">
+      <div id="header">
+              <div class="logoheader">
+          <div id="logo">
+                    <a href="/"><img src="/images/new/logo.jpg" alt="Great Lakes Lists"></a>
+                  </div>  
+                
+
+<div class="customtopright">
+	<span class="signUp"> 
+	<a href="#inline0" class="fancybox-effects-a"> <img class="emailIcon" src="/images/new/email.png" alt="">
+<p class="signUpText">Sign up for our Newsletter</p>
+<img class="divider" src="/images/new/divider.png" alt=""> </a></span><a href="#inline0" class="fancybox-effects-a"> </a> <span class="phone"> <img class="phoneIcon" src="/images/new/geatlakes-home.png" alt="">
+<p id="phoneNumber">1-800-964-5478</p>
+</span></div>
+
+                <div id="menubar">
+<ul class="menu">
+<li class="item-101"><a href="/">Home</a></li><li class="item-102"><a href="/locate-a-list">Locate A List</a></li><li class="item-153"><a href="/list-management">List Management</a></li><li class="item-103"><a href="/service">Services</a></li><li class="item-105"><a href="/contact-us">Contact</a></li><li class="item-104"><a href="/about-us">   About Us</a></li></ul>
+</div>
+        </div><!-- end logoheader -->
+
+          <ul class="skiplinks">
+            <li><a href="#main" class="u2">TPL_BEEZ5_SKIP_TO_CONTENT</a></li>
+            <li><a href="#nav" class="u2">TPL_BEEZ5_JUMP_TO_NAV</a></li>
+                      </ul>
+          <h2 class="unseen">TPL_BEEZ5_NAV_VIEW_SEARCH</h2>
+          <h3 class="unseen">TPL_BEEZ5_NAVIGATION</h3>
+          
+                    <div id="sliderNav"></div>
+
+            <div class="searchnav">
+        <form action="/privacy-policy" method="post" class="form-validate" name="listform" id="listform">
+<input id="" class="inputboxnav" value="Find A List..." maxlength="60" size="18" name="search" type="text" onfocus="if (this.value=='Find A List...') this.value='';" onblur="if (this.value=='') this.value='Find A List...';">
+<input class="buttonnav" value="GO!" name="submit" type="submit">
+<input type="hidden" name="option" value="com_datacards">
+<input type="hidden" name="task" value="listQuery">
+<input type="hidden" name="472c20df68c3e305dc822894231b84cd" value="1"></form>
+</div>
+
+              </div><!-- end header -->
+      
+            
+<div id="contentarea">
+<!-- BEGIN INTERNAL BANNER IMAGE   -->    
+                                        <div id="header-image">
+                               <h1 id="title">Privacy Policy</h1>
+                        </div> 
+        <!-- END INTERNAL BANNER IMAGE   -->
+
+              <div id="wrapper2">
+                              <div id="main" role="main">
+            
+<div id="system-message-container">
+</div>
+            <div class="item-page">
+
+
+
+
+
+
+
+
+
+<p>Effective Date: 10/13/2020<br> Date Last Updated: 10/18/2021</p>
+<p>PRIVACY NOTICE /YOUR PRIVACY RIGHTS</p>
+<p>If you are a California resident, please click <strong><a href="#_Your_California_Privacy">here</a></strong> for more information about your specific privacy rights.</p>
+<ul>
+<li>1. Introduction</li>
+</ul>
+<p><span style="color: #222222; font-family: Helvetica, sans-serif; font-size: 13pt;">Great Lakes List Management</span>&nbsp;(“us,” “we,” or “our”) collects and processes information about you as described in this Privacy Notice (“Notice”).&nbsp; We are committed to protecting the privacy of those with whom we interact.&nbsp; This Notice contains details about how we collect, use, and share Personal Information that we obtain from and about you when you interact with us via our website, email, and in other online and offline interactions. Please read this Notice carefully.<br> <strong>Applicability</strong>: We collect information in several contexts as described below.&nbsp; However, this Notice does not apply to the following information:</p>
+<ul>
+<li>Information about our employees, contractors, agents, and job applicants.&nbsp; Such information is subject to a separate privacy notice that we will make available to individuals.<strong></strong></li>
+<li>Information we collect from individuals with whom we engage in solely business-to-business communications and transactions, such as information about the employees of our business partners and customers.</li>
+</ul>
+<p><strong>Changes</strong>: We may update this Notice from time-to-time.&nbsp; The current Notice will be effective when posted.&nbsp; Please check this Notice periodically for updates.&nbsp; If any of the changes are unacceptable to you, you should cease interacting with us.&nbsp; When required under applicable law, we will notify you of any changes to this Notice by posting an update on this website.&nbsp; When required under applicable law, we will seek affirmative consent from you before making material changes to the way we handle Personal Information previously collected from you. If you do not provide such consent, Personal Information will continue to be used in a manner that is consistent with the version of this Notice under which it was collected.</p>
+<ul>
+<li>2. Sources of Personal Information</li>
+</ul>
+<p>We collect information about you and how you interact with us in several ways, including:</p>
+<ul>
+<li><strong>Information you provide to us directly</strong>.&nbsp; We collect the information you provide to us directly.</li>
+<li><strong>Information automatically collected or inferred from your interaction with us.</strong>&nbsp; We automatically collect technical information about your interactions with us (such as IP address and browsing preferences).</li>
+<li><strong>Information from public sources, </strong>including &nbsp;government entities from which public records are obtained and<strong> </strong>information you submit in public forums</li>
+<li><strong>Information from third parties.</strong>&nbsp; We receive information about you and your interactions with us from third parties, such as from data brokers, third party service and content providers, credit reporting agencies, and others interacting with us.</li>
+</ul>
+<p>We may combine information that we receive from the various sources described in this Notice, including third party sources and public sources, and use or disclose it for the purposes identified below.<strong></strong></p>
+<ul>
+<li>3. Types of Personal Information We Collect</li>
+</ul>
+<p>The types of information that we have collected about you during the previous 12 months are: <strong> </strong></p>
+<ul>
+<li><strong>Identifiers</strong>, such as your name, alias, postal address, country of residence, internet protocol address, email address, account name, phone number, social media identifiers (e.g., Twitter handle, Instagram name, etc.) or other similar identifiers.</li>
+<li><strong>Customer records</strong>, such as signatures.</li>
+<li><strong>Protected Class and Demographic information</strong>, such as age, race, gender, national origin, religion, sex, disability, citizenship, medical condition, political activity or affiliation, military or veteran status, education, or date of birth.</li>
+<li><strong>Commercial information and preferences</strong>, including records of personal property, creditworthiness, products or services purchased, obtained, or considered, or other purchasing or consuming histories or tendencies.</li>
+<li><strong>Internet or other electronic network activity information</strong>, such as your browsing history, search history, and information regarding your interactions with us (including interacting with us online, by the mobile application, and through advertisements).</li>
+<li><strong>Geolocation information</strong>, such as longitude and latitude from your IP address.</li>
+<li><strong>Audio, electronic, visual, thermal, olfactory or similar information, </strong>such as video recordings of our premises, call center recordings, or customer support chat logs.</li>
+<li><strong>Professional, employment, or education information</strong>, such as job title, business address, employment history, or other professional information.</li>
+<li><strong>Education information</strong> that is not publicly available personally identifiable information as defined in the Family Educational Rights and Privacy Act.</li>
+<li><strong>Inferences</strong> drawn from any of the information we collect to create a profile about you reflecting your preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.</li>
+</ul>
+<ul>
+<li>4. How We Use Your Personal Information</li>
+</ul>
+<p>We may use each category of your information described above in the following ways: <strong> </strong></p>
+<ul>
+<li><strong>To enable interactions between you and us</strong>, such as to provide you with and support your interactions with us; communicate with you about our data practices; install and configure changes and updates to programs and technologies related to interactions with us; authenticate those who interact with us; or to respond to your requests, complaints, and inquiries.</li>
+<li><strong>For our own internal business purposes</strong>, such as to evaluate or audit the usage and performance of programs and technologies related to interactions with us; evaluate and improve the quality of your interactions with us and programs and technologies related to interactions with us; perform internal research for technological development and demonstration; conduct data analysis and testing; maintain proper business records and other relevant records.</li>
+<li><strong>For legal, safety, or security reasons</strong>, such as to comply with legal requirements; protect our safety, our property or rights of those who interact with us, or others; and detect, prevent, and respond to security incidents or other malicious, deceptive, fraudulent, or illegal activity.</li>
+<li><strong>In a de-identified, anonymized, or aggregated format</strong>.&nbsp; When converted to a de-identified, anonymized, or aggregated format, data no longer constitutes Personal Information and we may use this information for any purpose.</li>
+<li><strong>For marketing</strong>.&nbsp; We may use your Personal Information to market our products or services or those of third parties, such as our business partners. We may use your Personal Information when you participate in marketing surveys, questionnaires, promotions, events or contests.&nbsp; We may audit aspects of our ad impressions. We may use your Personal Information for short-term transient use, including for contextual ad customization. We may use your Personal Information to enhance our content and to potentially send you commercial emails.&nbsp;</li>
+<li><strong>For any other purposes for which you provide consent. </strong></li>
+</ul>
+<ul>
+<li>5. With Whom We Share Your Personal Information</li>
+</ul>
+<p>We may share your Personal Information with the categories of recipients described below:</p>
+<ul>
+<li><strong>Affiliates and subsidiaries</strong>:&nbsp; We may share your Personal Information within the our group of companies, which includes parents, corporate affiliates, subsidiaries, business units and other companies that share common ownership for the purposes described above.</li>
+<li><strong>Service providers</strong>: We may share your Personal Information with service providers working on our behalf in order to facilitate our interactions with you or request or support our relationship with you, such as hosting service providers, IT providers, operating systems and platforms, internet service providers, analytics companies, and marketing providers (e.g., we may share your email address with our outbound email marketing provider).&nbsp; We may contract with other companies to provide certain services, including identity verification, email distribution, market research, promotions management and payment processing. We provide these companies with only the information they need to perform their services and work with them to ensure that your privacy is respected and protected. These companies are prohibited by contract from using this information for their own marketing purposes or from sharing this information with anyone other than with us, unless at our direction as part of providing the service.</li>
+<li><strong>Business partners</strong>:<strong> </strong>We may also provide your Personal Information or provide access to your Personal Information to our business partners, including for third party marketing or as a sale. If legally required, we will seek your consent before engaging in such sharing.</li>
+<li><strong>For legal, security and safety purposes</strong>:&nbsp; We may share your Personal Information with third parties such as law enforcement or other government agencies to comply with law or legal requirements; to enforce or apply our Terms of Use and other agreements; and to protect our rights and our property or safety of our users or third parties.</li>
+<li><strong>In connection with a corporate transaction</strong>:&nbsp; If we sell some or all of our assets, merge or are acquired by another entity, including through a sale or in connection with a bankruptcy, we will share your Personal Information with that entity.</li>
+</ul>
+<p>We may also de-identity, anonymize, or aggregate Personal Information to share with third parties for any purpose.</p>
+<ul>
+<li>6. How We Use Cookies and Automatic Data Collection Tools</li>
+</ul>
+<p>We also collect information, via cookies, web beacons, pixels, tags or other tracking technologies, such as your Internet Service Provider and IP address, the date and time you access our website, the pages you accessed while visiting our website, and the Internet address from which you accessed our website. Some cookies exist only during a single session and some are persistent over multiple sessions over time. We use these technologies to remember user preferences, maximize the performance of our website and services, provide you with offers that may be of interest to you, measure the effectiveness of our email campaigns and to personalize online content. These cookies and other technologies may be used to track you across devices.<br> To provide you with more relevant and interesting experience, we may work with third party companies to display ads or customize the content on the website and on other websites. These companies may use cookies and similar tracking technologies as described in this Statement to gather information about your visits to the website, as well as your visits elsewhere on the Internet. These companies use this information to provide you with more relevant advertising known as interest-based advertising. For more information about third-party advertisers and how to prevent them from using your information, please visit <a href="http://www.networkadvertising.org/choices/">http://www.networkadvertising.org/choices/</a>. This is a site offered by the Network Advertising Initiative ("NAI") that includes information on how consumers can opt-out from receiving interest-based advertising from some or all of NAI's members. The Digital Advertising Alliance (“DAA”) also offers a choice mechanism with respect to certain types of data collection and use by third parties available at <a href="http://www.aboutads.info">www.aboutads.info</a>. Opting out of interest-based advertising will not opt you out of all advertising, but rather only interest-based advertising from us or our agents or representatives. <br> Some browsers have incorporated Do Not Track (“DNT”) preferences. Most of these features, when turned on, send signals to the website you are visiting that you do not wish to have information about your online searching and browsing activities collected and used.&nbsp; As there is not yet a common agreement about how to interpret DNT signals, we do not honor DNT signals from website browsers at this time.&nbsp; However, you may refuse or delete cookies.&nbsp; If you refuse or delete cookies, some of our website functionality may be impaired.&nbsp; If you change computers, devices, or browsers, or use multiple computers, devices, or browsers, and delete your cookies, you may need to repeat this process for each computer, device, or browser. Please refer to your browser’s Help instructions to learn more about how to manage cookies and the use of other tracking technologies.</p>
+<ul>
+<li>7. Security and Retention</li>
+</ul>
+<p>We maintain reasonable security procedures and technical and organizational measures to protect your Personal Information against accidental or unlawful destruction, loss, disclosure, alteration, or use.</p>
+<ul>
+<li>8. Children’s Privacy</li>
+</ul>
+<p>Interactions with us are intended for individuals 16 years of age and older.&nbsp; Our interactions are not directed at, marketed to, nor intended for, children under 16 years of age.&nbsp; We do not knowingly collect any information, including Personal Information, from children under 16 years of age.&nbsp; If you believe that we have inadvertently collected Personal Information from a child under the age of 16, please contact us at the address below and we will use reasonable efforts to delete the child’s information from our databases.&nbsp;&nbsp;</p>
+<ul>
+<li>9. External Links</li>
+</ul>
+<p>When interacting with us you may encounter links to external sites or other online services, including those embedded in third party advertisements or sponsor information, that we do not control.&nbsp; We are not responsible for the privacy practices and data collection policies for such third party services.&nbsp; You should consult the privacy statements of those third party services for details.&nbsp;</p>
+<ul>
+<li>10. Terms of Use</li>
+</ul>
+<p>The Terms of Use for interactions with us is incorporated by reference into this Notice, and can be found at: <a href="/terms-and-conditions">Terms and Conditions.</a></p>
+<ul>
+<li>11. Contact Info/Your Choices</li>
+</ul>
+<p>If you have questions regarding this Notice, please contact us at:<br> EMAIL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="cloak85751"><a href="mailto:privacy@greatlakeslists.com">privacy@greatlakeslists.com</a></span><script type="text/javascript">
+ //<!--
+ document.getElementById('cloak85751').innerHTML = '';
+ var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+ var path = 'hr' + 'ef' + '=';
+ var addy85751 = 'pr&#105;v&#97;cy' + '&#64;';
+ addy85751 = addy85751 + 'gr&#101;&#97;tl&#97;k&#101;sl&#105;sts' + '&#46;' + 'c&#111;m';
+ document.getElementById('cloak85751').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy85751 + '\'>' + addy85751+'<\/a>';
+ //-->
+ </script><br> PHONE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 800-964-5478<br> MAIL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3126 Peach Street, Erie, PA&nbsp; 16509<br><br> To opt-out of receiving promotional email messages from us, please click on the "Unsubscribe" link contained at the bottom of each email or by contacting us using the information above.<br><br> If you are a California resident, you may ask us to refrain from sharing your Personal Information with certain affiliates or third parties for their marketing purposes. Please contact us at <span id="cloak28810"><a href="mailto:ccpa@greatlakeslists.com">ccpa@greatlakeslists.com</a></span><script type="text/javascript">
+ //<!--
+ document.getElementById('cloak28810').innerHTML = '';
+ var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+ var path = 'hr' + 'ef' + '=';
+ var addy28810 = 'ccp&#97;' + '&#64;';
+ addy28810 = addy28810 + 'gr&#101;&#97;tl&#97;k&#101;sl&#105;sts' + '&#46;' + 'c&#111;m';
+ var addy_text28810 = 'ccp&#97;' + '&#64;' + 'gr&#101;&#97;tl&#97;k&#101;sl&#105;sts' + '&#46;' + 'c&#111;m';
+ document.getElementById('cloak28810').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy28810 + '\'>'+addy_text28810+'<\/a>';
+ //-->
+ </script> if you would like to do so.<strong></strong></p>
+<ul>
+<li><a name="_Your_California_Privacy"></a>Your California Privacy Rights</li>
+</ul>
+<p>This section applies to certain California residents and supplements the rest of our Notice above.&nbsp; This section does not apply to the following information:</p>
+<ul>
+<li>Information about individuals who are not California residents;</li>
+<li>Information about our own employees, contractors, agents, and job applicants.&nbsp; Such information is subject to a separate privacy notice that we will make available to individuals.<strong> </strong></li>
+<li>Information we collect from individuals with whom we engage in solely business-to-business communications and transactions, such as information about the employees of our business partners and customers.</li>
+</ul>
+<p>Pursuant to the California Consumer Privacy Act of 2018, below is a summary of the Personal Information we collected from consumers, the sources from which we collected the Personal Information, the business or commercial purpose for which the Personal Information was collected and the categories of third parties with whom we share consumer Personal Information. &nbsp;The section references relate to the sections above in this Notice.<br><br> <span style="text-decoration: underline;">Source of Your Personal Information</span><br><br> The categories of sources of personal information are detailed in the Section 2 above and are summarized as follows: (a) directly from you, (b) through automated technologies or interactions, (c) public sources, and (d) from third parties. <br><br> <span style="text-decoration: underline;">Uses of Your personal information</span><br><br> The business and/or commercial purposes for which we collect personal information are detailed in the Section 4 and are part of the following general purposes: (a) performing services, (b) auditing, (c) legal and compliance, (d) quality assurance, (e) security, (f) debugging, (g) short term, transient use, (h) internal research, and (i) corporate transactions.<br><br> <span style="text-decoration: underline;">Sharing Personal Information </span><br><br> The categories of third parties to whom we disclose personal information for a business purpose are detailed in the Section 5 and are summarized as follows: (a) affiliates and subsidiaries, (b) third party service providers, (c) business partners, (d) legal, safety, and security, (e) corporate transactions, (f) entities related to online data collection, and (g) otherwise with your consent. <br><br> Our data sharing practices are detailed in the chart below and align with the categories described in Section 3 (Personal Information) and Section 5 (Sharing).</p>
+<table border="1" cellpadding="0">
+<tbody>
+<tr>
+<td width="212"><br> Categories of Personal Information<strong><em> We Collect</em></strong></td>
+<td width="202">
+<p><strong><em>Categories of Third Parties to Which We Disclose Personal Information for a Business Purpose</em></strong></p>
+</td>
+<td width="201">
+<p><strong><em>Categories of Third Parties to Which We Sell Personal Information</em></strong></p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Identifiers such as real name, postal address, country of origin, IP address, email address, account name, date of birth, other similar identifiers.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Personal information subject to the California Customer Records Act, such as signatures.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Characteristics of protected classifications under California or Federal Law, such as age and gender.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Commercial information, including products or services purchased, obtained or considered, or other purchasing or consumer history.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Internet or other electronic network activity information, including, but not limited to, status/HTTP status code, operating system and its interface, version of browsing software, device ID, other device information, browsing history, search history and information regarding a consumer’s interaction with an internet website, application or advertisement.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Geolocation data, such as your precise or approximate location derived from information from your mobile device.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Audio, electronic, visual, thermal, olfactory, or similar information, such as audio recordings of customer service calls.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Inferences drawn from any of the information identified above to create a profile about a consumer reflecting the consumer’s preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+<li>Entities to which you have consented to the disclosure</li>
+</ul>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Education information that isn’t public as defined by the Family Education Rights an Privacy Act.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+</ul>
+<p align="center">Entities to which you have consented to the disclosure</p>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="212">
+<p>Professional or employment-related information, such as job title, business address, employment history, or other professional information.</p>
+</td>
+<td width="202">
+<ul>
+<li>Affiliates and subsidiaries</li>
+<li>Service providers</li>
+<li>Business partners</li>
+<li>For legal, security, and safety purposes</li>
+<li>In connection with a corporate transaction</li>
+<li>Cookie and automatic data collection entities</li>
+</ul>
+<p align="center">Entities to which you have consented to the disclosure</p>
+</td>
+<td width="201" valign="top">
+<ul>
+<li>Business partners</li>
+<li>Companies that operate cookie and other online tracking technologies described in Section 6</li>
+<li>Data Brokers</li>
+<li>Customers who purchase data from us.</li>
+</ul>
+<p align="center">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>To our knowledge, we do not sell Personal Information of anyone under 16 years of age.<br><br> <span style="text-decoration: underline;">Your Rights</span><br><br> California residents have certain rights, subject to legal limitations, regarding the collection, use, and sharing of Personal Information. California residents may exercise the following rights via our webform at <a href="/ccpa_request.php">CCPA</a>, by emailing us at <span id="cloak12882"><a href="mailto:ccpa@greatlakeslists.com">ccpa@greatlakeslists.com</a></span><script type="text/javascript">
+ //<!--
+ document.getElementById('cloak12882').innerHTML = '';
+ var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+ var path = 'hr' + 'ef' + '=';
+ var addy12882 = 'ccp&#97;' + '&#64;';
+ addy12882 = addy12882 + 'gr&#101;&#97;tl&#97;k&#101;sl&#105;sts' + '&#46;' + 'c&#111;m';
+ var addy_text12882 = 'ccp&#97;' + '&#64;' + 'gr&#101;&#97;tl&#97;k&#101;sl&#105;sts' + '&#46;' + 'c&#111;m';
+ document.getElementById('cloak12882').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy12882 + '\'>'+addy_text12882+'<\/a>';
+ //-->
+ </script> .<br><br> <strong>Right to Know</strong>. You have the right to request information about the categories of Personal Information we have collected about you, the categories of sources from which we collected the Personal Information, the purposes for collecting the Personal Information, the categories of third parties with whom we have shared your Personal Information, and the purpose for which we shared your Personal Information (“Categories Report”). You may also request information about the specific pieces of Personal Information we have collected about you (“Specific Pieces Report”).&nbsp;</p>
+<ul>
+<li><strong>Right to Delete</strong>. You have the right to request that we delete Personal Information that we have collected from you.</li>
+</ul>
+<ul>
+<li><strong>Right to Opt Out.</strong> You have the right to opt out of the sale of your Personal Information.</li>
+</ul>
+<p>We will not discriminate against you, in any manner prohibited by applicable law, for exercising these rights.<br><br> <span style="text-decoration: underline;">Verification: </span>In order to exercise your rights, we will need to obtain information to locate you in our records or verify your identity depending on the nature of the request. If you are submitting a request on behalf of a household, we will need to verify each member of the household in the manner set forth above. For a Specific Pieces Report, we will request your phone number, legal first and last name, and complete postal information to verify your identity and seek a signed declaration, under penalty of perjury, that you are who you say you are. For a Categories Report, we will request your phone number, legal first and last name, and complete postal information to verify your identity.&nbsp; For a Right to Delete request, we will request your phone number, legal first and last name, and complete postal information to verify your identity.<br><br> <span style="text-decoration: underline;">Authorized Agents</span>: Authorized agents may exercise rights on behalf of consumers, but we reserve the right to also verify the consumer directly as described above. Authorized agents may use the webform <a href="/ccpa_request.php">CCPA</a> and upload documentation demonstrating the agent has authority to exercise rights on the consumer’s behalf.&nbsp; At a minimum, we will require evidence of the agent’s identity, proof of registration with the California Secretary of State, and at least one of the following evidencing proof of your legal authority to act on the behalf of the individual consumer:</p>
+<ul>
+<li>Written authorization signed by the Consumer; or</li>
+<li>Certified copy of a Power of Attorney granted under Probate Code.</li>
+</ul>
+<p><span style="text-decoration: underline;">Timing</span>: We will address Requests to Opt-out within 15 business days. We will respond to Requests to Delete and Requests to Know within 45 calendar days, unless we need more time in which case we will notify you and may take up to 90 calendar days total to respond to your request.</p>
+	
+</div>
+
+                        
+          </div><!-- end main -->
+          </div><!-- end wrapper -->
+                    
+                     
+          <div class="wrap"></div>
+        </div> <!-- end contentarea -->
+
+      </div><!-- back -->
+
+    </div><!-- all -->
+            <div id="footer-sub">
+
+              <div id="footer">
+      
+          
+<ul class="menu">
+<li class="item-101"><a href="/">Home</a></li><li class="item-102"><a href="/locate-a-list">Locate A List</a></li><li class="item-153"><a href="/list-management">List Management</a></li><li class="item-103"><a href="/service">Services</a></li><li class="item-105"><a href="/contact-us">Contact</a></li><li class="item-104"><a href="/about-us">   About Us</a></li></ul>
+
+
+<div class="custom">
+	<p class="footphone">Call us Today! 1-800-964-5478</p></div>
+
+          
+              </div><!-- end footer -->
+      
+      </div>
+
+    <div id="footer-outer">
+
+          <div id="footer-inner">
+
+        <div id="bottom">
+                        <div class="box box1"> <div class="moduletable">
+ 
+
+<div class="custom">
+	<h2 class="cattitle">List Categories</h2>
+<ul>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=2">Ailments</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=7">Apparel</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=8">Automotive</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=9">Babies &amp; Children</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=10">Books &amp; Magazines</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=68">Business</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=11">Buyer/Responders</a></li>
+</ul>
+<ul>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=12">Collectors</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=13">Crafts</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=14">Education</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=15">Electronics</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=16">Email Lists</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=17">Entertainment</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=18">Family</a></li>
+</ul>
+<ul>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=19">Financial</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=25">Food</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=26">Fundraising</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=77">Health &amp; Beauty</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=29">House &amp; Home</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=31">Insurance</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=74">Lifestyles</a></li>
+</ul>
+<ul>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=62">Music</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=32">Occupation</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=33">Opportunity Seekers</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=70">Organizations</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=34">Pets</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=35">Shopping History</a></li>
+<li><a href="/locate-a-list?view=search&amp;task=categoryList&amp;catnum=36">Sports</a></li>
+</ul></div>
+</div>
+</div>
+                                  <div class="box box3"> <div class="moduletable">
+ 
+
+<div class="custom">
+	<ul>
+<li class="cattitle">Additional Info</li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+<li><a href="/terms-and-conditions">Terms and Conditions</a></li>
+<li><a href="/contact-us">Email Us</a></li>
+<li><a href="/sitemap">Sitemap</a></li>
+</ul>
+<!--<ul class="social">
+<li><a href="http://paramountlists.ybclients.com/"><img src="/templates/beez5/images/twitter.png" border="0" /></a></li>
+<li><a href="http://paramountlists.ybclients.com/"><img src="/templates/beez5/images/facebook.png" border="0" /></a></li>
+<li><a href="http://paramountlists.ybclients.com/"><img src="/templates/beez5/images/googleplus.png" border="0" /></a></li>
+</ul>--></div>
+</div>
+</div>
+                                                      <div class="box box2"> <div class="moduletable">
+ <iframe allowtransparency="true" class="newsletter-signup" src="/component/proforms/newsletter-signup_copy?raw_form=0&amp;tooltip=1&amp;required_advice=1&amp;tmpl=component&amp;isinframe=1" width="190" height="200" frameborder="0" scrolling="no"></iframe>
+</div>
+</div>
+                                                  <div id="copyright"> <div class="moduletable">
+ 
+
+<div class="custom">
+	<p>Great Lakes List Management Copyright © 2016 All Rights Reserved.</p></div>
+</div>
+</div>
+                  </div>
+          </div>
+           </div>
+    
+              
+              
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47302622-1', 'greatlakeslists.com');
+  ga('send', 'pageview');
+
+</script>
+                            
+  
+
+<div style="display: none;"><div id="inline0" style="width:500px;height:370px;overflow:auto;">
+		<iframe allowtransparency="true" class="newsletter-fancybox-signup" src="/component/proforms/newsletter-footer?raw_form=0&amp;tooltip=1&amp;required_advice=1&amp;tmpl=component&amp;isinframe=1" width="190" height="200" frameborder="0" scrolling="no"></iframe>
+</div></div></body></html>

@@ -1,0 +1,903 @@
+<!DOCTYPE html><html lang="en-US"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy</title>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//unpkg.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="Data Partners » Feed" href="https://datapartners.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Data Partners » Comments Feed" href="https://datapartners.com/comments/feed/">
+<link rel="canonical" href="https://datapartners.com/privacy-policy/">
+		<script>
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/datapartners.com\/wp-includes\/js\/wp-emoji.js?ver=5.3.2","twemoji":"https:\/\/datapartners.com\/wp-includes\/js\/twemoji.js?ver=5.3.2"}};
+			/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {number[]} set1 Set of Emoji character codes.
+	 * @param {number[]} set2 Set of Emoji character codes.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detects if the browser supports rendering emoji or flag emoji.
+	 *
+	 * Flag emoji are a single glyph made of two characters, so some browsers
+	 * (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. This flag is shortlisted for the Emoji 13 spec,
+				 * but has landed in Twemoji early, so we can add support for it, too.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0x1F3F3, 0xFE0F, 0x200D, 0x26A7, 0xFE0F ],
+					[ 0x1F3F3, 0xFE0F, 0x200B, 0x26A7, 0xFE0F ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDDFA, 0xD83C, 0xDDF3 ],
+					[ 0xD83C, 0xDDFA, 0x200B, 0xD83C, 0xDDF3 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDFF4, 0xDB40, 0xDC67, 0xDB40, 0xDC62, 0xDB40, 0xDC65, 0xDB40, 0xDC6E, 0xDB40, 0xDC67, 0xDB40, 0xDC7F ],
+					[ 0xD83C, 0xDFF4, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC62, 0x200B, 0xDB40, 0xDC65, 0x200B, 0xDB40, 0xDC6E, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC7F ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Love is love.
+				 *
+				 * To test for Emoji 12 support, try to render a new emoji: men holding hands, with different skin
+				 * tone modifiers.
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[0xD83D, 0xDC68, 0xD83C, 0xDFFE, 0x200D, 0xD83E, 0xDD1D, 0x200D, 0xD83D, 0xDC68, 0xD83C, 0xDFFC],
+					[0xD83D, 0xDC68, 0xD83C, 0xDFFE, 0x200B, 0xD83E, 0xDD1D, 0x200B, 0xD83D, 0xDC68, 0xD83C, 0xDFFC]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {Object} src The url where the script is located.
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	/*
+	 * Tests the browser support for flag emojis and other emojis, and adjusts the
+	 * support settings accordingly.
+	 */
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script><script src="https://datapartners.com/wp-includes/js/twemoji.js?ver=5.3.2" type="text/javascript" defer=""></script><script src="https://datapartners.com/wp-includes/js/wp-emoji.js?ver=5.3.2" type="text/javascript" defer=""></script>
+		<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="atomic-blocks-fontawesome-css" href="/wp-content/plugins/atomic-blocks/dist/assets/fontawesome/css/all.css?ver=1630005508" media="all">
+<link rel="stylesheet" id="monochrome-pro-css" href="/wp-content/themes/monochrome-pro/style.css?ver=1679954169" media="all">
+<style id="monochrome-pro-inline-css">
+
+
+		a,
+		.entry-meta a:hover,
+		.entry-meta a:focus,
+		.entry-title a:hover,
+		.entry-title a:focus,
+		.genesis-nav-menu a:focus,
+		.genesis-nav-menu a:hover,
+		.genesis-nav-menu .current-menu-item > a,
+		.genesis-nav-menu .toggle-header-search:focus,
+		.genesis-nav-menu .toggle-header-search:hover,
+		.genesis-responsive-menu .genesis-nav-menu a:focus,
+		.genesis-responsive-menu .genesis-nav-menu a:hover,
+		.sub-menu-toggle:focus,
+		.sub-menu-toggle:hover,
+		#genesis-mobile-nav-primary:focus,
+		#genesis-mobile-nav-primary:hover {
+			color: #ff3600;
+		}
+
+		@media only screen and (max-width: 1023px) {
+			.genesis-responsive-menu .genesis-nav-menu a:focus,
+			.genesis-responsive-menu .genesis-nav-menu a:hover,
+			.genesis-responsive-menu .genesis-nav-menu .sub-menu .menu-item a:focus,
+			.genesis-responsive-menu .genesis-nav-menu .sub-menu .menu-item a:hover,
+			.genesis-responsive-menu.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a {
+				color: #ff3600;
+			}
+		}
+
+		
+
+		button:hover,
+		button:focus,
+		input:hover[type="button"],
+		input:hover[type="reset"],
+		input:hover[type="submit"],
+		input:focus[type="button"],
+		input:focus[type="reset"],
+		input:focus[type="submit"],
+		.archive-pagination a:hover,
+		.archive-pagination a:focus,
+		.archive-pagination li.active a,
+		.button:hover,
+		.button:focus,
+		.image-section button:hover,
+		.image-section button:focus,
+		.image-section input[type="button"]:hover,
+		.image-section input[type="button"]:focus,
+		.image-section input[type="reset"]:hover,
+		.image-section input[type="reset"]:focus,
+		.image-section input[type="submit"]:hover,
+		.image-section input[type="submit"]:focus,
+		.image-section .button:hover,
+		.image-section .button:focus,
+		.image-section .more-link:hover,
+		.image-section .more-link:focus,
+		.more-link:hover,
+		.more-link:focus,
+		.site-container div.wpforms-container-full .wpforms-form input[type="submit"]:focus,
+		.site-container div.wpforms-container-full .wpforms-form input[type="submit"]:hover,
+		.site-container div.wpforms-container-full .wpforms-form button[type="submit"]:focus,
+		.site-container div.wpforms-container-full .wpforms-form button[type="submit"]:hover {
+			background-color: #ff3600;
+			color: #ffffff;
+		}
+		
+			.before-footer-cta {
+				background-color: #ff3600;
+				background: linear-gradient(45deg,#ff3600,#ff3600);
+			}
+
+			.before-footer-cta,
+			.before-footer-cta a,
+			.before-footer-cta p,
+			.before-footer-cta .widget-title {
+				color: #ffffff;
+			}
+			
+		.single .content .entry-content > p:first-of-type {
+			font-size: 24px;
+			font-weight: 300;
+			line-height: 32px;
+		}
+		
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://datapartners.com/wp-includes/css/dist/block-library/style.css?ver=5.3.2" media="all">
+<link rel="stylesheet" id="atomic-blocks-style-css-css" href="/wp-content/plugins/atomic-blocks/dist/blocks.style.build.css?ver=1630005510" media="all">
+<link rel="stylesheet" id="widgetopts-styles-css" href="/wp-content/plugins/widget-options/assets/css/widget-options.css" media="all">
+<link rel="stylesheet" id="monochrome-fonts-css" href="//fonts.googleapis.com/css?family=Muli%3A300%2C300i%2C400%2C400i%2C600%2C600i%7COpen+Sans+Condensed%3A300&amp;ver=1679954169" media="all">
+<link rel="stylesheet" id="monochrome-ionicons-css" href="//unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css?ver=1679954169" media="all">
+<link rel="stylesheet" id="monochrome-pro-gutenberg-css" href="/wp-content/themes/monochrome-pro/lib/gutenberg/front-end.css?ver=1679954169" media="all">
+<style id="monochrome-pro-gutenberg-inline-css">
+.ab-block-post-grid .ab-post-grid-items .ab-block-post-grid-title a:hover {
+	color: #ff3600;
+}
+
+.site-container .wp-block-button .wp-block-button__link {
+	background-color: #ff3600;
+}
+
+.wp-block-button .wp-block-button__link:not(.has-background),
+.wp-block-button .wp-block-button__link:not(.has-background):focus,
+.wp-block-button .wp-block-button__link:not(.has-background):hover {
+	color: #ffffff;
+}
+
+.site-container .wp-block-button.is-style-outline .wp-block-button__link {
+	color: #ff3600;
+}
+
+.site-container .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.site-container .wp-block-button.is-style-outline .wp-block-button__link:hover {
+	color: #ff5923;
+}
+
+.site-container .wp-block-pullquote.is-style-solid-color {
+	background-color: #ff3600;
+}		.site-container .has-small-font-size {
+			font-size: 14px;
+		}		.site-container .has-normal-font-size {
+			font-size: 18px;
+		}		.site-container .has-large-font-size {
+			font-size: 22px;
+		}		.site-container .has-larger-font-size {
+			font-size: 26px;
+		}		.site-container .has-theme-primary-color,
+		.site-container .wp-block-button .wp-block-button__link.has-theme-primary-color,
+		.site-container .wp-block-button.is-style-outline .wp-block-button__link.has-theme-primary-color {
+			color: #070605;
+		}
+
+		.site-container .has-theme-primary-background-color,
+		.site-container .wp-block-button .wp-block-button__link.has-theme-primary-background-color,
+		.site-container .wp-block-pullquote.is-style-solid-color.has-theme-primary-background-color {
+			background-color: #070605;
+		}		.site-container .has-theme-secondary-color,
+		.site-container .wp-block-button .wp-block-button__link.has-theme-secondary-color,
+		.site-container .wp-block-button.is-style-outline .wp-block-button__link.has-theme-secondary-color {
+			color: #FF3600;
+		}
+
+		.site-container .has-theme-secondary-background-color,
+		.site-container .wp-block-button .wp-block-button__link.has-theme-secondary-background-color,
+		.site-container .wp-block-pullquote.is-style-solid-color.has-theme-secondary-background-color {
+			background-color: #FF3600;
+		}		.site-container .has-green-color,
+		.site-container .wp-block-button .wp-block-button__link.has-green-color,
+		.site-container .wp-block-button.is-style-outline .wp-block-button__link.has-green-color {
+			color: #003830;
+		}
+
+		.site-container .has-green-background-color,
+		.site-container .wp-block-button .wp-block-button__link.has-green-background-color,
+		.site-container .wp-block-pullquote.is-style-solid-color.has-green-background-color {
+			background-color: #003830;
+		}		.site-container .has-light-blue-color,
+		.site-container .wp-block-button .wp-block-button__link.has-light-blue-color,
+		.site-container .wp-block-button.is-style-outline .wp-block-button__link.has-light-blue-color {
+			color: #BAD4D8;
+		}
+
+		.site-container .has-light-blue-background-color,
+		.site-container .wp-block-button .wp-block-button__link.has-light-blue-background-color,
+		.site-container .wp-block-pullquote.is-style-solid-color.has-light-blue-background-color {
+			background-color: #BAD4D8;
+		}		.site-container .has-white-color,
+		.site-container .wp-block-button .wp-block-button__link.has-white-color,
+		.site-container .wp-block-button.is-style-outline .wp-block-button__link.has-white-color {
+			color: #FFFFFF;
+		}
+
+		.site-container .has-white-background-color,
+		.site-container .wp-block-button .wp-block-button__link.has-white-background-color,
+		.site-container .wp-block-pullquote.is-style-solid-color.has-white-background-color {
+			background-color: #FFFFFF;
+		}
+</style>
+<link rel="stylesheet" id="simple-social-icons-font-css" href="/wp-content/plugins/simple-social-icons/css/style.css?ver=3.0.2" media="all">
+<script src="https://datapartners.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+<script src="https://datapartners.com/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1"></script>
+<script src="/wp-content/plugins/simple-social-icons/svgxuse.js?ver=1.1.21"></script>
+<link rel="https://api.w.org/" href="https://datapartners.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://datapartners.com/xmlrpc.php?rsd">
+<link rel="alternate" type="application/json+oembed" href="https://datapartners.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdatapartners.com%2Fprivacy-policy%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://datapartners.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdatapartners.com%2Fprivacy-policy%2F&amp;format=xml">
+<link rel="pingback" href="https://datapartners.com/xmlrpc.php">
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLBL1515W6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KLBL1515W6');
+</script><link rel="icon" href="/wp-content/uploads/2020/02/cropped-DP-Mark-32x32.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2020/02/cropped-DP-Mark-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="/wp-content/uploads/2020/02/cropped-DP-Mark-180x180.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2020/02/cropped-DP-Mark-270x270.png">
+		<style id="wp-custom-css">
+			/* Ryan's Edits Start*/
+.stats {
+	font-size: 34px !important;
+}
+.pre-mover-img {
+	padding: 20px;
+}
+.header-background-green .site-header {
+	background-color: #1c1c5e;
+}
+.header-background-light-blue .site-header {
+	background-color: #a3a3a3;
+}
+.wp-block-column ul.menu {
+	background-color: #e0e0e0 !important;
+}
+
+@media only screen and (max-width: 782px) {
+.site-header {
+Background-color: #ffffff !important;
+}
+}
+@media only screen and (max-width: 1023px){
+h1 { font-size: 51px !important;
+}
+}
+/* Ryan's Edits End*/		</style>
+		</head>
+<body class="page-template-default page page-id-3 wp-custom-logo wp-embed-responsive header-full-width full-width-content genesis-breadcrumbs-hidden elementor-default elementor-kit-646 js" itemscope="" itemtype="https://schema.org/WebPage"><div class="site-container" style="margin-bottom: 561px;"><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li></ul><header class="site-header" itemscope="" itemtype="https://schema.org/WPHeader"><div class="wrap"><div class="title-area"><a href="https://datapartners.com/" class="custom-logo-link" rel="home"><img width="605" height="56" src="/wp-content/uploads/2020/02/DP-Logo.png" class="custom-logo" alt="Data Partners" srcset="/wp-content/uploads/2020/02/DP-Logo.png 605w, /wp-content/uploads/2020/02/DP-Logo-300x28.png 300w, /wp-content/uploads/2020/02/DP-Logo-600x56.png 600w" sizes="(max-width: 605px) 100vw, 605px" loading="lazy"></a><p class="site-title" itemprop="headline">Data Partners</p><p class="site-description" itemprop="description">We Transform Data Into Actionable Intelligence!</p></div><button class="menu-toggle ionicons-before ion-ios-menu" aria-expanded="false" aria-pressed="false" id="genesis-mobile-nav-primary">Menu</button><nav class="nav-primary genesis-responsive-menu" aria-label="Main" itemscope="" itemtype="https://schema.org/SiteNavigationElement" id="genesis-nav-primary" style=""><div class="wrap"><ul id="menu-header-menu" class="menu genesis-nav-menu menu-primary js-superfish sf-js-enabled sf-arrows" style="touch-action: pan-y;"><li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242"><a href="https://datapartners.com/about-us/the-difference/" itemprop="url"><span itemprop="name">The Difference</span></a></li>
+<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="https://datapartners.com/about-us/" itemprop="url"><span itemprop="name">About Us</span></a></li>
+<li id="menu-item-196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-196"><a href="#" itemprop="url" class="sf-with-ul"><span itemprop="name">Solutions</span></a>
+<button class="sub-menu-toggle ionicons-before ion-ios-arrow-down" aria-expanded="false" aria-pressed="false"><span class="screen-reader-text">Submenu</span></button><ul class="sub-menu" style="">
+	<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="https://datapartners.com/cable/" itemprop="url"><span itemprop="name">Cable</span></a></li>
+	<li id="menu-item-286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="https://datapartners.com/b2b/" itemprop="url"><span itemprop="name">B2B</span></a></li>
+	<li id="menu-item-298" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298"><a href="https://datapartners.com/b2c/" itemprop="url"><span itemprop="name">B2C</span></a></li>
+</ul>
+</li>
+<li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157"><a href="https://datapartners.com/blog/" itemprop="url"><span itemprop="name">Blog</span></a></li>
+<li id="menu-item-177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177"><a href="https://datapartners.com/contact/" itemprop="url"><span itemprop="name">Contact</span></a></li>
+</ul></div></nav></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-3 page type-page status-publish entry" aria-label="Privacy Policy" itemscope="" itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Privacy Policy</h1>
+</header><div class="entry-content" itemprop="text">
+<p>We did our best to write our Privacy Policy in plain, easy-to-understand, language. However, if there is any part of the policy that you think is unclear or that you would like explained, feel free to contact us. You can email us at&nbsp;<a href="mailto:info@datapartners.com">info@datapartners.com</a>, write us at Data Partners Inc., 12857 Banyan Creek Drive, Ft. Myers, Florida 33908 or call us toll-free at 866.423.1818.</p>
+
+
+
+<p><strong>I. General Information</strong></p>
+
+
+
+<p>This privacy notice discloses the privacy practices for all of the websites below and for Data Partners Inc., a Florida corporation, which is the company who owns and operates these websites:</p>
+
+
+
+<ul><li><a href="http://www.datapartners.com/">www.datapartners.com</a></li><li><a href="http://www.brandnewmovers.com/">www.brandnewmovers.com</a></li><li><a href="http://www.brandnewhomeowners.com/">www.brandnewhomeowners.com</a></li><li><a href="http://www.brandnewbusinesses.com/">www.brandnewbusinesses.com</a></li></ul>
+
+
+
+<p>When we say “websites” or “our sites” in this Privacy Policy, we are referring to all of these websites above. When we say “DPI”, “we,” “our,” or “us,” in this Privacy Policy, we are referring to Data Partners Inc.</p>
+
+
+
+<p>This Privacy Policy provides useful information on how we use consumer and business data and how you may control information pertaining to you. This Privacy Policy applies to information collected by our websites as well as to the information buying and selling practices of DPI. It notifies you of the following:</p>
+
+
+
+<ul><li>What personally identifiable information is collected from you through our websites, how it is used and with whom it may be shared.</li><li>What personally identifiable information we license from third-party providers and/or relicense to our clients.</li><li>What choices are available to you regarding the use of your data.</li><li>The security protections in place to protect the misuse of your information</li></ul>
+
+
+
+<p><strong>II. State Specific Policies</strong></p>
+
+
+
+<p>Some states have enacted laws granting residents of those states certain privacy rights. We have dedicated special subsections of our Privacy Policy that apply to residents of each of those states. The following state-specific subsections are incorporated into and made part of our Privacy Policy:</p>
+
+
+
+<ul><li>California Residents should click <a href="https://datapartners.com/ccpa/">HERE</a>.</li><li>Colorado Residents should click <a href="https://datapartners.com/colorado-residents/">HERE</a>.</li><li>Connecticut Residents should click <a href="https://datapartners.com/connecticut-residents/">HERE</a>.</li><li>Utah Residents should click <a href="https://datapartners.com/utah-residents/">HERE</a>.</li><li>Virginia Residents should click <a href="https://datapartners.com/virginia-residents/">HERE</a>.</li></ul>
+
+
+
+<p>We encourage residents of these states to also review all the other sections of our Privacy Policy below since those general sections apply to the extent they are not contradicted by the state-specific subsection.</p>
+
+
+
+<p><strong>III. Information Collection and Use</strong></p>
+
+
+
+<p><strong>A. Information Collected Directly by Us</strong></p>
+
+
+
+<p>DPI is the sole owner of the information collected through our websites or directly by our company representatives. We only have access to/collect information that you voluntarily give us via email, contact form, or other direct contact initiated by you. We may gather your name, address, email address, telephone number, IP Address, and/or Mobile Device ID in your voluntary use of our websites or when you contact our representatives.</p>
+
+
+
+<p>We will use your information to respond to you, regarding the reason you contacted us, and for appropriate follow-up. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order, or as a means to enhance our communications with you (like via an email provider). This information is used solely to help us better communicate directly with you. We do not sell or rent this information to anyone.</p>
+
+
+
+<p>Unless you specifically ask us not to, we may contact you via telephone, email, text message, or online display in the future to tell you about specials, new products or services, or changes to this privacy policy. If you do not wish us to contact you any further, please see the Opt Out section below on how to unsubscribe from our communications.</p>
+
+
+
+<p><strong>B. Information We License from Third-Parties</strong></p>
+
+
+
+<p>Our core business is relicensing consumer and business information to help our clients market their products and services more effectively. The products we sell contain information on individuals and households that we license from third-parties. The information we license to our clients is collected by our third-party partners from many sources. These sources include public records, publicly available information, subscription information, warranty cards, surveys, point-of-sale information, website directories, website visits, online activity, mobile applications, and commercially available consumer data from other third-party information providers who may or may not have collected the data directly from you.</p>
+
+
+
+<p>Some of this information may have been modeled or inferred from other information. For example, if you subscribe to a bridal magazine we might assume (i.e., infer) that you are engaged to be married. Or, the provider of information might make a calculated estimate of your home’s value based on the known values of surrounding homes (i.e., modeling). We may also use personal data to construct a non-existent “average consumer” that encompasses certain average characteristics of consumers who buy or do not buy (i.e., profiling). Inferring, modeling, and profiling are common practices used in trying to match consumers with products and services they are most likely to want when exact information is not available or feasible.</p>
+
+
+
+<p>Identifiers such as name, address, and telephone numbers are sourced from publicly accessible sources such as the white and yellow page telephone directories, online directories, website postings, public records, public websites, property and assessor files, governmental issued licenses, and information available to the public through directory assistance.</p>
+
+
+
+<p><strong>C. What We Do with Information We License from Third-Parties</strong></p>
+
+
+
+<p>Our clients are small, medium, and large businesses, non-profit organizations, government agencies, and political organizations who want to market to consumers. Our clients use our products to enhance their marketing efforts and better align their products and services with consumer wants and needs.</p>
+
+
+
+<p>Examples of the types of information we license for use in marketing are general contact information (like consumer and business names, titles, addresses, telephone numbers); consumer demographics (like age, gender, income, marital status, home value, net worth etc.); household makeup (like number of adults or presence of children); consumer buying behavior (like owning a boat, or buying pet toys); consumer interests (like an interest in golf); telecommunications characteristics (like whether you have a satellite dish or high-speed internet service); business firmographics (sales volume, number of employees, years in business, etc.); and life-event triggers (a recent move, purchase of a home, or recent marriage).</p>
+
+
+
+<p>Our products are sometimes used by us (on behalf of our clients) or by our clients directly to draw inferences about consumers or develop predictive models. These predictions are used to make educated guesses about consumer preferences and future buying behavior and enable our clients to deliver marketing messages to the consumers who are most likely to want to receive them.</p>
+
+
+
+<p>We may sometimes match different elements of information or points of contact together to help our clients engage in “multichannel” marketing. For example, a client with a list of telephone numbers of their customers may wish to add email addresses and mailing addresses to their list so they can reach their customers via email and direct mail. We may also use anonymized (hashed) versions of our information to match our products to our client’s files.</p>
+
+
+
+<p>Ultimately, our goal is to help our clients ensure their marketing messages reach consumers who are most likely to want to receive them, and avoid consumers who don’t. Our clients ultimately use our information to send targeted offers to consumers and businesses via various marketing channels such as direct mail, telemarketing, digital ads, social media ads, mobile ads, etc.</p>
+
+
+
+<p>The explanation and examples above are intended to give you a good idea of the major categories of information we maintain and most of the ways we use that information. However, it is not intended to be an exhaustive list of all the information we maintain and all the ways that information might be used.</p>
+
+
+
+<p><strong>D. Limitations</strong></p>
+
+
+
+<p>Our clients are permitted to use the information we provide for a limited purpose. Our clients may use our data only for lawfully conducted marketing or for things related to lawful marketing (such as cleaning their customer lists or verification of data they already have). No other purpose is allowed.</p>
+
+
+
+<p>This means that our clients are prohibited from using our data for any purpose or in any way that might violate any U.S. federal or state laws that protects your privacy or consumer rights. Among those are the CAN-SPAM Act (intended to reduce unwanted email solicitations); the Telephone Consumer Protection Act of 1991 (intended to reduce unwanted telephone solicitations) as well as the privacy and best practice policies set out by the Data and Marketing Association (“DMA”).</p>
+
+
+
+<p>We do not provide or possess personal information on any person under 18 years old. We may identify households with children present (with or without age ranges) or consumer activity that may indicate the presence of a child (such as purchasing toys), but no personally identifiable information regarding minors is ever kept by us or provided by us.</p>
+
+
+
+<p><strong>E. Information we Do NOT Collect, Use, Share, or Sell</strong></p>
+
+
+
+<p>We do not collect, store, share, or use personal information that falls into any of the following categories, either directly on our sites or from third-party data providers, nor do we ever sell this information to our clients:</p>
+
+
+
+<ul><li>personal signatures (other than in regard to agreements we may sign with our clients)</li><li>credit card numbers or debit card numbers (other than to process purchases made by our clients)</li><li>social security numbers</li><li>passport numbers</li><li>national ID numbers</li><li>drivers’ license numbers</li><li>state ID card numbers</li><li>military ID numbers</li><li>insurance policy numbers</li><li>bank account numbers</li><li>financial account numbers (other than to process purchases made by our clients)</li><li>facial recognition data</li><li>physical characteristics or descriptions</li><li>exact dates of birth</li><li>citizenship</li><li>geolocation information of any individual (we may geolocate buildings &amp; other structures, roads, land boundaries, etc.)</li><li>actual credit scores</li><li>actual medical conditions</li><li>actual physical or mental disabilities</li><li>gender identity or expression other than birth gender</li><li>sexual orientation</li><li>audio information (except for our clients who may call us directly)</li><li>video information</li><li>genetic information (including familial genetic information)</li><li>online account usernames or passwords (other than those we issue for access to our sites)</li><li>internet browsing or search history, or</li><li>any personally identifiable information regarding any person under 18 years of age.</li></ul>
+
+
+
+<p><strong>NOTE</strong>: Our state-specific provisions of this Privacy Policy (See Section II above) may list additional types of information that we will not collect, sell, or share in those particular states.</p>
+
+
+
+<p><strong>IV. Your Access to and Control Over Information</strong></p>
+
+
+
+<p>We believe that consumers should ultimately be in control of their information. Accordingly, you may exercise control over your information as follows:</p>
+
+
+
+<p><strong>A. Email Communications Sent by Us to You</strong></p>
+
+
+
+<p>Opt Out: All email offers for goods and services sent to you by us include an opportunity to opt-out from receiving future communications from us about our services. Simply follow the “Opt Out” instructions included in the email message.</p>
+
+
+
+<p><strong>B. Third-Party Information We License</strong></p>
+
+
+
+<p>You may opt out of any consumer marketing database we maintain in two ways:</p>
+
+
+
+<ol><li>Clicking the “<a href="https://datapartners.com/donotsellmyinformation/">Manage Your Privacy Preferences</a>” button located on our homepage of each of our websites and following the simple instructions regarding submitting your information request; or</li><li>Call us toll-free at <strong>866.423.1818</strong> and speak with our Consumer Privacy Coordinator who will assist you with your request.</li></ol>
+
+
+
+<p>Your request will be processed as soon as possible, usually being processed within fifteen (15) days of receipt, but may take up to forty-five (45) business days. If you are a third-party attempting to opt-out another person, you must provide evidence of legally sufficient authorization before we will opt the other person out.</p>
+
+
+
+<p>Except as specifically required by federal, state, or local law (please see the state-specific Privacy Policies we list above), we will not process third party and/or agent attempts to opt-out or delete a consumer’s information unless a Power of Attorney that complies in all respects with the controlling jurisdiction’s laws has been supplied to us in writing along with sufficient identification of the consumer represented by the attorney.</p>
+
+
+
+<p>Please note that we do not collect, process, or store any information on consumers outside of the United States. Accordingly, some well-known privacy laws such as the General Data Protection Regulation (“GDPR”) that grants certain privacy rights to residents of the member states of the European Union do not apply to our company. Consumer requests to exercise rights under the GDPR, including opt-outs or deletion requests, will be ignored.</p>
+
+
+
+<p>A small number of states in the U.S. have adopted laws (such as the California Consumer Privacy Act (“CCPA”)) that confer specific privacy rights to residents of that particular state. However, those laws apply only to residents of those respective states. They have no applicability to consumers who live in other states. For example, a resident of the state of Iowa receives no protection or rights from the CCPA. Requests by consumers who improperly attempt to invoke rights granted to residents of other states will be processed according to the terms of this general Privacy Policy only.</p>
+
+
+
+<p>If you choose to opt out of our consumer database(s), we will stop licensing your information to any of our clients. Please understand that opting out of our databases:</p>
+
+
+
+<ul><li>Does NOT mean we will delete or destroy information pertaining to you. Instead, we flag your record as an “Opt Out” that will not be delivered to any of our clients. We preserve your data so that we can show continuing compliance with your opt-out request.</li><li>Does NOT mean that any of our clients or providers will also opt you out of their databases. We can promise only that we will opt you out of our databases, and will no longer use your information to help our clients target their marketing messages.</li><li>Does NOT guarantee you will no longer receive marketing messages. We can only opt you out from databases that we maintain. Your information may appear on databases maintained by companies other than ours.</li></ul>
+
+
+
+<p><strong>C. Other Sources for Opt-Out &amp; Privacy Information</strong></p>
+
+
+
+<p>The websites listed below are NOT maintained or affiliated with us in any way. We are providing these links only as convenient information on how you can better regulate your preferences on marketing materials you receive.</p>
+
+
+
+<ul><li>Data &amp; Marketing Association’s consumer choice portal for both direct mail and email opt-outs: <a href="https://dmachoice.thedma.org/">www.dmachoice.org</a></li><li>The federal National Do-Not-Call Registry: <a href="https://www.donotcall.gov/">www.donotcall.gov</a></li><li>Opting out of Prescreened Credit Offers: <a href="https://www.optoutprescreen.com/">www.optoutprescreen.com</a></li><li>Opting out of interest-based targeting cookies: <a href="https://optout.networkadvertising.org/?c=1">optout.networkadvertising.org</a></li><li>Opting out of interest-based targeting cookies:  <a href="https://youradchoices.com/">youradchoices.com</a></li><li>The DMA’s Email Preference Service: <a href="https://www.ims-dm.com/cgi/offemaillist.php">www.ims-dm.com/cgi/offemaillist.php</a></li><li>The DMA’s Deceased Do Not Contact Service: <a href="https://www.ims-dm.com/cgi/ddnc.php">https://www.ims-dm.com/cgi/ddnc.php</a></li><li>The DMA’s Do Not Contact list for Caretakers: <a href="https://www.ims-dm.com/cgi/dncc.php">https://www.ims-dm.com/cgi/dncc.php</a></li><li>Your email opt-out rights under U.S. CAN-SPAM law: <a href="https://consumer.ftc.gov/articles/0210-how-get-less-spam-your-email">https://consumer.ftc.gov/articles/0210-how-get-less-spam-your-email</a></li><li>Network Advertising Initiative Opt-Out: <a href="https://thenai.org/opt-out/">https://thenai.org/opt-out/</a></li><li>U.S. Banking Privacy Rules: <a href="https://www.fdic.gov/regulations/examinations/financialprivacy/handbook/index.html">https://www.fdic.gov/regulations/examinations/financialprivacy/handbook/index.html</a></li></ul>
+
+
+
+<p><strong>D. No Discrimination, Retaliation, Cost, or Incentives</strong></p>
+
+
+
+<p>We do NOT discriminate or retaliate in any way against any consumer who chooses to opt out of one or more of our databases. We offer no financial benefit, service difference, reward, or other incentive to you for disclosing information to us or allowing us to share your information, nor do we penalize you in any way for choosing to opt out or exercise any privacy rights you have under state or federal law. We never charge any fee for opting out or exercising any of your privacy rights. How and whether we use your personal information is entirely up to you.</p>
+
+
+
+<p><strong>V. Security</strong></p>
+
+
+
+<p>We have established, implemented, and maintained commercially reasonable administrative, technical, and physical data precautions to protect the confidentiality, integrity, and accessibility of the information we collect and process. Protections include physical restrictions, intrusion alarms, electronic monitoring, firewall protections, security logs, encryption of data, access controls, and employment of full-time technical personnel. As part of these security protections, we regularly do all of the following:</p>
+
+
+
+<ul><li>review the hardware and software connected to our network;</li><li>implement security settings on key systems;</li><li>limit user and administrator privileges;</li><li>patch software and firmware to stay current;</li><li>secure critical hardware and data assets at appropriate levels;</li><li>utilize software and/or hardware to defend against viruses, malware, and intrusions;</li><li>block vulnerable access points;</li><li>provide security training to our employees who have access to the network;</li><li>monitor accounts and network audit logs;</li><li>test our defenses; and</li><li>review our plan to respond to security incidents.</li></ul>
+
+
+
+<p>Whenever we collect sensitive information (such as credit card data) from our clients online, that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a closed lock icon at the bottom of your web browser, or looking for “https” at the beginning of the address of the web page.</p>
+
+
+
+<p>While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information you share with us. The computers/servers in which we store personally identifiable information are always kept in a secure environment that is not accessible to the public or third parties.</p>
+
+
+
+<p>We may house certain information outside of our facility. Anytime information is housed outside of our facility, it is kept in a secure environment that meets or exceeds the standards for security that we use at our own facility, and we only use service providers who promise us by contract to keep our information safe and secure on networks that meet industry standards for security.</p>
+
+
+
+<p><strong>VI. Requests for Information and Correspondence</strong></p>
+
+
+
+<p>If you fill out our online submission form to obtain more information from us regarding one of our products or services, you must submit information on how we may contact you such as your name, business name, title, address, telephone number and/or email address. If you choose to correspond with us through email, we may retain the content of your email messages together with your email address and our responses and contact you regarding the subject matter of your inquiry. We will retain any information you submit so that we may more effectively communicate with you in the future.</p>
+
+
+
+<p>Information that you submit to induce us to contact you is never sold to or shared with third parties.</p>
+
+
+
+<p><strong>VII. Orders</strong></p>
+
+
+
+<p>We request information from you on our order forms and agreements. Like any vendor, to buy from us, you must provide contact information (like your name, business name, and address) and sometimes financial information (like credit card number and/or expiration date). All information you submit on an order form is used for billing purposes and to fill your orders only. It will never be sold, rented, or disclosed to third parties, except as necessary to complete the transaction (e.g., providing your credit card number to a payment processor). If we need to contact you regarding an order, we will use this information to contact you.</p>
+
+
+
+<p><strong>VIII. Cookies</strong></p>
+
+
+
+<p>We may use “cookies” on this site. A cookie is a piece of data stored on a site visitor’s computer to help us improve your access to our site and identify repeat visitors to our site. For instance, when we use a cookie to identify you, you would not have to log in a password more than once, thereby saving you time when visiting our site. Cookies can also enable us to track and target the interests of our users to enhance the experience on our site. Usage of a cookie is in no way linked to any personally identifiable information on our site and it is never sold, rented to, or accessible by third parties.</p>
+
+
+
+<p><strong>IX. Sharing Information</strong></p>
+
+
+
+<p><strong>A. Information You Send to Us</strong></p>
+
+
+
+<p>Except for the limited situations described below, we never share, sell, or rent information you send directly to us with third parties.</p>
+
+
+
+<p>We use a credit card processing company to bill users for goods and services. These companies do not retain, share, store or use personally identifiable information for any secondary purposes beyond fulfilling your order.</p>
+
+
+
+<p>We may partner with a third party to provide specific services to our clients. In that event, we will share names, or other contact information that is necessary for the third party to provide these services to that client. These third parties are not allowed to use personally identifiable information except for the purpose of providing the services we have authorized.</p>
+
+
+
+<p>If Data Partners Inc. is acquired, our user information may be among the assets transferred to the buyer in the sale.</p>
+
+
+
+<p><strong>B. Information We License from Third-Parties</strong></p>
+
+
+
+<p>Information about you that we license from third-parties is shared with our clients who re-license that information from us. For example, our client may request a list of names and addresses of consumers who recently moved into neighborhoods near their store locations.</p>
+
+
+
+<p>As stated above, any sharing of your information with third parties is limited exclusively for purposes of lawful marketing, such as mailing you offers for goods and services. No other purpose is permitted.</p>
+
+
+
+<p><strong>X. Links</strong></p>
+
+
+
+<p>Our websites may contain links to other sites. Please be aware that we are not responsible for the content or privacy practices of such other sites. We encourage our users to be aware when they leave our site and to read the privacy statements of any other site that collects personally identifiable information.</p>
+
+
+
+<p>Some of our linkage sites make chat rooms, forums, message boards, and/or newsgroups available to their users. Please remember that any information that is disclosed in these areas, in some cases, becomes public information and you should exercise caution when deciding to disclose your personal information on these other sites.</p>
+
+
+
+<p><strong>XI. Surveys &amp; Contests</strong></p>
+
+
+
+<p>From time-to-time our websites may request information via surveys or contests. Participation in these surveys or contests is completely voluntary and you may choose whether or not to participate and disclose this information. Information required may include contact information (such as name and shipping address), and demographic information (such as zip code, age level). Contact information will be used to notify the winners and award prizes. Survey responses will be used for purposes of improving client satisfaction or development of new products and services.</p>
+
+
+
+<p><strong>XII. Minors</strong></p>
+
+
+
+<p>Persons under 18 are prohibited from submitting any personally identifiable information to us including name, mailing address, telephone number, or email address. Users who submit information to us warrant (by acknowledging having read our Privacy Policy) that they are age 18 or older. If you are under age 18, you are permitted to view our public website only. If we learn that personal information of a person under 18 has been submitted to us, we will delete that information from our systems immediately. Protection of young children is particularly important to us. Accordingly, consistent with the Federal Children’s Online Privacy Protection Act of 1998 (COPPA), we will never knowingly request, collect, or maintain personally identifiable information from anyone under the age of 13, and no portion of our website is structured or intended to attract anyone under age 13.</p>
+
+
+
+<p><strong>XIII. Legal Compliance</strong></p>
+
+
+
+<p>We may disclose your personal information when required by law or in the good-faith belief that such action is necessary in order to conform to federal, state, or local laws or regulations, or to comply with a court order, an investigation by law enforcement, or when legal process served on us.</p>
+
+
+
+<p><strong>XIV. Log Files</strong></p>
+
+
+
+<p>We may record log files in regard to visits to our websites. The information we log may include your internet protocol (IP) address, browser type, referring/exit pages, platform type, date/time stamp, and number of clicks to analyze trends, administer the website, track users’ movements in the aggregate, and gather broad demographic information for aggregate use. None of this information, including IP addresses, are linked to personally identifiable information, and this information is never sold or rented to third parties.</p>
+
+
+
+<p><strong>XV. Consent</strong></p>
+
+
+
+<p>By using this site, you consent to the collection and use of your information consistent with this Privacy Policy.</p>
+
+
+
+<p><strong>XVI. Revisions</strong></p>
+
+
+
+<p>We may change our Privacy Policy in the future in order to adjust to changes in the law or best practices. We recommend that you check it frequently.</p>
+
+
+
+<p>Last Reviewed: 12/06/2022</p>
+
+
+
+<p>Last Updated: 02/24/2023</p>
+
+
+
+<p><strong>XVII. Contact Us</strong></p>
+
+
+
+<p>If you have any questions about our Privacy Policy, this site, or the practices of Data Partners Inc., you can email us at&nbsp;<a href="mailto:info@datapartners.com">info@datapartners.com</a>, write us at Data Partners Inc., 12857 Banyan Creek Drive, Ft. Myers, Florida 33908 or call us toll-free at&nbsp;<strong>866.423.1818.</strong></p>
+</div></article></main></div></div></div><footer class="site-footer" itemscope="" itemtype="https://schema.org/WPFooter"><div class="wrap"><div class="footer-widget-1"><div class="wrap"><section id="custom_html-1" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><img class="dp-logo" src="/wp-content/themes/monochrome-pro/images/dp-mark-red.svg" alt="Data Partners Logo">
+
+<img src="/wp-content/themes/monochrome-pro/images/dp-logotype-white.svg" alt="Data Partners Logo"></div></div></section>
+</div></div><div class="footer-widget-2"><div class="wrap"><section id="text-2" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><p><!--(figmeta)eyJmaWxlS2V5IjoiWFJ5VUNXb21weUFGOHBxM21XU0xhYyIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->DataPartners provides customized data solutions for direct marketing, including specialized marketing products developed for the cable telecom industry.</p>
+</div>
+		</div></section>
+<section id="text-3" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Toll Free</h4>
+			<div class="textwidget"><p><!--(figmeta)eyJmaWxlS2V5IjoiWFJ5VUNXb21weUFGOHBxM21XU0xhYyIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->866.423.1818</p>
+</div>
+		</div></section>
+<section id="text-4" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Local</h4>
+			<div class="textwidget"><p><!--(figmeta)eyJmaWxlS2V5IjoiWFJ5VUNXb21weUFGOHBxM21XU0xhYyIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->239.267.8762</p>
+</div>
+		</div></section>
+<section id="text-5" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Email</h4>
+			<div class="textwidget"><p><!--(figmeta)eyJmaWxlS2V5IjoiWFJ5VUNXb21weUFGOHBxM21XU0xhYyIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->info@datapartners.com</p>
+</div>
+		</div></section>
+<section id="text-6" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Address</h4>
+			<div class="textwidget"><p><!--(figmeta)eyJmaWxlS2V5IjoiWFJ5VUNXb21weUFGOHBxM21XU0xhYyIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->12857 Banyan Creek Drive<br>
+Fort Myers, FL 33908</p>
+</div>
+		</div></section>
+</div></div><p style="font-size:14px">Copyright ©&nbsp;2023  Data Partners · <a href="/terms-of-use">Terms of Use</a> · <a href="/privacy-policy">Privacy Policy</a> ·<a href="/donotsellmyinformation"> Manage Your Privacy Preferences</a></p></div></footer>	<script type="text/javascript">
+		function atomicBlocksShare( url, title, w, h ){
+			var left = ( window.innerWidth / 2 )-( w / 2 );
+			var top  = ( window.innerHeight / 2 )-( h / 2 );
+			return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top='+top+', left='+left);
+		}
+	</script>
+	<style type="text/css" media="screen"></style><script src="/wp-content/plugins/atomic-blocks/dist/assets/js/dismiss.js?ver=1630005510"></script>
+<script src="https://datapartners.com/wp-includes/js/hoverIntent.js?ver=1.8.1"></script>
+<script src="/wp-content/themes/genesis/lib/js/menu/superfish.js?ver=1.7.10"></script>
+<script src="/wp-content/themes/genesis/lib/js/menu/superfish.args.js?ver=3.3.5"></script>
+<script src="/wp-content/themes/genesis/lib/js/skip-links.js?ver=3.3.5"></script>
+<script src="/wp-content/themes/monochrome-pro/js/global.js?ver=1.0.0"></script>
+<script src="/wp-content/themes/monochrome-pro/js/block-effects.js?ver=1.0.0"></script><style class="studiopress-block-effects-js">.fade-in, .fade-in-up { opacity: 0; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; } @media print { .fade-in, .fade-in-up { opacity: 1 !important; -webkit-animation: unset !important; animation: unset !important; -webkit-transition: none !important; transition: none !important; } } @-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } .fade-in.in-viewport { -webkit-animation-name: fadeIn; animation-name: fadeIn; } @-webkit-keyframes fadeInUp { from { opacity: 0; -webkit-transform: translate3d(0, 20px, 0); transform: translate3d(0, 20px, 0); } to { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } } @keyframes fadeInUp { from { opacity: 0; -webkit-transform: translate3d(0, 20px, 0); transform: translate3d(0, 20px, 0); } to { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } } .fade-in-up.in-viewport { -webkit-animation-name: fadeInUp; animation-name: fadeInUp; } </style>
+<script>
+var genesis_responsive_menu = {"mainMenu":"Menu","menuIconClass":"ionicons-before ion-ios-menu","subMenu":"Submenu","subMenuIconClass":"ionicons-before ion-ios-arrow-down","menuClasses":{"combine":[],"others":[".nav-primary"]}};
+</script>
+<script src="/wp-content/themes/monochrome-pro/js/responsive-menus.js?ver=1679954169"></script>
+<script src="https://datapartners.com/wp-includes/js/wp-embed.js?ver=5.3.2"></script>
+
+</body></html>

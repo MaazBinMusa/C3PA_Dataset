@@ -1,0 +1,601 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+<!-- data layer script-->
+	<script type="rocketlazyloadscript">
+	  window.dataLayer = window.dataLayer || [];
+	</script>
+<!-- end data layer script-->
+<!-- Google Tag Manager Placed by Harrison Sammak and Matt Kelchner on 9-17-2020 -->
+	<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W3ZB67T');</script>
+<!-- End Google Tag Manager -->
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Privacy Policy (CA) - Strata Company</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A400%2C700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A400%2C700&amp;display=swap" media="all" onload="this.media='all'"><noscript>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A400%2C700&amp;#038;display=swap" /&gt;</noscript><link rel="stylesheet" href="https://www.gostrata.com/wp-content/cache/min/1/687500a460459e8840a62431e17ebdaf.css" media="all" data-minify="1">
+    <link rel="shortcut icon" type="image/png" href="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/cropped-strata-favicon-32x32.png&amp;nocache=1">
+    
+    <script>var et_site_url='http://www.gostrata.com';var et_post_id='12458';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+</script><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+            <script type="rocketlazyloadscript" data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">
+                const ctPublicFunctions = {"_ajax_nonce":"738dc5ce5e","_rest_nonce":"ccb8ac1566","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/www.gostrata.com\/wp-json\/","data__cookies_type":"native","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk.","cookiePrefix":""}
+            </script>
+        
+            <script type="rocketlazyloadscript" data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">
+                const ctPublic = {"_ajax_nonce":"738dc5ce5e","settings__forms__check_internal":"0","settings__forms__check_external":"0","settings__forms__search_test":"1","blog_home":"https:\/\/www.gostrata.com\/","pixel__setting":"0","pixel__enabled":false,"pixel__url":null,"data__email_check_before_post":"1","data__cookies_type":"native","data__key_is_ok":true,"data__visible_fields_required":true,"data__to_local_storage":[]}
+            </script>
+        <script type="rocketlazyloadscript">                function apbct_attach_event_handler__backend(elem, event, callback) {                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                                elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(document, 'DOMContentLoaded', function(){                    if (typeof apbctLocalStorage === "object" && ctPublic.data__key_is_ok) {                        apbctLocalStorage.set('ct_checkjs', 'bbd3d5b3d2afa2f0c85c7cdb9c2e65ac0d51a4918b884d902ba7e1969c207626', true );                    } else {                        console.log('APBCT ERROR: apbctLocalStorage object is not loaded.');                    }                  });    </script>
+	<!-- This site is optimized with the Yoast SEO plugin v20.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link rel="canonical" href="https://www.gostrata.com/privacy-policy-ca/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Privacy Policy (CA) - Strata Company">
+	<meta property="og:url" content="https://www.gostrata.com/privacy-policy-ca/">
+	<meta property="og:site_name" content="Strata Company">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="8 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.gostrata.com/privacy-policy-ca/","url":"https://www.gostrata.com/privacy-policy-ca/","name":"Privacy Policy (CA) - Strata Company","isPartOf":{"@id":"https://www.gostrata.com/#website"},"datePublished":"2020-12-23T18:56:03+00:00","dateModified":"2020-12-23T18:56:03+00:00","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.gostrata.com/privacy-policy-ca/"]}]},{"@type":"WebSite","@id":"https://www.gostrata.com/#website","url":"https://www.gostrata.com/","name":"Strata Company","description":"Marketing Services &amp; Technology Solutions","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.gostrata.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+
+
+
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://www.gostrata.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1" id="jquery-core-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js" defer=""></script>
+<script type="text/javascript" id="olark-wp-js-extra">
+/* <![CDATA[ */
+var olark_vars = {"site_ID":"2285-788-10-5955","expand":"0","float":"0","override_lang":"0","lang":"","api":"","mobile":"1","woocommerce":"","woocommerce_version":null,"enable_cartsaver":"0"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/cache/min/1/wp-content/plugins/olark-live-chat/public/js/olark-wp-public.js?ver=1679455732" id="olark-wp-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-pagespeed-no-defer="" data-rocket-src="https://www.gostrata.com/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.6" id="ct_public_functions-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.gostrata.com/wp-json/"><link rel="alternate" type="application/json" href="https://www.gostrata.com/wp-json/wp/v2/pages/12458"><link rel="shortlink" href="https://www.gostrata.com/?p=12458">
+<link rel="alternate" type="application/json+oembed" href="https://www.gostrata.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.gostrata.com%2Fprivacy-policy-ca%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.gostrata.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.gostrata.com%2Fprivacy-policy-ca%2F&amp;format=xml">
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/cache/min/1/js/244348.js?ver=1679455732" defer=""></script>
+<noscript>&lt;img alt="" src="https://secure.easy0bark.com/244348.png" style="display:none;" /&gt;</noscript><style type="text/css" id="et-social-custom-css">
+				 .et_monarch .et_social_inline .et_social_circle .et_social_icons_container li i, .et_monarch .et_social_inline li { background: #ffffff; } .et_monarch .et_social_inline .et_social_circle .et_social_icons_container li:hover i, .et_monarch .et_social_inline .et_social_rounded .et_social_icons_container li:hover, .et_monarch .et_social_inline .et_social_rectangle .et_social_icons_container li:hover { background: #ffffff !important; } .et_monarch .et_social_inline .et_social_icons_container li i, .et_monarch .et_social_inline .et_social_count, .et_monarch .et_social_inline .et_social_networkname { color: #436fc6; } .et_monarch .et_social_inline .et_social_icons_container li:hover i, .et_monarch .et_social_inline .et_social_icons_container li:hover .et_social_count, .et_monarch .et_social_inline .et_social_icons_container li:hover .et_social_networkname { color: #e75605 !important; } 
+			</style><link rel="preload" href="https://www.gostrata.com/wp-content/plugins/monarch/core/admin/fonts/modules.ttf" as="font" crossorigin="anonymous"><meta name="google-site-verification" content="9arw2mUBXoCN7ehFHcrQ8wBBVhcfbMlwTbuQiKx4sKg">
+<meta name="facebook-domain-verification" content="0fs1eem34ryp4a4ts5fngjfdmom9qa"><link rel="icon" href="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/cropped-strata-favicon-32x32.png&amp;nocache=1" sizes="32x32">
+<link rel="icon" href="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/cropped-strata-favicon-192x192.png&amp;nocache=1" sizes="192x192">
+<link rel="apple-touch-icon" href="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/cropped-strata-favicon-180x180.png&amp;nocache=1">
+<meta name="msapplication-TileImage" content="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/cropped-strata-favicon-270x270.png&amp;nocache=1">
+		<style type="text/css" id="wp-custom-css">
+			h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: normal;
+}
+
+.page-id-12958 .arrow img, 
+.page-id-12958 .secarrow.bansec {
+    display: none!important;
+}
+
+.hidden {
+	display: none;
+}
+@media (min-width:781px){
+	.page-id-10533 .contact-page{
+		padding-top:70px;
+	}
+}
+@media (max-width:781px){
+	.lftrgt.pad-plus{
+		margin-bottom:30px;
+	}
+	.secarrow .top-part{
+		margin-bottom:36px;
+	}
+}
+.page-id-10808 h1, .page-id-11225 h1 {
+	letter-spacing:0em;
+	font-size:4em;
+}
+.case-studies-header .wrapper{
+	max-width:1200px;
+}
+
+.home .rss, .blog-top .lft .button, .blog_bot{
+	display:none;
+}
+
+ul.et_social_icons_container::before {
+	font-family: acumin-pro, sans-serif;
+}
+
+.logos-table span img {
+	opacity:.6;
+}
+.logos-table span img:hover {
+	opacity:1;
+}
+.logos-table a img, .footer-logos a img, .logos-table span img {
+	-webkit-transition: all .4s;
+    transition: all .4s;
+}
+
+.gform_footer .gform_button:hover {
+	color: #FFF!important;
+}
+
+/* nav transition */
+.site-header {
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    border-bottom: transparent;
+}
+
+
+/* button hover arrow effect */
+.button::after,
+#ajax-load-more .alm-btn-wrap .alm-load-more-btn::after,
+.gform_footer .gform_button::after {
+    transition: width .3s ease-in-out;
+}
+
+/* join mailing list page */
+.page-id-10808 h1 {
+	margin-bottom: 0;
+}
+
+/* footer icons */
+.contact div i{
+	font-weight:400;
+}
+
+footer .locations a, .contact-page .lft .locations a {
+    color: #3b6ec2;
+    font-size: 1em;
+}
+
+/* About Us Page - Team Section */ 
+.staff{
+	background-image:url(http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/White-Brick-Wall-2.jpg&nocache=1);
+	background-repeat:repeat-y;
+	background-size:100% auto; 
+}
+
+#ajax-load-more .more:hover {
+	color:#ffffff !important;
+}
+
+.page-id-10579 section.wp-block-amg-wrapper {
+	padding-top: 0!important;
+}
+.logos-table a img, .footer-logos a img {
+	opacity:60%;
+}
+.logos-table a img:hover, .footer-logos a img:hover {
+	opacity:100%;
+}
+/*
+.page-id-140 .banner .banner_img img{
+	    height: calc(100% - 60px);
+    width: auto;
+}
+.page-id-140 .banner .banner_img {
+	top:100px;
+}
+*/
+
+h2{
+	letter-spacing:0px;
+	line-height:1em;
+}
+.vertscroll .rgt img {
+	height:auto;
+	max-height:260px;
+}
+#block_5f0b044ef012d, #block_5f0a43140e2ea,
+#block_5f08bcfddd982{
+	background-color:#f5f5f5;
+}
+ .img-part.half img{
+		height:auto;
+	max-height:450px;
+}
+
+section.arrows {
+background-color:#f5f5f5;	
+}
+.main-menu li .sub-menu{
+	background:#f05822;
+	border-top:none;
+}
+.three-columns .half{
+    flex: 0 0 28% !important;
+	margin:0px;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+.seccontact h3, .blogpart .item h4 {
+	letter-spacing:0em;
+}
+.single-post h1{
+	font-size:4.5em;
+	letter-spacing:0em;
+}
+
+/* ABOUT US GROUP HERO */
+
+.page-id-140 .banner .banner_img {
+	top:0%!important;
+	left:37%!important;
+}
+.page-id-140 .banner .banner_img img {
+	position: absolute;
+	height:80%!important;
+	bottom:22%;
+}
+
+/* Hide contact form on thank you confirmation page */
+.page-id-12703 #gform_wrapper_1 { display:none;}
+
+@media (max-width: 850px) and (orientation: landscape), (max-width: 768px) {
+	.page-id-140 .banner .banner_img {
+		left:0%!important;
+	}
+	.page-id-140 .banner .banner_img img {
+		width:120%!important;
+		margin-bottom: -8%!important;
+    	left: 10%!important;
+    	position:relative!important;
+    	height:inherit!important;
+    	bottom:0!important;
+	}
+}		</style>
+		<noscript>&lt;style id="rocket-lazyload-nojs-css"&gt;.rll-youtube-player, [data-lazy-src]{display:none !important;}&lt;/style&gt;</noscript>
+</head>
+<body class="page-template-default page page-id-12458 et_monarch form-style">
+
+<!-- Google Tag Manager (noscript) Placed by Harrison Sammak and Matt Kelchner on 9-17-2020-->
+<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3ZB67T"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <div id="main">
+        <header class="site-header" id="site-header">
+            <div class="wrapper flex">
+                <a class="item logo" href="https://www.gostrata.com">
+                    <img width="264" height="100" src="https://www.gostrata.com/wp-content/themes/strata/images/logo.svg" data-lazy-src="https://www.gostrata.com/wp-content/themes/strata/images/logo.svg" data-ll-status="loaded" class="entered lazyloaded"><noscript>&lt;img width="264" height="100" src="https://www.gostrata.com/wp-content/themes/strata/images/logo.svg"&gt;</noscript>
+                    <img width="264" height="100" class="logo-white" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20264%20100'%3E%3C/svg%3E" data-lazy-src="https://www.gostrata.com/wp-content/themes/strata/images/logo-white.svg"><noscript>&lt;img width="264" height="100" class="logo-white" src="https://www.gostrata.com/wp-content/themes/strata/images/logo-white.svg"&gt;</noscript>
+                </a>
+
+                <div class="item can-grow rgt flex wrap menu-wrap">
+                    <ul id="main-menu" class="menu main-menu"><li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-243"><a href="https://www.gostrata.com/products-services/">Products &amp; Services</a>
+<span class="toggle"></span><ul class="sub-menu">
+	<li id="menu-item-378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-378"><a href="https://www.gostrata.com/products-services/integrated-marcom-tech/">Integrated Marcom Tech</a></li>
+	<li id="menu-item-245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-245"><a href="https://www.gostrata.com/products-services/multichannel-campaign-marketing/">Multichannel Campaign Marketing</a></li>
+	<li id="menu-item-12930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12930"><a href="https://www.gostrata.com/products-services/multichannel-campaign-marketing/smartmove/">New Mover Marketing</a></li>
+	<li id="menu-item-244" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-244"><a href="https://www.gostrata.com/products-services/execution-production/">Campaign Execution &amp; Production</a></li>
+</ul>
+</li>
+<li id="menu-item-15788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-15788"><a href="https://www.gostrata.com/about/">About Us</a>
+<span class="toggle"></span><ul class="sub-menu">
+	<li id="menu-item-15800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15800"><a href="https://www.gostrata.com/about/join-our-team/">Join Our Team</a></li>
+</ul>
+</li>
+<li id="menu-item-62" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-62"><a>Resources</a>
+<span class="toggle"></span><ul class="sub-menu">
+	<li id="menu-item-10375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10375"><a href="https://www.gostrata.com/stratabytes-blog/">Stratabytes Blog</a></li>
+	<li id="menu-item-10799" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10799"><a href="https://www.gostrata.com/case-studies/">Case Studies</a></li>
+	<li id="menu-item-13831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13831"><a href="https://www.youtube.com/c/StrataCompanyPlymouthMeeting">Videos</a></li>
+	<li id="menu-item-13717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13717"><a href="https://www.gostrata.com/faq/">Frequently Asked Questions</a></li>
+	<li id="menu-item-14791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14791"><a href="https://www.gostrata.com/corporate-citizenship/">Corporate Citizenship</a></li>
+</ul>
+</li>
+<li id="menu-item-10537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10537"><a href="https://www.gostrata.com/contact-us/">Contact Us</a></li>
+</ul>                </div>
+            </div>
+
+            <div class="mob-menu-toggle txt-c desk-lg-hid" id="mob-menu-toggle">
+                <i class="far fa-times hid"></i>
+                <i class="far fa-bars"></i>
+            </div>
+        </header>
+<div class="site-content">
+    
+	<section class="sec-toptitle block " id="block_5f0f2803595cb">
+        <div class="wrapper medium">
+            <h1>Your California <strong>Privacy Rights </strong></h1>
+            
+        </div>
+    </section>
+
+
+<section class="wp-block-amg-wrapper block pad-dbl"><div class="wrapper medium">
+<h4>Under the California Consumer Privacy Act (CCPA)</h4>
+
+
+
+<div class="is-layout-flow wp-block-group"><div class="wp-block-group__inner-container">
+<p>Strata Company. (“Strata”) values the privacy of its customers and consumers.&nbsp;We’ve created this resource to help California residents understand the type of personal information we collect, how we use it, and how to exercise your rights under the California Consumer Privacy Act.</p>
+</div></div>
+
+
+
+<h4>Introduction to Strata’s Services</h4>
+
+
+
+<p>Strata helps our clients to provide more targeted, relevant, and effective marketing and communications through various media channels including but not limited to direct mail, email, social media, display ads, and to understand more about their clients and prospects through our wide variety of data products and services.</p>
+
+
+
+<h4>Information Strata Collects</h4>
+
+
+
+<h6>Strata Website</h6>
+
+
+
+<p>Strata does not collect personal information about visitors to our site except when visitors specifically provide such information on a voluntary basis. Personal information may be gathered from forms submitted to request additional information as well as content or blog subscriptions. We may collect personal information, such as your name, email address, mailing address, telephone number, contact preferences, and other identifiers as part of our effort to transact business with you and to respond to your inquiries. We may also collect personal information from you for marketing purposes unless you specifically opt-out and request that you not be contacted in conjunction with such marketing activities.</p>
+
+
+
+<h6>Marketing Data Products and Services</h6>
+
+
+
+<p>Strata collects the following categories of information about consumers:</p>
+
+
+
+<ul><li>Name/Address</li><li>Demographic</li><li>Interest-based data</li><li>Device</li><li>Browser</li><li>Email, clear or hashed</li><li>IP address</li><li>Geolocation data</li><li>Telephone</li><li>Inferences about your predicted characteristics and preferences</li><li>Other information about you that is linked to personal information above, for example, information on individuals who have recently moved, purchased a home, obtained a hunting license, registered a boat.</li></ul>
+
+
+
+<p>Strata does not knowingly collect, use or disclose personal information for marketing purposes on anyone under the age of 18.<br>Strata has collected personal information from the following categories of sources in the last twelve (12) months:</p>
+
+
+
+<ul><li>Business to business companies</li><li>Data compilers/aggregators/resellers</li><li>Public or government entities</li><li>Publishing product companies</li><li>Telecommunication companies</li></ul>
+
+
+
+<p>In the past twelve (12) months, Strata has disclosed or sold the categories of personal information referenced above to the following categories of third parties:</p>
+
+
+
+<ul><li>Advertising/marketing companies</li><li>Advertising networks</li><li>Apparel &amp; accessory companies</li><li>Automotive companies</li><li>Business services/agencies</li><li>Business to business companies</li><li>Communication services companies</li><li>Consumer data resellers</li><li>Consumer packaged goods companies</li><li>Consumer services companies</li><li>Data analytics providers</li><li>Educational institutions &amp; companies</li><li>Electronics companies</li><li>Food &amp; beverage companies</li><li>Furniture &amp; home goods companies</li><li>General merchandise &amp; gift product companies</li><li>Health &amp; wellness product &amp; service companies</li><li>Insurance &amp; financial services companies</li><li>Lifestyle &amp; interest product companies</li><li>Marketing data companies</li><li>Not for profit organizations</li><li>Publishing product companies</li><li>Technology/computer software companies</li><li>Telecommunications companies</li><li>Travel, leisure, &amp; entertainment companies</li></ul>
+
+
+
+<h4>Strata shares data for the following purposes:</h4>
+
+
+
+<ul><li>Marketing</li><li>Analytics</li></ul>
+
+
+
+<h4>Right to Know Data Collected</h4>
+
+
+
+<p>As a California resident, you have the right to request that Strata disclose the specific pieces or categories of personal information that we have collected about you in the preceding twelve (12) months. <a href="https://www.gostrata.com/do-not-sell-my-personal-information/">Click here</a> to submit a verifiable request to exercise this right.<br><br>In order for Strata to properly verify the Consumer’s identity prior to any disclosure of information, Strata will require, at a minimum, the Consumer’s full name, address, email address, and telephone number.<br><br>Alternatively, you may email dataprivacyteam@gostrata.com to initiate this request.<br><br>If Strata cannot verify the identity of the person making the request pursuant to the regulations set forth in Article 4 (Verification of Requests – <a href="https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf">https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf</a>) Strata may request additional information for verification or deny your request.<br><br>Strata is not obligated to provide the information required by Sections 1798.110, 1798.115 ( <a href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&amp;part=4.&amp;lawCode=CIV&amp;title=1.81.5.">https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&amp;part=4.&amp;lawCode=CIV&amp;title=1.81.5.</a>) to the same consumer more than twice in a twelve (12) month period.</p>
+
+
+
+<h4>Right to Know Data Shared</h4>
+
+
+
+<p>As a California resident, you have the right to request that Strata disclose the categories of your personal information we have disclosed or sold to third parties for a business or commercial purpose in the preceding twelve (12) months. <a href="https://www.gostrata.com/do-not-sell-my-personal-information/">Click here</a> to submit a verifiable request to exercise this right.<br><br>In order for Strata to properly verify the Consumer’s identity prior to any disclosure of information, Strata will require, at a minimum, the Consumer’s full name, address, email address, and telephone number.<br><br>Alternatively, you may email dataprivacyteam@gostrata.com to initiate this request.<br><br>If Strata cannot verify the identity of the person making the request pursuant to the regulations set forth in Article 4 (Verification of Requests – <a href="https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf">https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf</a>) Strata may request additional information for verification or deny your request.<br><br>Strata is not obligated to provide the information required by Section 1798.110, 1798.115 (<a href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&amp;part=4.&amp;lawCode=CIV&amp;title=1.81.5.">https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&amp;part=4.&amp;lawCode=CIV&amp;title=1.81.5.</a>) to the same consumer more than twice in a twelve (12) month period.</p>
+
+
+
+<h4>Right to Delete</h4>
+
+
+
+<p>As a California resident, you have the right to request that Strata delete any personal information we have collected or maintain. <a href="https://www.gostrata.com/do-not-sell-my-personal-information/">Click here</a> to submit a verifiable request to exercise this right.<br><br>In order for Strata to properly verify the Consumer’s identity prior to any disclosure of information, Strata will require, at a minimum, the Consumer’s full name, address, email address, and telephone number.<br><br>Alternatively, you may email dataprivacyteam@gostrata.com to initiate this request.<br><br>If Strata cannot verify the identity of the person making the request pursuant to the regulations set forth in Article 4 (Verification of Requests – <a href="https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf">https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf</a>) Strata may request additional information for verification or deny your request.</p>
+
+
+
+<h4>Right to Opt-Out</h4>
+
+
+
+<p>As a California resident, you have the right to opt-out of the sale of your personal information by Strata. <a href="https://www.gostrata.com/do-not-sell-my-personal-information/">Click here</a> to submit a verifiable request to exercise this right.<br><br>In order for Strata to properly verify the Consumer’s identity prior to any disclosure of information, Strata will require, at a minimum, the Consumer’s full name, address, email address, and telephone number.<br><br>Alternatively, you may email dataprivacyteam@gostrata.com to initiate this request.<br><br>If Strata cannot verify the identity of the person making the request pursuant to the regulations set forth in Article 4 (Verification of Requests – <a href="https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf">https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf</a>) Strata may request additional information for verification or deny your request.</p>
+
+
+
+<h4>Right to Non-Discrimination</h4>
+
+
+
+<p>As a California resident, you have the right not to receive discriminatory treatment by Strata for exercising your privacy rights conferred by the CCPA.</p>
+
+
+
+<h4>Authorized Agent</h4>
+
+
+
+<p>As a California resident, you can designate an authorized agent to make a request under the CCPA on the consumer’s behalf.&nbsp;“Authorized Agent” means a natural person or a business entity registered with the Secretary of State that a consumer has authorized to act on their behalf subject to the requirements set forth in section 999.326 (<a href="https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf">https://oag.ca.gov/sites/all/files/agweb/pdfs/privacy/oal-sub-final-text-of-regs.pdf</a>).</p>
+
+
+
+<h4><strong>Other Privacy Choices and Opt-Out Solutions</strong></h4>
+
+
+
+<p>DMAchoice.org (<a href="https://dmachoice.thedma.org/">https://dmachoice.thedma.org/</a>) offers consumers a simple, step-by-step process that enables them to decide what mail they do and do not want.<br><br>In addition, DMAchoice, offers online and mail in registration for DMA’s:<br><br>eMail Preference Service (reduce your unsolicited commercial email)<br><br>Telephone Preference Service (to reduce national commercial calls for consumers who live in Pennsylvania and Wyoming – consumers in other states are referred to the National Do Not Call Registry: <a href="http://www.donotcall.gov">www.donotcall.gov</a>)<br><br>Deceased Do Not Contact list (for name removal of deceased individuals’ names)<br><br>Do Not Contact list for Caregivers (for caregivers to register name removal on behalf of those individuals for whom they care).<br><br>Digital Advertising Alliance (<a href="https://youradchoices.com/">https://youradchoices.com/</a>) When you click on the YourAdChoices Icon, you get control over how information about your interests is used for relevant advertising.<br><br>Network Advertising Alliance (<a href="http://optout.networkadvertising.org/?c=1">http://optout.networkadvertising.org/?c=1</a>) NAI offers an opt-out page where you can learn more about NAI members who deliver tailored online ads and your choices to opt-out of receiving them.</p>
+
+
+
+<h4><strong>Cookie Policy</strong></h4>
+
+
+
+<p>We use&nbsp;First Party Cookies to record your visit to our website.<br><br>We do permit the setting of Third-Party cookies on our website. We use Google Analytics cookies to assess performance and analytics or to perform business research.</p>
+
+
+
+<h4><strong>Managing and Refusing the Use of Cookies</strong></h4>
+
+
+
+<p>Most browsers allow you to choose whether you wish to accept cookies.&nbsp;Generally, your browser will offer you the choice to accept, refuse or delete all cookies, or third-party cookies on a website.&nbsp;Controls will vary by browser so we’ve provided links below to popular browser instructions:</p>
+
+
+
+<ul><li>Google Chrome (<a href="https://support.google.com/chrome/answer/95647">https://support.google.com/chrome/answer/95647</a>)</li><li>Internet Explorer (<a href="https://support.microsoft.com/en-ie/help/17442/windows-internet-explorer-delete-manage-cookies">https://support.microsoft.com/en-ie/help/17442/windows-internet-explorer-delete-manage-cookies</a>)</li><li>Firefox (<a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences">https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences</a>)</li><li>Safari (<a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac">https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac</a>)</li></ul>
+
+
+
+<h4><strong>Links to Third Party Sites</strong></h4>
+
+
+
+<p>Our website contains links to third party sites. Strata does not endorse or make any representations about any third party sites including any information found there. We encourage you to review the privacy policies of these third party sites.</p>
+
+
+
+<h4><strong>Security</strong></h4>
+
+
+
+<p>Strata maintains security procedures designed to keep information we aggregate, license and process from being accessed by any unauthorized person, persons or business. Strata has safeguards in place to keep your personal information accurate, complete, and up to date for the purposes for which it is used. Strict measures are taken to assure against unauthorized access, alteration, or dissemination of personal information. We also maintain physical security for our facilities and limit access to certain critical areas of our business.</p>
+
+
+
+<h4><strong>Privacy Policy Updates</strong></h4>
+
+
+
+<p>Strata may revise this Privacy Policy at our discretion. Any future version of the Privacy Policy generally becomes effective at the time of posting. We encourage you to periodically review the website for the latest changes.&nbsp;You can determine when this Policy was last revised by checking the “Last Revised” date at the bottom of this Policy. By using, and continuing to use, the site you agree to this Policy.<br><br>Questions about this Privacy Policy may be submitted by mail to the address below or via email to dataprivacyteam@gostrata.com.<br><br>Strata Company<br>Attn: Data Privacy Team<br>5166 Campus Drive,<br>Plymouth Meeting, PA 19002<br><br>This policy was last revised December 22, 2020.<br><br>A copy of this policy can be <a href="https://www.gostrata.com/wp-content/uploads/2020/12/Strata-Privacy-Policy-CA-1.pdf">downloaded here</a>.</p>
+</div></section>
+</div>
+    <footer class="site-footer">
+        <div class="wrapper medium flex">
+            <div class="logo-part">
+                <a class="item logo" href="https://www.gostrata.com">
+                    <img width="301" height="151" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20301%20151'%3E%3C/svg%3E" data-lazy-src="https://www.gostrata.com/wp-content/themes/strata/images/strata-company.svg"><noscript>&lt;img width="301" height="151" src="https://www.gostrata.com/wp-content/themes/strata/images/strata-company.svg"&gt;</noscript>
+                </a>
+            </div>
+            <div class="locations">
+                <h4>Locations</h4>
+                <h5>Plymouth Meeting</h5>
+<p><a href="https://goo.gl/maps/JdQkJBfC114TU5tf8" target="_blank" rel="noopener">5166 Campus Drive<br>
+Plymouth Meeting, PA 19462</a></p>
+<h5>Conshohocken</h5>
+<p><a href="https://www.google.com/maps?q=1100+East+Hector+Street+Suite+100+Conshohocken,+PA+19428" target="_blank" rel="noopener">1100 East Hector Street</a><br>
+<a href="https://www.google.com/maps?q=1100+East+Hector+Street+Suite+100+Conshohocken,+PA+19428" target="_blank" rel="noopener">Suite 100</a><br>
+<a href="https://www.google.com/maps?q=1100+East+Hector+Street+Suite+100+Conshohocken,+PA+19428" target="_blank" rel="noopener">Conshohocken, PA 19428</a></p>
+            </div>
+            <div class="contact">
+                <h4>CONNECT</h4> 
+                <h5>Contact Us</h5>
+                <div>
+                    <p><a class="phonetrack" href="tel:610-941-6100">610.941.6100</a><br>
+<a href="mailto:info@gostrata.com">info@gostrata.com</a><br>
+<!-- class 'phonetrack' assigned for Ad Tracks implementation for Search Engine People --></p>
+                </div>
+                <h5>Follow Us</h5>
+                <div>
+                    <a href="https://www.facebook.com/stratacompany/" target="_blank"><i class="fab fa-facebook-f"></i></a> &nbsp; <a href="https://www.instagram.com/go_strata/" target="_blank"><i class="fab fa-instagram"></i></a> &nbsp; <a href="https://www.linkedin.com/company/strata-company/" target="_blank"><i class="fab fa-linkedin-in"></i></a> &nbsp; <a href="https://www.youtube.com/c/StrataCompanyPlymouthMeeting" target="_blank"><i class="fab fa-youtube"></i></a> &nbsp;                 </div>
+                <h5>Stay Up-to-Date</h5>
+                <a href="/join-our-mailing-list/">Join Our Mailing List</a>        
+            </div>            
+            <div class="accolades">
+                <h4>Accolades</h4> 
+                <div class="footer-logos flex">
+                    <a><img width="177" height="251" style="width:100%" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20177%20251'%3E%3C/svg%3E" data-lazy-src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2021/10/thumbnail.png&amp;nocache=1"><noscript>&lt;img width="177" height="251" style="width:100%" src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2021/10/thumbnail.png&amp;nocache=1" /&gt;</noscript></a> &nbsp; <a><img width="361" height="361" style="width:100%" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20361%20361'%3E%3C/svg%3E" data-lazy-src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/AICPA-SOC.png&amp;nocache=1"><noscript>&lt;img width="361" height="361" style="width:100%" src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/AICPA-SOC.png&amp;nocache=1" /&gt;</noscript></a> &nbsp; <a><img width="196" height="79" style="width:75%" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20196%2079'%3E%3C/svg%3E" data-lazy-src="https://www.gostrata.com/wp-content/uploads/2020/07/BBB-Accredited-Business.svg"><noscript>&lt;img width="196" height="79" style="width:75%" src="https://www.gostrata.com/wp-content/uploads/2020/07/BBB-Accredited-Business.svg" /&gt;</noscript></a> &nbsp; <a><img width="600" height="240" style="width:75%" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20240'%3E%3C/svg%3E" data-lazy-src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/Philadelphia-100.png&amp;nocache=1"><noscript>&lt;img width="600" height="240" style="width:75%" src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/Philadelphia-100.png&amp;nocache=1" /&gt;</noscript></a> &nbsp; <a><img width="600" height="286" style="width:75%" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20286'%3E%3C/svg%3E" data-lazy-src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/Benjamin-Franklin-Awards.png&amp;nocache=1"><noscript>&lt;img width="600" height="286" style="width:75%" src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/Benjamin-Franklin-Awards.png&amp;nocache=1" /&gt;</noscript></a> &nbsp; <a><img width="381" height="124" style="width:75%" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20381%20124'%3E%3C/svg%3E" data-lazy-src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/SIAA.png&amp;nocache=1"><noscript>&lt;img width="381" height="124" style="width:75%" src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/SIAA.png&amp;nocache=1" /&gt;</noscript></a> &nbsp; <a><img width="600" height="429" style="width:75%" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20429'%3E%3C/svg%3E" data-lazy-src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/Inc-5000.png&amp;nocache=1"><noscript>&lt;img width="600" height="429" style="width:75%" src="http://www.gostrata.com/wp-content/webpc-passthru.php?src=https://www.gostrata.com/wp-content/uploads/2020/07/Inc-5000.png&amp;nocache=1" /&gt;</noscript></a> &nbsp;                 </div>                               
+            </div>
+        </div>
+        <div class="copy">
+            <div class="wrapper medium">
+				<p>© Copyright 2023 Strata Company</p>
+				<p>
+					<a href="/privacy-policy">Privacy Policy</a>
+				</p>
+				<p>
+					<a href="/privacy-policy-ca"> Privacy Policy (CA)</a>
+				</p>
+				<a href="/do-not-sell-my-personal-information"> Do Not Sell My Personal Information</a>
+   		</div>
+	</div></footer>
+</div><!-- #main -->
+
+<script type="rocketlazyloadscript">				
+                    document.addEventListener('DOMContentLoaded', function () {
+                        setTimeout(function(){
+                            if( document.querySelectorAll('[name^=ct_checkjs]').length > 0 ) {
+                                apbct_public_sendREST(
+                                    'js_keys__get',
+                                    { callback: apbct_js_keys__set_input_value }
+                                )
+                            }
+                        },0)					    
+                    })				
+                </script><script type="rocketlazyloadscript"> (function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_JMvZ8gkvqoe82pOd.js'); })(); </script>
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/plugins/amk-guten-blocks/assets/libs/amk-accordion/amk-accordion.min.js?ver=6.1.1" id="amg_accordion-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/cache/min/1/wp-content/plugins/amk-guten-blocks/assets/js/script.js?ver=1679455732" id="amg-js" defer=""></script>
+<script type="text/javascript" id="awsm-job-scripts-js-extra">window.addEventListener('DOMContentLoaded', function() {
+/* <![CDATA[ */
+var awsmJobsPublic = {"ajaxurl":"https:\/\/www.gostrata.com\/wp-admin\/admin-ajax.php","is_tax_archive":"","is_search":"","job_id":"0","wp_max_upload_size":"10485760","deep_linking":{"search":true,"spec":true,"pagination":true},"i18n":{"loading_text":"Loading...","form_error_msg":{"general":"Error in submitting your application. Please try again later!","file_validation":"The file you have selected is too large."}},"vendors":{"selectric":true,"jquery_validation":true}};
+/* ]]> */
+});</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/plugins/wp-job-openings/assets/js/script.min.js?ver=3.3.3" id="awsm-job-scripts-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/plugins/monarch/js/idle-timer.min.js?ver=1.4.14" id="et_monarch-idle-js" defer=""></script>
+<script type="text/javascript" id="et_monarch-custom-js-js-extra">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"http:\/\/www.gostrata.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/www.gostrata.com\/privacy-policy-ca\/","stats_nonce":"aee8da8ea4","share_counts":"e8067ec74d","follow_counts":"f3c6a01958","total_counts":"215b010d44","media_single":"62f322f83d","media_total":"5f03fadf5f","generate_all_window_nonce":"4c88796fa6","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/cache/min/1/wp-content/plugins/monarch/js/custom.js?ver=1679455732" id="et_monarch-custom-js-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.gostrata.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/cache/min/1/npm/@splidejs/splide-extension-url-hash@0.1.5/dist/js/splide-extension-url-hash.min.js?ver=1679455732" id="splide_hash-js" defer=""></script>
+<script type="text/javascript" src="https://www.gostrata.com/wp-content/themes/strata/js/splide.min.js?ver=1629401646" id="splide-js" defer=""></script>
+<script data-minify="1" type="text/javascript" src="https://www.gostrata.com/wp-content/cache/min/1/wp-content/themes/strata/js/script.js?ver=1679455732" id="site-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.gostrata.com/wp-content/cache/min/1/wp-content/plugins/monarch/core/admin/js/common.js?ver=1679455732" id="et-core-common-js" defer=""></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.gostrata.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+
+
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me --></body></html>

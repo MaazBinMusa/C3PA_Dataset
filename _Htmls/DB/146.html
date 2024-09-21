@@ -1,0 +1,1787 @@
+<!DOCTYPE html><html lang="en-US" class="no-js"><head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"><link rel="shortcut icon" href="https://webbula.com/wp-content/uploads/2018/07/webbulafavicon.png"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer="">
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.2.1 (Yoast SEO v20.3) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Privacy Notice - Information on What Data We Collect and Use | Webbula</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A300%2C400%2C600%2C700%7COpen%20Sans%3A600%2C700%2C400&amp;subset=latin%2Clatin-ext&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A300%2C400%2C600%2C700%7COpen%20Sans%3A600%2C700%2C400&amp;subset=latin%2Clatin-ext&amp;display=swap" media="all" onload="this.media='all'"><noscript>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A300%2C400%2C600%2C700%7COpen%20Sans%3A600%2C700%2C400&amp;#038;subset=latin%2Clatin-ext&amp;#038;display=swap" /&gt;</noscript>
+	<meta name="description" content="Webbula privacy policy, find information on what data we collect, how we use it, why we collect it &amp; the steps we take to ensure compliance &amp; data security.">
+	<link rel="canonical" href="https://webbula.com/privacy-policy/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Privacy Notice">
+	<meta property="og:description" content="Webbula privacy policy, find information on what data we collect, how we use it, why we collect it &amp; the steps we take to ensure compliance &amp; data security.">
+	<meta property="og:url" content="https://webbula.com/privacy-policy/">
+	<meta property="og:site_name" content="Webbula">
+	<meta property="article:modified_time" content="2023-01-04T21:21:00+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="25 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://webbula.com/privacy-policy/","url":"https://webbula.com/privacy-policy/","name":"Privacy Notice - Information on What Data We Collect and Use | Webbula","isPartOf":{"@id":"https://webbula.com/#website"},"datePublished":"2022-11-18T21:56:11+00:00","dateModified":"2023-01-04T21:21:00+00:00","description":"Webbula privacy policy, find information on what data we collect, how we use it, why we collect it & the steps we take to ensure compliance & data security.","breadcrumb":{"@id":"https://webbula.com/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://webbula.com/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://webbula.com/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://webbula.com/"},{"@type":"ListItem","position":2,"name":"Privacy Notice"}]},{"@type":"WebSite","@id":"https://webbula.com/#website","url":"https://webbula.com/","name":"Webbula","description":"The Data Solutions Experts","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://webbula.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//js.hs-scripts.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//use.fontawesome.com">
+<link rel="dns-prefetch" href="//maps.googleapis.com">
+<link rel="dns-prefetch" href="//maps.gstatic.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagservices.com">
+<link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
+<link rel="dns-prefetch" href="//adservice.google.com">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+<link rel="dns-prefetch" href="//youtube.com">
+<link rel="dns-prefetch" href="//i.ytimg.com">
+<link rel="dns-prefetch" href="//player.vimeo.com">
+<link rel="dns-prefetch" href="//api.pinterest.com">
+<link rel="dns-prefetch" href="//assets.pinterest.com">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//platform.twitter.com">
+<link rel="dns-prefetch" href="//syndication.twitter.com">
+<link rel="dns-prefetch" href="//platform.instagram.com">
+<link rel="dns-prefetch" href="//referrer.disqus.com">
+<link rel="dns-prefetch" href="//c.disquscdn.com">
+<link rel="dns-prefetch" href="//cdn.ampproject.org">
+<link rel="dns-prefetch" href="//pixel.wp.com">
+<link rel="dns-prefetch" href="//s.gravatar.com">
+<link rel="dns-prefetch" href="//0.gravatar.com">
+<link rel="dns-prefetch" href="//2.gravatar.com">
+<link rel="dns-prefetch" href="//1.gravatar.com">
+<link rel="dns-prefetch" href="//sitename.disqus.com">
+<link rel="dns-prefetch" href="//s7.addthis.com">
+<link rel="dns-prefetch" href="//platform.linkedin.com">
+<link rel="dns-prefetch" href="//w.sharethis.com">
+<link rel="dns-prefetch" href="//s0.wp.com">
+<link rel="dns-prefetch" href="//s1.wp.com">
+<link rel="dns-prefetch" href="//s2.wp.com">
+<link rel="dns-prefetch" href="//stats.wp.com">
+<link rel="dns-prefetch" href="//ajax.microsoft.com">
+<link rel="dns-prefetch" href="//ajax.aspnetcdn.com">
+<link rel="dns-prefetch" href="//s3.amazonaws.com">
+<link rel="dns-prefetch" href="//code.jquery.com">
+<link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
+<link rel="dns-prefetch" href="//github.githubassets.com">
+<link rel="dns-prefetch" href="//ad.doubleclick.net">
+<link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+<link rel="dns-prefetch" href="//cm.g.doubleclick.net">
+<link rel="dns-prefetch" href="//js.hsforms.net">
+<link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Webbula » Feed" href="https://webbula.com/feed/">
+<link rel="stylesheet" id="classic-theme-styles-css" href="https://webbula.com/wp-includes/css/classic-themes.min.css?ver=1" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel="stylesheet" id="formcraft-common-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/cache/asset-cleanup/css/item/formcraft-common-v13ab6bd1e9e2c534f724652073db62af514f36f8.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="formcraft-form-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/plugins/formcraft3/dist/form.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="gdpr-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/plugins/gdpr/dist/css/public.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="menu-image-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/plugins/menu-image/includes/css/menu-image.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="dashicons-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/cache/asset-cleanup/css/item/dashicons-ve1e5d02287e5076441f5954437dfb06249fdd08e.css?ver=1679933622" type="text/css" media="all">
+<link rel="stylesheet" id="ivory-search-styles-css" href="https://webbula.com/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="font-awesome-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/cache/asset-cleanup/css/item/font-awesome-v278ec5fe854c3a05ee524187f767826124d21315.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="salient-grid-system-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/css/grid-system.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="main-styles-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/cache/asset-cleanup/css/item/main-styles-va7c2ac4e3620df20d798b89e63574fa51784e8f4.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="nectar-header-secondary-nav-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/css/header/header-secondary-nav.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="magnific-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/css/plugins/magnific.css?ver=1679933622" type="text/css" media="all">
+
+<link data-minify="1" rel="stylesheet" id="responsive-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/css/responsive.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="skin-original-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/css/skin-original.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="font-awesome-official-css" href="https://webbula.com/wp-content/cache/min/1/releases/v5.15.3/css/all.css?ver=1679933622" type="text/css" media="all" crossorigin="anonymous">
+<link data-minify="1" rel="stylesheet" id="js_composer_front-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/cache/asset-cleanup/css/item/js_composer_front-vce8ebbb97ac692b362feb667c258391970c5defd.css?ver=1679933622" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" id="dynamic-css-css" href="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/css/salient-dynamic-styles.css?ver=1679933622" type="text/css" media="all">
+<style id="dynamic-css-inline-css" type="text/css">
+@media only screen and (min-width:1000px){body #ajax-content-wrap.no-scroll{min-height:calc(100vh - 116px);height:calc(100vh - 116px)!important;}}@media only screen and (min-width:1000px){#page-header-wrap.fullscreen-header,#page-header-wrap.fullscreen-header #page-header-bg,html:not(.nectar-box-roll-loaded) .nectar-box-roll > #page-header-bg.fullscreen-header,.nectar_fullscreen_zoom_recent_projects,#nectar_fullscreen_rows:not(.afterLoaded) > div{height:calc(100vh - 115px);}.wpb_row.vc_row-o-full-height.top-level,.wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:calc(100vh - 115px);}html:not(.nectar-box-roll-loaded) .nectar-box-roll > #page-header-bg.fullscreen-header{top:116px;}.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container{height:calc(100vh - 114px)!important;}.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container{height:calc(100vh - 114px - 32px)!important;}}#nectar_fullscreen_rows{background-color:;}
+/* Ian Changes */
+
+/* font-display: swap; */
+
+.testimonial_slider blockquote p {
+    padding-bottom: 30px;
+    line-height: 37px!important;
+}
+.blog-recent[data-style="default"] .col .post-header h3 {
+    margin-bottom: 3px;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+    line-height: 23px;
+    margin-top: 13px;
+}
+#footer-outer #copyright p {
+    -ms-transform: translateX(0%)!important;
+    transform: translateX(0%)!important;
+    -webkit-transform: translateX(0%)!important;
+}
+#footer-outer div#copyright .col.span_5 {
+    left: 0!important;
+    width: 48%!important;
+    text-align: right;
+}
+#footer-outer div#copyright .col.span_7 {
+    width: 57.5%;
+    text-align: left;
+}
+#footer-outer #copyright .col ul {
+    float: left;
+}
+.lists {
+	list-style-type: square !important;
+	text-align: center !important;
+}
+
+
+.btn {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    display: block!important;
+    float: left;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0s !important;
+    width: 175px;
+}
+
+.btn--alt:hover  {text-align: left; display:block; padding: 16px 0 ;}
+
+.home .swiper-slide .content h2  {font-size:250%!important; line-height: 110%!important;}
+
+
+.swiper-slide[data-color-scheme="dark"] .content .button.transparent a:hover, .swiper-slide[data-color-scheme="dark"] .content .button.transparent_2 a:hover {
+    border: 2px solid #eb2227 !important;
+}
+
+
+.portfolio-items .col .work-info .vert-center p{
+    display: none;
+    opacity: 0;
+}
+
+
+.bottomslide .swiper-slide h2{color:#fff!important; font-size:30px!important;}
+
+.audiences_tarket {padding-left: 52px;}
+
+.portfolio-items .work-meta p {
+    display: none;
+    
+}
+img.stnd.default-logo{
+      height: 86px!important;
+}
+header#top .container{
+    padding: 0 33px;
+}  
+
+header#top nav >ul{
+    margin-top: 14px;
+}
+@media only screen and (max-width: 1000px) {
+body header#top #logo img, #header-outer[data-permanent-transparent="false"] #logo .dark-version {
+    height: 63px!important;
+margin-top: -15px!important;
+}
+header#top .container {
+    padding: 0 0px;
+}
+}
+
+.wpb_raw_code.wpb_raw_js.videoHolder {
+    width: 100%;
+
+  
+    margin: 0px auto;
+}
+.videoHolder object {
+    width: 100%;
+    height: 315px;
+    /* padding: 0px 20px; */
+}
+
+.style {
+    height: 7px;
+}
+.broken_link, a.broken_link {
+    text-decoration: none!important;
+     border-bottom: 1px solid;
+}
+
+/* Ian Change to Fix GDPR bar and Chat issues */
+
+.gdpr.gdpr-privacy-bar .gdpr-wrapper, .gdpr.gdpr-reconsent-bar .gdpr-wrapper {
+    padding: 20px 60px 60px;
+}
+
+/*
+body .post-content a {
+    color: #eb2227;
+    border-bottom: 1px solid;
+}
+.container.main-content a {
+    border-bottom: 1px solid;
+}
+
+nav ul.sf-menu::after {
+    content: url(https://webbula.com/wp-content/uploads/2019/06/oracleBadge125.jpg);
+    float: right;
+    position: relative;
+    top: 25px;
+    right: -23px;
+}
+*/
+    
+
+
+/*
+.parallax_slider_outer .swiper-slide{display:none;}
+
+.parallax_slider_outer .swiper-container{
+ background-image: url("/wp-content/uploads/2016/02/mobile_header.jpg");
+ background-size: 100% auto; margin-top:0px; background-repeat:no-repeat;
+ height:279px!important;
+ }
+ 
+ 
+ .parallax_slider_outer.first-section .slider-pagination, .nectar-slider-wrap.first-section .slider-pagination {
+    display:none;
+}
+
+.parallax_slider_outer.first-section {min-height:220px !important;}
+
+}
+
+*/
+/* iphone wide*/
+/*
+@media only screen 
+and (min-device-width : 321px) 
+and (max-device-width : 667px) 
+and (orientation : landscape)
+
+{
+.parallax_slider_outer .swiper-slide{display:none;}
+
+.parallax_slider_outer .swiper-container{
+ background-image: url("/wp-content/uploads/2016/02/mobile_header.jpg");
+ background-size: 100% auto; background-repeat:no-repeat;
+ height:279px!important; margin-top:-21px;
+ }
+ 
+ 
+ .parallax_slider_outer.first-section .slider-pagination, .nectar-slider-wrap.first-section .slider-pagination {
+    display:none;
+}
+
+.parallax_slider_outer.first-section {min-height:220px !important; margin-bottom:55px!important;}
+
+}
+
+
+
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : landscape) 
+
+{
+.parallax_slider_outer.first-section {min-height:220px !important; margin-bottom:0;
+margin-top:0px !important;
+}
+
+
+.parallax_slider_outer .swiper-container{
+
+ height:335px!important; margin-top:-21px!important;
+ }
+}
+
+.mlw_qmn_quiz label {
+ display: inline !important;
+}
+
+
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : portrait) { 
+
+.parallax_slider_outer .swiper-container{ margin-top:-18px!important;}
+ 
+ 
+ }*/
+
+#header-secondary-outer .sf-menu li ul, body:not([data-header-format="left-header"]) #top .sf-menu li ul, #top nav >ul >.megamenu >.sub-menu, #header-outer .widget_shopping_cart .cart_list li, #header-outer .cart-notification, #header-outer .widget_shopping_cart_content {
+    background-color: #1C1C1C!important;
+    
+}
+header#top .sf-menu li ul li a, #header-secondary-outer nav > ul > li > a, #header-secondary-outer ul ul li a, #header-outer .widget_shopping_cart .cart_list a {
+    font-family: Open Sans!important;
+    letter-spacing: 1px!important;
+    font-size: 12px!important;
+    line-height: 12px!important;
+    font-weight: 600!important;
+}
+
+.sf-menu li ul li a:hover, .sf-menu li ul li.sfHover >a {
+    color: #27CFC3;
+    background-color: #272727!important;
+}
+.sf-menu ul a:hover,.sf-menu li ul li a:hover {
+    color: #eb2227!important;
+}
+body {
+        color: #676767;
+}
+#header-outer #top nav > ul > li:not(.megamenu) ul a:hover,#header-outer:not([data-format="left-header"]) #top nav > ul > li:not(.megamenu) ul a:hover {
+        background-color: #272727!important;
+}
+#top nav > ul > .megamenu > ul ul li a:hover {
+        background-color: #272727!important;
+}
+sf-menu >li ul {
+    padding: 0px;
+    width: 20em;
+}
+header#top .sf-menu li ul li a, #header-secondary-outer nav > ul > li > a, #header-secondary-outer ul ul li a, #header-outer .widget_shopping_cart .cart_list a {
+    font-family: Open Sans!important;
+    letter-spacing: 1px!important;
+    font-size: 12px!important;
+    padding: 14px 20px;
+    line-height: 12px!important;
+    font-weight: 600!important;
+    border-bottom: 1px solid #252525;
+}
+header#top .sf-menu li#menu-item-13595 ul li a {
+    border: none;
+}
+body:not([data-header-format="left-header"]) #top nav >ul >.megamenu >ul >li >a {
+        color: #ed1f20;
+}
+#top nav ul li a {
+    color: #888888;
+}
+h4 {
+    font-size: 21px;
+    line-height: 32px;
+    margin-bottom: 7px;
+}
+.sf-menu >li ul {
+    padding: 0px!important;
+}
+.post .more-link span{
+        padding: 4px 9px;
+}
+.post-area.masonry .post .post-meta {
+    display: block;
+    margin-bottom: 0;
+    display: none;
+}
+#top nav >ul >.megamenu >ul >li {
+    padding: 12px 0px 16px 23px;
+    border: none;
+}
+.masonry.classic .post.masonry-blog-item h3.title {
+color: #ed1f20;
+}
+.post .more-link span {
+    font-size: 13px;
+}
+body:not([data-header-format="left-header"]) #top nav > ul > .megamenu > ul ul .current-menu-item > a {
+background: #1c1c1c!important;    
+}
+body:not([data-header-format="left-header"]) #top nav > ul > .megamenu > ul ul .current-menu-item a {
+color: #999999!important;    
+}
+.salesforce_w2l_lead input[type="checkbox"] {
+    position: relative;
+    top: -22px;
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Ian Move Blog Post Social Around */ 
+
+.single #single-meta {
+   position: relative;
+    margin: 20px 0px 0px 0px;
+    padding-bottom: 15px;
+}
+.single .heading-title {
+    padding-bottom: 0px;
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 16px;
+}
+
+/* Ian Changes to Homepage */
+
+.fourBox h2, .fourBox p {
+    color: #FFFFFF;
+    text-align: left;
+}
+.fourBox h2 {
+    padding-bottom: 18px;
+}
+.fourBox p {
+    font-size: 16px!important;
+}
+.fourBox .vc_column-inner {
+    padding: 15% 7%;
+    height: 100%;
+}
+.fourBox .section-title {
+    margin: 0 0 0 0;
+    padding: 0 0 36px 0;
+    border-bottom: 0px solid #ddd!important;
+}
+.fourBox .vc_column-inner:after {
+    top: 0;
+    background: #252525a1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.row .col.section-title {
+    border-bottom: 0px solid #ddd;
+}
+
+h1.homeHeader {
+    text-align: center;
+    color: #fff;
+    font-size: 34px;
+    font-weight: 400;
+    margin-top: 8px;
+    margin-bottom: 0px;
+  
+}
+.homeWrapper .column_container .wpb_wrapper {
+    padding: 72px;
+}
+blockquote, .testimonial_slider blockquote, .testimonial_slider blockquote span, .testimonial_slider[data-style=minimal] blockquote span:not(.title), .testimonial_slider[data-style=minimal] blockquote, .testimonial_slider[data-style=minimal] .controls {
+    font-family: Open Sans;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.nectar_single_testimonial span {
+    font-size: 17px;
+    font-weight: 700;
+    font-variant-caps: all-small-caps;
+    color: #ed1f20;
+}
+.footerDetails {
+    padding: 0px 29px 0px 0px;
+}.mcFormWrapper {
+    display: flex;
+}
+.mcFormHolder {
+    padding: 10px;
+    margin: 0px;
+    position: relative;
+    z-index: 9;
+    border: 1px solid #e8e8e8;
+    margin-top: 60px;
+    box-shadow: -3px 4px 3px #eaeaea;
+}
+.mcFormHolder .mcFormInner {
+    padding: 160px 0px 20px;
+    background: url(https://webbula.com/wp-content/uploads/2020/04/mailbox.png);
+    background-position: center top;
+    background-size: 55%;
+    background-repeat: no-repeat;
+    z-index: 9999;
+    position: relative;
+    margin-top: -76px;
+}
+ 
+.mcFormInner p {
+    font-size: 14.5px;
+    text-align: center;
+    padding: 10px 6px;
+}
+.mcFormInner h3 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #000000;
+    text-align: center;
+}
+ 
+.mc4wp-form-fields input[type="email"] {
+    border: 1px solid #f1f1f1;
+    background: #f1f1f1;
+    line-height: 24px;
+    margin: 0px ;
+    width: 100%!important;
+    text-align: left;
+    padding:10px, 6px;
+}
+.mc4wp-form-fields input[type="email"]:focus {
+    background: #f1f1f1!important;
+}
+.mc4wp-form-fields input.mcSubmit {
+    border-radius: 16px;
+    font-size: 19px;
+    font-weight: 700;
+    width: 64%;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 690px) {
+    .mcFormHolder .mcFormInner {
+        padding: 240px 0px 20px;
+    }
+}
+.nectar-highlighted-text.instance-0 em:before {
+    background-color: #ed1f20!important;
+}
+
+#sidebar h4 {
+    color: #ed1f20;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+.sf_field.sf_field_Disclaimer.sf_type_html {
+    font-size: 14px;
+}
+label.w2llabel.required.checkbox.w2llabel-checkbox-label {
+    font-size: 14px;
+}
+.salesforce_w2l_lead input[type="checkbox"] {
+    position: relative;
+    top: 6px;
+    width: 20px;
+    height: 20px;
+}
+
+.w2lsubmit {
+    padding-top: 30px;
+}
+
+pre {
+    background: #ffffff;
+    font-family: "Andale Mono",Courier,"Courier New",monospace;
+    font-size: 14px;
+    font-size: 0.9375rem;
+    padding: 0;
+    line-height: 0;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+}
+.wFormContainer {
+    margin-left: 0px;
+    margin-right: 0px;
+    /* align-content: center; */
+    height: 10000px;
+}
+
+.wFormContainer {
+    height: 1500px;
+}
+
+.wFormContainer .wForm form {
+    padding: 0rem 0rem 0rem 0rem!important;
+}
+
+.wForm .oneField {
+    border: 2px solid transparent;
+    padding: 0px 1px!important;
+}
+.wForm div > div.oneField, .wForm fieldset > div.oneField, .wForm form > div.oneField, .wForm fieldset, .wForm .matrixLayout, .wForm .gridLayout, .wForm h4, .wForm .wfPagingButtons, .wForm .actions {
+    margin-top: 0;
+}
+</style>
+
+<link data-minify="1" rel="stylesheet" id="font-awesome-official-v4shim-css" href="https://webbula.com/wp-content/cache/min/1/releases/v5.15.3/css/v4-shims.css?ver=1679933623" type="text/css" media="all" crossorigin="anonymous">
+<style id="font-awesome-official-v4shim-inline-css" type="text/css">
+@font-face{font-family:"FontAwesome";font-display:auto;src:url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.eot"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.woff2") format("woff2"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.woff") format("woff"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.ttf") format("truetype"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-brands-400.svg#fontawesome") format("svg");}
+
+@font-face{font-family:"FontAwesome";font-display:auto;src:url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.eot"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.woff2") format("woff2"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.woff") format("woff"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.ttf") format("truetype"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-solid-900.svg#fontawesome") format("svg");}
+
+@font-face{font-family:"FontAwesome";font-display:auto;src:url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.eot"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.woff2") format("woff2"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.woff") format("woff"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.ttf") format("truetype"),
+url("https://use.fontawesome.com/releases/v5.15.3/webfonts/fa-regular-400.svg#fontawesome") format("svg");unicode-range:U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1" id="jquery-core-js"></script>
+<script type="text/javascript" id="gdpr-js-extra">
+/* <![CDATA[ */
+var GDPR = {"ajaxurl":"https:\/\/webbula.com\/wp-admin\/admin-ajax.php","logouturl":"","i18n":{"aborting":"Aborting","logging_out":"You are being logged out.","continue":"Continue","cancel":"Cancel","ok":"OK","close_account":"Close your account?","close_account_warning":"Your account will be closed and all data will be permanently deleted and cannot be recovered. Are you sure?","are_you_sure":"Are you sure?","policy_disagree":"By disagreeing you will no longer have access to our site and will be logged out."},"is_user_logged_in":"","refresh":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/plugins/gdpr/dist/js/public.js?ver=1679933623" id="gdpr-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://webbula.com/wp-json/"><link rel="alternate" type="application/json" href="https://webbula.com/wp-json/wp/v2/pages/42388"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://webbula.com/xmlrpc.php?rsd">
+			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v10.0.25-->
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript" class="hsq-set-content-id" data-content-id="standard-page">
+				var _hsq = _hsq || [];
+				_hsq.push(["setContentType", "standard-page"]);
+			</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+			
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to automatic -->
+<script data-cfasync="false" data-pagespeed-no-defer="">
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"Douglas"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P8M92HJ');
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<link rel="preload" as="font" href="https://webbula.com/wp-content/themes/salient/css/fonts/icomoon.woff" crossorigin="">
+<link rel="preload" as="font" href="https://webbula.com/wp-content/themes/salient/css/fonts/steadysets.woff" crossorigin="">
+<link rel="preload" as="font" href="https://webbula.com/wp-content/themes/salient/css/fonts/steadysets.ttf" crossorigin=""><script type="rocketlazyloadscript" data-rocket-type="text/javascript"> var root = document.getElementsByTagName( "html" )[0]; root.setAttribute( "class", "js" ); </script><script type="rocketlazyloadscript">var t_code = "DS-4584-1690-982";</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://webbula.com/wp-content/cache/min/1/track/script.js?ver=1679933623" defer=""></script>
+<link rel="icon" href="https://webbula.com/wp-content/uploads/2018/01/Wicon500-100x100.png" sizes="32x32">
+<link rel="icon" href="https://webbula.com/wp-content/uploads/2018/01/Wicon500-300x300.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://webbula.com/wp-content/uploads/2018/01/Wicon500-300x300.png">
+<meta name="msapplication-TileImage" content="https://webbula.com/wp-content/uploads/2018/01/Wicon500-300x300.png">
+		<style type="text/css" id="wp-custom-css">
+			#footer-outer div#copyright .col.span_5 {
+    left: 50%;
+}
+
+#footer-outer .div#copyright col.span_7 {
+    float: right;
+}
+
+#footer-outer div#copyright .col {
+    width: auto !important;
+}
+
+#footer-outer #copyright p {
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+#slide-out-widget-area .inner .off-canvas-menu-container li a {
+    font-size: 22px;
+    line-height: 36px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+body #header-secondary-outer .nectar-center-text {
+    max-width: 100%;
+    text-align: start;
+	font-weight:500px;
+	
+}
+a.headphone:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f879";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+	 padding-right:10px;
+	
+}
+a.headmail:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0e0";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+	  padding-left:40px;
+	 padding-right:10px;
+}
+#header-secondary-outer {
+    padding-top: 46px;
+	border: none;
+	
+	}
+	a.headphone {
+    font-size: 14px;
+  
+}
+a.headmail{
+	  font-size: 14px;
+}
+@media (min-width:1555px) and (max-width: 1650px) {
+         a.headphone{
+            padding-left:3%;
+          }
+
+    }
+ @media (min-width:1651px) and (max-width: 1780px) {
+         a.headphone{
+            padding-left:6%;
+          }
+
+    }
+ @media (min-width:1781px) {
+         a.headphone{
+            padding-left:11%;
+          }
+
+    }
+ @media (min-width:1001px) and (max-width: 1555px) {
+         a.headphone{
+            padding-left:0%;
+          }
+
+    }
+
+@media (min-width:691px) and (max-width: 1000px){
+body #header-secondary-outer .nectar-center-text {
+        text-align:center;
+          }
+
+    }
+body #slide-out-widget-area .secondary-header-text {
+    line-height: 2em;
+    position: absolute;
+    padding-top: 375px;
+    background-color: transparent;
+    margin-left: -18px;
+	 
+}
+body #slide-out-widget-area .secondary-header-text a.headmail:before {
+  
+       padding-left: 0px;
+   
+}
+body #slide-out-widget-area .secondary-header-text a.headmail{
+	font-size:18px;
+	opacity:0.7;
+}
+body #slide-out-widget-area .secondary-header-text a.headphone{
+	font-size:18px;
+	opacity:0.7;
+}
+a.logv2:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f007";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    padding-left: 40px;
+    padding-right: 10px;
+}
+a.logv2{
+	  font-size: 14px;
+}
+a.logv2 {
+    padding-left: 50%;
+}
+@media (min-width:768px) and (max-width: 1132px){
+a.logv2 {
+     padding-left: 40%;
+          }
+
+    }
+@media (min-width:691px) and (max-width: 767px){
+a.logv2 {
+     padding-left:0%;
+          }
+
+    }
+@media (min-width:1292px) and (max-width: 1600px){
+a.logv2 {
+     padding-left:58%;
+          }
+
+    }
+
+@media (max-width: 689px){
+a.logv2:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f007";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    padding-right: 10px;
+    padding-left: 0px; 	
+	
+}
+}
+@media (max-width: 689px){
+a.logv2 {
+ padding-left:0%;
+font-size: 18px;
+opacity: 0.7;
+display:block;	
+}	
+}
+}
+
+		</style>
+		<noscript>&lt;style&gt; .wpb_animate_when_almost_visible { opacity: 1; }&lt;/style&gt;</noscript><style type="text/css" media="screen">.is-menu path.search-icon-path { fill: #cecece;}body .popup-search-close:after, body .search-close:after { border-color: #cecece;}body .popup-search-close:before, body .search-close:before { border-color: #cecece;}</style>	
+</head>
+
+
+<body class="page-template-default page page-id-42388 salient original wpb-js-composer js-comp-ver-6.4.2 vc_responsive" data-footer-reveal="false" data-footer-reveal-shadow="none" data-header-format="default" data-body-border="off" data-boxed-style="" data-header-breakpoint="1000" data-dropdown-style="minimal" data-cae="easeOutCubic" data-cad="650" data-megamenu-width="contained" data-aie="none" data-ls="magnific" data-apte="standard" data-hhun="0" data-fancy-form-rcs="default" data-form-style="default" data-form-submit="regular" data-is="minimal" data-button-style="default" data-user-account-button="false" data-flex-cols="true" data-col-gap="default" data-header-inherit-rc="false" data-header-search="false" data-animated-anchors="true" data-ajax-transitions="false" data-full-width-header="false" data-slide-out-widget-area="true" data-slide-out-widget-area-style="slide-out-from-right" data-user-set-ocm="off" data-loading-animation="none" data-bg-header="false" data-responsive="1" data-ext-responsive="true" data-header-resize="1" data-header-color="light" data-transparent-header="false" data-cart="false" data-remove-m-parallax="" data-remove-m-video-bgs="" data-m-animate="0" data-force-header-trans-color="light" data-smooth-scrolling="0" data-permanent-transparent="false">
+	
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript"> if(navigator.userAgent.match(/(Android|iPod|iPhone|iPad|BlackBerry|IEMobile|Opera Mini)/)) { document.body.className += " using-mobile-browser "; } </script>	
+	<div id="header-space" data-header-mobile-fixed="1"></div> 
+	
+		
+	<div id="header-outer" data-has-menu="true" data-has-buttons="no" data-header-button_style="default" data-using-pr-menu="false" data-mobile-fixed="1" data-ptnm="false" data-lhe="default" data-user-set-bg="#ffffff" data-format="default" data-permanent-transparent="false" data-megamenu-rt="0" data-remove-fixed="0" data-header-resize="1" data-cart="false" data-transparency-option="0" data-box-shadow="small" data-shrink-num="25" data-using-secondary="1" data-using-logo="1" data-logo-height="62" data-m-logo-height="40" data-padding="10" data-full-width="false" data-condense="false">
+		
+			
+	<div id="header-secondary-outer" class="default" data-mobile="default" data-remove-fixed="0" data-lhe="default" data-secondary-text="true" data-full-width="false" data-mobile-fixed="1" data-permanent-transparent="false">
+		<div class="container">
+			<nav>
+				<div class="nectar-center-text"><a href="tel:888.993.2285" class="headphone">888.993.2285</a>    <a href="mailto:contact@webbula.com" class="headmail">contact@webbula.com</a><a href="https://login.emailhygiene.com/login" class="logv2">Log in</a></div>				
+			</nav>
+		</div>
+	</div>
+	
+
+<div id="search-outer" class="nectar">
+	<div id="search">
+		<div class="container">
+			 <div id="search-box">
+				 <div class="inner-wrap">
+					 <div class="col span_12">
+						  <form role="search" action="https://webbula.com/" method="GET">
+															<input type="text" name="s" value="Start Typing..." data-placeholder="Start Typing...">
+															
+												</form>
+					</div><!--/span_12-->
+				</div><!--/inner-wrap-->
+			 </div><!--/search-box-->
+			 <div id="close"><a href="#">
+				<span class="icon-salient-x" aria-hidden="true"></span>				 </a></div>
+		 </div><!--/container-->
+	</div><!--/search-->
+</div><!--/search-outer-->
+
+<header id="top">
+	<div class="container">
+		<div class="row">
+			<div class="col span_3">
+				<a id="logo" href="https://webbula.com" data-supplied-ml-starting-dark="false" data-supplied-ml-starting="false" data-supplied-ml="false">
+					<img width="250" height="73" class="stnd default-logo" alt="Webbula" src="https://webbula.com/wp-content/uploads/2019/01/WebbulaLogo250.png" srcset="https://webbula.com/wp-content/uploads/2019/01/WebbulaLogo250.png 1x,https://webbula.com/wp-content/uploads/2020/10/Webbula_Logo.jpg.webp 2x"> 
+				</a>
+				
+							</div><!--/span_3-->
+			
+			<div class="col span_9 col_last">
+									<div class="slide-out-widget-area-toggle mobile-icon slide-out-from-right" data-custom-color="false" data-icon-animation="simple-transform">
+						<div> <a href="#sidewidgetarea" aria-label="Navigation Menu" aria-expanded="false" class="closed">
+							<span aria-hidden="true"> <i class="lines-button x2"> <i class="lines"></i> </i> </span>
+						</a></div> 
+					</div>
+								
+									
+					<nav>
+						
+						<ul class="sf-menu">	
+							<li id="menu-item-13520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sf-with-ul menu-item-13520"><a>About<span class="sf-sub-indicator"><i class="fa fa-angle-down icon-in-menu"></i></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-13846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13846"><a href="https://webbula.com/about/">The ]w[ Story</a></li>
+	<li id="menu-item-13845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13845"><a href="https://webbula.com/team/">Our Team</a></li>
+	<li id="menu-item-42259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42259"><a href="https://webbula.com/industries-we-serve/">Industries We Serve</a></li>
+	<li id="menu-item-12671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12671"><a href="https://webbula.com/clients/">Our Clients</a></li>
+	<li id="menu-item-15691" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15691"><a href="https://webbula.com/webbula-community/">Community</a></li>
+</ul>
+</li>
+<li id="menu-item-13595" class="megamenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children sf-with-ul menu-item-13595"><a>Solutions<span class="sf-sub-indicator"><i class="fa fa-angle-down icon-in-menu"></i></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-16541" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16541"><a href="#">Multi-Method Hygiene<span class="sf-sub-indicator"><i class="fa fa-angle-right icon-in-menu"></i></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-16416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16416"><a href="https://webbula.com/email-hygiene/">Email Hygiene</a></li>
+		<li id="menu-item-16417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16417"><a href="https://webbula.com/email-verification/">Email Verification</a></li>
+		<li id="menu-item-41125" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41125"><a href="https://webbula.com/lead-validation/">Lead Validation</a></li>
+	</ul>
+</li>
+	<li id="menu-item-16542" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16542"><a href="#">Data Enhancement<span class="sf-sub-indicator"><i class="fa fa-angle-right icon-in-menu"></i></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-37411" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37411"><a href="https://webbula.com/data-append/">Data Append</a></li>
+		<li id="menu-item-41527" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41527"><a href="https://webbula.com/email-appending-services/">Email Append</a></li>
+		<li id="menu-item-41419" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41419"><a href="https://webbula.com/demographic-appends/">Demographic Append</a></li>
+		<li id="menu-item-16590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16590"><a href="https://webbula.com/webbula-programmatic-data/">Programmatic Data</a></li>
+	</ul>
+</li>
+	<li id="menu-item-16543" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16543"><a href="#">The Data Vault<span class="sf-sub-indicator"><i class="fa fa-angle-right icon-in-menu"></i></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-13781" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13781"><a href="https://webbula.com/datavault/">The dataVault Story</a></li>
+		<li id="menu-item-13765" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13765"><a href="https://webbula.com/taxonomy-download/">Taxonomy</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-41956" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41956"><a href="https://webbula.com/become-a-partner/">Partners</a></li>
+<li id="menu-item-13771" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children sf-with-ul menu-item-13771"><a href="https://webbula.com/webbula-resources/">Resources<span class="sf-sub-indicator"><i class="fa fa-angle-down icon-in-menu"></i></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-39306" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39306"><a href="https://webbula.com/blog">Blog</a></li>
+	<li id="menu-item-38871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38871"><a href="https://webbula.com/news/">News</a></li>
+	<li id="menu-item-13809" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13809"><a href="https://webbula.com/resource-library/">Resource Library</a></li>
+	<li id="menu-item-40883" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40883"><a href="https://webbula.com/a-complete-guide-to-data-appending-solutions/">The Complete Guide to Data Appending Solutions</a></li>
+	<li id="menu-item-41121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41121"><a href="https://webbula.com/a-complete-guide-to-email-list-cleaning/">The Complete Guide to Email List Cleaning</a></li>
+	<li id="menu-item-42241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42241"><a href="https://webbula.com/the-complete-guide-to-programmatic-advertising/">The Complete Guide to Programmatic Advertising</a></li>
+	<li id="menu-item-37694" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37694"><a href="https://webbula.com/not-for-profit-program/">Not-for-Profit</a></li>
+	<li id="menu-item-11817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-11817"><a href="https://webbula.com/privacy-center/">Privacy Center</a></li>
+</ul>
+</li>
+<li id="menu-item-15854" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15854"><a href="https://webbula.com/contact-us/">Contact Us</a></li>
+<li id="menu-item-16706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16706"><a href="https://webbula.com/blog/webbula-recognized-as-an-oracle-cloud-premier-data-provider/" class="menu-image-title-hide menu-image-not-hovered"><span class="menu-image-title-hide menu-image-title">Oracle</span><img width="130" height="50" src="https://webbula.com/wp-content/uploads/2022/12/oracleadvertising.png.webp" class="menu-image menu-image-title-hide" alt="Oracle Advertising" decoding="async" loading="lazy"></a></li>
+<li class=" astm-search-menu is-menu is-dropdown menu-item"><a href="#" aria-label="Search Icon Link"><svg width="20" height="20" class="search-icon" role="img" viewBox="2 9 20 5" focusable="false" aria-label="Search">
+						<path class="search-icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a><form class="is-search-form is-form-style is-form-style-3 is-form-id-0 " action="https://webbula.com/" method="get" role="search"><label for="is-search-input-0"><span class="is-screen-reader-text">Search for:</span><input type="search" id="is-search-input-0" name="s" value="" class="is-search-input" placeholder="Search here..." autocomplete="off"></label><button type="submit" class="is-search-submit"><span class="is-screen-reader-text">Search Button</span><span class="is-search-icon"><svg focusable="false" aria-label="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button></form><div class="search-close"></div></li>						</ul>
+						
+
+													<ul class="buttons sf-menu" data-user-set-ocm="off">
+								
+																
+							</ul>
+												
+					</nav>
+					
+										
+				</div><!--/span_9-->
+				
+								
+			</div><!--/row-->
+					</div><!--/container-->
+	</header>
+		
+	</div>
+	
+		
+	<div id="ajax-content-wrap">
+		
+		
+<div class="container-wrap">
+	<div class="container main-content">
+		<div class="row">
+			
+			
+		<div id="fws_6421c37a6e370" data-column-margin="default" data-midnight="dark" class="wpb_row vc_row-fluid vc_row top-level standard_section " style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap" data-bg-animation="none" data-bg-overlay="false"><div class="inner-wrap"><div class="row-bg" style=""></div></div><div class="row-bg-overlay"></div></div><div class="row_col_wrap_12 col span_12 dark left">
+	<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding" data-t-w-inherits="default" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">
+		<div class="vc_column-inner"><div class="column-bg-overlay-wrap" data-bg-animation="none"><div class="column-bg-overlay"></div></div>
+			<div class="wpb_wrapper">
+				
+<div class="wpb_text_column wpb_content_element ">
+	<div class="wpb_wrapper">
+		<h1 id="page-title" class="title">Webbula Privacy Notice</h1>
+<div id="node-285" class="node node-privacy-center-page node-promoted view-mode-full clearfix">
+<div class="content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<p>Webbula, LLC (“We,” “Our,”, “Us”, or “Webbula”) has developed this Privacy Notice to explain how we collect, retain, process, share and transfer your personal information when you visit <a href="https://webbula.com">https://webbula.com</a> (“Website”) and to help you make informed decisions when using our Website or accessing our data services ( together, the or our “Services”).</p>
+<p>To review the “California Addendum” we have created specifically to address disclosures required under the <strong>California Privacy Rights Act,</strong> please see our “<strong><a href="https://webbula.com/ccpa-addendum/" target="_blank" rel="noopener">CPRA PRIVACY NOTICE</a>” </strong>which is an addendum to this Privacy Notice<strong>.</strong>&nbsp; &nbsp;(Formerly known as the California Consumer Privacy Act.)</p>
+<p>To “opt out” of our databases – which means we will no longer “sell” and will instead suppress the personal information we have associated with you, please see <a href="#YourPrivacyRights">Section 13</a>.</p>
+<p>To learn about personal information that we collect from our own Clients – e.g., the organizations that we work with, or business prospects for our own Services – please see <a href="#DataCollectedThroughOurCorporateWebsite">Section 7</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="node-285" class="node node-privacy-center-page node-promoted view-mode-full clearfix">
+<div class="content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<ol>
+<li><strong>Background About Our Services </strong></li>
+</ol>
+<p>Webbula provides a variety of data services to advertisers, marketers and other organizations.&nbsp; Generally, these services (our “Services”) are designed to help these organizations market to and communicate with their consumers and prospective consumers, or others that may wish to interact with their organizations (for instance, donors, where the organization is a charitable organization).&nbsp;&nbsp; Sometimes we have a direct relationship with these organizations.&nbsp; At other times, we have an indirect relationship with them, such as through another data or advertising platform, or a reseller, or an agency that engages on behalf of their own client.&nbsp;&nbsp; We refer to all end users as “Clients,” whether they are brands, data or ad platforms, agencies or other types of organizations.</p>
+<p>Our Services are described in more depth in this Privacy Notice:&nbsp;&nbsp; they often involve either (a) performing “hygiene” on the consumer information our Clients have – for instance, to correct inaccuracies and prevent fraud, (b) helping organizations to maintain and expand their consumer or donor base, and (c) helping organizations better reach, target and communicate with consumers or donors online or through other marketing channels.</p>
+<p>We often collect consumer information, including information known as “personal information” or “personal data” under state privacy laws, from other companies who have a direct (or indirect) relationship with the consumer at issue.&nbsp;&nbsp; We therefore often do not have a direct relationship with the consumer:&nbsp; rather, we often act as a data intermediary, between either multiple “first parties” who do have relationships with the consumer, or “first” and “third” parties who wish to do so.</p>
+<p>As we have described elsewhere in this Privacy Notice, in order to “opt out” of our databases – which means we will no longer “sell” and will instead suppress the information we have associated with you, please see <a href="#YourPrivacyRights">Section 13</a>.</p>
+<p>To learn about information that we collect from our own Clients – e.g., the organizations that we work with, or business prospects for our own Services – please see <a href="#DataCollectedThroughOurCorporateWebsite">Section 7</a>.</p>
+<ol start="2">
+<li><strong>The Information That We Collect and Use in Our Services</strong></li>
+</ol>
+<p>In order to provide and operate our Services, we collect certain personal information.&nbsp; Under some state privacy statutes, this information is referred to as “personal information,” and in other states “personal data.”&nbsp; Some statutes refer to it (or certain such data) as “personally identifiable information.”&nbsp; We use the term “personal information” for purposes of this Privacy Notice to refer to that type of information, and we use the term “the Information” to refer to the personal information that we collect in providing our Services.</p>
+<p>We describe this personal below, in tabular form (which we do because certain statutes encourage or favor that type of presentation).</p>
+<p>The tables below explain the categories of information we collect and the purposes for which we use them.&nbsp; Further detail about each of the purposes is set out in the “Additional Information on Purposes” table below.&nbsp; Our descriptions of “Identifiers” follow common statutory, categorical examples:&nbsp; we do not necessarily collect all example types of all identifiers shown.</p>
+<table>
+<tbody>
+<tr>
+<td width="200"><strong>Categories of personal information we collect</strong></td>
+<td width="200"><strong>Purposes of use</strong></td>
+<td width="200"><strong>Sources of Information</strong></td>
+</tr>
+<tr>
+<td width="200"><strong>Identifiers</strong><br>
+E.g., name; alias; postal address; online identifiers; IP address; telephone number; email address, mobile ad identifiers.</td>
+<td width="200">
+<ul>
+<li>Provide the Services</li>
+</ul>
+<p>&nbsp;</p></td>
+<td width="200">
+<ul>
+<li>Data compilers and consumer data resellers, informational and retail websites (collectively “Commercial Sources”).</li>
+<li>Public records, government entities (such as the US Census Bureau), and other publicly available sources (collectively, “Public Sources”).</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="200"><strong>Characteristics of protected classifications under California or U.S. law, including Sensitive Personal Information</strong>&nbsp;E.g., race; color; religion; sex/gender, marital status; military or veteran status; national origin; ancestry.</td>
+<td width="200">
+<ul>
+<li>Provide the Services</li>
+</ul>
+</td>
+<td width="200">
+<ul>
+<li>Commercial Sources.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="200"><strong>Commercial or transactions information</strong>&nbsp;E.g., records of personal property, products or services purchased, obtained, or considered, or other purchasing or consuming histories or tendencies.</td>
+<td width="200">
+<ul>
+<li>Provide the Services</li>
+</ul>
+</td>
+<td width="200">
+<ul>
+<li>Commercial Sources.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="200"><strong>Internet or other electronic network activity information</strong>&nbsp;E.g., information on a consumer’s interaction with a website.</td>
+<td width="200">
+<ul>
+<li>Provide the Services</li>
+</ul>
+</td>
+<td width="200">
+<ul>
+<li>Commercial Sources.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="200"><strong>Geolocation data</strong></td>
+<td width="200">
+<ul>
+<li>Provide the Services</li>
+</ul>
+</td>
+<td width="200">
+<ul>
+<li>US Postal Service.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="200"><strong>Professional or employment-related information</strong>&nbsp;E.g., job titles or categories.</td>
+<td width="200">
+<ul>
+<li>Provide the Services</li>
+</ul>
+</td>
+<td width="200">
+<ul>
+<li>Commercial Sources.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li><strong>The Purposes for Which We Use the Personal Information We Collect</strong></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Generally, we use the personal information we collect to provide, maintain, operate and improve our Services.&nbsp;&nbsp; The below table provides additional specifics as to those uses:</p>
+<table width="604">
+<tbody>
+<tr>
+<td width="604"><strong>Additional Information on Purposes of Personal Information Use</strong></td>
+</tr>
+<tr>
+<td width="604"><strong>Uses to Provide the Services:</strong><p></p>
+<p>&nbsp;</p>
+<p><strong>Data marketing services, for example:</strong></p>
+<ul>
+<li>Generally, creating data marketing tools and products for our marketer Clients, as more fully described in our Privacy Policy (and on our websites). This may include, at any given time, our provision of datasets, data “appends” (connecting data across datasets), data “scoring” (providing inferences about potential consumer behavior), data hygiene services (helping Clients to evaluate, validate and correct personal information they hold), and security and anti-fraud services (helping Clients to identify potentially fraudulent activity).</li>
+<li>Helping our Clients identify and understand their consumers better, by providing insights about them and managing loyalty programs, as well as providing financial and other scoring products.</li>
+<li>Assisting our Clients with use our Services to provide their consumers and prospects with better service, improved offerings, and special promotions, for instance, advising on which consumers or prospective consumers are most likely to be interested (or disinterested) in certain offers.</li>
+</ul>
+<p><strong>Online targeting, for example:</strong></p>
+<ul>
+<li>Creating or helping to create defined audience segments based on common demographics and/or shared (actual or inferred) interests or preferences (e.g., households with prospective students). When we do this, we work with a data partner that “matches” our or other Information through de-identification techniques (such as through coded data “hashing”) with online cookies and other identifiers, in order to help brands and other organizations target and measure ad campaigns online across various display, mobile and other media channels.</li>
+<li>Assisting Clients in creating “identity” graphs, to help locate users across various channels, such as based on common personal, device-based, or network-based identifiers (e.g., IP address, email address).</li>
+</ul>
+<p><strong>Additional marketing services, for example (which may overlap with “data marketing services” above):</strong></p>
+<ul>
+<li>Assisting in targeting and optimizing of direct mail and email campaigns, display, mobile and social media marketing.</li>
+<li>Measuring the effectiveness of online or offline ad campaigns by determining which messages are most likely to be seen or opened by which types of consumers, or which types of ads are most likely to lead to purchases.</li>
+<li>Analyzing and optimizing our Clients’ (or their service providers’) proprietary databases, or helping Clients to identify and mitigate potential fraud.</li>
+<li>Providing “verification” or data “hygiene” services, which is how companies update and/or “clean” their databases by either verifying or removing or correcting old, incorrect or outdated information.</li>
+</ul>
+<p><strong>Operating our Services, for example:</strong></p>
+<ul>
+<li>Improving, testing, updating and verifying our own database.</li>
+<li><span style="font-family: inherit; font-size: inherit;">Developing new products.</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Operating, analyzing, improving, and securing our Services.</span></li>
+</ul>
+<p><strong>Personalize the experience, for example:</strong></p>
+<ul>
+<li>Creating and updating profiles and audience segments that can be used for analytics, interested-based advertising and marketing on the Services</li>
+<li>Using inferences about your preferences and interests for any and all of the above purposes</li>
+</ul>
+<p><strong>Send you marketing and advertising, </strong><strong>for example:</strong></p>
+<ul>
+<li>Sending you customized newsletters, surveys and information about products, services and promotions offered (with your consent where required) based on your activities and interests including at a household level</li>
+<li>Providing you with advertising, including targeted advertising, based on your activities and interests including at a household level</li>
+</ul>
+<p><strong>Build and manage business-to-business relationships, for example:</strong></p>
+<ul>
+<li>pursuing potential business opportunities, including identifying and contacting the correct person within the company</li>
+<li><span style="font-family: inherit; font-size: inherit;">Sending communications for business purposes</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Managing Client, supplier and other business relationships</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Sending event invitations, marketing emails and campaigns, and tracking the effectiveness of such communications</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Issuing or paying invoices, and fulfilling contractual commitments</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Providing business contacts with access to our systems, and managing that access</span></li>
+<li>Communicating with you as an influencer about a shared social media campaign, and associated analytics</li>
+</ul>
+<p><strong>Market and advertise for third parties, for example:</strong></p>
+<ul>
+<li>Send you newsletters, promotional emails, surveys and information about products, services and promotions offered by our partners and other organizations with which we work</li>
+<li><span style="font-family: inherit; font-size: inherit;">Customize content that our third-party partners deliver on the Services (e.g., targeted third-party advertising)</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Create and update inferences about you and audience segments that can be used for interested-based advertising and marketing on the Services, third party services and platforms, and mobile apps</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Create profiles about you, including adding and combining information we obtain from third parties and matching your interests across devices, which may be used for third-party marketing and advertising, including targeted advertising, third party services and platforms, mobile apps and/or websites, connected devices (such as browsers, mobile devices, tablets and TVs) and offline marketing.</span></li>
+</ul>
+<p><strong>Compliance and risk management activities for business-to-business relationships, for example:</strong></p>
+<ul>
+<li>Compliance with laws and regulations</li>
+<li><span style="font-family: inherit; font-size: inherit;">Managing third party and other risks to our business</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Protecting the reputation of our businesses</span></li>
+<li><span style="font-family: inherit; font-size: inherit;">Following the principles of ethical business conduct set out in our Code of Conduct</span></li>
+</ul>
+<p><strong>Protect our users, Services and properties, for example:&nbsp; </strong></p>
+<ul>
+<li>Protecting the safety and security of users and visitors to the Services</li>
+<li>Protecting our digital and physical properties</li>
+<li><span style="font-family: inherit; font-size: inherit;">Detecting and preventing other activities that may be illegal or in violation of our Terms of Service</span></li>
+</ul>
+<p><strong>&nbsp;</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>We may combine all the information we collect from or receive about you for the outlined purposes. We may aggregate or deidentify your information and may use, share, rent or sell aggregated or deidentified information for any purpose, and such information is not subject to this Privacy Policy.</p>
+<div id="node-285" class="node node-privacy-center-page node-promoted view-mode-full clearfix">
+<div class="content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden">
+<div class="field-items">
+<div class="field-item even">
+<ol start="4">
+<li><strong>How We Share Information with Third Parties, including Service Providers</strong></li>
+</ol>
+<p>Webbula may share the Information with Clients, marketing services and platforms, as well as service providers that help us to provide the Services we’ve described above (or other services we may add in the future).&nbsp; This includes sharing in the following ways:</p>
+<ul>
+<li><strong>With Our Clients:</strong> We license your information in various ways to our Clients (and sometimes to partners and resellers, who license the Information to their Client), when we provide our Services.&nbsp; We may sometimes share your information with those Clients’ service providers (for instance, a provider that sends communications for or on behalf of a Client, including their own customer).</li>
+<li><strong>With Our Advertisers and Partners:</strong> We also may share the Information, including personally identifiable information and Audience Segments, with business and data partners to help provide more tailored targeted marketing, advertising and communications. Likewise, we may do so for analytical purposes, including to help these other parties measure campaign performance, inform future campaigns, or to handle, analyze, or segregate this Information on our or our Clients’ behalf.</li>
+<li><strong>With Our Service Providers: </strong>We share your information with a variety of service providers in order to operate, protect and advertise our Services and maintain our website(s).&nbsp; For instance, we may share the Information with tech and Client support providers, marketing and advertising providers, other data providers (such as to enhance or verify your information), security vendors, payment vendors (as to our business to business information), and other companies help us deliver or develop Services.</li>
+<li><strong>Corporate transfers:</strong> If Webbula, its stock or its significant assets are acquired by or merged into another entity, our information will be transferred to that entity, and may be shared during due diligence in anticipation of any such transaction.</li>
+<li><strong>Affiliates, parent companies and subsidiaries:</strong> Webbula may share some or all of the Information in our possession with any affiliated or subsidiary companies (if we ever have any).</li>
+<li><strong>As required by law or to protect any person or entity:</strong> Webbula may disclose Information if we believe that such disclosure is necessary to (a) comply in good faith with relevant laws or to respond to subpoenas or warrants served on us; or (b) to protect or otherwise defend the rights, property or safety of Webbula, our Clients, or any other person or entity.</li>
+</ul>
+<ol start="5">
+<li><strong>Your Marketing and Opt-Out Choices</strong></li>
+</ol>
+<p>There are multiple ways that you can opt-out of having the Information used to market to you:</p>
+<ul>
+<li>First, you may visit our “opt out” page at <a href="https://webbula.com/opt-out-request/">https://webbula.com/opt-out-request/</a> to have your personal information removed from our database. We will then remove your personal information from our active marketing databases We may in certain cases request additional information, if required.</li>
+<li>If you wish to opt out of online targeted ads (sometimes referred to as “interest-based” or “personalized” advertising), you can also visit the opt-out portals operated the industry groups the <a href="http://optout.networkadvertising.org/" target="_blank" rel="noopener">National Advertising Initiative (NAI)</a> or the <a href="http://aboutads.info/" target="_blank" rel="noopener">Digital Advertising Alliance (DAA),</a> and you can learn more about how those opt-outs work on those linked web pages. Please note that these online opt-outs are cookie-based (unlike Webbula’s direct opt-out.&nbsp; Thus, if you browse the web from multiple browsers or devices, you will need to opt out from each browser and/or device, and for the same reason, if you change browsers or clear your browser cookie cache, you will need to perform this opt-out function again.&nbsp; Opting-out in this way will not prevent you from seeing all types of online ads; it generally will prevent targeted ads customized to what advertisers think may be most likely to be relevant and of interest to you.</li>
+<li>If we market to you by email, in our corporate capacity – such as if you are a Client or prospective Client of ours and we send information about our Services — you may “unsubscribe” from our marketing emails through a link placed in your emails. <a id="CookiesAndSimiliarTechnology"></a></li>
+</ul>
+<ol start="6">
+<li><strong>Cookies and Similar Technologies</strong></li>
+</ol>
+<p><strong><em>Cookies and How We Use Them</em></strong></p>
+<p>While Webbula does not generally use cookies (for instance, third party cookies) in providing its Services to Clients, on this website Webbula its business partners do use certain industry-standard technologies, including cookies and similarly functioning technologies, which we describe below.</p>
+<p>Our partners, on the other hand, may use cookies and similar technologies in their own marketing services.&nbsp; We thus may work with third parties or service providers to provide or enhance our services (e.g. for purposes of tailoring ads, or placing browser cookies), or to offer marketers ways to access or use our Information, often in de-identified form.&nbsp;&nbsp; These business and platform partners may set and access their own cookies, pixel tags and similar technologies on your device, which may have cookies with varying expiration periods. Those partners may, likewise, collect various types of information about your browser, device, or browsing activities through use of these cookies.</p>
+<p>Cookies, in turn, are small data files that contain a string of characters, such as a unique browser identifier. Cookies are stored on your computer or other device and act as tags that identify your device. Our (or other companies’) servers send your device a cookie when you visit a website. A pixel tag (also commonly known as a web beacon or clear GIF) is an invisible 1 x 1 pixel that is placed on certain web pages. &nbsp;When you access web pages (such as the website of a marketer), pixel tags may generate a generic notice of the visit and permit our partners (or sometimes, us) to read the cookies that a respective company or server has deployed. &nbsp;Pixel tags are used in combination with cookies to track the activity on a site by a particular device. &nbsp;When you turn off cookies, pixel tags simply detect a given website visit.</p>
+<p>We or our service providers, and other online marketing platforms that we or they work with, may use cookies to, among other things, “remember” you, determine visitor patterns and trends, collect information about your activities on our clients’ sites, or interact with the advertising you see.&nbsp;&nbsp; Cookies are used in this way to provide relevant content to you and replace non-relevant communications with ads that better match your interests.</p>
+<p><strong>Necessary / Regulatory</strong></p>
+<p>Cookies that are necessary for the site to function properly and ensure your consent choices are saved for GDPR regulations.&nbsp; The Necessary / Regulatory cookies used on this site including the following:</p>
+<ul>
+<li>gdpr – This cookie associated with Webbula, LLC through this website’s consent manager. This cookie is used to request and store your consent of Webbula’s Privacy Notice and cookie choices. It is set to expire after 1 year.</li>
+</ul>
+<p><strong>Statistics / Analytics </strong></p>
+<p>Google Analytics provides anonymous statistical information for us. They process IP addresses and information from other cookies used on our sites so we know how many page views we have, how many users we have, what browsers they are using (so we can target our resources in the right way to maximize compatibility for the majority of our users) and, in some cases, in which country, city or region they are located.</p>
+<ul>
+<li>_ga – This cookie is associated with Google Universal Analytics. This cookie is used to distinguishes unique users by assigning a randomly generated number as a client identifier. It is included in each page request in a site and used to calculate visitor, session and campaign data for the sites analytics reports. It is set to expire after 2 years.</li>
+<li>_gid – This cookie is associated with Google Universal Analytics. This cookie is used to distinguishes unique users by assigning a randomly generated number as a client identifier. It is included in each page request in a site and used to calculate visitor, session and campaign data for the sites analytics reports. It is set to expire after 24 hours.</li>
+<li>_gat – This cookie is associated with Google Universal Analytics, it is used to throttle the request rate – limiting the collection of data on high traffic sites. It expires after 1 minutes.</li>
+</ul>
+<p><strong>Disabling Cookies</strong></p>
+<p>Most web browsers are set up to accept cookies. You may be able to set your browser to warn you before accepting certain cookies or to refuse certain cookies. However, if you disable the use of cookies in your web browser, some features of our website and other services may be difficult to use or become inoperable. <a id="DataCollectedThroughOurCorporateWebsite"></a></p>
+<ol start="7">
+<li><strong>Data Collected Through Our Corporate Website</strong></li>
+</ol>
+<table width="604">
+<tbody>
+<tr>
+<td colspan="3" width="604"><strong>Additional information that we collect for business-to-business relationships only </strong></td>
+</tr>
+<tr>
+<td width="226"><strong>Categories of personal information we collect</strong></td>
+<td width="198"><strong>Purposes of use</strong></td>
+<td width="180"><strong>Sources of Information</strong></td>
+</tr>
+<tr>
+<td width="226"><strong>Business contact information</strong><p></p>
+<p>For example: company name, your name, email address, and job.</p></td>
+<td width="198">
+<ul>
+<li>Build and manage business-to-business relationships</li>
+</ul>
+</td>
+<td width="180">
+<ul>
+<li>You</li>
+<li>Your company</li>
+<li>Trade associations</li>
+<li>Social media</li>
+<li>Business data resellers</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="226"><strong>Transactional information</strong><p></p>
+<p>For example: bank details of suppliers, credit/debit card details, purchase history, delivery address.</p></td>
+<td width="198">
+<ul>
+<li>Build and manage business-to-business relationships</li>
+</ul>
+</td>
+<td width="180">
+<ul>
+<li>You</li>
+<li>Publicly available sources</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="226"><strong>Device information and identifiers</strong><p></p>
+<p>For example: IP address, cookie IDs, browser type and language, operating system, platform type, device type, and advertising and app identifiers.</p></td>
+<td width="198">
+<ul>
+<li>Provide the Services</li>
+<li>Personalize your experience</li>
+<li>Provide seamless experience across platforms and devices</li>
+<li>Protect our users, Services and properties</li>
+<li>Send you marketing and advertising</li>
+<li>Market and Advertise for third parties</li>
+<li>Build and manage business-to-business relationships</li>
+</ul>
+</td>
+<td width="180">
+<ul>
+<li>You</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width="226"><strong>Demographics</strong><p></p>
+<p>For example (as permitted by law): ethnicity (minority owned businesses), gender (women-owned businesses)</p></td>
+<td width="198">
+<ul>
+<li>Build and manage business-to-business relationships</li>
+</ul>
+</td>
+<td width="180">
+<ul>
+<li>You</li>
+<li>Your company</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>How Webbula Shares the Information We Collect Through Our Websites</em></strong></p>
+<p>We may sometimes share or otherwise disclose the Information we collect about you, as described in this Privacy Policy or otherwise disclosed to you when you provide us with the information, including as follows:</p>
+<ul>
+<li>We may share the Information with service providers who help us deliver the services you request or we provide. For instance, we share the Information with tech and customer support providers, marketing and advertising providers, other data providers (such as to enhance or verify our Information), security and data hygiene vendors, payment vendors (as to our business to business information), and other companies that may help us deliver or develop Services.</li>
+<li>We may share the Information to communicate with you and market to you, including through email, direct mail or display media (which in turn may rely on cookies and similar technologies, described elsewhere in this Privacy Notice, including in <a href="#CookiesAndSimiliarTechnology">Section 6</a>).</li>
+<li>We will disclose your information if we believe in good faith that we are required to do so by law, regulation or other government authority or to protect the rights, safety or property of ourselves or any person or entity. We may also cooperate with law enforcement agencies in any official investigation and we may disclose any Information to the requesting agency in doing so.</li>
+<li>If we or all or substantially all of our assets, are purchased by another company (such as in a merger, consolidation, restructuring, the sale of stock and/or assets, or other corporate change or financing transaction), the Information in our possession will likely be transferred to the successor entity. We also may share the Information during the course of any due diligence process leading up to any such transaction.</li>
+</ul>
+<p>Our website(s) use cookies and similar technologies, both for its internal and operational purposes and to market to you (such as to retarget ads to you when you visit other sites across the Internet).</p>
+<ol start="8">
+<li><strong>Links</strong></li>
+</ol>
+<p>This website may provide links to other websites that Webbula thinks users will find interesting or useful.&nbsp; For instance, if we present information about a webinar by another company. Webbula is not responsible for the privacy practices of these other sites or companies.</p>
+<ol start="9">
+<li><strong>Security and Data Integrity</strong></li>
+</ol>
+<p>Webbula uses various electronic, physical, technical, and procedural safeguards to protect and limit access to the information you provided to us via this online service. Unfortunately, no data transmission or storage system can be guaranteed to be 100 percent secure; you therefore should not rely on our (or any) security protocols to be foolproof. Additionally, please note that information you send to us electronically may not be secure when it is transmitted to us because we do not control the security of your delivery channel.</p>
+<ol id="C9" start="10">
+<li><strong>Children’s Privacy</strong></li>
+</ol>
+<p>Our online services are not intended for children, and Webbula provides no products or service geared towards children. Our website at www.webbula.com does not knowingly solicit or collect personal information online from children under age 18.</p>
+<ol id="C9" start="11">
+<li><strong>Changes to this Privacy Policy</strong></li>
+</ol>
+<p>From time to time, we may update this Privacy Policy.&nbsp; Any changes to it will become effective when it is posted to our website.&nbsp; Please check back to learn of any changes to this Privacy Policy.</p>
+<ol id="C9" start="12">
+<li><strong>Storage of Information in the United States</strong></li>
+</ol>
+<p>If you are accessing our website from outside of the United States, your connection likely will be through and to servers located in the United States and all Information you provide will likely be processed and securely maintained in our web servers and internal systems located within the United States.&nbsp; (We generally store the Information used in our Services in the United States.)&nbsp;&nbsp; Thus, you should be aware that in accessing this website or otherwise communicating with us, the Information we collect or receive from you may be subject to laws with lesser or different privacy standards than those in your own country (such as if you are in a country located in the European Union). <a id="YourPrivacyRights"></a></p>
+<ol id="C9" start="13">
+<li><strong>Your Privacy Rights</strong></li>
+</ol>
+<p>Depending on where you live, you may have certain rights with respect to your information. &nbsp;For example, under several state laws (as they become effective), you may be able to ask us to:</p>
+<ul>
+<li>provide access to certain information we hold about you, in some cases in a portable format, if technically feasible</li>
+<li>update or correct your information</li>
+<li>delete certain information</li>
+<li>restrict the use of your information</li>
+</ul>
+<p>We will respond within the time period prescribed by applicable law. Please note that many of the above rights are subject to exceptions and limitations.</p>
+<p><strong>Do Not Sell</strong>: &nbsp;First, consumers may opt out of the “sale” of their personal information.&nbsp; (This is required in some states, but we endeavor to extend this right to all consumers.) &nbsp;&nbsp;Those laws may broadly defines “sale” in a way that may include allowing third parties, such as advertisers, advertising networks, to receive certain information such as cookies, IP address, device identifiers or other hashed identifiers, interests, browsing behavior and/or other activity to add to a profile about your device, browser, or you.</p>
+<p>Depending on the consumer (and depending on whether the consumer is a Client of ours or a member of the public with whom we lack a direct relationship), we may disclose the following categories of information for such purposes which may be considered a sale (as defined by applicable law):</p>
+<ul>
+<li>identification and demographics;</li>
+<li>inference data, such as whether you may be likely to purchase certain goods in the near future.</li>
+</ul>
+<p>To opt out of this type of sale, please go to <a href="https://webbula.com/opt-out-request/">https://webbula.com/opt-out-request/</a> and follow the instructions on that web page.</p>
+<p><strong>Do Not Share/Do Not Target</strong>: &nbsp;Consumers also may opt out “targeted” advertising, which is also sometimes referred to as “interest based” or “personalized” advertising.&nbsp; We refer to it here as “targeted” advertising. &nbsp;(It is also referred to as “cross-context” advertising under California law.) (This “opt out” right is required in some states, but again, we endeavor to extend this right to all consumers.)</p>
+<p>We do not directly control the sending or initiation of targeted advertising, which is generally performed with cookies and similar technologies.&nbsp; However, we do sometimes provide personal information that is used in association with cookies and similar technologies for cross-context advertising.</p>
+<p>In turn, to opt out of this type of targeting, you may request that we not “sell” your Information (<a href="#YourPrivacyRights">see above instructions</a>).&nbsp;&nbsp; When you do so we will cease providing your Information for purposes of cross-context advertising.&nbsp; You may also visit industry websites such as those operated by the <a href="https://optout.networkadvertising.org/?c=1">National Advertising Initiative (NAI)</a> and the <a href="https://youradchoices.com/control">Digital Advertising Alliance (DAA)</a>, which provide cookie-based opt-outs in respect to cross-context advertising.&nbsp; (These opt-out solutions are generally cookie-based and specific to a particular browser, so if you switch browsers, or clear your cookies, you will generally need to refresh your opt-out.).&nbsp; Finally, to the extent you have enabled a global opt-out preference signal, the providers we work with may recognize that signal to the extent required under applicable state laws.</p>
+<p>In addition, to the extent you have enabled a global opt-out preference signal, we will recognize that signal to the extent required under applicable state laws.</p>
+<p>Finally, although we do not obtain mobile device information, we work with business partners who may associate the personal information we provide to them with mobile ad identifiers.&nbsp; You may opt-out of cross-context advertising or targeting performed by these companies through the mobile device settings for Android and Apple iOS devices. To exercise this type of opt-out, please visit the privacy settings of your Android or iOS device and select “limit ad tracking” (Apple iOS) or “opt-out of interest-based ads” (Android). Also, you may visit &nbsp;<a href="https://urldefense.com/v3/__https:/youradchoices.com/appchoices__;!!ACWV5N9M2RV99hQ!MbTNYtVJsE_j2X1mip-XHYqM5bhiFo1HbeyKMLi6BMHZxsMNxNK62vtnz0sr__7yPIMCAopZQkNKoFB0kXeBvjo$">https://youradchoices.com/appchoices</a>&nbsp;to download the AppChoices Tool to control interest-based advertising on apps on your mobile device and&nbsp;<a href="https://urldefense.com/v3/__https:/thenai.org/opt-out/mobile-opt-out/__;!!ACWV5N9M2RV99hQ!P9RTHyjFYojOoPkoA62B1MZ-A-4vgIQX5xZSbxiTHr1RVXgHt8TLYwTXyJ8bz-GHcFzjcjXjZJtc11gIGBkON-g8tf4$">https://thenai.org/opt-out/mobile-opt-out/</a>&nbsp;for more information and instructions on opting out on mobile devices.</p>
+<p><strong>Accessing the Personal Information We Have About You</strong></p>
+<p>In certain states you may have a right to “access” or “know” about the specific information we hold about you, such as to deliver our Services.&nbsp; &nbsp;If you would like to&nbsp;<a href="https://webbula.com/ca-eu-data-request/">request access of your personal information</a>, you may do so by contacting us at 888-993-2285 ext 4 or you may visit our “Data Access Request” page at <a href="https://webbula.com/ca-eu-data-request/">https://webbula.com/ca-eu-data-request/</a>.</p>
+<p>For security purposes (and as required under California law), we will verify your identity – in part by requesting certain information from you — when you request to exercise your California privacy rights.&nbsp; For instance, if you request categories or specific pieces of personal information we have received about you, you may need to confirm your possession of an identifier (such as an email address) or to provide a piece of identification that confirms you are the person you claim to be.</p>
+<p><strong>Authorized Agents</strong></p>
+<p>If you or (in certain states where required by law) your authorized agent would like to opt out of Webbula’s use of your information for such purposes (to the extent this is considered a sale, share, or targeted advertising), you may do so as outlined on the following page: <a href="https://webbula.com/opt-out-request/" target="_blank" rel="noopener">https://webbula.com/opt-out-request/</a></p>
+<p><strong>Sensitive Data</strong></p>
+<ul>
+<li>Some states, like Colorado, Connecticut, and Virginia, provide their residents (upon the applicable effective dates), the right to opt-in to the processing of their sensitive personal information or personal data. To the extent you believe you may have opted in to the collection of such personal information/data, you can opt out at any time so by providing your email here <a href="https://webbula.com/opt-out-request/">https://webbula.com/opt-out-request/</a></li>
+<li>Some states, like California and Utah, provide their residents (upon the applicable effective dates), have the right to opt-out of certain uses of their sensitive personal data. You can do so by providing your email here <a href="https://webbula.com/opt-out-request/">https://webbula.com/opt-out-request/</a></li>
+</ul>
+<p>In some cases, you may appeal a decision made relating to your rights. Please contact us at <a href="mailto:privacy@webbula.com">privacy@webbula.com</a> if you would like to inquire about an appeal.</p>
+<p><strong>Nevada Residents</strong></p>
+<p>Certain Nevada consumers may opt out of the sale of “covered information” for monetary consideration to a person for that person to license or sell such information. “Covered information” includes first and last name, address, email address, phone number, Social Security Number, or an identifier that allows a specific person to be contacted either physically or online.&nbsp; Please contact us at <a href="mailto:privacy@webbula.com">privacy@webbula.com</a> if you would like to opt out.</p>
+<p>&nbsp;</p>
+</div>
+<div class="field-item even">
+<ol id="C9" start="14">
+<li><strong>EU-US PRIVACY SHIELD</strong></li>
+</ol>
+<p class="CHSglBody" style="text-align: justify;">Privacy Shield Certification. As a business subject to the enforcement and investigatory powers of the Federal Trade Commission, Webbula, Inc. has certified our compliance with the EU-US Privacy Shield Framework with respect to the personal client data we receive from the relevant European countries, and the United Kingdom, effective as of the date our certification is posted at <a href="https://www.privacyshield.gov/list">https://www.privacyshield.gov/list</a>. You can learn more about the Privacy Shield program at <a href="https://www.privacyshield.gov">https://www.privacyshield.gov.</a> We may alternatively process personal data our clients in the EU submit via other compliance mechanisms, including data processing agreements based on the EU Standard Contractual Clauses. (As to any third-party service providers we may use to process information subject to the Privacy Shield, we may have liability under the Privacy Shield if both (i) the agent processes the information in a manner inconsistent with the Privacy Shield and (ii) we are responsible for the event giving rise to the damage.)</p>
+<p class="CHSglBody" style="text-align: justify;">Accessing Your Data: European and UK residents may have certain legal rights to access certain personal data and to obtain its correction, amendment, or deletion. You may contact us at the contact information below to request access, correction, amendment, or deletion. Because our personnel have limited rights to identify and access an individual user’s personal data that our client has submitted to us, and because we process that data on behalf of our clients, we may first refer you to the client who submitted your data, and we will support them as needed in responding to your request.</p>
+<p class="CHSglBody" style="text-align: justify;">Resolution of Complaints. In compliance with the EU-US Privacy Shield Principles, Webbula commits to resolve complaints about your privacy and our collection or use of your personal information. If you have any concerns or complaints, please contact us as described at the end of this Privacy Notice, and we will work with you to resolve your issue. Webbula has further committed to refer unresolved Privacy Shield complaints to ANA, an alternative dispute resolution provider located in the United States. If you do not receive timely acknowledgment of your complaint from us, or if we have not addressed your complaint to your satisfaction, please contact or visit&nbsp; <a href="https://thedma.org/resources/consumer-resources/privacyshield-consumers/">ANA at EU US or Swiss Privacy Shield for Consumers – Data Compliance</a> for more information or to file a complaint. The services of ANA are provided at no cost to you. Under certain conditions, more fully described on the Privacy Shield website <a href="https://www.privacyshield.gov">https://www.privacyshield.gov</a>, you may be entitled to invoke binding arbitration when other dispute resolution procedures have been exhausted.</p>
+</div>
+<p>If you have any questions please contact ANA at:</p>
+<p><strong>ANA</strong><br>
+<strong>Attn: Privacy Shield</strong><br>
+<strong>225 Reinekers Lane, Suite 325</strong><br>
+<strong>Alexandria, VA 22314</strong></p>
+</div>
+<div class="field-items">
+<div class="field-item even">
+<ol start="15">
+<li><strong>EUROPEAN UNION REPRESENTATIVE</strong></li>
+</ol>
+<p>VeraSafe has been appointed as Webbula’s representative in the European Union for data protection matters, pursuant to Article 27 of the General Data Protection Regulation of the European Union. VeraSafe can be contacted in addition to using our&nbsp;<a href="https://webbula.com/privacy-center/">Privacy Center</a>, however only on matters related to the processing of personal data of EU residents.</p>
+<p class="p2">To make such an inquiry, please contact VeraSafe using this contact form: <a href="https://verasafe.com/public-resources/contact-data-protection-representative">https://verasafe.com/public-resources/contact-data-protection-representative</a> or via telephone at: +420 228 881 031.</p>
+<p>Alternatively, VeraSafe can be contacted at:</p>
+<address>VeraSafe Czech Republic s.r.o<br>
+Klimentská 46<br>
+Prague 1, 11002<br>
+Czech Republic</address>
+<address>&nbsp;</address>
+<address>VeraSafe Ireland Ltd</address>
+<address>Unit 3D North Point House</address>
+<address>North Point Business Park</address>
+<address>New Mallow Road<br>
+Cork T23AT2P</address>
+<address>Ireland</address>
+<address>&nbsp;</address>
+<ol start="16">
+<li><strong>Contact Us</strong></li>
+</ol>
+<p>Webbula has a designated privacy contact. &nbsp;If you have questions related to this Privacy Policy, or regarding our products or services, please contact us:</p>
+<address>Webbula, LLC</address>
+<address>ATTN: Privacy / Compliance</address>
+<address>5000 Stonewood Drive</address>
+<address>Suite 310</address>
+<address>Wexford, PA 15090</address>
+<address><a href="mailto:privacy@Webbula.com">privacy@webbula.com</a></address>
+<address><i>Copyright 2009 – 2023,</i><i><i> Webbula, LLC. &nbsp;All rights reserved.<br>
+</i></i>We appreciate your comments and questions regarding Webbula’s privacy practices.<strong><i>DATE OF LAST MODIFICATION December 5, 2022</i></strong></address>
+</div>
+</div>
+</div>
+</div>
+</div>
+	</div>
+</div>
+
+
+
+
+			</div> 
+		</div>
+	</div> 
+</div></div>
+			
+		</div><!--/row-->
+	</div><!--/container-->
+</div><!--/container-wrap-->
+
+
+<div id="footer-outer" data-midnight="light" data-cols="4" data-custom-color="false" data-disable-copyright="false" data-matching-section-color="false" data-copyright-line="false" data-using-bg-img="false" data-bg-img-overlay="0.8" data-full-width="false" data-using-widget-area="false" data-link-hover="default">
+	
+	
+<div id="call-to-action">
+	<div class="container">
+		  <div class="triangle"></div>
+		  <span> Get Data Quality </span>
+		  <a class="nectar-button 
+		  regular-button accent-color" data-color-override="false" href="/get-started/">
+		  Get Started		</a>
+	</div>
+</div>
+
+	
+  <div class="row" id="copyright" data-layout="default">
+	
+	<div class="container">
+	   
+				<div class="col span_5">
+		   
+					   
+						<p>
+				</p><div class="footerDetails">Social Media<br><a href="https://webbula.com/opt-out-request/">Do Not Sell My Information</a> | <a href="https://webbula.com/opt-out-request/">Targeted Advertising</a> | <a href="https://webbula.com/privacy-policy/">Privacy Notice</a> | <a href="https://webbula.com/webbula-resources/webbula-gdpr/">GDPR</a>| <a href="https://webbula.com/our-ccpa-commitment/"> CCPA</a> |  <a href="https://webbula.com/data-security-at-webbula/">Data Security</a><br>5000 Stonewood Dr, Ste 310<br>Wexford, PA 15090<br>888.993.2285<br>© 2009-2023 Webbula, LLC.  All Rights Reserved!</div>			 <p></p>	
+					   
+		</div><!--/span_5-->
+			   
+	  <div class="col span_7 col_last">
+		<ul class="social">
+						   <li><a target="_blank" href="https://twitter.com/webbula"><i class="fa fa-twitter"></i> </a></li> 		  			 <li><a target="_blank" href="https://facebook.com/webbulapgh"><i class="fa fa-facebook"></i> </a></li> 		  		  			 <li><a target="_blank" href="https://www.pinterest.com/webbula/overview/"><i class="fa fa-pinterest"></i> </a></li> 		  			 <li><a target="_blank" href="https://www.linkedin.com/company/webbula"><i class="fa fa-linkedin"></i> </a></li> 		  			 <li><a target="_blank" href="https://www.youtube.com/channel/UClMbs5Vk9970oOlUhXRaRNA"><i class="fa fa-youtube-play"></i> </a></li> 		  		  		  		  		  		  		  		  		  		  		  		  		  		  		  		  		  		  		  		  		  		                                 		</ul>
+	  </div><!--/span_7-->
+
+	  	
+	</div><!--/container-->
+	
+  </div><!--/row-->
+  
+		
+</div><!--/footer-outer-->
+
+	
+	<div id="slide-out-widget-area-bg" class="slide-out-from-right dark">
+				</div>
+		
+		<div id="slide-out-widget-area" class="slide-out-from-right" data-dropdown-func="default" data-back-txt="Back">
+			
+						
+			<div class="inner" data-prepend-menu-mobile="false">
+				
+				<a class="slide_out_area_close" href="#">
+					<span class="icon-salient-x icon-default-style"></span>				</a>
+				
+				
+									<div class="off-canvas-menu-container mobile-only">
+						
+						<div class="secondary-header-text"><a href="tel:888.993.2285" class="headphone">888.993.2285</a>    <a href="mailto:contact@webbula.com" class="headmail">contact@webbula.com</a><a href="https://login.emailhygiene.com/login" class="logv2">Log in</a></div>						
+						<ul class="menu">
+							<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13520"><a>About</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13846"><a href="https://webbula.com/about/">The ]w[ Story</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13845"><a href="https://webbula.com/team/">Our Team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42259"><a href="https://webbula.com/industries-we-serve/">Industries We Serve</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12671"><a href="https://webbula.com/clients/">Our Clients</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15691"><a href="https://webbula.com/webbula-community/">Community</a></li>
+</ul>
+</li>
+<li class="megamenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13595"><a>Solutions</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16541"><a href="#">Multi-Method Hygiene</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16416"><a href="https://webbula.com/email-hygiene/">Email Hygiene</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16417"><a href="https://webbula.com/email-verification/">Email Verification</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41125"><a href="https://webbula.com/lead-validation/">Lead Validation</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16542"><a href="#">Data Enhancement</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37411"><a href="https://webbula.com/data-append/">Data Append</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41527"><a href="https://webbula.com/email-appending-services/">Email Append</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41419"><a href="https://webbula.com/demographic-appends/">Demographic Append</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16590"><a href="https://webbula.com/webbula-programmatic-data/">Programmatic Data</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16543"><a href="#">The Data Vault</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13781"><a href="https://webbula.com/datavault/">The dataVault Story</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13765"><a href="https://webbula.com/taxonomy-download/">Taxonomy</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41956"><a href="https://webbula.com/become-a-partner/">Partners</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13771"><a href="https://webbula.com/webbula-resources/">Resources</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39306"><a href="https://webbula.com/blog">Blog</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38871"><a href="https://webbula.com/news/">News</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13809"><a href="https://webbula.com/resource-library/">Resource Library</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40883"><a href="https://webbula.com/a-complete-guide-to-data-appending-solutions/">The Complete Guide to Data Appending Solutions</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41121"><a href="https://webbula.com/a-complete-guide-to-email-list-cleaning/">The Complete Guide to Email List Cleaning</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42241"><a href="https://webbula.com/the-complete-guide-to-programmatic-advertising/">The Complete Guide to Programmatic Advertising</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37694"><a href="https://webbula.com/not-for-profit-program/">Not-for-Profit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-11817"><a href="https://webbula.com/privacy-center/">Privacy Center</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15854"><a href="https://webbula.com/contact-us/">Contact Us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16706"><a href="https://webbula.com/blog/webbula-recognized-as-an-oracle-cloud-premier-data-provider/" class="menu-image-title-hide menu-image-not-hovered"><span class="menu-image-title-hide menu-image-title">Oracle</span><img width="130" height="50" src="https://webbula.com/wp-content/uploads/2022/12/oracleadvertising.png.webp" class="menu-image menu-image-title-hide" alt="Oracle Advertising" decoding="async" loading="lazy"></a></li>
+<li class=" astm-search-menu is-menu is-dropdown menu-item"><a href="#" aria-label="Search Icon Link"><svg width="20" height="20" class="search-icon" role="img" viewBox="2 9 20 5" focusable="false" aria-label="Search">
+						<path class="search-icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a><form class="is-search-form is-form-style is-form-style-3 is-form-id-0 " action="https://webbula.com/" method="get" role="search"><label for="is-search-input-0"><span class="is-screen-reader-text">Search for:</span><input type="search" id="is-search-input-0" name="s" value="" class="is-search-input" placeholder="Search here..." autocomplete="off"></label><button type="submit" class="is-search-submit"><span class="is-screen-reader-text">Search Button</span><span class="is-search-icon"><svg focusable="false" aria-label="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span></button></form><div class="search-close"></div></li>							
+						</ul>
+						
+						<ul class="menu secondary-header-items">
+													</ul>
+					</div>
+										
+				</div>
+				
+				<div class="bottom-meta-wrap"></div><!--/bottom-meta-wrap-->					
+				</div>
+		
+</div> <!--/ajax-content-wrap-->
+
+	<a id="to-top" class="
+		"><i class="fa fa-angle-up"></i></a>
+	<div class="gdpr gdpr-overlay"></div>
+<div class="gdpr gdpr-privacy-bar" style="display:none;">
+	<div class="gdpr-wrapper">
+		<div class="gdpr-content">
+			<p>We use cookies to offer you a better browsing experience and analyze site traffic. Read about how we use cookies and how you can control them by clicking "Privacy Preferences". If you continue to use this site, you consent to our use of cookies.</p>
+		</div>
+		<div class="gdpr-right">
+							<ul class="gdpr-cookie-categories">
+																	<li class="gdpr-cookie-categories-item">
+							<input type="checkbox" id="gdpr-cookie-category-analytics-performance" class="gdpr-cookie-category" data-category="analytics-performance" name="allowed_cookie_categories" value="Statistics / Analytics" checked="checked">
+							<label for="gdpr-cookie-category-analytics-performance">Statistics / Analytics</label>
+						</li>
+																	<li class="gdpr-cookie-categories-item">
+							<input type="checkbox" id="gdpr-cookie-category-necessary-required" class="gdpr-cookie-category" data-category="necessary-required" name="allowed_cookie_categories" value="Necessary / Regulatory" checked="checked" disabled="">
+							<label for="gdpr-cookie-category-necessary-required">Necessary / Regulatory</label>
+						</li>
+									</ul>
+						<div class="gdpr-buttons">
+				<button class="gdpr-preferences" type="button">Privacy Preferences</button>
+				<button class="gdpr-agreement" type="button">I Agree</button>
+			</div>
+			<span class="gdpr-close"></span>
+		</div>
+	</div>
+</div>
+
+<div class="gdpr gdpr-privacy-preferences">
+	<div class="gdpr-wrapper">
+		<form method="post" class="gdpr-privacy-preferences-frm">
+			<input type="hidden" name="action" value="gdpr_update_privacy_preferences">
+			<input type="hidden" id="update-privacy-preferences-nonce" name="update-privacy-preferences-nonce" value="4f1ce57418"><input type="hidden" name="_wp_http_referer" value="/privacy-policy/">			<header>
+				<div class="gdpr-box-title">
+					<h3>Privacy Preference Center</h3>
+					<span class="gdpr-close"></span>
+				</div>
+			</header>
+			<div class="gdpr-mobile-menu">
+				<button type="button">Options</button>
+			</div>
+			<div class="gdpr-content">
+				<div class="gdpr-tabs">
+					<ul class="">
+						<li><button type="button" class="gdpr-tab-button gdpr-active" data-target="gdpr-consent-management">Consent Management</button></li>
+																			<li><button type="button" class="gdpr-tab-button gdpr-cookie-settings" data-target="analytics-performance">Cookie Settings</button>
+								<ul class="gdpr-subtabs">
+									<li><button type="button" data-target="analytics-performance">Statistics / Analytics</button></li><li><button type="button" data-target="necessary-required">Necessary / Regulatory</button></li>								</ul>
+							</li>
+											</ul>
+					<ul class="gdpr-policies">
+																													<li><a href="https://webbula.com/?page_id=14347" target="_blank">Privacy Policy</a></li>
+																		</ul>
+				</div>
+				<div class="gdpr-tab-content">
+					<div class="gdpr-consent-management gdpr-active">
+						<header>
+							<h4>Consent Management</h4>
+						</header>
+						<div class="gdpr-info">
+							<p>When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience.<br>
+<br>
+Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.</p>
+																								<div class="gdpr-cookies-used">
+										<div class="gdpr-cookie-title">
+											<p>Privacy Policy</p>
+																							<span class="gdpr-always-active">Required</span>
+												<input type="hidden" name="user_consents[]" value="privacy-policy" style="display:none;">
+																					</div>
+										<div class="gdpr-cookies">
+											<span>You read and agreed to our <a href="https://webbula.com/privacy-policy/" target="_blank">Privacy Notice</a>.</span>
+										</div>
+									</div>
+																					</div>
+					</div>
+																<div class="analytics-performance">
+							<header>
+								<h4>Statistics / Analytics</h4>
+							</header><!-- /header -->
+							<div class="gdpr-info">
+								<p>These are used to track user interaction and detect potential problems. These help us improve our services by providing analytical data on how users use this site.</p>
+																	<div class="gdpr-cookies-used">
+										<div class="gdpr-cookie-title">
+											<p>Cookies Used</p>
+																																		<label class="gdpr-switch">
+													<input type="checkbox" class="gdpr-cookie-category" data-category="analytics-performance" name="approved_cookies[]" value="[&quot;_ga&quot;,&quot;_gid&quot;,&quot;_gat&quot;]" checked="checked">
+													<span class="gdpr-slider round"></span>
+													<span class="gdpr-switch-indicator-on">ON</span>
+													<span class="gdpr-switch-indicator-off">OFF</span>
+												</label>
+																					</div>
+										<div class="gdpr-cookies">
+											<span>_ga, _gid, _gat</span>
+										</div>
+									</div>
+																							</div>
+						</div>
+											<div class="necessary-required">
+							<header>
+								<h4>Necessary / Regulatory</h4>
+							</header><!-- /header -->
+							<div class="gdpr-info">
+								<p>Cookies that are necessary for the site to function properly and ensure your consent choices are saved for GDPR regulations</p>
+																	<div class="gdpr-cookies-used">
+										<div class="gdpr-cookie-title">
+											<p>Cookies Used</p>
+																																		<span class="gdpr-always-active">Required</span>
+												<input type="hidden" name="approved_cookies[]" value="[&quot;gdpr&quot;]">
+																					</div>
+										<div class="gdpr-cookies">
+											<span>gdpr</span>
+										</div>
+									</div>
+																							</div>
+						</div>
+									</div>
+				<input type="hidden" name="all_cookies" value="[&quot;_ga&quot;,&quot;_gid&quot;,&quot;_gat&quot;,&quot;gdpr&quot;]">
+			</div>
+			<footer>
+				<input type="submit" value="Save Preferences">
+			</footer>
+		</form>
+	</div>
+</div>
+
+<div class="gdpr gdpr-general-confirmation">
+	<div class="gdpr-wrapper">
+		<header>
+			<div class="gdpr-box-title">
+				<h3></h3>
+				<span class="gdpr-close"></span>
+			</div>
+		</header>
+		<div class="gdpr-content">
+			<p></p>
+		</div>
+		<footer>
+			<button class="gdpr-ok" data-callback="closeNotification">OK</button>
+		</footer>
+	</div>
+</div>
+
+<script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/api/v1/script/bd8e010b-439e-463e-85f7-7097d030c69d/widget.js?ver=1679933624"></script>
+<script type="text/html" id="wpb-modifications"></script><script type="text/javascript" id="leadin-script-loader-js-js-extra">
+/* <![CDATA[ */
+var leadin_wordpress = {"userRole":"visitor","pageType":"page","leadinPluginVersion":"10.0.25"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/5769437.js?ver=1679933624" async="" defer="" id="hs-script-loader"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1679933624" id="gtm4wp-form-move-tracker-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/webbula.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/third-party/jquery.easing.js?ver=1679933624" id="jquery-easing-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/third-party/jquery.mousewheel.js?ver=1679933624" id="jquery-mousewheel-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/priority.js?ver=1679933624" id="nectar_priority-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/third-party/transit.js?ver=1679933624" id="nectar-transit-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/third-party/waypoints.js?ver=1679933624" id="nectar-waypoints-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/themes/salient/js/third-party/imagesLoaded.min.js?ver=4.1.4" id="imagesLoaded-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/third-party/hoverintent.js?ver=1679933624" id="hoverintent-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/third-party/magnific.js?ver=1679933624" id="magnific-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/third-party/superfish.js?ver=1679933624" id="superfish-js" defer=""></script>
+<script type="text/javascript" id="nectar-frontend-js-extra">
+/* <![CDATA[ */
+var nectarLove = {"ajaxurl":"https:\/\/webbula.com\/wp-admin\/admin-ajax.php","postID":"42388","rooturl":"https:\/\/webbula.com","disqusComments":"false","loveNonce":"992c10a6c7","mapApiKey":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/cache/min/1/wp-content/themes/salient/js/init.js?ver=1679933624" id="nectar-frontend-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/plugins/salient-core/js/third-party/touchswipe.min.js?ver=1.0" id="touchswipe-js" defer=""></script>
+<script type="text/javascript" id="ivory-search-scripts-js-extra">
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5" id="ivory-search-scripts-js" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webbula.com/wp-content/plugins/js_composer_salient/assets/js/dist/js_composer_front.min.js?ver=6.4.2" id="wpb_composer_front_js-js" defer=""></script>
+    <script type="rocketlazyloadscript">
+    jQuery(document).ready(function() {
+      
+    });
+    </script>
+    
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1679934330 --></body></html>

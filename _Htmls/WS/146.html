@@ -1,0 +1,1599 @@
+<!DOCTYPE html><html lang="en-US" data-lang="en-US" crm-lang="en-US" dir="ltr" crm-lcid="1033" same-site-mode="None"><head><style data-merge-styles="true"></style>
+		
+		<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<script type="text/javascript">
+				
+		</script>
+	<title>
+					SR-03733
+				&nbsp;· Help Center</title>
+		
+		<script src="/_resources/getresourcemanager?lang=en-US"></script>
+	
+	<script type="text/javascript">
+		// Refresh all powerBI Iframes on Login in one Iframe
+		window.addEventListener('message', function (event) {
+			if (event && event.data && event.data == 'refreshPowerBI') {
+				$("iframe.powerbi").each(function () {
+					this.src = this.src;
+				});
+			}
+		});
+
+		// Fix for incorrect viewport width setting in IE 10 on Windows Phone 8.
+		if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+			var msViewportStyle = document.createElement("style");
+			msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+			document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+		}
+	</script>
+		
+	
+		
+		<link href="/bootstrap.min.css?1698177012000" rel="stylesheet">
+
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/font-awesome.bundle-3d8a58a48f.css" onerror="javascript: var target = event.target; var link = document.createElement('link'); link.crossOrigin = target.crossOrigin; link.href = '/dist/font-awesome.bundle-3d8a58a48f.css'; link.rel = 'stylesheet'; target.insertAdjacentElement('afterend',link);" rel="stylesheet">
+
+				<link href="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-e40e2053e3.css" onerror="javascript: var target = event.target; var link = document.createElement('link'); link.crossOrigin = target.crossOrigin; link.href = '/dist/preform.bundle-e40e2053e3.css'; link.rel = 'stylesheet'; target.insertAdjacentElement('afterend',link);" rel="stylesheet">
+
+
+		
+		<!--[if lt IE 9]>
+				<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+		
+		<!--[if lt IE 10]>
+				<script src="~/js/formdata.js"></script>
+			<![endif]-->
+		
+			
+		
+	<link rel="stylesheet" href="/Areas/KnowledgeManagement/css/article.css">
+	<link rel="stylesheet" href="/Areas/KnowledgeManagement/css/collapsible.css">
+	
+
+
+		<link href="/thumbnail.css?1698177044000" rel="stylesheet">
+<link href="/theme.css?1698177043000" rel="stylesheet">
+<link href="/ContactUs.css?1698177024000" rel="stylesheet">
+<link href="/expertcallback.css?1699374490000" rel="stylesheet">
+<link href="/bidirectional.css?1698177012000" rel="stylesheet">
+<link href="/Summit.css?1698177043000" rel="stylesheet">
+<link href="/Font-Awesome-Pro-5.css?1699288641000" rel="stylesheet">
+
+		<style type="text/css">#heading {
+    background-color: black;
+    height: 50px;
+}
+
+.main {
+    margin: 18px;
+    border-radius: 4px;
+}
+
+div[role="form"]{
+    background-color: black;
+}
+
+.webchat-header {
+    background-color: #EFEFEF; 
+    color: #333333;
+    font-weight: 600;
+    height: 48px;
+    padding: 0px 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#restartButton
+{
+    padding:8px;
+    margin-top:-52px;
+    background-color: #076abd !important;
+}
+
+.webchat__send-box  {
+    background-color: white !important;
+}
+
+.webchat__suggested-actions__item-box
+{
+    border-color: #076abd !important;
+}
+
+.page-heading .btn-toolbar  {
+    display: none;
+}
+
+/* #articleShare .dropdown-toggle  {
+    border-radius: 30px;
+    height: 41px;
+} */
+
+#articleShare .dropdown-toggle { border: 0; height: auto; background: none; font-size: 20px; border-radius: 0; color: #000; }
+
+
+.dropdown-menu  {
+    min-width: 110px !important;
+    border-radius: 10px;
+}
+
+.dropdown-menu li a {
+    color: #2f5fef;
+    text-align: left;
+}
+
+.dropdown-menu li i {
+    padding-right: 5px;
+}
+
+.dropdown-menu li   {
+    text-align: left;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.dropdown-menu li:hover   {
+    background: none;
+}
+
+.dropdown-menu li a:hover {
+    background: none;
+}
+
+.dropdown-menu ul   {
+    border-radius: 5px;
+}
+
+.form-control  {
+}
+
+ul.breadcrumb li a[href*="knowledgebase"] {
+    display: none;
+ }
+ 
+ ul.breadcrumb li:has(a[href*="knowledgebase"]) {
+    display: none;
+ }
+
+.form-search    {
+   padding-top: 50px;
+}
+
+.input-group .input-group-btn    {
+   margin-left: 10px;
+}
+
+.input-group {
+   max-width: 70%;
+   margin: auto;
+}
+
+.input-group  .btn {
+   padding: 4px 0;
+   font-weight: 200;
+   font-size: 28px;
+   height: 40px;
+   width: 40px;
+   line-height: 0;
+   transition: all 0.2s ease-in-out;
+   background: #0e5896 !important;
+   border-radius: 3px;
+   color: #fff !important;
+   border: 0;
+   font-weight: 800;
+   letter-spacing: 1.1px;
+}
+
+.input-group .form-search .btn span {
+   color:#000 !important;
+}
+
+#ContentContainer_MainContent_SearchResults .label.label-primary {
+   display: none;
+}
+
+a {
+   color: #1169b2;
+}
+
+.pagination > li > a, .pagination > li > span   {
+   height: auto;
+   width: auto;
+   z-index: 0 !important;
+}
+
+@media (min-width: 1200px)  {
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+        float: none;
+    }
+    .col-lg-4 {
+        width: 100%;
+    }
+}
+
+#RelatedArticles.panel-default {
+    border: 0;
+}
+
+#RelatedArticles.panel-default>.panel-heading {
+    color: #333;
+    background: none;
+    font-size: 19.5px;
+    padding-bottom: 0;
+}
+
+#RelatedArticles.panel-default>.panel-heading h4 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+}
+
+#RelatedArticles.panel-default>.panel-heading h4 span {
+    display: none;
+}
+
+#RelatedArticles.panel-default>.panel-heading h4 span.xrm-attribute-value-encoded {
+    display: block !important;
+}
+
+#RelatedArticles.panel-default>.panel-heading h4 span.xrm-editable-text {
+    display: block !important;
+}
+
+#RelatedArticles .list-group-item   {
+    font-size: 12px;
+    padding: 2px 2px 2px 3em;
+    border: 0;
+}
+
+#RelatedArticles .list-group-item:before   {
+    font-family: 'Font Awesome 5 Pro';
+    margin-right: 6px;
+    content: "\f0eb";
+    margin-left: 1px;
+    margin-right: 5px;
+    font-size: 1.4em;
+    color: #000;
+}
+
+#RelatedArticles a.list-group-item:hover, a.list-group-item:focus, button.list-group-item:hover, button.list-group-item:focus {
+    text-decoration: none;
+    color: #23527c;
+    background: none;
+}
+
+#article-rating {
+    display: none;
+}
+
+h2, .h2 {
+    font-size: 30px !important;
+ }
+ 
+ h3, .h3 {
+   font-size: 17.5px !important;
+    font-weight: 700 !important;
+ }
+ 
+ ol ul {
+   list-style-type: disc !important;
+ }
+ 
+ .knowledge-article-content {
+   font-size: 13px !important;
+ }
+ 
+ .knowledge-article-content h3, 
+ .knowledge-article-content .h3 {
+   line-height: 1.4em !important;
+    padding: 5px 0px !important;
+ }
+ 
+ .knowledge-article-content table {
+   width: 100% !important;
+    margin: 10px 0 !important;
+    border: solid 1px #000 !important;
+    border-collapse: collapse !important;
+ }
+ 
+ .knowledge-article-content table td {
+   padding: 5px !important;
+    border: solid 1px #000 !important;
+    vertical-align: middle !important;
+ }
+ 
+ .knowledge-article-content img {
+    max-width: 100% !important;
+    height: auto !important;
+ }
+ 
+ @media only screen and (max-width: 600px) {
+   .page-header h1,
+   .page-header .h1	{
+      font-size: 33px !important;
+   }
+ }
+
+ #mainContent, #content-container   {
+    min-height: auto !important;
+ }
+
+ @media print {
+    .form-search    {
+        display: none;
+    }
+ }
+
+ #content   {
+    /* min-height: 704px; */
+ }
+
+</style>
+		
+		
+		
+	
+		
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/pwa-style.bundle-2739c60227.css" onerror="javascript: var target = event.target; var link = document.createElement('link'); link.crossOrigin = target.crossOrigin; link.href = '/dist/pwa-style.bundle-2739c60227.css'; link.rel = 'stylesheet'; target.insertAdjacentElement('afterend',link);" rel="stylesheet">
+
+		<meta name="react-film" content="version=3.1.1-main.df870ea"><meta name="react-scroll-to-bottom:version" content="4.2.0"><meta name="web-speech-cognitive-services" content="version=7.1.3"><meta name="botframework-directlinespeech:version" content="4.15.9"><meta name="botframework-webchat:bundle:variant" content="full"><meta name="botframework-webchat:bundle:version" content="4.15.9"><meta name="botframework-webchat:core:version" content="4.15.9"><meta name="botframework-webchat:ui:version" content="4.15.9"><style data-load-themed-styles="true" type="text/css">.pickerText_cc9894a7{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #a19f9d;min-width:180px;padding:1px;min-height:32px}.pickerText_cc9894a7:hover{border-color:#c7e0f4}.pickerInput_cc9894a7{height:34px;border:none;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;outline:0;padding:0 6px 0;margin:1px}.pickerInput_cc9894a7::-ms-clear{display:none}</style><style data-load-themed-styles="true" type="text/css">.resultContent_ae2a2ef5{display:table-row}.resultContent_ae2a2ef5 .resultItem_ae2a2ef5{display:table-cell;vertical-align:bottom}.peoplePickerPersona_ae2a2ef5{width:180px}.peoplePickerPersona_ae2a2ef5 .ms-Persona-details{width:100%}.peoplePicker_ae2a2ef5 .ms-BasePicker-text{min-height:40px}.peoplePickerPersonaContent_ae2a2ef5{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}</style><style data-load-themed-styles="true" type="text/css">.callout_0508e60b .ms-Suggestions-itemButton{padding:0;border:none}.callout_0508e60b .ms-Suggestions{min-width:300px}</style><style data-load-themed-styles="true" type="text/css">.root_2f55324e{min-width:260px}.suggestionsItem_2f55324e{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;position:relative;overflow:hidden}.suggestionsItem_2f55324e:hover{background:#f3f2f1}.suggestionsItem_2f55324e:hover .closeButton_2f55324e{display:block}.suggestionsItem_2f55324e.suggestionsItemIsSuggested_2f55324e{background:#edebe9}.suggestionsItem_2f55324e.suggestionsItemIsSuggested_2f55324e:hover{background:#c8c6c4}@media screen and (-ms-high-contrast:active){.suggestionsItem_2f55324e.suggestionsItemIsSuggested_2f55324e:hover{background:Highlight;color:HighlightText}}@media screen and (-ms-high-contrast:active){.suggestionsItem_2f55324e.suggestionsItemIsSuggested_2f55324e{background:Highlight;color:HighlightText;-ms-high-contrast-adjust:none}}.suggestionsItem_2f55324e.suggestionsItemIsSuggested_2f55324e .closeButton_2f55324e:hover{background:#a19f9d;color:#323130}@media screen and (-ms-high-contrast:active){.suggestionsItem_2f55324e.suggestionsItemIsSuggested_2f55324e .itemButton_2f55324e{color:HighlightText}}.suggestionsItem_2f55324e .closeButton_2f55324e{display:none;color:#605e5c}.suggestionsItem_2f55324e .closeButton_2f55324e:hover{background:#edebe9}.actionButton_2f55324e{background-color:transparent;border:0;cursor:pointer;margin:0;position:relative;border-top:1px solid #edebe9;height:40px;width:100%;font-size:12px}[dir=ltr] .actionButton_2f55324e{padding-left:8px}[dir=rtl] .actionButton_2f55324e{padding-right:8px}html[dir=ltr] .actionButton_2f55324e{text-align:left}html[dir=rtl] .actionButton_2f55324e{text-align:right}.actionButton_2f55324e:hover{background-color:#edebe9;cursor:pointer}.actionButton_2f55324e:active,.actionButton_2f55324e:focus{background-color:#c7e0f4}.actionButton_2f55324e .ms-Button-icon{font-size:16px;width:25px}.actionButton_2f55324e .ms-Button-label{margin:0 4px 0 9px}html[dir=rtl] .actionButton_2f55324e .ms-Button-label{margin:0 9px 0 4px}.buttonSelected_2f55324e{background-color:#c7e0f4}.suggestionsTitle_2f55324e{padding:0 12px;color:#0078d4;font-size:12px;line-height:40px;border-bottom:1px solid #edebe9}.suggestionsContainer_2f55324e{overflow-y:auto;overflow-x:hidden;max-height:300px;border-bottom:1px solid #edebe9}.suggestionsNone_2f55324e{text-align:center;color:#797775;font-size:12px;line-height:30px}.suggestionsSpinner_2f55324e{margin:5px 0;white-space:nowrap;line-height:20px;font-size:12px}html[dir=ltr] .suggestionsSpinner_2f55324e{padding-left:14px}html[dir=rtl] .suggestionsSpinner_2f55324e{padding-right:14px}html[dir=ltr] .suggestionsSpinner_2f55324e{text-align:left}html[dir=rtl] .suggestionsSpinner_2f55324e{text-align:right}.suggestionsSpinner_2f55324e .ms-Spinner-circle{display:inline-block;vertical-align:middle}.suggestionsSpinner_2f55324e .ms-Spinner-label{display:inline-block;margin:0 10px 0 16px;vertical-align:middle}html[dir=rtl] .suggestionsSpinner_2f55324e .ms-Spinner-label{margin:0 16px 0 10px}.itemButton_2f55324e.itemButton_2f55324e{width:100%;padding:0;min-width:0;height:100%}@media screen and (-ms-high-contrast:active){.itemButton_2f55324e.itemButton_2f55324e{color:WindowText}}.itemButton_2f55324e.itemButton_2f55324e:hover{color:#201f1e}.closeButton_2f55324e.closeButton_2f55324e{padding:0 4px;height:auto;width:32px}@media screen and (-ms-high-contrast:active){.closeButton_2f55324e.closeButton_2f55324e{color:WindowText}}.closeButton_2f55324e.closeButton_2f55324e:hover{background:#c8c6c4;color:#201f1e}.suggestionsAvailable_2f55324e{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style><style data-load-themed-styles="true" type="text/css">.suggestionsContainer_a151d363{overflow-y:auto;overflow-x:hidden;max-height:300px}.suggestionsContainer_a151d363 .ms-Suggestion-item:hover{background-color:#f3f2f1;cursor:pointer}.suggestionsContainer_a151d363 .is-suggested{background-color:#deecf9}.suggestionsContainer_a151d363 .is-suggested:hover{background-color:#c7e0f4;cursor:pointer}</style><style data-load-themed-styles="true" type="text/css">.root_e4eecb3d{min-width:260px}.actionButton_e4eecb3d{background:0 0;background-color:transparent;border:0;cursor:pointer;margin:0;padding:0;position:relative;width:100%;font-size:12px}html[dir=ltr] .actionButton_e4eecb3d{text-align:left}html[dir=rtl] .actionButton_e4eecb3d{text-align:right}.actionButton_e4eecb3d:hover{background-color:#f3f2f1;cursor:pointer}.actionButton_e4eecb3d:active,.actionButton_e4eecb3d:focus{background-color:#c7e0f4}.actionButton_e4eecb3d .ms-Button-icon{font-size:16px;width:25px}.actionButton_e4eecb3d .ms-Button-label{margin:0 4px 0 9px}html[dir=rtl] .actionButton_e4eecb3d .ms-Button-label{margin:0 9px 0 4px}.buttonSelected_e4eecb3d{background-color:#deecf9}.buttonSelected_e4eecb3d:hover{background-color:#c7e0f4;cursor:pointer}@media screen and (-ms-high-contrast:active){.buttonSelected_e4eecb3d:hover{background-color:Highlight;color:HighlightText}}@media screen and (-ms-high-contrast:active){.buttonSelected_e4eecb3d{background-color:Highlight;color:HighlightText;-ms-high-contrast-adjust:none}}.suggestionsTitle_e4eecb3d{font-size:12px}.suggestionsSpinner_e4eecb3d{margin:5px 0;white-space:nowrap;line-height:20px;font-size:12px}html[dir=ltr] .suggestionsSpinner_e4eecb3d{padding-left:14px}html[dir=rtl] .suggestionsSpinner_e4eecb3d{padding-right:14px}html[dir=ltr] .suggestionsSpinner_e4eecb3d{text-align:left}html[dir=rtl] .suggestionsSpinner_e4eecb3d{text-align:right}.suggestionsSpinner_e4eecb3d .ms-Spinner-circle{display:inline-block;vertical-align:middle}.suggestionsSpinner_e4eecb3d .ms-Spinner-label{display:inline-block;margin:0 10px 0 16px;vertical-align:middle}html[dir=rtl] .suggestionsSpinner_e4eecb3d .ms-Spinner-label{margin:0 16px 0 10px}.itemButton_e4eecb3d{height:100%;width:100%;padding:7px 12px}@media screen and (-ms-high-contrast:active){.itemButton_e4eecb3d{color:WindowText}}.screenReaderOnly_e4eecb3d{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style><style data-load-themed-styles="true" type="text/css">.resultContent_a17eb2a2{display:table-row}.resultContent_a17eb2a2 .resultItem_a17eb2a2{display:table-cell;vertical-align:bottom}.peoplePickerPersona_a17eb2a2{width:180px}.peoplePickerPersona_a17eb2a2 .ms-Persona-details{width:100%}.peoplePicker_a17eb2a2 .ms-BasePicker-text{min-height:40px}.peoplePickerPersonaContent_a17eb2a2{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:7px 12px}</style><style data-load-themed-styles="true" type="text/css">.pickerText_15a92175{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-sizing:border-box;box-sizing:border-box;border:1px solid #a19f9d;min-width:180px;min-height:30px}.pickerText_15a92175:hover{border-color:#323130}.pickerText_15a92175.inputFocused_15a92175{position:relative;border-color:#0078d4}.pickerText_15a92175.inputFocused_15a92175:after{pointer-events:none;content:'';position:absolute;left:-1px;top:-1px;bottom:-1px;right:-1px;border:2px solid #0078d4}@media screen and (-ms-high-contrast:active){.pickerText_15a92175.inputDisabled_15a92175{position:relative;border-color:GrayText}.pickerText_15a92175.inputDisabled_15a92175:after{pointer-events:none;content:'';position:absolute;left:0;top:0;bottom:0;right:0;background-color:Window}}.pickerInput_15a92175{height:34px;border:none;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;outline:0;padding:0 6px 0;-ms-flex-item-align:end;align-self:flex-end}.pickerItems_15a92175{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;max-width:100%}.screenReaderOnly_15a92175{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style><style data-load-themed-styles="true" type="text/css">.personaContainer_cbad3345{border-radius:15px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:#eff6fc;margin:4px;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;position:relative}.personaContainer_cbad3345::-moz-focus-inner{border:0}.personaContainer_cbad3345{outline:transparent}.personaContainer_cbad3345{position:relative}.ms-Fabric--isFocusVisible .personaContainer_cbad3345:focus:after{-webkit-box-sizing:border-box;box-sizing:border-box;content:'';position:absolute;top:-2px;right:-2px;bottom:-2px;left:-2px;pointer-events:none;border:1px solid #605e5c;border-radius:0}.personaContainer_cbad3345 .ms-Persona-primaryText{color:#005a9e;font-size:14px;font-weight:400}.personaContainer_cbad3345 .ms-Persona-primaryText.hover_cbad3345{color:#005a9e}@media screen and (-ms-high-contrast:active){.personaContainer_cbad3345 .ms-Persona-primaryText{color:HighlightText}}.personaContainer_cbad3345 .actionButton_cbad3345:hover{background:#c7e0f4}.personaContainer_cbad3345 .actionButton_cbad3345 .ms-Button-icon{color:#005a9e}@media screen and (-ms-high-contrast:active){.personaContainer_cbad3345 .actionButton_cbad3345 .ms-Button-icon{color:HighlightText}}.personaContainer_cbad3345:hover{background:#deecf9}.personaContainer_cbad3345:hover .ms-Persona-primaryText{color:#005a9e;font-size:14px;font-weight:400}@media screen and (-ms-high-contrast:active){.personaContainer_cbad3345:hover .ms-Persona-primaryText{color:HighlightText}}.personaContainer_cbad3345.personaContainerIsSelected_cbad3345{background:#0078d4}.personaContainer_cbad3345.personaContainerIsSelected_cbad3345 .ms-Persona-primaryText{color:#ffffff}@media screen and (-ms-high-contrast:active){.personaContainer_cbad3345.personaContainerIsSelected_cbad3345 .ms-Persona-primaryText{color:HighlightText}}.personaContainer_cbad3345.personaContainerIsSelected_cbad3345 .actionButton_cbad3345{color:#ffffff}.personaContainer_cbad3345.personaContainerIsSelected_cbad3345 .actionButton_cbad3345 .ms-Button-icon{color:#005a9e}.personaContainer_cbad3345.personaContainerIsSelected_cbad3345 .actionButton_cbad3345 .ms-Button-icon:hover{background:#005a9e}@media screen and (-ms-high-contrast:active){.personaContainer_cbad3345.personaContainerIsSelected_cbad3345 .actionButton_cbad3345 .ms-Button-icon{color:HighlightText}}@media screen and (-ms-high-contrast:active){.personaContainer_cbad3345.personaContainerIsSelected_cbad3345{border-color:Highlight;background:Highlight;-ms-high-contrast-adjust:none}}.personaContainer_cbad3345.validationError_cbad3345 .ms-Persona-primaryText{color:#e81123}.personaContainer_cbad3345.validationError_cbad3345 .ms-Persona-initials{font-size:20px}@media screen and (-ms-high-contrast:active){.personaContainer_cbad3345{border:1px solid WindowText}}.personaContainer_cbad3345 .itemContent_cbad3345{-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;min-width:0;max-width:100%}.personaContainer_cbad3345 .removeButton_cbad3345{border-radius:15px;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:33px;height:33px;-ms-flex-preferred-size:32px;flex-basis:32px}.personaContainer_cbad3345 .expandButton_cbad3345{border-radius:15px 0 0 15px;height:33px;width:44px;padding-right:16px;position:inherit;display:-webkit-box;display:-ms-flexbox;display:flex;margin-right:-17px}.personaContainer_cbad3345 .personaWrapper_cbad3345{position:relative;display:inherit}.personaContainer_cbad3345 .personaWrapper_cbad3345 .ms-Persona-details{padding:0 8px}.personaContainer_cbad3345 .personaDetails_cbad3345{-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto}.itemContainer_cbad3345{display:inline-block;vertical-align:top}</style><style>.cke{visibility:hidden;}</style></head>
+<body data-sitemap-state="/knowledgebase/article/:/knowledgebase/:/" data-dateformat="M/d/yyyy" data-timeformat="h:mm tt" data-datetimeformat="M/d/yyyy h:mm tt" data-app-path="/" data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/" data-case-deflection-url="/_services/search/9e74002c-3c6f-ed11-9562-00224824e596">
+
+	
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/pcf-style.bundle-0d8f841437.css" onerror="javascript: var target = event.target; var link = document.createElement('link'); link.crossOrigin = target.crossOrigin; link.href = '/dist/pcf-style.bundle-0d8f841437.css'; link.rel = 'stylesheet'; target.insertAdjacentElement('afterend',link);" rel="stylesheet">
+
+		
+	
+		
+
+	<div id="offlineNotificationBar" style="display: none;">
+		<img alt="web" id="web" onerror="javascript: var target = event.target; var img = document.createElement('img'); img.src = '/css/images/web.png'; img.alt = 'web'; img.id = 'web' ; target.insertAdjacentElement('afterend',img); target.remove();" src="https://content.powerapps.com/resource/powerappsportal/img/web.png">
+		<div id="message">You’re offline. This is a read only version of the page.</div>
+		<div id="close" onclick="this.parentElement.style.display='none';"><img alt="close" onerror="javascript: var target = event.target; var img = document.createElement('img'); img.src = '/css/images/close.png'; img.alt = 'close'; img.id = '' ; target.insertAdjacentElement('afterend',img); target.remove();" src="https://content.powerapps.com/resource/powerappsportal/img/close.png"></div>
+	</div>
+
+	
+
+	<script type="text/javascript">
+        window.DisableCkEditor = window.DisableCkEditor || {};
+		DisableCkEditor.Value = 'False';
+    </script>
+
+	<script type="text/javascript">
+		var isPvaBotAuthenticated = sessionStorage['isPvaBotAuthenticated'];
+		var isPortalUserLoggedIn = 'False';
+
+        if ((isPvaBotAuthenticated != null || isPvaBotAuthenticated != undefined) && isPvaBotAuthenticated != isPortalUserLoggedIn) {
+			sessionStorage['triggerPvaBotSignOut'] = true;
+			sessionStorage.removeItem('c2Token');
+            sessionStorage.removeItem('directLinetoken');
+            sessionStorage.removeItem('conversation_Id');
+		}
+		sessionStorage['isPvaBotAuthenticated'] = isPortalUserLoggedIn;
+    </script>
+
+	<script type="text/javascript">
+		window["Microsoft"] = window["Microsoft"] || {};
+		window["Microsoft"].Dynamic365 = {
+			Portal: {
+				
+				User: {
+					userName: '',
+					contactId: ''
+				},
+				
+				version: '9.5.9.17',
+				type: 'CustomerPortal',
+				id: '76360b2b-2089-46db-b255-751ad6bc67a5', 
+				geo: 'NAM', 
+				tenant: '770f2d4e-9b90-41b1-bf75-89deeec4e274', 
+				correlationId: '7bb665ef-b08d-4ade-9223-15d62b3b5efe',
+				isTelemetryEnabled: 'True',
+				InstrumentationSettings: {
+					instrumentationKey: '197418c5cb8c4426b201f9db2e87b914-87887378-2790-49b0-9295-51f43b6204b1-7172',
+					collectorEndpoint: 'https://us-mobile.events.data.microsoft.com/OneCollector/1.0/'
+				},
+				timerProfileForBatching: 'NEAR_REAL_TIME'
+			}
+		}
+
+		// Mark request not cacheable if Dynamics365PortalAnalytics cookie is being refreshed by the server or if the cookie in request header is invalid
+		
+
+		// For client side telemetry intializing Dynamics365PortalAnalytics cookie object
+		
+				window["Microsoft"].Dynamic365.Portal.dynamics365PortalAnalytics = 'bUmNugj9db56gU5snybO37Waihi4f6wiZsXFopoDbPEtjFDo2gjrmb-nVCRSMzU1iY6ieFlin3LZZ1bP-PDQ4gxBQ9I0IxCOAawTnz7I1paghMJly7ivqif7Ca6SUCtW5jTTxwodHmVC3hN2caslBQ2'; 
+		
+		
+    </script>
+	
+		
+<script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+
+
+
+<img class="showforprint printobj" alt="Summit Header Logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSI4OS43cHgiIGhlaWdodD0iNDBweCIgdmlld0JveD0iMTUyIDM3Ny4yIDg5LjcgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMTUyIDM3Ny4yIDg5LjcgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjMDAwMDk5IiBkPSJNMjM5LjQsMzg2LjVjLTAuMS0wLjEtMC4xLTAuMS0wLjItMC4xbC0yLjUsMGwxLjctOC4zYzAtMC4xLDAtMC4yLTAuMS0wLjJjLTAuMS0wLjEtMC4yLTAuMS0wLjMsMAoJbC0xMy41LDYuOGMtMC4xLDAtMC4xLDAuMS0wLjEsMC4ybC0wLjQsMS43bC01MS40LDBsNi4xLTljMC4xLTAuMSwwLjEtMC4yLDAtMC4yYy0wLjEtMC4xLTAuMS0wLjEtMC4yLTAuMWgtMTYuNAoJYy0wLjEsMC0wLjEsMC0wLjIsMC4xbC02LjYsOS4xYy0wLjcsMC45LTIuNSwzLjMtMi4yLDYuMmMwLjIsMi4zLDEuMywzLjksMS45LDQuNWwtMi45LDRjLTAuMSwwLjEtMC4xLDAuMSwwLDAuMmw1LjUsMTUuOAoJYzAsMC4xLDAuMSwwLjEsMC4yLDAuMmMwLjEsMCwwLjIsMCwwLjItMC4xbDkuMS0xMi40YzEuMiwxLjUsMy42LDMuNiw4LjEsMy41YzEuNCwwLDIuNi0wLjIsMy41LTAuNGMwLDAsMC4xLDAuMSwwLjIsMC4xbDUzLjMsMAoJYzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwxLjktOS4xbDIuNSwwYzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwyLjYtMTEuN0MyMzkuNSwzODYuNiwyMzkuNCwzODYuNiwyMzkuNCwzODYuNXoiLz4KPGc+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTY1LjYsNDEwLjhoMi40YzAuOSwwLDEuMywwLjUsMS4xLDEuMmMtMC4xLDAuNC0wLjQsMC44LTAuOSwxYzAuMSwwLjYsMC4xLDEuMSwwLjMsMS43aC0xLjZsLTAuMS0yLjIKCQljMC4xLDAsMC4yLDAsMC4zLDBjMC4zLDAsMC42LTAuMSwwLjctMC40YzAuMS0wLjMtMC4xLTAuMy0wLjQtMC4zaC0wLjVsLTAuNywyLjloLTEuNEwxNjUuNiw0MTAuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xNzEuMyw0MTIuOGwwLjYtMC45aDBsMC4xLDAuOUgxNzEuM3ogTTE3MC4xLDQxNC43bDAuNi0wLjloMS40bDAuMSwwLjloMS42Yy0wLjMtMS4zLTAuNS0yLjYtMC43LTMuOQoJCWgtMS44Yy0wLjksMS4zLTEuOCwyLjYtMi44LDMuOUgxNzAuMXoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xNzcuMiw0MTQuN2MtMC40LDAtMC45LDAuMS0xLjEsMC4xYy0xLjIsMC0yLjMtMC42LTEuOS0yYzAuNC0xLjQsMS43LTIsMi45LTJjMC4zLDAsMC43LDAuMSwxLDAuMQoJCUwxNzgsNDEyYy0wLjMtMC4xLTAuNi0wLjEtMC45LTAuMWMtMC45LDAtMS4zLDAuNi0xLjQsMWMtMC4xLDAuNiwwLjIsMC45LDAuNywwLjljMC41LDAsMC45LTAuMSwxLjItMC4xTDE3Ny4yLDQxNC43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE3OC45LDQxMC44aDEuNWwtMSwzLjloLTEuNUwxNzguOSw0MTAuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xODEuMiw0MTAuOGgxLjhsMC42LDIuMWgwbDAuNS0yLjFoMS4zbC0xLDMuOWgtMS44bC0wLjctMi4xaDBsLTAuNSwyLjFoLTEuM0wxODEuMiw0MTAuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xODkuOCw0MTIuNGwtMC42LDIuMmMtMC42LDAuMS0xLjUsMC4xLTEuOCwwLjFjLTEuMiwwLTIuMy0wLjYtMS45LTJjMC40LTEuNCwxLjctMiwyLjktMgoJCWMwLjUsMCwxLDAuMSwxLjQsMC4xbC0wLjIsMS4xYy0wLjQtMC4xLTAuOC0wLjItMS4yLTAuMmMtMC44LDAtMS4zLDAuNC0xLjUsMS4xYy0wLjEsMC42LDAuMSwwLjksMC42LDAuOWMwLjEsMCwwLjMsMCwwLjQsMAoJCWwwLjEtMC4zaC0wLjRsMC4zLTFMMTg5LjgsNDEyLjRMMTg5LjgsNDEyLjR6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTk1LjQsNDE0LjdIMTkybDEtMy45aDMuNGwtMC4zLDFoLTEuOWwtMC4xLDAuNGgxLjZsLTAuMywxaC0xLjZsLTAuMSwwLjRoMS45TDE5NS40LDQxNC43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE5OS4xLDQxMS44YzAuNSwwLDAuOCwwLjQsMC43LDFjLTAuMSwwLjYtMC43LDAuOS0xLjEsMC45cy0wLjgtMC40LTAuNy0wLjkKCQlDMTk4LjEsNDEyLjIsMTk4LjYsNDExLjgsMTk5LjEsNDExLjh6IE0yMDAuNiw0MTMuN0wyMDAuNiw0MTMuN2MwLjMtMC4yLDAuNi0wLjcsMC42LTAuOWMwLjQtMS40LTAuNy0yLTEuOS0yCgkJYy0xLjIsMC0yLjYsMC42LTIuOSwyYy0wLjQsMS40LDAuNywyLDEuOSwyYzAuNCwwLDEuNy0wLjEsMi41LTAuMmwwLjQtMS4xTDIwMC42LDQxMy43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIwMy44LDQxMC44bC0wLjUsMi4xYy0wLjEsMC40LTAuMSwwLjcsMC4zLDAuN2MwLjQsMCwwLjYtMC4zLDAuNy0wLjdsMC41LTIuMWgxLjVsLTAuNywyLjgKCQljLTAuMSwwLjYtMC45LDEuMi0yLjMsMS4yYy0xLjQsMC0xLjktMC42LTEuNy0xLjJsMC43LTIuOEgyMDMuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yMDcuMSw0MTAuOGgxLjVsLTEsMy45aC0xLjVMMjA3LjEsNDEwLjh6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjA5LjQsNDEwLjhoMi4zYzAuNSwwLDEuMSwwLjQsMC44LDEuM2MtMC4yLDAuNy0wLjksMS4yLTEuNywxLjJjLTAuMSwwLTAuMiwwLTAuMywwbC0wLjEtMC45aDAuMgoJCWMwLjIsMCwwLjQtMC4xLDAuNS0wLjNjMC4xLTAuMy0wLjEtMC4zLTAuMy0wLjNoLTAuM2wtMC43LDIuOWgtMS40TDIwOS40LDQxMC44eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIxMi4zLDQxNC43bDEtMy45aDJsLTAuMSwyLjFoMGwxLTIuMWgybC0xLDMuOWgtMS4ybDAuNi0yLjZoMGwtMS4yLDIuNmgtMS4zbDAuMS0yLjZoMGwtMC42LDIuNkgyMTIuM3oiCgkJLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yMjEuMyw0MTQuN2gtMy40bDEtMy45aDMuNGwtMC4zLDFoLTEuOWwtMC4xLDAuNGgxLjZsLTAuMywxaC0xLjZsLTAuMSwwLjRoMS45TDIyMS4zLDQxNC43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIyMy4xLDQxMC44aDEuOGwwLjYsMi4xaDBsMC41LTIuMWgxLjNsLTEsMy45aC0xLjdsLTAuNy0yLjFoMGwtMC41LDIuMWgtMS4zTDIyMy4xLDQxMC44eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIyNy43LDQxMC44aDMuOWwtMC4zLDFoLTEuMmwtMC43LDIuOGgtMS41bDAuNy0yLjhoLTEuMkwyMjcuNyw0MTAuOHoiLz4KPC9nPgo8Zz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yNDAuMywzODAuOGMtMC42LDAtMS4xLTAuNS0xLjEtMS4xYzAtMC42LDAuNS0xLjEsMS4xLTEuMWMwLjYsMCwxLjEsMC41LDEuMSwxLjEKCQlDMjQxLjQsMzgwLjMsMjQwLjksMzgwLjgsMjQwLjMsMzgwLjh6IE0yNDAuMywzODFjMC44LDAsMS40LTAuNiwxLjQtMS40YzAtMC44LTAuNi0xLjQtMS40LTEuNGMtMC44LDAtMS40LDAuNi0xLjQsMS40CgkJUzIzOS42LDM4MSwyNDAuMywzODF6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjQwLjYsMzc5LjhjMC4zLDAsMC40LTAuMSwwLjQtMC40YzAtMC4yLDAtMC4zLTAuMi0wLjRjLTAuMS0wLjEtMC4zLTAuMS0wLjQtMC4xaC0wLjd2MS40aDAuM3YtMC42aDAuMwoJCWwwLjMsMC42aDAuM0wyNDAuNiwzNzkuOHogTTI0MCwzNzkuNnYtMC40aDAuNGMwLjEsMCwwLjMsMCwwLjMsMC4yYzAsMC4yLTAuMSwwLjItMC4zLDAuMkgyNDB6Ii8+CjwvZz4KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIzNi4zLDM4OC4zYy0wLjEtMC4xLTAuMS0wLjEtMC4yLTAuMWwtMi41LDBsMS40LTYuNmMwLTAuMSwwLTAuMi0wLjEtMC4yYy0wLjEtMC4xLTAuMi0wLjEtMC4zLDBsLTguOSw0LjQKCWMtMC4xLDAtMC4xLDAuMS0wLjEsMC4ybC0wLjUsMi4zbC0xMy42LDBjLTAuMSwwLTAuMSwwLTAuMiwwLjFsLTEuNiwyLjJsLTAuNy0yLjJjMC0wLjEtMC4xLTAuMi0wLjItMC4ySDE5NWMtMC4xLDAtMC4xLDAtMC4yLDAuMQoJbC0xLjcsMi4zbC0wLjctMi4yYzAtMC4xLTAuMS0wLjItMC4yLTAuMmgtMjEuN2MtMC4xLDAtMC4yLDAuMS0wLjIsMC4ybC0wLjYsMi42Yy0wLjUtMC43LTEuMi0xLjYtMS41LTEuOWw3LjMtMTAuMgoJYzAuMS0wLjEsMC4xLTAuMiwwLTAuM2MwLTAuMS0wLjEtMC4xLTAuMi0wLjFoLTEyLjVjLTAuMSwwLTAuMSwwLTAuMiwwLjFjLTAuMSwwLjEtNiw4LjQtNi4xLDguNWMtMC42LDAuNy0yLDIuNy0xLjgsNC44CgljMC4yLDEuOSwxLjIsMy4xLDEuNSwzLjZsMC4yLDAuMmwwLjcsMC45bC0zLjIsNC4zYzAsMC4xLTAuMSwwLjEsMCwwLjJsNC4xLDEyLjFjMCwwLjEsMC4xLDAuMSwwLjIsMC4yYzAuMSwwLDAuMiwwLDAuMi0wLjEKCWw5LjItMTIuOWMwLDAuMSwwLDAuMywwLDAuNGMwLjEsMS43LDEuNyw0LjksNyw0LjljMy4xLDAsNS4xLTAuOSw2LjQtMS45bC0wLjMsMS4zYzAsMC4xLDAsMC4xLDAsMC4yYzAsMC4xLDAuMSwwLjEsMC4yLDAuMWw0OSwwCgljMC4xLDAsMC4yLTAuMSwwLjItMC4ybDEuOS05LjFsMi41LDBjMC4xLDAsMC4yLTAuMSwwLjItMC4ybDEuNy03LjVDMjM2LjQsMzg4LjQsMjM2LjQsMzg4LjQsMjM2LjMsMzg4LjN6Ii8+CjxnPgoJPHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTE4My43LDM4OS45YzAtMC4xLTAuMS0wLjEtMC4yLTAuMWgtNC41Yy0wLjEsMC0wLjIsMC4xLTAuMiwwLjJsLTIsOS4zYzAsMC4xLTAuMywxLjMtMS40LDEuMwoJCWMtMC4zLDAtMC41LTAuMS0wLjYtMC4zYy0wLjItMC4zLTAuMS0wLjgtMC4xLTAuOWMwLDAsMi4xLTkuMywyLjEtOS4zYzAtMC4xLDAtMC4xLTAuMS0wLjJjMC0wLjEtMC4xLTAuMS0wLjItMC4xaC00LjUKCQljLTAuMSwwLTAuMiwwLjEtMC4yLDAuMmwtMi40LDEwLjdjMCwwLDAsMCwwLDAuMWMwLDAsMC4zLDMuMyw1LjMsMy4zYzUuNiwwLDYuOC0zLjIsNi44LTMuM2wyLjQtMTAuNwoJCUMxODMuNywzOTAuMSwxODMuNywzOTAsMTgzLjcsMzg5Ljl6Ii8+Cgk8cGF0aCBmaWxsPSIjRkYwMDAwIiBkPSJNMjI0LDM5MC4xYzAtMC4xLTAuMS0wLjEtMC4yLTAuMWgtNC41Yy0wLjEsMC0wLjIsMC4xLTAuMiwwLjJsLTIuOSwxMy4zYzAsMC4xLDAsMC4xLDAuMSwwLjIKCQljMCwwLjEsMC4xLDAuMSwwLjIsMC4xaDQuNWMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMi45LTEzLjNDMjI0LDM5MC4yLDIyNCwzOTAuMiwyMjQsMzkwLjF6Ii8+Cgk8cGF0aCBmaWxsPSIjRkYwMDAwIiBkPSJNMjAwLjYsMzkwLjFjMC0wLjEtMC4xLTAuMS0wLjItMC4xaC00LjVjLTAuMSwwLTAuMSwwLTAuMiwwLjFsLTMuMiw0LjNsLTEuMy00LjFjMC0wLjEtMC4xLTAuMi0wLjItMC4yCgkJaC00LjhjLTAuMSwwLTAuMiwwLjEtMC4yLDAuMmwtMy4yLDEzLjNjMCwwLjEsMCwwLjEsMCwwLjJjMCwwLjEsMC4xLDAuMSwwLjIsMC4xaDQuNmMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMS43LTYuNGwxLjMsMy42CgkJYzAsMC4xLDAuMSwwLjEsMC4yLDAuMmMwLjEsMCwwLjIsMCwwLjItMC4xbDIuOC0zLjZsLTEuMyw2LjFjMCwwLjEsMCwwLjEsMC4xLDAuMmMwLDAuMSwwLjEsMC4xLDAuMiwwLjFoNC4zCgkJYzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwzLjItMTMuNEMyMDAuNiwzOTAuMiwyMDAuNiwzOTAuMSwyMDAuNiwzOTAuMXoiLz4KCTxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0yMTcuMiwzOTAuMWMwLTAuMS0wLjEtMC4xLTAuMi0wLjFoLTQuNWMtMC4xLDAtMC4xLDAtMC4yLDAuMWwtMy4yLDQuM2wtMS4zLTQuMWMwLTAuMS0wLjEtMC4yLTAuMi0wLjIKCQloLTQuOGMtMC4xLDAtMC4yLDAuMS0wLjIsMC4ybC0zLjIsMTMuM2MwLDAuMSwwLDAuMSwwLDAuMmMwLDAuMSwwLjEsMC4xLDAuMiwwLjFoNC42YzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwxLjctNi40bDEuMywzLjYKCQljMCwwLjEsMC4xLDAuMSwwLjIsMC4yYzAuMSwwLDAuMiwwLDAuMi0wLjFsMi44LTMuNmwtMS4zLDYuMWMwLDAuMSwwLDAuMSwwLjEsMC4yYzAsMC4xLDAuMSwwLjEsMC4yLDAuMWg0LjMKCQljMC4xLDAsMC4yLTAuMSwwLjItMC4ybDMuMi0xMy40QzIxNy4yLDM5MC4yLDIxNy4yLDM5MC4xLDIxNy4yLDM5MC4xeiIvPgoJPHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTE2Ny45LDM5MS42bC0xLjktMi40bDYuMS04LjVjMC4xLTAuMSwwLjEtMC4yLDAtMC4zYzAtMC4xLTAuMS0wLjEtMC4yLTAuMWgtOC4zYy0wLjEsMC0wLjEsMC0wLjIsMC4xCgkJbC01LjUsNy43YzAsMC0wLjEsMC4xLTAuMSwwLjFjLTAuNCwwLjYtMS42LDIuMS0xLjUsMy42YzAuMSwxLjQsMC45LDIuMywxLjIsMi43YzAsMC4xLDAuMSwwLjEsMC4xLDAuMWMwLjcsMC45LDEuMywxLjcsMS42LDIKCQlsLTMuNCw0LjdjMCwwLjEtMC4xLDAuMSwwLDAuMmwyLjcsOC4xYzAsMC4xLDAuMSwwLjEsMC4yLDAuMmMwLjEsMCwwLjIsMCwwLjItMC4xbDguNS0xMS43bDAuMS0wLjFjMC40LTAuNSwxLjUtMi4xLDEuNS0zLjYKCQljMC0xLjQtMC43LTIuMi0wLjktMi41QzE2OCwzOTEuNywxNjcuOSwzOTEuNywxNjcuOSwzOTEuNnoiLz4KCTxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0yMzQuMiwzOTBjLTAuMS0wLjEtMC4xLTAuMS0wLjItMC4xbC0yLjQsMGwxLjEtNS4yYzAtMC4xLDAtMC4yLTAuMS0wLjJjLTAuMS0wLjEtMC4yLTAuMS0wLjMsMGwtNSwyLjUKCQljLTAuMSwwLTAuMSwwLjEtMC4xLDAuMmwtMC42LDIuOWgtMWMtMC4xLDAtMC4yLDAuMS0wLjIsMC4ybC0wLjksNGMwLDAuMSwwLDAuMSwwLjEsMC4yYzAsMC4xLDAuMSwwLjEsMC4yLDAuMWgwLjlsLTEuOSw5CgkJYzAsMC4xLDAsMC4xLDAuMSwwLjJjMCwwLjEsMC4xLDAuMSwwLjIsMC4xaDQuNmMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMS45LTkuMWwyLjUsMGMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMC45LTQuMQoJCUMyMzQuMywzOTAuMSwyMzQuMywzOTAuMSwyMzQuMiwzOTB6Ii8+CjwvZz4KPC9zdmc+Cg==">
+<div class="header-container hidefromprint" role="navigation">
+  <div class="header">
+    <div id="header_overlay" class="header-nav-overlay">
+      <div class="overlay-menu">
+        <p>Welcome</p>
+        <a href="javascript:void(0)" class="header-close-button" onclick="closeNav()">×</a>
+      </div>
+      <div class="overlay-content-top">
+                
+            
+                <a class="overlay-top-link " aria-label="My Account" aria-roledescription="link" href="https://www.summitracing.com/account" title="My Account">
+                      My Account
+                </a>
+            
+                <a class="overlay-top-link " aria-label="Order Status" aria-roledescription="link" href="https://www.summitracing.com/orders" title="Order Status">
+                      Order Status
+                </a>
+            
+                <a class="overlay-top-link " aria-label="Wish List" aria-roledescription="link" href="https://www.summitracing.com/wishlist" title="Wish List">
+                      Wish List
+                </a>
+            
+          
+        </div>
+      
+
+      <hr>
+
+      
+        <ul class="weblinks overlay-bottom-list">
+        
+
+          <li role="none" class="weblink  overlay-bottom-link">
+            <a aria-label="Store" aria-roledescription="link" href="https://www.summitracing.com/" title="Store">
+                    <span class="far fa-home" aria-hidden="true"></span>
+                  Store
+            </a>
+          </li>
+
+        
+
+          <li role="none" class="weblink  overlay-bottom-link">
+            <a aria-label="Savings Central" aria-roledescription="link" href="https://www.summitracing.com/savingscentral" title="Savings Central">
+                    <span class="far fa-usd-circle" aria-hidden="true"></span>
+                  Savings Central
+            </a>
+          </li>
+
+        
+
+          <li role="none" class="weblink  overlay-bottom-link">
+            <a aria-label="Shop by Brands" aria-roledescription="link" href="https://www.summitracing.com/brands" title="Shop by Brands">
+                    <span class="far fa-tags" aria-hidden="true"></span>
+                  Shop by Brands
+            </a>
+          </li>
+
+        
+
+          <li role="none" class="weblink  overlay-bottom-link">
+            <a aria-label="News &amp; Events" aria-roledescription="link" href="https://www.summitracing.com/newsandevents" title="News &amp; Events">
+                    <span class="fal fa-calendar-alt" aria-hidden="true"></span>
+                  News &amp; Events
+            </a>
+          </li>
+
+        
+
+          <li role="none" class="weblink  overlay-bottom-link">
+            <a aria-label="Help Center Home" aria-roledescription="link" href="/" title="Help Center Home">
+                    <span class="far fa-question-circle" aria-hidden="true"></span>
+                  Help Center Home
+            </a>
+          </li>
+
+        
+      </ul>
+      
+      
+      </div>
+    </div>
+    <div class="header-sticky-container">
+      <div class="header-top">
+        <div class="header-row">
+          <div class="header-row-center">
+            <div class="header-menu-mobile header-mobile-icon">
+              <span class="fas fa-bars" onclick="openNav()"></span>
+            </div>
+            <div class="header-logo">
+              <a href="https://www.summitracing.com/">
+                <img class="showforprint" alt="Summit Header Logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSI4OS43cHgiIGhlaWdodD0iNDBweCIgdmlld0JveD0iMTUyIDM3Ny4yIDg5LjcgNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMTUyIDM3Ny4yIDg5LjcgNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjMDAwMDk5IiBkPSJNMjM5LjQsMzg2LjVjLTAuMS0wLjEtMC4xLTAuMS0wLjItMC4xbC0yLjUsMGwxLjctOC4zYzAtMC4xLDAtMC4yLTAuMS0wLjJjLTAuMS0wLjEtMC4yLTAuMS0wLjMsMAoJbC0xMy41LDYuOGMtMC4xLDAtMC4xLDAuMS0wLjEsMC4ybC0wLjQsMS43bC01MS40LDBsNi4xLTljMC4xLTAuMSwwLjEtMC4yLDAtMC4yYy0wLjEtMC4xLTAuMS0wLjEtMC4yLTAuMWgtMTYuNAoJYy0wLjEsMC0wLjEsMC0wLjIsMC4xbC02LjYsOS4xYy0wLjcsMC45LTIuNSwzLjMtMi4yLDYuMmMwLjIsMi4zLDEuMywzLjksMS45LDQuNWwtMi45LDRjLTAuMSwwLjEtMC4xLDAuMSwwLDAuMmw1LjUsMTUuOAoJYzAsMC4xLDAuMSwwLjEsMC4yLDAuMmMwLjEsMCwwLjIsMCwwLjItMC4xbDkuMS0xMi40YzEuMiwxLjUsMy42LDMuNiw4LjEsMy41YzEuNCwwLDIuNi0wLjIsMy41LTAuNGMwLDAsMC4xLDAuMSwwLjIsMC4xbDUzLjMsMAoJYzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwxLjktOS4xbDIuNSwwYzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwyLjYtMTEuN0MyMzkuNSwzODYuNiwyMzkuNCwzODYuNiwyMzkuNCwzODYuNXoiLz4KPGc+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTY1LjYsNDEwLjhoMi40YzAuOSwwLDEuMywwLjUsMS4xLDEuMmMtMC4xLDAuNC0wLjQsMC44LTAuOSwxYzAuMSwwLjYsMC4xLDEuMSwwLjMsMS43aC0xLjZsLTAuMS0yLjIKCQljMC4xLDAsMC4yLDAsMC4zLDBjMC4zLDAsMC42LTAuMSwwLjctMC40YzAuMS0wLjMtMC4xLTAuMy0wLjQtMC4zaC0wLjVsLTAuNywyLjloLTEuNEwxNjUuNiw0MTAuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xNzEuMyw0MTIuOGwwLjYtMC45aDBsMC4xLDAuOUgxNzEuM3ogTTE3MC4xLDQxNC43bDAuNi0wLjloMS40bDAuMSwwLjloMS42Yy0wLjMtMS4zLTAuNS0yLjYtMC43LTMuOQoJCWgtMS44Yy0wLjksMS4zLTEuOCwyLjYtMi44LDMuOUgxNzAuMXoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xNzcuMiw0MTQuN2MtMC40LDAtMC45LDAuMS0xLjEsMC4xYy0xLjIsMC0yLjMtMC42LTEuOS0yYzAuNC0xLjQsMS43LTIsMi45LTJjMC4zLDAsMC43LDAuMSwxLDAuMQoJCUwxNzgsNDEyYy0wLjMtMC4xLTAuNi0wLjEtMC45LTAuMWMtMC45LDAtMS4zLDAuNi0xLjQsMWMtMC4xLDAuNiwwLjIsMC45LDAuNywwLjljMC41LDAsMC45LTAuMSwxLjItMC4xTDE3Ny4yLDQxNC43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE3OC45LDQxMC44aDEuNWwtMSwzLjloLTEuNUwxNzguOSw0MTAuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xODEuMiw0MTAuOGgxLjhsMC42LDIuMWgwbDAuNS0yLjFoMS4zbC0xLDMuOWgtMS44bC0wLjctMi4xaDBsLTAuNSwyLjFoLTEuM0wxODEuMiw0MTAuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xODkuOCw0MTIuNGwtMC42LDIuMmMtMC42LDAuMS0xLjUsMC4xLTEuOCwwLjFjLTEuMiwwLTIuMy0wLjYtMS45LTJjMC40LTEuNCwxLjctMiwyLjktMgoJCWMwLjUsMCwxLDAuMSwxLjQsMC4xbC0wLjIsMS4xYy0wLjQtMC4xLTAuOC0wLjItMS4yLTAuMmMtMC44LDAtMS4zLDAuNC0xLjUsMS4xYy0wLjEsMC42LDAuMSwwLjksMC42LDAuOWMwLjEsMCwwLjMsMCwwLjQsMAoJCWwwLjEtMC4zaC0wLjRsMC4zLTFMMTg5LjgsNDEyLjRMMTg5LjgsNDEyLjR6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTk1LjQsNDE0LjdIMTkybDEtMy45aDMuNGwtMC4zLDFoLTEuOWwtMC4xLDAuNGgxLjZsLTAuMywxaC0xLjZsLTAuMSwwLjRoMS45TDE5NS40LDQxNC43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE5OS4xLDQxMS44YzAuNSwwLDAuOCwwLjQsMC43LDFjLTAuMSwwLjYtMC43LDAuOS0xLjEsMC45cy0wLjgtMC40LTAuNy0wLjkKCQlDMTk4LjEsNDEyLjIsMTk4LjYsNDExLjgsMTk5LjEsNDExLjh6IE0yMDAuNiw0MTMuN0wyMDAuNiw0MTMuN2MwLjMtMC4yLDAuNi0wLjcsMC42LTAuOWMwLjQtMS40LTAuNy0yLTEuOS0yCgkJYy0xLjIsMC0yLjYsMC42LTIuOSwyYy0wLjQsMS40LDAuNywyLDEuOSwyYzAuNCwwLDEuNy0wLjEsMi41LTAuMmwwLjQtMS4xTDIwMC42LDQxMy43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIwMy44LDQxMC44bC0wLjUsMi4xYy0wLjEsMC40LTAuMSwwLjcsMC4zLDAuN2MwLjQsMCwwLjYtMC4zLDAuNy0wLjdsMC41LTIuMWgxLjVsLTAuNywyLjgKCQljLTAuMSwwLjYtMC45LDEuMi0yLjMsMS4yYy0xLjQsMC0xLjktMC42LTEuNy0xLjJsMC43LTIuOEgyMDMuOHoiLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yMDcuMSw0MTAuOGgxLjVsLTEsMy45aC0xLjVMMjA3LjEsNDEwLjh6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjA5LjQsNDEwLjhoMi4zYzAuNSwwLDEuMSwwLjQsMC44LDEuM2MtMC4yLDAuNy0wLjksMS4yLTEuNywxLjJjLTAuMSwwLTAuMiwwLTAuMywwbC0wLjEtMC45aDAuMgoJCWMwLjIsMCwwLjQtMC4xLDAuNS0wLjNjMC4xLTAuMy0wLjEtMC4zLTAuMy0wLjNoLTAuM2wtMC43LDIuOWgtMS40TDIwOS40LDQxMC44eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIxMi4zLDQxNC43bDEtMy45aDJsLTAuMSwyLjFoMGwxLTIuMWgybC0xLDMuOWgtMS4ybDAuNi0yLjZoMGwtMS4yLDIuNmgtMS4zbDAuMS0yLjZoMGwtMC42LDIuNkgyMTIuM3oiCgkJLz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yMjEuMyw0MTQuN2gtMy40bDEtMy45aDMuNGwtMC4zLDFoLTEuOWwtMC4xLDAuNGgxLjZsLTAuMywxaC0xLjZsLTAuMSwwLjRoMS45TDIyMS4zLDQxNC43eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIyMy4xLDQxMC44aDEuOGwwLjYsMi4xaDBsMC41LTIuMWgxLjNsLTEsMy45aC0xLjdsLTAuNy0yLjFoMGwtMC41LDIuMWgtMS4zTDIyMy4xLDQxMC44eiIvPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIyNy43LDQxMC44aDMuOWwtMC4zLDFoLTEuMmwtMC43LDIuOGgtMS41bDAuNy0yLjhoLTEuMkwyMjcuNyw0MTAuOHoiLz4KPC9nPgo8Zz4KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yNDAuMywzODAuOGMtMC42LDAtMS4xLTAuNS0xLjEtMS4xYzAtMC42LDAuNS0xLjEsMS4xLTEuMWMwLjYsMCwxLjEsMC41LDEuMSwxLjEKCQlDMjQxLjQsMzgwLjMsMjQwLjksMzgwLjgsMjQwLjMsMzgwLjh6IE0yNDAuMywzODFjMC44LDAsMS40LTAuNiwxLjQtMS40YzAtMC44LTAuNi0xLjQtMS40LTEuNGMtMC44LDAtMS40LDAuNi0xLjQsMS40CgkJUzIzOS42LDM4MSwyNDAuMywzODF6Ii8+Cgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjQwLjYsMzc5LjhjMC4zLDAsMC40LTAuMSwwLjQtMC40YzAtMC4yLDAtMC4zLTAuMi0wLjRjLTAuMS0wLjEtMC4zLTAuMS0wLjQtMC4xaC0wLjd2MS40aDAuM3YtMC42aDAuMwoJCWwwLjMsMC42aDAuM0wyNDAuNiwzNzkuOHogTTI0MCwzNzkuNnYtMC40aDAuNGMwLjEsMCwwLjMsMCwwLjMsMC4yYzAsMC4yLTAuMSwwLjItMC4zLDAuMkgyNDB6Ii8+CjwvZz4KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIzNi4zLDM4OC4zYy0wLjEtMC4xLTAuMS0wLjEtMC4yLTAuMWwtMi41LDBsMS40LTYuNmMwLTAuMSwwLTAuMi0wLjEtMC4yYy0wLjEtMC4xLTAuMi0wLjEtMC4zLDBsLTguOSw0LjQKCWMtMC4xLDAtMC4xLDAuMS0wLjEsMC4ybC0wLjUsMi4zbC0xMy42LDBjLTAuMSwwLTAuMSwwLTAuMiwwLjFsLTEuNiwyLjJsLTAuNy0yLjJjMC0wLjEtMC4xLTAuMi0wLjItMC4ySDE5NWMtMC4xLDAtMC4xLDAtMC4yLDAuMQoJbC0xLjcsMi4zbC0wLjctMi4yYzAtMC4xLTAuMS0wLjItMC4yLTAuMmgtMjEuN2MtMC4xLDAtMC4yLDAuMS0wLjIsMC4ybC0wLjYsMi42Yy0wLjUtMC43LTEuMi0xLjYtMS41LTEuOWw3LjMtMTAuMgoJYzAuMS0wLjEsMC4xLTAuMiwwLTAuM2MwLTAuMS0wLjEtMC4xLTAuMi0wLjFoLTEyLjVjLTAuMSwwLTAuMSwwLTAuMiwwLjFjLTAuMSwwLjEtNiw4LjQtNi4xLDguNWMtMC42LDAuNy0yLDIuNy0xLjgsNC44CgljMC4yLDEuOSwxLjIsMy4xLDEuNSwzLjZsMC4yLDAuMmwwLjcsMC45bC0zLjIsNC4zYzAsMC4xLTAuMSwwLjEsMCwwLjJsNC4xLDEyLjFjMCwwLjEsMC4xLDAuMSwwLjIsMC4yYzAuMSwwLDAuMiwwLDAuMi0wLjEKCWw5LjItMTIuOWMwLDAuMSwwLDAuMywwLDAuNGMwLjEsMS43LDEuNyw0LjksNyw0LjljMy4xLDAsNS4xLTAuOSw2LjQtMS45bC0wLjMsMS4zYzAsMC4xLDAsMC4xLDAsMC4yYzAsMC4xLDAuMSwwLjEsMC4yLDAuMWw0OSwwCgljMC4xLDAsMC4yLTAuMSwwLjItMC4ybDEuOS05LjFsMi41LDBjMC4xLDAsMC4yLTAuMSwwLjItMC4ybDEuNy03LjVDMjM2LjQsMzg4LjQsMjM2LjQsMzg4LjQsMjM2LjMsMzg4LjN6Ii8+CjxnPgoJPHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTE4My43LDM4OS45YzAtMC4xLTAuMS0wLjEtMC4yLTAuMWgtNC41Yy0wLjEsMC0wLjIsMC4xLTAuMiwwLjJsLTIsOS4zYzAsMC4xLTAuMywxLjMtMS40LDEuMwoJCWMtMC4zLDAtMC41LTAuMS0wLjYtMC4zYy0wLjItMC4zLTAuMS0wLjgtMC4xLTAuOWMwLDAsMi4xLTkuMywyLjEtOS4zYzAtMC4xLDAtMC4xLTAuMS0wLjJjMC0wLjEtMC4xLTAuMS0wLjItMC4xaC00LjUKCQljLTAuMSwwLTAuMiwwLjEtMC4yLDAuMmwtMi40LDEwLjdjMCwwLDAsMCwwLDAuMWMwLDAsMC4zLDMuMyw1LjMsMy4zYzUuNiwwLDYuOC0zLjIsNi44LTMuM2wyLjQtMTAuNwoJCUMxODMuNywzOTAuMSwxODMuNywzOTAsMTgzLjcsMzg5Ljl6Ii8+Cgk8cGF0aCBmaWxsPSIjRkYwMDAwIiBkPSJNMjI0LDM5MC4xYzAtMC4xLTAuMS0wLjEtMC4yLTAuMWgtNC41Yy0wLjEsMC0wLjIsMC4xLTAuMiwwLjJsLTIuOSwxMy4zYzAsMC4xLDAsMC4xLDAuMSwwLjIKCQljMCwwLjEsMC4xLDAuMSwwLjIsMC4xaDQuNWMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMi45LTEzLjNDMjI0LDM5MC4yLDIyNCwzOTAuMiwyMjQsMzkwLjF6Ii8+Cgk8cGF0aCBmaWxsPSIjRkYwMDAwIiBkPSJNMjAwLjYsMzkwLjFjMC0wLjEtMC4xLTAuMS0wLjItMC4xaC00LjVjLTAuMSwwLTAuMSwwLTAuMiwwLjFsLTMuMiw0LjNsLTEuMy00LjFjMC0wLjEtMC4xLTAuMi0wLjItMC4yCgkJaC00LjhjLTAuMSwwLTAuMiwwLjEtMC4yLDAuMmwtMy4yLDEzLjNjMCwwLjEsMCwwLjEsMCwwLjJjMCwwLjEsMC4xLDAuMSwwLjIsMC4xaDQuNmMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMS43LTYuNGwxLjMsMy42CgkJYzAsMC4xLDAuMSwwLjEsMC4yLDAuMmMwLjEsMCwwLjIsMCwwLjItMC4xbDIuOC0zLjZsLTEuMyw2LjFjMCwwLjEsMCwwLjEsMC4xLDAuMmMwLDAuMSwwLjEsMC4xLDAuMiwwLjFoNC4zCgkJYzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwzLjItMTMuNEMyMDAuNiwzOTAuMiwyMDAuNiwzOTAuMSwyMDAuNiwzOTAuMXoiLz4KCTxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0yMTcuMiwzOTAuMWMwLTAuMS0wLjEtMC4xLTAuMi0wLjFoLTQuNWMtMC4xLDAtMC4xLDAtMC4yLDAuMWwtMy4yLDQuM2wtMS4zLTQuMWMwLTAuMS0wLjEtMC4yLTAuMi0wLjIKCQloLTQuOGMtMC4xLDAtMC4yLDAuMS0wLjIsMC4ybC0zLjIsMTMuM2MwLDAuMSwwLDAuMSwwLDAuMmMwLDAuMSwwLjEsMC4xLDAuMiwwLjFoNC42YzAuMSwwLDAuMi0wLjEsMC4yLTAuMmwxLjctNi40bDEuMywzLjYKCQljMCwwLjEsMC4xLDAuMSwwLjIsMC4yYzAuMSwwLDAuMiwwLDAuMi0wLjFsMi44LTMuNmwtMS4zLDYuMWMwLDAuMSwwLDAuMSwwLjEsMC4yYzAsMC4xLDAuMSwwLjEsMC4yLDAuMWg0LjMKCQljMC4xLDAsMC4yLTAuMSwwLjItMC4ybDMuMi0xMy40QzIxNy4yLDM5MC4yLDIxNy4yLDM5MC4xLDIxNy4yLDM5MC4xeiIvPgoJPHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTE2Ny45LDM5MS42bC0xLjktMi40bDYuMS04LjVjMC4xLTAuMSwwLjEtMC4yLDAtMC4zYzAtMC4xLTAuMS0wLjEtMC4yLTAuMWgtOC4zYy0wLjEsMC0wLjEsMC0wLjIsMC4xCgkJbC01LjUsNy43YzAsMC0wLjEsMC4xLTAuMSwwLjFjLTAuNCwwLjYtMS42LDIuMS0xLjUsMy42YzAuMSwxLjQsMC45LDIuMywxLjIsMi43YzAsMC4xLDAuMSwwLjEsMC4xLDAuMWMwLjcsMC45LDEuMywxLjcsMS42LDIKCQlsLTMuNCw0LjdjMCwwLjEtMC4xLDAuMSwwLDAuMmwyLjcsOC4xYzAsMC4xLDAuMSwwLjEsMC4yLDAuMmMwLjEsMCwwLjIsMCwwLjItMC4xbDguNS0xMS43bDAuMS0wLjFjMC40LTAuNSwxLjUtMi4xLDEuNS0zLjYKCQljMC0xLjQtMC43LTIuMi0wLjktMi41QzE2OCwzOTEuNywxNjcuOSwzOTEuNywxNjcuOSwzOTEuNnoiLz4KCTxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0yMzQuMiwzOTBjLTAuMS0wLjEtMC4xLTAuMS0wLjItMC4xbC0yLjQsMGwxLjEtNS4yYzAtMC4xLDAtMC4yLTAuMS0wLjJjLTAuMS0wLjEtMC4yLTAuMS0wLjMsMGwtNSwyLjUKCQljLTAuMSwwLTAuMSwwLjEtMC4xLDAuMmwtMC42LDIuOWgtMWMtMC4xLDAtMC4yLDAuMS0wLjIsMC4ybC0wLjksNGMwLDAuMSwwLDAuMSwwLjEsMC4yYzAsMC4xLDAuMSwwLjEsMC4yLDAuMWgwLjlsLTEuOSw5CgkJYzAsMC4xLDAsMC4xLDAuMSwwLjJjMCwwLjEsMC4xLDAuMSwwLjIsMC4xaDQuNmMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMS45LTkuMWwyLjUsMGMwLjEsMCwwLjItMC4xLDAuMi0wLjJsMC45LTQuMQoJCUMyMzQuMywzOTAuMSwyMzQuMywzOTAuMSwyMzQuMiwzOTB6Ii8+CjwvZz4KPC9zdmc+Cg==">
+              </a>
+              </div>
+            <div class="header-home-mobile header-mobile-icon">
+              <a href="https://www.summitracing.com/cart" class="fas fa-shopping-cart" aria-hidden="true"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-nav">
+      <div class="header-row">
+        <div class="header-row-center">
+        <div class="header-navlistcontainer header-navleftbar">
+        
+          
+        <nav aria-label="Main Navigation" class="navbar-left menu-bar " data-weblinks-maxdepth="2">
+            <ul class="nav navbar-nav weblinks">
+            
+
+              <li role="none" class="weblink ">
+                <a aria-label="Store" aria-roledescription="link" href="https://www.summitracing.com/" title="Store">
+                        <span class="far fa-home" aria-hidden="true"></span>
+                      Store
+                </a>
+              </li>
+
+            
+
+              <li role="none" class="weblink ">
+                <a aria-label="Brands" aria-roledescription="link" href="https://www.summitracing.com/brands" title="Brands">
+                        <span class="far fa-tags" aria-hidden="true"></span>
+                      Brands
+                </a>
+              </li>
+
+            
+
+              <li role="none" class="weblink ">
+                <a aria-label="Savings Central" aria-roledescription="link" href="https://www.summitracing.com/savingscentral" title="Savings Central">
+                        <span class="far fa-usd-circle" aria-hidden="true"></span>
+                      Savings Central
+                </a>
+              </li>
+
+            
+
+              <li role="none" class="weblink ">
+                <a aria-label="Contact Us" aria-roledescription="link" href="/contact-us/" title="Contact Us">
+                        <span class="far fa-phone-volume" aria-hidden="true"></span>
+                      Contact Us
+                </a>
+              </li>
+
+            
+
+              <li role="none" class="weblink ">
+                <a aria-label="Help Center Home" aria-roledescription="link" href="/" title="Help Center Home">
+                        <span class="far fa-question-circle" aria-hidden="true"></span>
+                      Help Center Home
+                </a>
+              </li>
+
+            
+          </ul>
+          
+        </nav></div>
+      
+
+      <div class="header-navlistcontainer header-navrightbar">
+        
+        
+        <nav aria-label="Main Navigation" class="navbar-left menu-bar " data-weblinks-maxdepth="2">
+            <ul class="nav navbar-nav weblinks">
+            
+              <li role="none" class="weblink ">
+                <a aria-label="Wish List" aria-roledescription="link" href="https://www.summitracing.com/wishlist" title="Wish List">
+                        <span class="far fa-heart" aria-hidden="true"></span>
+                      Wish List
+                </a>
+              </li>
+
+            
+              <li role="none" class="weblink ">
+                <a aria-label="Order Status" aria-roledescription="link" href="https://www.summitracing.com/orders" title="Order Status">
+                        <span class="far fa-box" aria-hidden="true"></span>
+                      Order Status
+                </a>
+              </li>
+
+            
+              <li role="none" class="weblink ">
+                <a aria-label="My Account" aria-roledescription="link" href="https://www.summitracing.com/account" title="My Account">
+                        <span class="far fa-user" aria-hidden="true"></span>
+                      My Account
+                </a>
+              </li>
+
+            
+          </ul>
+          
+        </nav></div>
+      
+      </div>
+        </div>
+        
+      </div>
+      </div>
+      <div class="header-nav-mobile">
+        <div class="header-navlistcontainer">
+      
+      </div>
+    </div>
+  
+
+
+<script type="text/javascript">
+         window.onload = function() {
+            if(window.navigator.appName == "Microsoft Internet Explorer" || window.navigator.userAgent.indexOf("Trident") > 0){
+                var searchElement = document.getElementById("search");
+                if (searchElement != null) searchElement.setAttribute("href", "");
+            }
+          };
+
+          function openNav()  {
+            document.getElementById('header_overlay').style.display = 'block';
+          }
+
+          function closeNav() {
+            document.getElementById('header_overlay').style.display = 'none';
+          }
+
+  //         function setHeight(){
+  //          var windowHeight = window.innerHeight - 140;
+  //          var navbar = document.getElementById("navbar");
+  //          if (navbar) {
+  //           navbar.style.maxHeight = windowHeight + "px";
+  //  }
+  //         }
+
+  //         window.addEventListener('resize', function (event) {
+  //          setHeight();
+  //         });
+</script>
+
+	<!-- add anti-forgery token-->
+	<div id="antiforgerytoken" data-url="/_layout/tokenhtml"><input name="__RequestVerificationToken" type="hidden" value="vFbD90ZYhw3R5596JgE8yJrX0fSdoFmCCurmiaR2ruVrQehm1OmcrAYuXg4YMTbuHI6OHvJ_5dSGeuOeeUbiRiaHMuYTM5DSohpyp79FEc41"></div>
+
+
+	
+		<!-- Client Telemetry init if telemetry enabled-->
+		<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/client-telemetry.bundle-4335d2f4b0.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/client-telemetry.bundle-4335d2f4b0.js" type="text/javascript"></script>
+
+	
+	
+	<!-- Client Telemetry Wrapper init -->
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/client-telemetry-wrapper.bundle-963910d4c3.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/client-telemetry-wrapper.bundle-963910d4c3.js" type="text/javascript"></script>
+
+	<script>
+		window.clientLogWrapper = new ClientLogWrapper();
+	</script>
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/preform.moment_2_29_4.bundle-79a29b80d8.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/preform.moment_2_29_4.bundle-79a29b80d8.js" type="text/javascript"></script>
+
+	
+	
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/pcf-dependency.bundle-805a1661b7.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-dependency.bundle-805a1661b7.js" type="text/javascript"></script>
+
+				<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/pcf.bundle-d13e85b491.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf.bundle-d13e85b491.js" type="text/javascript"></script>
+
+				<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/pcf-extended.bundle-e303d53553.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-extended.bundle-e303d53553.js" type="text/javascript"></script>
+
+		
+		
+	<div>
+
+
+
+
+
+<form method="GET" action="/search/" role="search" class="form-search">
+    <div class="input-group">
+
+        
+        
+        
+        
+        <div class="btn-group btn-select input-group-btn" data-target="#filter-7b75d090-e239-4a6e-811b-5c9a48535aba" data-focus="#search_control">
+            <ul>
+                <li class="dropdown-submenu dropdown">
+                    <button id="search-filter" type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-label="Search Filter" aria-expanded="false">
+
+                        <span class="selected">Knowledge Articles</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="listbox" aria-label="Search Filter">
+                        
+                        <li role="presentation">
+                            <a href="#" role="option" data-value="knowledgearticle" aria-label="Knowledge Articles" aria-selected="false" tabindex="-1">Knowledge Articles</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <label for="filter-7b75d090-e239-4a6e-811b-5c9a48535aba" class="sr-only">Search Filter</label>
+        <select id="filter-7b75d090-e239-4a6e-811b-5c9a48535aba" name="logicalNames" class="btn-select" aria-hidden="true" data-query="logicalNames">
+            
+            <option value="knowledgearticle">Knowledge Articles</option>
+            
+        </select>
+        
+
+        <label for="search_control" class="sr-only">
+            Search
+        </label>
+        <input type="text" class="form-control" id="search_control" name="q" placeholder="Search" value="" title="Search">
+        <div class="input-group-btn">
+            <button type="submit" class="btn btn-default" title="Search" aria-label="Search">
+                <span class="fa fa-search" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+</div><div class="page-heading">
+		<div class="container">
+			
+			<ul class="breadcrumb">
+				<!--dummy expression to resolve CS0103 error The name '__o' does not exist in the current context-->
+				
+					<li>
+						<a href="/">Home</a>
+					</li>
+				
+					<li style="display: none;">
+						<a href="/knowledgebase/">Knowledge Base - Home</a>
+					</li>
+				
+				<li class="active">
+					SR-03733
+				</li>
+			</ul>
+			<div class="page-header"><div id="articleShare" class="hidefromprint" style="float: right;"><div class="dropdown">
+<button aria-label="Share Button" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <i class="far fa-share-alt"></i>
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <li><a href="mailto:?body=https://help.summitracing.com/knowledgebase/article/SR-03733/en-us&amp;subject=What is your privacy and security policy?"><i class="far fa-envelope"></i>Email</a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://help.summitracing.com/knowledgebase/article/SR-03733/en-us"><i class="fab fa-facebook"></i>Facebook</a></li>
+  <li><a id="CopyLink" href="javascript:copyUrl()"><i class="far fa-link"></i>Copy Link</a></li>
+  <li><a href="javascript:window.print()"><i class="far fa-print"></i>Print</a></li>
+</ul>
+</div></div>
+				<div class="pull-right">
+					<div class="btn-toolbar">
+						<div class="btn-group">
+							<a href="javascript:window.print()" role="button" aria-label="Print" class="btn btn-default btn-sm"><i class="fa fa-print"></i> <span class="xrm-editable-text xrm-attribute" data-languagecontext="English"><span class="xrm-attribute-value-encoded xrm-attribute-value">Print</span></span></a>
+						</div>
+					</div>
+				</div>
+				<h1>What is your privacy and security policy?</h1>
+				<div id="foundmyanswer-rating" class="row">
+					
+				</div>
+			<div role="alert" aria-roledescription="heading" aria-label="What is your privacy and security policy?" class="sr-only"></div></div>
+
+		</div>
+	</div>
+
+		<div id="content-container" class="container wrapper-body" role="main">
+			<div id="content">
+				
+	<div class="row" id="mainContent">
+		
+
+	<div class="col-lg-12">
+
+	<div class="knowledge-article">
+		<div class="row">
+				
+						<div id="article-rating" class="col-sm-6">
+
+<fieldset>
+    <div class="form-group">
+        <div>
+            <input data-val="true" data-val-number="The field MaxRating must be a number." data-val-required="The MaxRating field is required." id="maxRating" name="maxRating" type="hidden" value="5">
+            <input data-val="true" data-val-number="The field MinRating must be a number." data-val-required="The MinRating field is required." id="minRating" name="minRating" type="hidden" value="0">
+			<input id="ratingUrl" name="ratingUrl" type="hidden" value="/knowledgebase/article/SR-03733/GetArticleRating/0e977329-2715-ee11-8f6d-00224805ce3a">
+            <input data-val="true" data-val-number="The field Rating must be a number." data-val-required="The Rating field is required." id="rating" name="rating" type="hidden" value="0.0000000000" style="display: none;">
+            <input id="createRatingUrl" name="createRatingUrl" type="hidden" value="/knowledgebase/article/SR-03733/RatingCreate/0e977329-2715-ee11-8f6d-00224805ce3a">
+			<div id="post-rating" class="rateit" data-rateit-resetable="false" data-rateit-step="1" data-rateit-min="0" data-rateit-max="5" data-rateit-backingfld="#rating"><button id="rateit-reset-2" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-2" style="display: none;"></button><div id="rateit-range-2" class="rateit-range" tabindex="0" role="slider" aria-label="rating" aria-owns="rateit-reset-2" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0.0000000000" aria-readonly="false" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 0px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+        </div>
+    </div>
+</fieldset>
+
+<script type="text/javascript">
+    $(function () {
+        var ratingUrl = $("#ratingUrl").val();
+        $.ajax({
+            url: ratingUrl,
+            type: 'GET',
+            success: function (result) {
+                $("#rating").val(result);
+            },
+            error: function (error) { console.log(error); }
+        });
+
+        return false;
+    });
+
+    //'rated' event gets triggered from touch and non-touch surfaces when a rating happens
+    $('#post-rating').bind('rated', function (e) {
+        var url = $("#createRatingUrl").val();
+        $.blockUI({ message: null, overlayCSS: { opacity: .3 } });
+        var dto = {
+            rating: $('#post-rating').rateit('value'),
+            maxRating: $('#post-rating').rateit('max'),
+            minRating: $('#post-rating').rateit('min')
+        }
+        shell.ajaxSafePost({
+            type: 'POST',
+            url: url,
+            data: dto,
+            success: function (result) {
+                $("#article-rating").html(result);
+                $('#post-rating').rateit();
+                if (((document.getElementById("foundmyanswerbutton") != null) && (document.getElementById("foundmyanswerbutton").style.display != "none")) || ((document.getElementById("foundmyanswerlabel") != null) && (document.getElementById("foundmyanswerlabel").style.display != "none"))) {
+                    document.getElementById("post-rating").style.marginTop = "13px";
+                }
+                $.unblockUI();
+            },
+            error: function () {
+                $.unblockUI();
+            }
+        });
+    });
+
+</script></div>
+				
+			
+			<div id="found-my-answer-bottom-comments" class="col-sm-6"><span><span class="xrm-editable-text xrm-attribute"><span class="xrm-attribute-value">Views: </span></span></span><span id="viewcount-value" data-url="/knowledgebase/article/SR-03733/GetArticleViewCount/0e977329-2715-ee11-8f6d-00224805ce3a">574</span>
+				
+			</div>
+		</div>
+
+		<div class="knowledge-article-content"><h2>Our Privacy and Security Policy</h2>
+			<div data-wrapper="true" style="font-size: 12px; font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, sans-serif"><p><span style="font-size: 16pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a540548">Autosales, Incorporated, DBA Summit Racing Equipment Privacy Policy for California Residents</a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Effective Date 10/02/2023</b></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Last Updated on</b>: 10/02/2023</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">This policy applies to all visitors, users and others. This policy is intended to comply with the California Consumer Privacy Act of 2018 (CCPA) and any terms defined in the CCPA have the same meaning when used in this Policy. This policy is also intended to comply with the General Data Protection Regulation of 2018 (GDPR).</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Where noted in this Policy, the CCPA temporarily exempts personal information reflecting a written or verbal business-to-business communication (“B2B personal information”) from its requirements.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a871356"><u>Information We Collect</u></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We collect information that identifies, relates to, describes, references, is reasonably capable of being associated with, or could reasonably be linked, directly or indirectly, with a particular consumer, household, or device ("<b>personal information</b>"). Personal information does not include:</span></span></span></p>
+<ul><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Publicly available information from government records.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Deidentified or aggregated consumer information.</span></span></span></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">In particular, we have collected the following categories of personal information from consumers within the last twelve months:</span></span></span><br>&nbsp;<table class="MsoTableGrid" style="width: 100%; border-collapse: collapse; border: none" width="100%"><tbody><tr><td style="border: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Category</b></span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: 1px solid rgba(0, 0, 0, 1); border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Examples</b></span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: 1px solid rgba(0, 0, 0, 1); border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Collected</b></span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">A. Identifiers.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">A real name, alias, postal address, unique personal identifier, online identifier, Internet Protocol address, email address, account name, Social Security number, driver's license number, passport number, or other similar identifiers.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">YES</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">B. Personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e)).</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">A name, signature, Social Security number, physical characteristics or description, address, telephone number, passport number, driver's license or state identification card number, insurance policy number, education, employment, employment history, bank account number, credit card number, debit card number, or any other financial information, medical information, or health insurance information.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Some personal information included in this category may overlap with other categories.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">YES</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">C. Protected classification characteristics under California or federal law.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Age (40 years or older), race, color, ancestry, national origin, citizenship, religion or creed, marital status, medical condition, physical or mental disability, sex (including gender, gender identity, gender expression, pregnancy or childbirth and related medical conditions), sexual orientation, veteran or military status, genetic information (including familial genetic information).</span></span></span><br>&nbsp;</td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NO</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">D. Commercial information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Records of personal property, products or services purchased, obtained, or considered, or other purchasing or consuming histories or tendencies.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">YES</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">E. Biometric information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Genetic, physiological, behavioral, and biological characteristics, or activity patterns used to extract a template or other identifier or identifying information, such as, fingerprints, faceprints, and voiceprints, iris or retina scans, keystroke, gait, or other physical patterns, and sleep, health, or exercise data.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NO</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">F. Internet or other similar network activity.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Browsing history, search history, information on a consumer's interaction with a website, application, or advertisement.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">YES</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">G. Geolocation data.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Physical location or movements.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NO</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">H. Sensory data.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Audio, electronic, visual, thermal, olfactory, or similar information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NO</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">I. Professional or employment-related information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Current or past job history or performance evaluations.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NO</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">J. Non-public education information (per the Family Educational Rights and Privacy Act (20 U.S.C. Section 1232g, 34 C.F.R. Part 99)).</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Education records directly related to a student maintained by an educational institution or party acting on its behalf, such as grades, transcripts, class lists, student schedules, student identification codes, student financial information, or student disciplinary records.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NO</span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">K. Inferences drawn from other personal information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 60%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Profile reflecting a person's preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 20%; padding: 0 7px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NO</span></span></span></td></tr></tbody></table><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We obtain the categories of personal information listed above from the following categories of sources:</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a748479"><u>Use of Personal Information</u></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We may use or disclose the personal information we collect for one or more of the following purposes:</span></span></span>
+<ul><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To fulfill or meet the reason you provided the information. For example, if you share your name and contact information to request a price quote or ask a question about our products or services, we will use that personal information to respond to your inquiry. If you provide your personal information to purchase a product or service, we will use that information to process your payment and facilitate delivery. We may also save your information to facilitate new product orders or process returns. </span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To provide, support, personalize, and develop our Website, products, and services.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To create, maintain, customize, and secure your account with us.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To process your requests, purchases, transactions, and payments and prevent transactional fraud.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To provide you with support and to respond to your inquiries, including to investigate and address your concerns and monitor and improve our responses.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To personalize your Website experience and to deliver content and product and service offerings relevant to your interests, including targeted offers and ads through our Website, third-party sites, and via email or text message (with your consent, where required by law).</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To help maintain the safety, security, and integrity of our Website, products and services, databases and other technology assets, and business.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To respond to law enforcement requests and as required by applicable law, court order, or governmental regulations.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">As described to you when collecting your personal information or as otherwise set forth in the CCPA.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">In order to process any orders for products or services, we may send your data to, and also use the resulting information from, credit reporting agencies to prevent fraudulent purchases.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which personal information held by us about our Website users or consumers is among the assets transferred.</span></span></span></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We will not collect additional categories of personal information or use the personal information we collected for materially different, unrelated, or incompatible purposes without providing you notice.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a831891"><u>Sharing Personal Information</u></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We may share your personal information by disclosing it to a third party for a business purpose. We only make these business purpose disclosures under written contracts that describe the purposes, require the recipient to keep the personal information confidential, and prohibit using the disclosed information for any purpose except performing the contract. In the preceding twelve (12) months, Company has disclosed personal information for a business purpose to the categories of third parties indicated in the chart below.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We do not sell personal information. In the preceding twelve (12) months, Company has not sold personal information to any third parties For more on your personal information sale rights, see Personal Information Sales Opt-Out and Opt-In Rights.</span></span></span><br>&nbsp;<table class="MsoTableGrid" style="width: 100%; border-collapse: collapse; border: none" width="100%"><tbody><tr><td rowspan="2" style="border: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; height: 25px" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Personal Information Category</b></span></span></span></td><td colspan="2" style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 71%; padding: 0 8px 12px; height: 25px; border-top: 1px solid rgba(0, 0, 0, 1); border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Category of Third-Party Recipients</b></span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Business Purpose Disclosures</b></span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Sales</b></span></span></span></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">A: Identifiers.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Service Providers</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">B: California Customer Records personal information categories.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Service Providers</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">C: Protected classification characteristics under California or federal law.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">D: Commercial information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">E: Biometric information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">F: Internet or other similar network activity.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">G: Geolocation data.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">H: Sensory data.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">I: Professional or employment-related information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">J: Non-public education information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr><tr><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 28%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: 1px solid rgba(0, 0, 0, 1)" valign="top"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">K: Inferences drawn from other personal information.</span></span></span></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 36%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td><td style="border-bottom: 1px solid rgba(0, 0, 0, 1); width: 34%; padding: 0 8px 12px; border-top: none; border-right: 1px solid rgba(0, 0, 0, 1); border-left: none" valign="top"><ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">NONE</span></span></span></li></ul></td></tr></tbody></table><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a443678"><i>Reselling Personal Information</i></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold">The CCPA prohibits a third party from reselling personal information unless you have received explicit notice and an opportunity to opt-out of further sales. We do not sell personal information to third parties that may resell that information.</span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><u>Storage of Your Data</u></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We securely store your data at Summit Racing Equipment and take the commercially reasonable security precautions to protect your data, including industry standard technical and physical controls.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We will only keep your data for as long as necessary for the purpose for which the data was collected. Some information may be kept for longer periods of time in order to fulfill the terms of a written warranty or product recall conducted in accordance with federal law; or to detect security incidents, protect against malicious, deceptive, fraudulent, or illegal activity.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Once the applicable time period has expired, we will delete your data by deleting it from the system from which it is stored. Data may be retained in our backup systems until such time as those backups are next accessed.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><u>Marketing</u></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We would like to send you information about products and services of ours that we think you might like. If you have agreed to receive marketing, you may always opt out at a later date. If you no longer wish to be contacted for marketing purposes, please click https://help.summitracing.com/app/answers/detail/a_id/4986/kw/marketing%20emails.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a363591"><u>Your Rights and Choices </u></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a828717"><i>Right to Know</i></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You have the right to request that we disclose certain information to you about our collection and use of your personal information over the past 12 months (the "right to know"). Once we receive your request and confirm your identity (see Exercising Your Rights), we will disclose to you:</span></span></span>
+<ul><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">The categories of personal information we collected about you.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">The categories of sources for the personal information we collected about you.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Our business or commercial purpose for collecting or selling that personal information.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">The categories of third parties with whom we share that personal information.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">If we sold or disclosed your personal information for a business purpose, two separate lists disclosing:</span></span></span><ul style="list-style-type: disc"><li class="BulletList2" style="margin-top: 8px; margin-bottom: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">sales, identifying the personal information categories that each category of recipient purchased; and </span></span></span></li><li class="BulletList2" style="margin-top: 8px; margin-bottom: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">disclosures for a business purpose, identifying the personal information categories that each category of recipient obtained. </span></span></span></li></ul></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We do not provide a right to know or data portability disclosure for B2B personal information.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a664478"><i>Right to Rectification</i></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You have the right to request that we correct any information you believe is inaccurate. You also have the right to request we complete information that you believe is incomplete.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><i>Right to Delete </i></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You have the right to request that we delete any of your personal information that we collected from you and retained, subject to certain exceptions (the "right to delete"). Once we receive your request and confirm your identity (see Exercising Your Rights), we will review your request to see if an exception applies which allows us to retain the information applies. We may deny your deletion request if retaining the information is necessary for us or our service provider(s) to:</span></span></span>
+<ol><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Complete the transaction for which we collected the personal information, provide a good or service that you requested, take actions reasonably anticipated within the context of our ongoing business relationship with you, fulfill the terms of a written warranty or product recall conducted in accordance with federal law, or otherwise perform our contract with you.</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Detect security incidents, protect against malicious, deceptive, fraudulent, or illegal activity, or prosecute those responsible for such activities.</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Debug products to identify and repair errors that impair existing intended functionality.</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Exercise free speech, ensure the right of another consumer to exercise their free speech rights, or exercise another right provided for by law.</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Comply with the California Electronic Communications Privacy Act (Cal. Penal Code § 1546 <i>et. seq.</i>).</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Engage in public or peer-reviewed scientific, historical, or statistical research in the public interest that adheres to all other applicable ethics and privacy laws, when the information's deletion may likely render impossible or seriously impair the research's achievement, if you previously provided informed consent.</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Enable internal-only uses that are reasonably aligned with consumer expectations based on your relationship with us.</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Comply with a legal obligation.</span></span></span></li><li class="List-NumberedListLev" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Make other internal and lawful uses of that information that are compatible with the context in which you provided it.</span></span></span></li></ol><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We will delete or deidentify personal information from our records if it is not subject to one of these exceptions and we will direct our service providers to take similar action.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We do not provide these deletion rights for B2B personal information.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><i>Right to Restrict Processing</i></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You have the right to request that we restrict the processing of your personal data, under certain circumstances.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><i>Right to Object to Processing</i></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You have the right to object to our processing of your personal data, under certain conditions.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><i>Right to Data Portability</i></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a585939"><i>Exercising Your Rights</i></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">To exercise any of these rights described above, please submit a request by:</span></span></span>
+<ul><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Calling us at 1-800-230-3030.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Submitting a request through https://help.summitracing.com/app/ask</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Emailing us at privacy@summitracing.com.</span></span></span></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Only you, or someone legally authorized to act on your behalf, may exercise any of these rights related to your personal information.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You may only submit a request to know twice within a 12-month period. Your request to exercise any of these rights must:</span></span></span>
+<ul><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Provide sufficient information that allows us to reasonably verify you are the person about whom we collected personal information; or you are an authorized representative, which may include:</span></span></span>
+<ul style="list-style-type: disc"><li class="BulletList2" style="margin-top: 8px; margin-bottom: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">If you have a password-protected account within our systems, we may offer you the ability to verify your identity using the same authentication process used to access the password-protected account. Any verification using this process will require you to re-authenticate yourself in order to verify your identity.</span></span></span></li><li class="BulletList2" style="margin-top: 8px; margin-bottom: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">If you do not have a password-protected account, or if you do not use your password-protected account for verification, you will be required to provide at least two data points that match data points that we maintain. In the event that a request involves certain highly sensitive information, we will require you to provide at least three data points that match data points that we maintain in order to verify identity.</span></span></span></li></ul></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Describe your request with sufficient detail that allows us to properly understand, evaluate, and respond to it.</span></span></span></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You may also make a request to exercise any of these rights on behalf of your child by providing the requested number of matching data points related to your child.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We cannot respond to your request or provide you with personal information if we cannot verify your identity or authority to make the request and confirm the personal information relates to you.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You do not need to create an account with us to submit a request to know or delete. However, we do consider requests made through your password protected account sufficiently verified when the request relates to personal information associated with that specific account.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We will only use personal information provided in the request to verify the requestor's identity or authority to make it.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">For instructions on exercising your sale opt-out or opt-in rights, see Personal Information Sales Opt-Out and Opt-In Rights.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a736729"><i>Response Timing and Format</i></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We will confirm receipt of your request within ten (10) business days. If you do not receive confirmation within the 10-day timeframe, please contact us by either:</span></span></span>
+<ul><li style="list-style-type: none; list-style-position: inside"><ul style="list-style-type: disc"><li class="BulletList2" style="margin-top: 8px; margin-bottom: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Calling us at 1-800-230-3030.</span></span></span></li><li class="BulletList2" style="margin-top: 8px; margin-bottom: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Emailing us at privacy@summitracing.com.</span></span></span></li></ul></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We endeavor to substantively respond to a verifiable consumer request within forty-five (45) days (thirty (30) days in the case of a request made under GDPR) of its receipt. If we require more time (up to another 45 days), we will inform you of the reason and extension period in writing.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">If you have an account with us, we will deliver our written response to that account. If you do not have an account with us, we will deliver our written response by mail or electronically, at your option.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Any disclosures we provide will only cover the 12-month period preceding our receipt of your request. The response we provide will also explain the reasons we cannot comply with a request, if applicable. For data portability requests, we will select a format to provide your personal information that is readily useable and should allow you to transmit the information from one entity to another entity without hindrance.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We do not charge a fee to process or respond to your verifiable consumer request unless it is excessive, repetitive, or manifestly unfounded. If we determine that the request warrants a fee, we will tell you why we made that decision and provide you with a cost estimate before completing your request.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a794300"><i>What are cookies?</i></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. When you visit our websites, we may collect information from you automatically through cookies or similar technology.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">For further information, visit allaboutcookies.org.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><i>How do we use cookies?</i></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Our Company uses cookies in a range of ways to improve your experience on our website, including:</span></span></span>
+<ul><li class="Paragraph" style="margin-left: 8px; margin-top: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Keeping you signed in</span></span></span></li></ul>
+<ul><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Understanding how you use our website</span></span></span></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">What types of cookies do we use?</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">There are a number of different types of cookies, however, our website uses:</span></span></span>
+<ul><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Functionality — Our Company uses these cookies so that we recognize you on our website and remember your previously selected preferences. These could include what language you prefer and location you are in. A mix of first-party and third-party cookies are used.</span></span></span></li><li class="BulletList1" style="margin-top: 8px; margin-bottom: 8px; margin-left: 8px; list-style-position: inside"><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Advertising — Our Company uses these cookies to collect information about your visit to our website, the content you viewed, the links you followed and information about your browser, device, and your IP address. Our Company sometimes shares some limited aspects of this data with third parties for advertising purposes. We may also share online data collected through cookies with our advertising partners. This means that when you visit another website, you may be shown advertising based on your browsing patterns on our website.</span></span></span></li></ul><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><i>How to manage cookies</i></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">You can set your browser not to accept cookies, and the above website tells you how to remove cookies from your browser. However, in a few cases, some of our website features may not function as a result.</span></span></span><br><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a545195"><u>Changes to Our Privacy Policy</u></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">We reserve the right to amend this privacy policy at our discretion and at any time. When we make changes to this privacy policy, we will post the updated notice on the Website and update the notice's effective date. <b>Your continued use of our Website following the posting of changes constitutes your acceptance of such changes</b>.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold"><a name="a953370"><u>Contact Information</u></a></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">If you have any questions or comments about this notice, the ways in which Autosales, Incorporated, DBA Summit Racing Equipment collects and uses your information described here, your choices and rights regarding such use, or wish to exercise your rights under California law, please do not hesitate to contact us at:</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Phone</b>: 1-800-230-3030</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Website</b>: <a>https://help.summitracing.com/app/ask</a><span class="MsoCommentReference" style="color: rgba(0, 0, 0, 1)"><span style="font-size: 8pt"><a class="msocomanchor" href="#_msocom_1" id="_anchor_1" name="_msoanchor_1">[DM1]</a>&nbsp;</span></span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Email</b>: privacy@summitracing.com</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><b>Postal Address</b>:</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Summit Racing Equipment</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Attn: Data Privacy Representative<br>1200 Southeast Ave<br>Tallmadge, OH 44278</span></span></span><br><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">If you need to access this Policy in an alternative format due to having a disability, please contact privacy@summitracing.com or 1-800-230-3030.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span style="font-weight: bold">How to Contact the Appropriate Authority</span></span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)">Should you wish to report a complaint or if you feel that we have not addressed your concern in a satisfactory manner, you may contact the Information Commissioner’s Office. . A list of offices, including contact information, can be found at https://ec.europa.eu/justice/article-29/structure/data-protection-authorities/index_en.htm.</span></span></span><br><span style="font-size: 12pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><a name="DocIDC"></a><span style="font-size: 8pt">AK3:1347015_v3</span></span></span></span>
+<div><hr align="left" class="msocomoff" size="1" width="33%"><div><div class="msocomtxt" id="_com_1"><a name="_msocom_1"></a><span style="font-size: 10pt"><span style="font-family: &quot;Times New Roman&quot;, serif"><span style="color: rgba(0, 0, 0, 1)"><span class="MsoCommentReference" style="color: rgba(0, 0, 0, 1)"><span style="font-size: 8pt">&nbsp;<a class="msocomoff" href="#_msoanchor_1">[DM1]</a></span></span>I added this.</span></span></span></div></div></div>
+<p>&nbsp;</p></div>
+		</div>
+	</div>
+
+	
+</div>
+
+	<script type="text/javascript">
+			$(function () {
+				var url = $("#viewcount-increment").attr("data-url");
+				shell.ajaxSafePost({
+				type: "POST",
+				url: url,
+				success: function (result) {
+					if (document.getElementById("foundmyanswerbutton") != null) {
+						if (document.getElementById("post-rating") != null) {
+							document.getElementById("post-rating").style.marginTop = "13px";
+						}
+					}
+					if (document.getElementById("foundmyanswerbuttonbottom") != null) {
+						document.getElementById("found-my-answer-bottom-comments").style.display = "inline";
+					}
+					$("#viewcount-increment").html(result);
+				},
+					error: function(error) { console.log(error); }
+				});
+
+				var viewcountUrl = $("#viewcount-value").attr("data-url");
+				$.ajax({
+					url: viewcountUrl,
+					type: 'GET',
+					success: function (result) {
+						$("#viewcount-value").html(result);
+					},
+					error: function (error) { console.log(error); }
+				});
+
+				return false;
+			});
+
+	function postcaseDeflection(url) {
+		shell.ajaxSafePost({
+			type: 'POST',
+			url: url,
+			success: function (result) {
+				document.getElementById("foundmyanswerlabel").style.display = "inline";
+				document.getElementById("foundmyanswerlabelbottom").style.display = "inline";
+				document.getElementById("foundmyanswerbutton").style.display = "none";
+				document.getElementById("foundmyanswerbuttonbottom").style.display = "none";
+				document.getElementById("found-my-answer-bottom-comments").style.display = "block";
+			}
+		});
+	}
+
+	function downloadKbAttachmentFile(attachmentElementId, fileName, fileSize, mimeType, downloadBlockUrl, initializeUrl) {
+		const blockSizeInBytes = 4096 * 1024 - 1;
+		// for the proper stitching of content blockSize should be multiple of 3
+		const totalNumberOfBlocks = parseInt(fileSize / blockSizeInBytes + 1);
+
+		var fileContinuationToken = "";
+		var contentString = "";
+		var numberOfBlocksDownloaded = 0;
+		var blockNumberToContentMap = {};
+
+		function downloadBlockCallback(i) {
+			if (i >= totalNumberOfBlocks) {
+				return;
+			}
+			url = downloadBlockUrl + "&blockNumber=" + i + "&fileContinuationToken=" + fileContinuationToken + "&blockSize=" + blockSizeInBytes;
+			shell.ajaxSafePost({
+				type: 'GET',
+				url: url,
+				success: (result) =>
+				{
+					numberOfBlocksDownloaded++;
+					blockNumberToContentMap[i] = result;
+					if (numberOfBlocksDownloaded == totalNumberOfBlocks) {
+						for (var j = 0; j < totalNumberOfBlocks; j++) {
+							contentString += blockNumberToContentMap[j];
+						}
+
+						var isImage = mimeType.startsWith('image/');
+						const attachmentElement = document.getElementById(attachmentElementId);
+
+						if (isImage) {
+							const bodyByteString = atob(contentString);
+							const bodyBuffer = new ArrayBuffer(bodyByteString.length);
+							const bodyView = new Uint8Array(bodyBuffer);
+							for (var k = 0; k < bodyByteString.length; k++) {
+								bodyView[k] = bodyByteString.charCodeAt(k);
+							}
+
+							var imageUrl = URL.createObjectURL(new Blob([bodyBuffer], { type: mimeType }));
+							attachmentElement.href = imageUrl;
+							attachmentElement.target = "_blank";
+						}
+						else {
+							const linkSource = 'data:' + mimeType + ';base64,' + contentString;
+							attachmentElement.href = linkSource;
+							attachmentElement.download = fileName;
+						}
+
+						attachmentElement.click();
+					}
+				}
+			});
+		}
+
+		shell.ajaxSafePost({
+			type: 'GET',
+			url: initializeUrl,
+			success: function (result) {
+				fileContinuationToken = encodeURIComponent(result);
+				for (var i = 0; i < totalNumberOfBlocks; i++)
+				{
+					downloadBlockCallback(i);
+				}
+			}
+		});
+	}
+	</script>
+
+		
+	
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			
+		
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-lg-12">
+			
+		
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			
+		<div id="comments">
+	<link href="https://content.powerapps.com/resource/powerappsportal/dist/editor.bundle-a512fd8d1f.css" onerror="javascript: var target = event.target; var link = document.createElement('link'); link.crossOrigin = target.crossOrigin; link.href = '/dist/editor.bundle-a512fd8d1f.css'; link.rel = 'stylesheet'; target.insertAdjacentElement('afterend',link);" rel="stylesheet">
+
+<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/editor.bundle-90ea956569.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/editor.bundle-90ea956569.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+	$(function () {
+		$("#post-comment").click(function () {
+		    $.blockUI({ message: null, overlayCSS: { opacity: .3 } });
+		    shell.ajaxSafePost({
+		        type: "POST",
+		        success: function (result) {
+		            $("#comments").html(result);
+		            commentCreated();
+		        },
+                complete: function () {
+                    $.unblockUI();
+                    if (window.loadAllPcfControlsOnPage) {
+                        window.loadAllPcfControlsOnPage();
+                    }
+                }
+		    }, $("#create-comment"));
+		    return false;
+		});
+	});
+
+	function commentCreated() {
+		portal.convertAbbrDateTimesToTimeAgo($);
+
+		if ($("#create-comment .validation-summary-errors").length == 0) {
+			$("#create-comment :input").each(function () {
+				if (this.type == "text" || this.tagName.toLowerCase() == "textarea") {
+					this.value = "";
+				}
+			});
+		}
+
+		prettyPrint();
+
+        if (window.DisableCkEditor == undefined || window.DisableCkEditor.Value == "False") {
+            portal.initializeHtmlEditors();
+        }
+	}
+</script>
+
+	
+	</div>
+
+	<div class="page-metadata clearfix">
+		<div class="xrm-editable-html xrm-attribute no-value" data-languagecontext="English"><div class="xrm-attribute-value"></div></div>
+	</div>
+
+	<div id="viewcount-increment" data-url="/knowledgebase/article/SR-03733/IncrementViewCount/0e977329-2715-ee11-8f6d-00224805ce3a"></div>
+
+		</div>
+	</div>
+
+			</div>
+		</div>
+	
+
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/pcf-loader.bundle-f4a0e619b8.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/pcf-loader.bundle-f4a0e619b8.js" type="text/javascript"></script>
+
+		
+		
+
+	
+		
+	
+	
+		
+
+
+
+
+
+<footer>
+			<div id="" class="hidefromprint">
+        <div class="footer-row primaryLinkGroup">
+        <div class="footer-select">
+            <a id="EmailSignUpFooterLink" class="primaryLinks" href="https://www.summitracing.com/email">
+                Email Sign Up
+                <i class="far fa-angle-down"></i></a>
+        </div>
+        <div class="footer-select">
+            <div class="footerMenuParent dropdown-menu" id="NewsEventsFooterMenu" aria-labelledby="NewsEventsFooterMenuLink">
+                <div class="footerMenu">
+                    
+                        
+                            <a href="https://www.summitracing.com/newsandevents">News &amp; Events Home</a>
+                        
+                            <a href="https://www.onallcylinders.com/">OnAllCylinders (blog)</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/calendar">Calendar of Events</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/newproductreleases">New Product Releases</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/summitracingnews">Summit Racing News</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/newsyoucanuse">News You Can Use</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/featuredvehicles">Featured Vehicles</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/mediacenter">Media Center</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/teamsummit">Team Summit</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/sanctioningbodies">Sanctioning Bodies</a>
+                        
+                    
+                </div>
+                <div class="footer-caret"></div>
+            </div>
+            <a id="NewsEventsFooterMenuLink" class="primaryLinks dropdown-toggle" data-toggle="dropdown" href="javascript:;" aria-haspopup="true" aria-expanded="false" role="button">
+                News &amp; Events
+                <i class="far fa-angle-down"></i>
+            </a>
+        </div>
+        <div class="footer-select">
+            <div class="footerMenuParent dropdown-menu" id="HelpFooterMenu" aria-labelledby="HelpFooterMenuLink">
+                <div class="footerMenu">
+                    
+                        
+                            <a href="/">Help Center</a>
+                        
+                            <a href="https://help.summitracing.com/knowledgebase/article/SR-03478/en-us">Return Policy</a>
+                        
+                            <a href="https://help.summitracing.com/knowledgebase/article/SR-00558/en-us">Beat a Price Guarantee</a>
+                        
+                            <a href="https://help.summitracing.com/knowledgebase/article/SR-00606/en-us">Payment Options</a>
+                        
+                            <a href="/contact-us/">Contact Us</a>
+                        
+                    
+                </div>
+                <div class="footer-caret"></div>
+            </div>
+            <a id="HelpFooterMenuLink" class="primaryLinks dropdown-toggle" data-toggle="dropdown" href="javascript:;" aria-haspopup="true" aria-expanded="false">
+                Help
+                <i class="far fa-angle-down"></i>
+            </a>
+        </div>
+        <div class="footer-select">
+            <div class="footerMenuParent dropdown-menu" id="SocialFooterMenu" aria-labelledby="SocialFooterMenuLink">
+                <div class="footerMenu">
+                    
+                        
+                            <a href="https://www.summitracing.com/redirect?obanner=HP50FIFacebook">Facebook</a>
+                        
+                            <a href="https://www.summitracing.com/redirect?obanner=HP50FITwitter">Twitter</a>
+                        
+                            <a href="https://www.summitracing.com/redirect?obanner=HP50IInstagram">Instagram</a>
+                        
+                            <a href="https://www.summitracing.com/redirect?obanner=HP50FIPinterest">Pinterest</a>
+                        
+                            <a href="https://www.summitracing.com/redirect?obanner=HP50FIYouTube">YouTube</a>
+                        
+                    
+                </div>
+                <div class="footer-caret" aria-controls="SocialFooterMenu" data-is-focus="false" aria-haspopup="true" aria-expanded="true"></div>
+            </div>
+            <a id="SocialFooterMenuLink" class="primaryLinks dropdown-toggle" data-toggle="dropdown" href="javascript:;" aria-haspopup="true" aria-expanded="false">
+                Social
+                <i class="far fa-angle-down"></i>
+            </a>
+        </div>
+        <div class="footer-select">
+            <div id="AboutFooterMenu" class="footerMenuParent dropdown-menu" aria-labelledby="AboutFooterMenuLink">
+                <div class="footerMenu">
+                    
+                        
+                            <a href="https://www.summitracing.com/about?ibanner=FB1">Corporate History</a>
+                        
+                            <a href="https://www.summitracing.com/about/retail">Retail Locations</a>
+                        
+                            <a href="https://www.summitracing.com/careeropportunities/about/careers">Career Opportunities</a>
+                        
+                    
+                </div>
+                <div class="footer-caret" aria-controls="AboutFooterMenu" data-is-focus="false" aria-haspopup="true" aria-expanded="true"></div>
+            </div>
+            <a id="AboutFooterMenuLink" class="primaryLinks dropdown-toggle" data-toggle="dropdown" href="javascript:;" aria-haspopup="true" aria-expanded="false">
+                About Summit
+                <i class="far fa-angle-down"></i>
+            </a>
+        </div>
+        <div class="footer-select">
+            <div id="MoreFooterMenu" class="footerMenuParent dropdown-menu" aria-labelledby="MoreFooterMenuLink">
+                <div class="footerMenu">
+                    
+                        
+                            <a href="https://www.summitracing.com/catalog">Request a Catalog</a>
+                        
+                            <a href="https://www.summitracing.com/speedcard">Summit Racing Credit Card</a>
+                        
+                            <a href="https://www.summitracing.com/giftcards?ibanner=FC2">Gift Cards</a>
+                        
+                            <a href="https://www.summitracing.com/newsandevents/calcsandtools">Calculators &amp; Tools</a>
+                        
+                    
+
+                </div>
+                <div class="footer-caret" aria-controls="MoreFooterMenu" data-is-focus="false" aria-haspopup="true" aria-expanded="true"></div>
+            </div>
+            <a id="MoreFooterMenuLink" class="primaryLinks dropdown-toggle" data-toggle="dropdown" href="javascript:;" aria-haspopup="true" aria-expanded="false">
+                More
+                <i class="far fa-angle-down"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer-row secondary rn_HideInPrint">
+        
+            
+                <a href="https://help.summitracing.com/knowledgebase/article/HE-03732/en-us">Terms of Use</a>
+                 | 
+            
+                <a href="https://www.summitracing.com/privacy">Privacy and Security</a>
+                 | 
+            
+                <a href="https://help.summitracing.com/knowledgebase/article/SR-05220/en-us">Site Accessibility</a>
+                 
+            
+        
+        <br>
+        Copyright 2023 by AUTOSALES, INCORPORATED <br class="show-for-small-only">dba Summit Racing Equipment |
+        <a href="https://help.summitracing.com/knowledgebase/article/HE-03734">Trademarks</a>
+        <br>
+    </div>
+    <div class="footer-row showforprint">
+        <img class="footer-logo" alt="Summit Racing Equipment" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMTQuNiAzMjIuMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjE0LjYgMzIyLjIiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjMDAwMDk5IiBkPSJNMjE0LjYsMC43YzAsMC0wLjctMC43LTEuNC0wLjdIODEuM2MtMC43LDAtMS40LDAtMS40LDAuN0wyNi40LDczLjRjLTUuNyw3LjEtMjAsMjYuNC0xNy44LDQ5LjkKCWMxLjQsMTguNSwxMC43LDMxLjQsMTUsMzYuNEwwLDE5MS44YzAsMCwwLDAuNywwLDEuNGw0NC4yLDEyNy42YzAsMC43LDAuNywxLjQsMS40LDEuNHMxLjQsMCwyLjEtMC43bDcyLjctOTkuOAoJYzAsMC01LDYuNCwyNy4xLTM5LjJjMzMuNS00Ny44LDIuOS04Ni4zLDIuOS04Ni4zbDE1LTIwLjdsNDguNS03Mi43QzIxNC42LDIuMSwyMTQuNiwxLjQsMjE0LjYsMC43eiBNMTg4LjIsMTVsLTU4LjUsODEuMwoJYzIuMSwyLjksOC42LDEwLDEyLjEsMTUuN2MyNC45LDI5LjktMTcuMSw3OS4xLTE3LjEsNzkuMWMzLjYtMi45LTc0LjEsMTAwLjUtNzQuMSwxMDAuNWMwLDAuNy0wLjcsMS40LTEuNCwxLjQKCWMtMC43LDAtMS40LTAuNy0xLjQtMS40bC0zMy41LTk3LjdjMC0wLjcsMC0xLjQsMC0xLjRsMjUuNy0zNS42bC01LjctNy4xbC0xLjQtMS40Yy0yLjktMy42LTEwLjctMTMuNS0xMi4xLTI4LjUKCWMtMS40LTE3LjEsMTAtMzIuOCwxNS0zOC41YzAuNy0wLjcsNDguNS02Ny43LDQ5LjItNjguNGMwLTAuNywwLjctMC43LDEuNC0wLjdoMTAwLjVjMC43LDAsMS40LDAuNywxLjQsMC43CglDMTg4LjksMTMuNSwxODguOSwxNC4zLDE4OC4yLDE1eiIvPgo8Zz4KCTxwYXRoIGZpbGw9IiNGRjAwMDAiIGQ9Ik0xMjguMywxMTYuMmwtMTUtMTkuMmw0OC41LTY4LjRjMC43LTAuNywwLjctMS40LDAtMi4xYzAtMC43LTAuNy0wLjctMS40LTAuN2gtNjdjLTAuNywwLTEuNCwwLTEuNCwwLjcKCQlMNDcsODguNGMwLDAtMC43LDAuNy0wLjcsMS40Yy0zLjYsNS0xMi44LDE3LjEtMTIuMSwyOC41YzAuNywxMC43LDcuMSwxOC41LDkuMywyMS40YzAsMC43LDAuNywwLjcsMC43LDAuNwoJCWM1LDcuMSwxMC43LDEzLjUsMTIuOCwxNi40bC0yNy4xLDM3LjhjLTAuNywwLjctMC43LDEuNCwwLDEuNEw1MiwyNjAuOWMwLDAuNywwLjcsMS40LDEuNCwxLjRjMC43LDAsMS40LDAsMi4xLTAuN2w2OC40LTk0LjEKCQlsMC43LTAuN2MyLjktNC4zLDEyLjEtMTYuNCwxMi4xLTI5LjJDMTM2LjksMTI2LjIsMTMxLjksMTE5LjgsMTI4LjMsMTE2LjJDMTI4LjMsMTE2LjksMTI4LjMsMTE2LjksMTI4LjMsMTE2LjJ6Ii8+CjwvZz4KPC9zdmc+Cg==">
+        <p class="footer-tag-line">Everything you need for anything you drive.</p>
+    </div>
+</div>
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $(".footerMenuParent").on("show.bs.collapse", function(event) {
+                console.log(event.type + " - " + event.currentTarget.id);
+                var ignoreMenuID = '#' + event.currentTarget.id;
+                //$($(".footerMenuParent").not(ignoreMenuID)).collapse('hide');
+            });
+        });
+        // $(document).ready(function() {
+        //     $(".footerMenuParent").on("hide.bs.collapse", function(event) {
+        //         console.log(event.type + " - " + event.currentTarget.id);
+        //     });
+        // });
+    })(jQuery);
+</script>
+		</footer>
+	
+	
+	
+	
+	
+	
+	
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/bootstrap.bundle-105a4995b8.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/bootstrap.bundle-105a4995b8.js" type="text/javascript"></script>
+
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/postpreform.bundle-184c77da50.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/postpreform.bundle-184c77da50.js" type="text/javascript"></script>
+
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/app.bundle-9e3ce8f0b4.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/app.bundle-9e3ce8f0b4.js" type="text/javascript"></script>
+
+	<script onerror="javascript: var target = event.target; var script = document.createElement('script'); script.crossOrigin = target.crossOrigin; script.src = '/dist/default-1033.moment_2_29_4.bundle-eda4e638fd.js'; script.type = 'text/javascript'; target.insertAdjacentElement('afterend',script);" src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.moment_2_29_4.bundle-eda4e638fd.js" type="text/javascript"></script>
+
+	
+
+	<script type="text/javascript">let pvaGet = document.createElement('div');
+pvaGet.id = "PVAInfo";
+var pvaID = null;
+var summary = null;
+
+
+
+
+
+
+
+
+
+
+
+summary = 'Our Privacy and Security Policy';
+
+
+
+
+
+if(pvaID)   {
+startConversation();
+
+$('#webchat').before('<button id="restartButton" style="float:right;margin-right:20px;background-color: #00809d;color: white;border: none;border-radius: 4px;cursor: pointer;">Restart Guide</button>');
+
+$('ul.breadcrumb li a').each(function()   {
+if(this.href.includes('knowledgebase')) {
+    this.parentElement.style.display = "none";
+}
+});
+
+document.getElementById('restartButton').addEventListener('click', () => {
+startConversation();
+});	
+}
+
+function startConversation()    {
+const styleOptions = {
+    hideUploadButton: true,
+    hideSendBox: false, //hides the input
+    backgroundColor: 'white',
+    botAvatarInitials: 'Interactive Paint Volume Guide',
+    accent: '#00809d',
+    botAvatarBackgroundColor: "#FFFFFF",
+    botAvatarImage: '/webchat-icon.png',
+    userAvatarImage: 'https://avatars.githubusercontent.com/u/661465',
+    suggestedActionLayout: 'stacked'
+};
+
+const BOT_ID = pvaID;
+const theURL = "https://powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=" + BOT_ID;
+
+fetch(theURL)
+    .then(response => response.json())
+    .then(conversationInfo => {
+        window.WebChat.renderWebChat(
+            {
+                directLine: window.WebChat.createDirectLine({
+                    token: conversationInfo.token,
+                }),
+                store,
+                styleOptions
+            },
+            document.getElementById('webchat')
+        );
+    })
+    .catch(err => console.error("An error occurred: " + err));
+//COde snippet to trigger the conversation
+const store = window.WebChat.createStore(
+    {},
+    ({ dispatch }) => next => action => {
+        if (action.type === "DIRECT_LINE/CONNECT_FULFILLED") {
+            dispatch({
+                meta: {
+                    method: "keyboard",
+                },
+                payload: {
+                    activity: {
+                        channelData: {
+                            postBack: true,
+                        },
+                        //Web Chat will show the 'Greeting' System Topic message which has a trigger-phrase 'hello'
+                        name: 'startConversation',
+                        value: {
+                            "routeSelection": "Paint"
+                        },
+                        type: "event"
+                    },
+                },
+                type: "DIRECT_LINE/POST_ACTIVITY",
+            });
+            //Hide Sendbox Input
+            document.querySelector(' [data-id="webchat-sendbox-input"]').hidden = true;
+            document.querySelector('.webchat__icon-button__shade').hidden = true;
+            document.getElementsByClassName('webchat__send-icon')[0].style.display = "none";
+        }
+        return next(action);
+    }
+);
+}
+
+$('ul.breadcrumb li a').each(function()   {
+    if(this.href.includes('knowledgebase')) {
+        this.parentElement.style.display = "none";
+    }
+});
+
+function copyUrl()  {
+    let url = document.location.href;
+
+    navigator.clipboard.writeText(url).then(function() {
+    }, function() {
+        //document.querySelector('#CopyLink').textContent = "Link Copied";
+    });
+}
+
+var subjectHeader = document.querySelector('.page-header h1').textContent;
+
+var shareOption = document.createElement('div');
+shareOption.id = "articleShare";
+shareOption.style.float = "right";
+shareOption.classList.add("hidefromprint");
+shareOption.innerHTML = `<div class="dropdown">
+<button aria-label="Share Button" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <i class="far fa-share-alt"></i>
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <li><a href="mailto:?body=${document.location.href}&subject=${subjectHeader}"><i class="far fa-envelope"></i>Email</a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURI(window.location.href)}"><i class="fab fa-facebook"></i>Facebook</a></li>
+  <li><a id="CopyLink" href="javascript:copyUrl()"><i class="far fa-link"></i>Copy Link</a></li>
+  <li><a href="javascript:window.print()"><i class="far fa-print"></i>Print</a></li>
+</ul>
+</div>`;
+document.querySelector('.page-header').prepend(shareOption);
+
+function addSearch() {
+
+    var url = location.pathname;
+  
+    var search = document.createElement("div");
+    search.innerHTML = `
+
+
+
+
+
+<form method="GET" action="/search/" role="search" class="form-search">
+    <div class="input-group">
+
+        
+        
+        
+        
+        <div class="btn-group btn-select input-group-btn" data-target="#filter-7b75d090-e239-4a6e-811b-5c9a48535aba" data-focus="#search_control">
+            <ul>
+                <li class="dropdown-submenu dropdown">
+                    <button id="search-filter" type="button" class="btn btn-default"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" aria-label="Search Filter" aria-expanded="false">
+
+                        <span class="selected">Knowledge Articles</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="listbox" aria-label="Search Filter">
+                        
+                        <li role="presentation">
+                            <a href="#" role="option" data-value="knowledgearticle"
+                               aria-label="Knowledge Articles" aria-selected="false" tabIndex="-1">Knowledge Articles</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <label for="filter-7b75d090-e239-4a6e-811b-5c9a48535aba" class="sr-only">Search Filter</label>
+        <select id="filter-7b75d090-e239-4a6e-811b-5c9a48535aba" name="logicalNames" class="btn-select" aria-hidden="true" data-query="logicalNames">
+            
+            <option value="knowledgearticle">Knowledge Articles</option>
+            
+        </select>
+        
+
+        <label for="search_control" class="sr-only">
+            Search
+        </label>
+        <input type="text" class="form-control" id="search_control" name="q"
+               placeholder="Search"
+               value=""
+               title="Search">
+        <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"
+                    title="Search"
+                    aria-label="Search">
+                <span class="fa fa-search" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</form>
+
+`;
+
+    var body = document.querySelector('body');
+    var head = document.querySelector('body .page-heading');
+    
+    body.insertBefore(search, head);
+  
+  }
+
+
+var links = [];
+
+$(document).ready(function () {
+
+    //$('#content').append('<a href="/knowledgebase/article/1013" name="Cam Card" style="" target="_self">test</a>');
+
+    if($('#content a').length > 0)  {
+        var filters = '';
+//, #content a[href*="/answers/detail/a_id/"]
+        var index = 0;
+        $('#content a[href*="/knowledgebase/article"]').each(function() {
+                var url = "/knowledgebase/article/";
+                var url2 = "/answers/detail/a_id/";
+                var articleno = $(this).attr('href').replace(url, "");
+                //articleno = $(this).attr('href').replace(url2, "");
+                console.log(articleno);
+
+                var filter = "contains(articlepublicnumber,'" + articleno + "')";
+                index++;
+                if(index < $('#content a[href*="/knowledgebase/article"]').length)  {
+                    filter+= " or ";
+                }
+
+                filters += filter;
+                // $(this).attr('href', url + massagedarticle + "/en-us");
+        });
+
+        if(index != 0)  {
+            var req = new XMLHttpRequest();  
+            req.open(  
+            "GET", 
+            // window.location.hostname +  
+            // 
+                "/_api/knowledgearticles?$select=articlepublicnumber&$filter=((" + filters + ") and statecode eq 3 and (contains(articlepublicnumber,'SR') or contains(articlepublicnumber,'KA')))&$top=50",
+            true  
+            );  
+            req.onreadystatechange = function() {  
+            if (this.readyState === 4) {  
+                req.onreadystatechange = null;  
+                if (this.status === 200) {  
+                var results = JSON.parse(this.response).value;  
+                results.forEach(article => {
+                    $("#content a[href*='/knowledgebase/article']").each(function() {
+                        var url = "/knowledgebase/article/";
+                        var articleno = $(this).attr('href').replace(url, "");
+
+                        if(article.articlepublicnumber.includes(articleno)) {
+                            $(this).attr('href', url + article.articlepublicnumber + "/en-us");
+                        }
+                    });
+                });
+                }
+            }  
+            };  
+            req.send();  
+        }
+    }
+
+    addSearch();
+
+    if(summary != null) {
+        var summaryElement = "<h2>" + summary + "</h2>";
+        $(".knowledge-article-content").prepend(summaryElement);
+    }
+
+});
+
+</script>
+	
+	<script>
+		//this event will update the title of the page based on active breadcrumb
+		$('.breadcrumb').ready(function () {
+			if ($('.breadcrumb').is(':visible')) {
+				document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "&nbsp;· Help Center");
+			}
+		});
+
+		function GoToNewEditor() {
+			var editCmsUrlSegment = "EditInCms";
+			var currentUrl = window.location.href;
+			if (currentUrl.indexOf('?') > -1) {
+				var urlSegments = currentUrl.split("?");
+				window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+			}
+			else {
+				window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+			}
+		}
+	</script>
+	
+		
+	
+	
+		
+			<script>
+				if ('serviceWorker' in navigator) {
+					navigator.serviceWorker.getRegistrations().then(function(registrations) {
+					for(let registration of registrations) {
+						registration.unregister();
+					}}).catch(function(err) {
+					console.log('Service Worker unregister action failed: ', err);
+					});
+				}
+			</script>
+		
+	
+		
+	<!--Start Show Session Expire Warning Popup here -->
+    
+
+
+<!-- Generated at 11/10/2023 1:42:29 AM -->
+<!-- Page OK -->
+</body></html>

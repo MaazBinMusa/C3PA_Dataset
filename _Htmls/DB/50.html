@@ -1,0 +1,3342 @@
+<!DOCTYPE html><html class="no-js"><head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",e=>{this.persisted=e.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(e){if(document.hidden){e._triggerListener();return}this.triggerEvents.forEach(t=>window.addEventListener(t,e.userEventHandler,{passive:!0})),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(e=>window.removeEventListener(e,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(e=>{this._isClickPending?this._pendingClickFinished=e:e()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(e,t,i){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(i,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{if(t.hasAttribute("src")){let i=new URL(t.src).origin;i!==location.origin&&e.push({src:i,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}}),e=[...new Map(e.map(e=>[JSON.stringify(e),e])).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){console.error(e)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{e.hasAttribute("data-rocket-src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)})}async _transformScript(e){return await this._littleBreath(),new Promise(t=>{function i(){e.setAttribute("data-rocket-status","executed"),t()}function r(){e.setAttribute("data-rocket-status","failed"),t()}try{let n=e.getAttribute("data-rocket-type"),s=e.getAttribute("data-rocket-src");if(n?(e.type=n,e.removeAttribute("data-rocket-type")):e.removeAttribute("type"),e.addEventListener("load",i),e.addEventListener("error",r),s)e.src=s,e.removeAttribute("data-rocket-src");else if(navigator.userAgent.indexOf("Firefox/")>0){var a=document.createElement("script");[...e.attributes].forEach(e=>{"type"!==e.nodeName&&a.setAttribute("data-rocket-type"===e.nodeName?"type":e.nodeName,e.nodeValue)}),a.text=e.text,e.parentNode.replaceChild(a,e),i()}else e.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(e.text)))}catch(o){r()}})}async _loadScriptsFromList(e){let t=e.shift();return t&&t.isConnected?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var i=document.createDocumentFragment();e.forEach(e=>{let r=e.getAttribute&&e.getAttribute("data-rocket-src")||e.src;if(r){let n=document.createElement("link");n.href=r,n.rel=t,"preconnect"!==t&&(n.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),e.crossOrigin&&(n.crossOrigin=e.crossOrigin),e.integrity&&(n.integrity=e.integrity),i.appendChild(n),this.trash.push(n)}}),document.head.appendChild(i)}_delayEventListeners(e){let t={};function i(e,i){!function e(i){!t[i]&&(t[i]={originalFunctions:{add:i.addEventListener,remove:i.removeEventListener},eventsToRewrite:[]},i.addEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.add.apply(i,arguments)},i.removeEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.remove.apply(i,arguments)});function r(e){return t[i].eventsToRewrite.indexOf(e)>=0?"rocket-"+e:e}}(e),t[e].eventsToRewrite.push(i)}function r(e,t){let i=e[t];Object.defineProperty(e,t,{get:()=>i||function(){},set(r){e["rocket"+t]=i=r}})}i(document,"DOMContentLoaded"),i(window,"DOMContentLoaded"),i(window,"load"),i(window,"pageshow"),i(document,"readystatechange"),r(document,"onreadystatechange"),r(window,"onload"),r(window,"onpageshow")}_delayJQueryReady(e){let t;function i(i){if(i&&i.fn&&!e.allJQueries.includes(i)){i.fn.ready=i.fn.init.prototype.ready=function(t){return e.domReadyFired?t.bind(document)(i):document.addEventListener("rocket-DOMContentLoaded",()=>t.bind(document)(i)),i([])};let r=i.fn.on;i.fn.on=i.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map(e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]})}return r.apply(this,arguments),this},e.allJQueries.push(i)}t=i}i(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>t,set(e){i(e)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(e=>e(window).trigger("rocket-jquery-load")),await this._littleBreath();let e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let e=new Map;document.write=document.writeln=function(t){let i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+t);let r=document.createRange(),n=i.parentElement,s=e.get(i);void 0===s&&(s=i.nextSibling,e.set(i,s));let a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(e=>setTimeout(e)):new Promise(e=>requestAnimationFrame(e))}_emptyTrash(){this.trash.forEach(e=>e.remove())}static run(){let e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+		<!-- Page hiding snippet (recommended)  -->
+		<style>.async-hide { opacity: 0 !important} </style>
+		<script type="rocketlazyloadscript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+		h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+		(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+		})(window,document.documentElement,'async-hide','dataLayer',4000,
+		{'GTM-KL4348K':true});</script>
+		
+		<!-- Modified Analytics tracking code with Optimize plugin -->
+		<script type="rocketlazyloadscript">
+		    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-101718115-1', 'auto');  // Update tracker settings 
+		  ga('require', 'GTM-KL4348K');           // Add this line
+		</script>
+
+		<script type="rocketlazyloadscript">
+	// Load GTM for everyone except PageSpeed Insight Tool
+	if(navigator.userAgent.indexOf("Chrome-Lighthouse") == -1) { 
+	
+
+	// Google Tag Manager as Payload for all 3rd-party JS
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-K7BXBJT');
+	// GTM End
+	 }
+	</script>
+
+<!-- Clearbit script -->
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  var pollForDefinition = function (scope, varname, callback) {
+    if (typeof scope[varname] !== "undefined") {
+      return callback();
+    }
+    var interval = setInterval(function () {
+      if (typeof scope[varname] !== "undefined") {
+        clearInterval(interval);
+        callback();
+      }
+    }, 250);
+  };
+  var script = document.createElement("script");
+  script.src = "https://marketo.clearbit.com/assets/v1/marketo/forms.js";
+  script.async = true;
+  script.setAttribute("data-clearbit-publishable-key", "pk_d06b9a7f7fc0140ca7fe16fdcb415f95");
+  script.onerror = function (e) {
+    console.log("Clearbit Form JS unable to load");
+    pollForDefinition(window, "MktoForms2", function () {
+      MktoForms2.whenReady(function (form) {
+        form.setValues({ clearbitFormStatus: "Clearbit Form JS unable to load" });
+      });
+    });
+  };
+  document.querySelector('head').appendChild(script);
+</script>
+
+<!-- Clearbit script -->
+
+	
+		
+		
+
+		<link href="//www.google-analytics.com" rel="dns-prefetch">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href="/favicon.ico" rel="shortcut icon">
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		
+		<meta name="facebook-domain-verification" content="04paqoc95noc8gsorhr4w0ssdlxdol">
+
+		<meta name="robots" content="max-image-preview:large">
+
+<!-- This site is optimized with the Yoast SEO Premium plugin v12.5.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Privacy Policy - GroundTruth - GroundTruth</title>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.groundtruth.com/privacy-policy/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Privacy Policy - GroundTruth - GroundTruth">
+<meta property="og:url" content="https://www.groundtruth.com/privacy-policy/">
+<meta property="og:site_name" content="GroundTruth">
+<meta property="article:publisher" content="https://www.facebook.com/xADinc/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy Policy - GroundTruth - GroundTruth">
+<meta name="twitter:site" content="@groundtruthco">
+<meta name="twitter:creator" content="@groundtruthco">
+<script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.groundtruth.com/#website","url":"https://www.groundtruth.com/","name":"GroundTruth","potentialAction":{"@type":"SearchAction","target":"https://www.groundtruth.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.groundtruth.com/privacy-policy/#webpage","url":"https://www.groundtruth.com/privacy-policy/","inLanguage":"en-US","name":"Privacy Policy - GroundTruth - GroundTruth","isPartOf":{"@id":"https://www.groundtruth.com/#website"},"datePublished":"2022-12-22T08:04:42-05:00","dateModified":"2023-01-01T07:07:21-05:00"}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link data-minify="1" rel="stylesheet" href="https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/build/variable.css?ver=1679647697" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" href="https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/build/main.min.css?ver=1679647697" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" href="https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/mega-menu-c.css?ver=1679647697" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type="text/css" media="all">
+<link data-minify="1" rel="stylesheet" href="https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/build/wp.css?ver=1679647697" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type="text/css" media="all">
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.groundtruth.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.groundtruth.com/wp-content/plugins/svg-support/vendor/DOMPurify/DOMPurify.min.js?ver=1.0.1" id="bodhi-dompurify-library-js" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/scripts/build/main.pkg.js?ver=1679647698" id="main-js" defer=""></script>
+<link rel="https://api.w.org/" href="https://www.groundtruth.com/wp-json/"><link rel="alternate" type="application/json" href="https://www.groundtruth.com/wp-json/wp/v2/pages/460858"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.groundtruth.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.groundtruth.com/wp-includes/wlwmanifest.xml"> 
+<link rel="shortlink" href="https://www.groundtruth.com/?p=460858">
+<link rel="alternate" type="application/json+oembed" href="https://www.groundtruth.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.groundtruth.com%2Fprivacy-policy%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.groundtruth.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.groundtruth.com%2Fprivacy-policy%2F&amp;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>		<style type="text/css" id="wp-custom-css">
+			
+.blog-chat{
+	background: #e9f0f2;
+    padding: 25px;
+    border-radius: 10px!important;
+	margin-top:20px
+}.blog-chat :last-child{
+	
+	margin-bottom:0!important
+}
+.comp-img-detail.comp-webinar.comp-row-card.for-retail .img-detail {
+    
+    max-height: 250px;
+}
+
+.comp-img-detail img{
+max-width:100%
+}
+
+.comp-color-box.for-retail {
+   padding: 0;
+    margin-top: 0;
+}
+
+.comp-color-box.for-retail .qsr-round-off .qsr-round-off_item {
+    flex: 0 0 25%;
+    padding: 0 15px;
+    margin-top: 80px;
+}
+.comp-row-card .copy-detail {
+    padding: 25px 70px;
+}.comp-row-card .copy-detail p{
+  margin-bottom:0
+}
+.comp-color-box.for-retail .img-detail {
+  
+    max-height: 250px;
+}
+ .comp-row-card.for-retail .copy-detail {
+    padding: 25px 35px;
+}
+.comp-color-box.for-retail .qsr-round-off .qsr-round-off_item .boxing p {
+    text-align: center;
+}
+
+.comp-color-box.for-retail .boxing{
+	min-height: 450px;
+}
+
+
+
+.mrc-accreditation section.section.header-section.sh-ar-40 {
+    padding-bottom: inherit!important;
+}
+.comp-quotation .quote-pin img{
+    max-width:32px;
+}
+
+a.post.insight-post .panel>.panel-heading>.panel-heading-inner {
+border: 3px solid #d5dfe2!important;
+
+    background-color: #e9f0f2!important;
+}
+
+a.post.insight-post .panel>.panel-heading>.panel-heading-inner:hover {
+border: 3px solid #18303d!important;
+
+    background-color: #e9f0f2!important;
+}
+
+.btn.black:hover{
+	  background-color: #20d2b5!important;
+	color:#151e24!important;
+}
+.border-black {
+    border: 1px solid #151e24 !important;
+}
+.black {
+    color: #151e24 !important;
+}
+.bg-gray {
+    background-color: #e9f0f2 !important;
+}
+.btn.btn-basic {
+    text-transform: capitalize;
+
+    border-color:  #151e24;
+    
+}
+.btn.btn-basic.bg-transparent:hover {
+	       border-color:  #20d2b5!important; background:#20d2b5!important;
+	color:#151e24!important;
+}.text-green {
+    color: #20d2b5;
+}
+
+footer nav.main-navigation .dropdown .dropdown-menu li.active > a {
+    background: none !important;
+    color: var(--seafoam);
+}
+
+div.announcement-container div.announcement .announcement-title .toggle, div.announcement-container div.announcement .announcement-title .btn.btn-basic:hover {
+   background:#18303d!important;
+	color:#fff!important;
+}
+/* .btn.btn-basic:hover {
+       border-color:  #18303d!important; background:#18303d!important;
+	color:#fff!important;
+} */
+hr {
+  
+    border-color: #18303d!important;
+  
+}.bg-green {
+    background-color: #20d2b5 !important;
+}
+
+.post.article-post:hover>.panel {
+    background-color: #e9f0f2 !important;
+    border-color: #18303d!important;
+}
+
+
+.btn.btn-basic.dropdown-toggle:hover{
+	  background-color: #18303d !important;
+	color:#fff!important;
+}
+
+.green {
+    color: #20d2b5 !important;
+}
+.solution.product-solution .panel.bg-gray .btn.btn-basic {
+   
+    border: 0 
+ 
+}.solution.product-solution .panel.bg-gray:hover .btn.btn-basic {
+   
+  background-color: #18303d !important;
+	color:#fff!important;
+ 
+}
+.solution.product-solution .panel.bg-gray:hover{
+	 background-color: #e9f0f2 !important;
+	border-color:#18303d!important;
+}
+.solution.product-solution .panel.bg-gray h2 {
+    font-size: 28px!important;
+
+}
+
+@media (max-width: 667px){
+.solution.product-solution .panel.bg-gray h2 {
+    font-size: 20px!important;
+
+}
+.comp-color-box.for-retail .boxing{
+	min-height: inherit
+}
+	.mobile-margin-20{
+		margin-top:20px
+	}
+}
+
+
+footer nav.main-navigation .copy-block .fa-map-marker {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.fa-map-marker:after {
+  
+    margin: 0 0 0 10px;
+}
+footer nav.main-navigation .copy-block a {
+
+    width: 120px;
+  
+}
+footer nav.main-navigation .dropdown .dropdown-menu li > a:hover {
+ 
+  color: var(--seafoam)!important;
+}
+
+.btn.btn-basic {
+
+    text-transform: capitalize;
+    letter-spacing: normal;
+}body.home .nav.nav-tabs>li h4 {
+
+    text-transform: capitalize;
+    letter-spacing: normal;
+}.bg-green {
+    background-color: #20d2b5 !important;
+}#mega-menu #sign-in-button {
+   
+    border: 1px solid #20d2b5 !important;
+   
+}
+.nav.nav-tabs>li>a:hover >h4{
+   border-color:  #18303d;
+}
+.nav.nav-tabs>li.active>a>h4 {
+ border-color: #20d2b5;
+}
+.carousel .carousel-indicators>li.active, .tns-nav button.tns-nav-active {
+    background-color: var(--seafoam) !important;
+}
+footer nav.navigation.social-navigation:before {
+    content: "\00a9 2023 GroundTruth. All rights reserved.";
+ 
+}
+.carousel .carousel-indicators>li, .tns-nav button {
+    background-color: var(--grey-dark) !important;
+}
+.page-template-page-posts.insights section.section .button-container .btn{
+text-transform: capitalize!important;
+    letter-spacing: normal;
+    padding: 15px 25px;
+    font-size: 16px;
+}
+.comp-quotation .quote-pin {
+   
+    background: #20d2b5;
+   
+}
+.postid-463267 .bg-blue{
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2023/03/giltuss-bg-7.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}.postid-463583 .bg-blue{
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2023/03/Truelio-2.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.postid-463267 .next-previous-navigation, .postid-463583 .next-previous-navigation{
+	display:none
+}
+.page-id-462272  .bg-blue{
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2022/04/bg-gradient.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.page-id-463398 .bg-blue{
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2023/03/retail-bg-sec.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+
+.page-id-463398 .bg-mint{
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2023/03/retail-bg-4.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.page-id-462272 .line-teal{
+    margin-bottom: 230px !important;
+}
+
+@media (max-width: 667px){
+	.page-id-462272 .line-teal {
+    margin-bottom: 0px !important;
+}
+}
+
+
+.page-id-461535 ul.bull-s li:after {
+    background: #20d2b5!important
+}
+.icon-strip.insight .icon.num {
+    background: var(--seafoam) !important;
+ 
+}
+
+.comp-icon-details.vote-3-col {
+   
+    margin: 0 -10px;
+   
+}
+.comp-icon-details.vote-3-col .comp-icon-details_col {
+    padding: 0 10px;
+  
+}
+@media (max-width: 769px) {
+	.comp-report .for-form .inner-col {
+    padding: 30px 20px!important
+   
+}
+.mhl{
+	min-height:inherit
+}
+.mmb{
+	margin-bottom:0 !important
+}
+}
+.vote-box h5{
+	letter-spacing: normal;
+	font-weight:400!important
+}
+.comp-icon-details.boxing-white.vote-box .boxing {
+ 
+  
+    padding: 25px;
+
+}
+.p-80 {
+  padding: 80px
+}
+
+
+@media (min-width: 1500px){
+.page-id-453056 .sh-ar-40, .page-id-430161 .sh-ar-40 {
+    padding-bottom: inherit!important;
+	}}
+@media (min-width: 769px) {
+  .contact .sh-ar-40 {
+    padding-bottom: inherit!important;
+  }
+	.privacy-policy-section a{
+		color: #0083c6!important;
+    font-weight: 400!important;
+	}	.privacy-policy-section a u{
+		text-decoration:none!important;
+	}
+  .contact-mrc .sh-ar-40 {
+    padding-bottom: inherit!important;
+  }
+
+  .contact-ctv .sh-ar-40 {
+    padding-bottom: inherit!important;
+  }
+
+  .contact-channel-partnership-reseller-partnership .sh-ar-40 {
+    padding-bottom: inherit!important;
+  }
+}
+
+.pp-mini .detail .detail-icon {
+    display: block!important;
+    margin-bottom: 0!important;
+}
+.hr-grey-normal.for-pp {
+    margin: 0 0px 70px 0;
+    border-bottom: 1px solid #d5dfe2;
+}
+.privacy-policy-section {
+    padding: 0px 0px 40px 0;
+    text-align: left;
+}
+
+.privacy-policy table tr th {
+    background: #f2f7f7;
+	line-height:normal
+
+}
+.privacy-policy table tr td, .privacy-policy table tr th {
+    border: 1px #e9f0f2 solid;
+ 
+}
+.privacy-policy table tr td ul{
+	padding-left:18px
+}
+.pp-mini{
+	padding:0!important;
+}
+.pp-mini .nav.nav-tabs>li{
+display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+}.pp-mini .nav.nav-tabs>li span{
+padding:0 0 0 20px;
+}.pp-mini .nav.nav-tabs>li strong{
+margin:0;
+	border-right: 3px solid #20d2b5;
+}
+@media (min-width: 667px)
+.page-id-453056 .sh-ar-40, .page-id-430161 .sh-ar-40 {
+    padding-bottom: inherit!important;
+}
+
+}
+.contact .sh-ar-40, .contact-ctv .sh-ar-40{
+    padding-bottom: inherit!important;
+}
+
+table.comp-table.simple{
+	width:100%;
+}
+.lfs-13 {
+    font-size: 13px !important;
+}
+
+table.comp-table.simple tr td {
+    background: #f2f7f7;
+	text-align:center;
+	font-size:16px;
+	
+}
+table.comp-table.simple tr td:first-child {
+	text-align:left;
+	font-weight:400
+}
+
+table.comp-table.simple.round-2 tr td {
+
+}
+
+.postid-460596 .container.container-narrow {
+    max-width: 850px;
+}
+
+
+.postid-460379 .next-previous-navigation {
+    display: none;
+}.comp-stats .count-2 {
+    font-size: 46px;
+    font-weight: 700;
+	margin-bottom:0
+ 
+}.comp-stats p{
+ line-height:normal;
+	margin-bottom:15px
+ 
+}.comp-stats.s-3 small{
+min-height: 38px;
+    display: block;
+ 
+}
+.comp-stats .count-2 {
+    font-size: 50px;
+    font-weight: 700;
+ 
+}
+.comp-auto-header{
+	padding: 0!important;
+    margin: 0!important;
+    height: auto!important;
+}.comp-auto-header .panel.for-copy p.title{
+margin-bottom: 10px!important;
+
+}
+.comp-auto-header .panel.for-copy{
+	padding: 0!important;
+height: auto!important;
+	position:inherit !important;
+}
+.comp-auto-header .panel.for-copy .detail {
+overflow: inherit;
+    height: auto !important;
+    padding: inherit!important;
+    width: 100%!important;
+    display: flex;
+    align-items: center;
+    min-height: 330px;
+}
+.comp-auto-header .panel.for-copy .detail-inner {
+	padding: 70px 0!important;
+    margin: 0!important;
+    height: auto!important;
+	position:inherit !important;
+	-webkit-transform: inherit !important; 
+    -moz-transform: inherit !important;
+    -o-transform: inherit !important;
+    -ms-transform: inherit !important;
+}
+
+
+
+
+
+.comp-auto-header .for-bg{
+	
+}
+
+ul.bull-s li::marker {
+display:none
+}
+.mb-30{
+	margin-bottom:30px
+}
+body.single .page-heading .author-share {
+    border-bottom: 1px solid #d5dfe2 !important;
+}
+.comp-report{
+	
+}
+.comp-report .for-copy{
+	width:55%;
+	margin-bottom:40px
+}
+.comp-report .for-copy img{
+	width:100%
+}
+.comp-report .for-form{
+		width:45%;
+
+
+}
+
+.comp-report .for-form .inner-col{
+padding: 40px 40px;
+    background: #e9f0f2;
+    text-align: center;
+    border-top: 5px solid var(--navy);
+}
+ul.bull-s.bull-navy li:after{
+	background:#18303d
+}
+
+.comp-report .for-form form.mktoForm .mktoButtonWrap {
+    padding-left: 0 !important;
+}
+.comp-report .for-form .mktoForm .mktoButtonWrap.mktoInset .mktoButton{
+margin: 0!important;
+    text-transform: capitalize;
+    letter-spacing: inherit;
+    font-size: 16px !important;
+}
+@media (max-width: 1280px) {
+.comp-auto-header .panel.for-copy .detail-inner {
+    padding-left:25px!important;
+padding-right:25px!important;
+}
+}
+@media (max-width: 667px) {
+.comp-stats .count-2 {
+    font-size: 32px;
+ 
+ 
+}
+	.comp-auto-header .panel.for-copy .detail {
+ 
+    min-height: 250px;
+}.comp-auto-header .panel.for-copy .detail-inner {
+    padding: 40px 25px!important;
+
+}.comp-report .for-copy {
+    width: 100%;
+    margin-bottom: 30px;
+}.comp-report .for-form {
+    width: 100%;
+}
+}
+
+ul.bull-s.bull-charcoal li:after {
+ background: var(--charcoal);
+}
+
+
+ul.radio-list.sq li:after {
+  
+    background: var(--charcoal);
+
+}
+
+ul.radio-list.sq li:before {
+    color: var(--charcoal);
+  
+    background: var(--charcoal);
+}
+.direct-mail ul.radio-list {
+    padding: 0 !important;
+margin: 40px 0 0 20px!important;
+}
+.direct-mail .header-spacer+.ar-auto, .product-template-default.direct-mail .header-spacer, .direct-mail .next-previous-navigation   {
+    display: none;
+}
+.postid-460033 .bg-blue {
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2022/12/direct-mail-header-2.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.postid-460033 .bg-lemon{
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2022/06/map-bg-2.png) !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+.line-teal.white::after {
+  background: #fff;
+}
+.dl-comp{
+background: #fff;
+    border-radius: 20px!important;
+    display: block;
+    width: 100%;
+    padding: 50px 105px;
+    margin-top: -275px;
+  
+}
+.direct-email-calculator input {
+    border: 1px solid #d5dfe2;
+    padding: 7px 15px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    width: 225px;
+    box-shadow: 0px 2px 15px rgb(55 82 95 / 6%) !important;
+    border-radius:4px !important;
+    height: auto;
+}
+.direct-email-calculator.blended-video p.placeholder span.inside {
+    background: #f2f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 4px 0 0 4px !important;
+    position: static;
+    border: 1px solid #d5dfe2;
+    border-right: 0;
+    width: 65px;
+} .direct-email-calculator  .alert {
+ line-height: normal;
+    bottom: -37px !important;
+    left: inherit;
+    top: initial;
+    color: #e14d43;
+    padding: 0;
+    font-size: 12px;
+    display: none;
+    width: 225px;
+    padding-left: 0;
+    right: 0;
+    text-align: center;
+}
+.direct-email-calculator   p.placeholder span.inside {
+    background: #f2f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 4px 0 0 4px !important;
+    position: static;
+    border: 1px solid #d5dfe2;
+    border-right: 0;
+    width: 65px;
+}
+.direct-email-calculator p.placeholder {
+    margin-bottom: 0px;
+    display: flex;
+ 
+	justify-content: right;
+}
+.dl-header-margin{
+	margin-bottom:210px
+}
+
+.dl-header-margin-2{
+    margin-bottom:180px;
+}
+.comp-icon-details.mt3 .comp-icon-details_col {
+  margin-top: 30px;
+
+}
+.learn-more{
+	text-decoration: underline!important; 
+	color: #8296A5!important;  
+	text-underline-offset: 5px!important; 
+	font-size: 15px;
+}.learn-more:hover{
+	text-decoration: underline!important;
+	color: #151e24!important;  
+	text-underline-offset: 5px!important; 
+}.learn-more:active,.learn-more:focus{
+	text-decoration: underline!important;
+	
+}
+
+.direct-email-calculator{
+padding: 50px 220px;
+    margin-top: -250px;
+    margin-bottom: 80px;
+	
+}
+.direct-email-calculator .gutter{
+	margin-top:25px;
+	justify-content:space-between;
+	align-items: center;
+}
+.direct-email-calculator .gutter .copy-detail{
+	width:auto;
+	font-weight:400;
+	font-size: 19px;
+}
+
+a.learn-more i{
+ -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+   
+}
+a.learn-more.active i{
+ 
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+@media (max-width: 667px) {
+	.dl-header-margin {
+  margin-bottom: 0;
+}
+	.dl-header-margin-2 {
+    margin-bottom: 0px;
+}.direct-email-calculator {
+padding: 30px 25px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}.postid-460033 .comp-img-detail .copy-detail {
+    padding: 20px;
+    margin-bottom: 15px;
+  
+}.direct-email-calculator .gutter .copy-detail {
+      width: 100%;
+    font-size: 15px;
+}.direct-email-calculator input { font-size: 15px;
+   
+    width: 100%;
+  
+}.direct-email-calculator .gutter {
+    margin-top: 0;
+ 
+}.dl-comp {
+      padding: 30px 25px;
+    margin-top: 0;
+}.dl-comp .comp-icon-details_col .icon img {
+    width: 35px !important;
+  height: auto !important;
+}.direct-mail ul.radio-list {
+  
+    margin: 30px 0 0 20px!important;
+}.postid-460033  section.section .detail>.detail-inner {
+    padding: 0!important;
+}.comp-img-detail.comp-col  {
+    margin: 0;
+  
+}
+	.comp-img-detail.comp-col .gutter {
+    margin: 0;
+    flex-direction: row;
+}.postid-460033 .comp-img-detail.managed-col {
+    margin-top: 20px;
+}.comp-btn.ghost {
+    border: 2px #fff solid;
+    padding: 12px 18px!important;
+}
+}
+
+
+section.section:not(.taxonomy-section)>.panel{
+	overflow:inherit
+}
+
+
+footer nav.main-navigation .copy-block p {
+  width: 100%;
+}
+.header-spacer {
+  height: 65px;
+}
+
+div.p-wrap-1 {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+div.p-wrap-1 img {
+  max-width: 100% !important;
+}
+
+.new-home-header h1.h-first {
+  font-size: 44px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+.new-home-header h2.h-second {
+  font-size: 44px !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+}
+.new-home-header {
+  padding: 70px 0;
+}
+.page-id-458556 .bg-blue {
+  background: transparent !important;
+  background: url(https://www.groundtruth.com/wp-content/uploads/2022/10/homr-new-banner.png) !important;
+  background-size: cover !important;
+  background-position: top left !important;
+}
+.new-home-header .comp-btn {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-home-header .comp-btn img {
+  width: 16px;
+}
+
+.new-home-header .comp-btn img.a-2 {
+  display: none;
+}
+.new-home-header .comp-btn:hover img.a-2 {
+  display: block;
+}
+.new-home-header .comp-btn:hover img.a-1 {
+  display: none;
+}
+.comp-home-alert div.announcement-container{
+	position:inherit
+}.comp-home-alert div.announcement-container div.announcement .announcement-title{
+ position: inherit;
+   
+    -webkit-transform: inherit;
+    -moz-transform: inherit;
+    -o-transform: inherit;
+    -ms-transform: inherit;
+    transform: inherit;
+}.comp-home-alert div.announcement-container div.announcement .announcement-title {
+  
+    position: inherit;
+   
+    -webkit-transform: inherit;
+    -moz-transform: inherit;
+    -o-transform: inherit;
+    -ms-transform: inherit;
+    transform: inherit;
+}
+section.section.comp-home-alert .detail .description {
+    padding: 0 !important;
+}
+section.section.comp-home-alert .detail .detail-icon {
+    display: none;
+    margin-bottom: 0;
+}
+
+.comp-home-alert div.announcement-container div.announcement .announcement-title{
+top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.comp-home-alert div.announcement-container div.announcement .announcement-title .m-s{
+
+    display: none;
+ 
+}.comp-home-alert div.announcement-container div.announcement .announcement-title i {
+    margin-right: 20px;
+}
+.page-id-458556 .announcement-container br {
+  display: none;
+}
+
+.page-id-458556 .section.bg-green {
+  padding: 5px 5px !important;
+}
+.page-id-458556 .announcement-title p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-id-458556 .announcement-title a {
+  text-transform: capitalize;
+  letter-spacing: normal !important;
+  padding: 3px 10px !important;
+  border: 2px solid #151e24 !important;
+  margin-left: 20px !important;
+  font-weight: 700 !important;
+  font-size: 14px;
+  color: #151e24;
+  min-height: normal !important;
+}
+.page-id-458556 .announcement-title a:hover {
+  text-transform: capitalize;
+  letter-spacing: normal !important;
+  padding: 3px 10px !important;
+  border: 2px solid #18303d !important;
+  margin-left: 20px !important;
+  font-weight: 700 !important;
+  font-size: 14px;
+  color: #fff;
+  min-height: normal !important;
+  background: #18303d;
+}
+
+
+
+.page-id-458194 .bg-blue {
+    background: transparent !important;
+    background: url(https://www.groundtruth.com/wp-content/uploads/2022/10/homr-new-banner.png) !important;
+    background-size: cover !important;
+    background-position: top left !important;
+}
+
+
+
+.comp-icon-details.for-gt-india {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /*     grid-template-rows: 1fr 2fr 1fr; */
+  gap: 25px 25px;
+}
+
+.comp-icon-details.for-gt-india .comp-icon-details_col {
+  padding: 20px;
+  border-radius: 10px !important;
+  background: #fff !important;
+  display: block;
+  width: inherit;
+  margin: 0;
+	    text-align: left;
+    position: relative;
+}.comp-icon-details.for-gt-india .comp-icon-details_col img{
+    max-width: 18px;
+    position: absolute;
+    top: 23px;
+    left: 20px;
+    margin: 0;
+}
+.comp-icon-details.for-gt-india   .comp-icon-details_col h6 {
+    padding-left: 25px;
+    font-size: 17px!important;
+    font-weight: 700!important;
+	text-transform:capitalize
+}
+.comp-icon-details.for-gt-india .comp-icon-details_col p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #18303d;
+}
+@media (max-width: 667px) {
+	.comp-home-alert div.announcement-container div.announcement .announcement-title i {
+    margin-right: 5px;
+}
+	.comp-home-alert div.announcement-container div.announcement .announcement-title .d-s{
+
+    display: none;
+ 
+}
+	.comp-home-alert div.announcement-container div.announcement .announcement-title .m-s{
+
+    display: block;
+		  margin-right: 5px;
+ 
+}
+  div.p-wrap-1 {
+    display: block;
+  }
+
+  .page-id-458556 .section.bg-green .detail-icon.invisible {
+    display: none;
+  }
+  .page-id-458556 .section.bg-green .detail > .detail-inner {
+    padding: 0 !important;
+  }
+  .page-id-458556 .announcement-title a {
+ text-transform: capitalize;
+    letter-spacing: normal !important;
+    padding: 2px 5px !important;
+    border: 1px solid #151e24 !important;
+    margin-left: 0 !important;
+    line-height: normal !important;
+    font-size: 11px !important;
+    margin-top: 0px !important;
+    min-height: inherit !important;
+    display: inline-block;
+  }
+  .page-id-458556
+    div.announcement-container
+    div.announcement
+    .announcement-title {
+    padding: 0 !important;
+  }
+  .new-home-header h1.h-first {
+    font-size: 32px !important;
+    margin-bottom: 10px !important;
+    text-align: left;
+  }
+  .new-home-header h2.h-second {
+    font-size: 32px !important;
+    text-align: left;
+  }
+  .new-home-header {
+    padding: 40px 0;
+  }
+  .new-home-header p {
+    text-align: left;
+  }
+  .new-home-header .comp-btn {
+    font-size: 15px !important;
+    padding: 12px 15px !important;
+    margin-top: 30px;
+    min-width: 120px !important;
+  }
+  .page-id-458556 .bg-blue {
+    background-position: top left !important;
+  }
+}
+
+.line-teal::after {
+  height: 4px;
+}
+
+.line-teal {
+  padding-bottom: 18px;
+}
+
+.page-id-458224 section.section:not(.taxonomy-section) > .panel {
+  overflow: visible;
+}
+
+.page-id-458224 #gdpr-modal {
+  display: none !important;
+}
+.page-id-459261 section.section:not(.taxonomy-section) > .panel {
+  overflow: visible;
+}
+
+.page-id-459261 #gdpr-modal {
+  display: none !important;
+}
+.blended-video {
+  background: #fff;
+  padding: 50px;
+  margin-top: -310px;
+  box-shadow: 2px 2px 40px rgb(130 150 165 / 10%) !important;
+  border-radius: 10px !important;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+}
+
+.page-id-458224 .line-teal,
+.page-id-459261 .line-teal {
+  margin-bottom: 230px !important;
+}
+
+.page-id-458224 .bg-blue,
+.page-id-459261 .bg-blue {
+  background: transparent !important;
+  background: url(https://www.groundtruth.com/wp-content/uploads/2022/04/bg-gradient.jpg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bull-pros p.bull {
+  position: relative;
+  padding-left: 25px;
+}
+
+.bull-pros p.bull img {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 13px;
+  width: auto !important;
+}
+
+.blended-video p.placeholder {
+  margin-bottom: 0px;
+  display: flex;
+  width: 320px;
+}
+
+.blended-video .sec-2,
+.blended-video .sec-1 {
+}
+
+.blended-video .sec-2 {
+  display: none;
+  padding-top: 35px;
+}
+
+.blended-video .sec-2 .comp-img-detail {
+  max-width: 500px;
+  margin: auto;
+}
+
+.blended-video .sec-2 p {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #8296a5;
+}
+
+.blended-video .sec-2 h1 {
+  margin: 0 !important;
+}
+
+.blended-video h5 {
+  margin-bottom: 50px !important;
+}
+
+.line-teal.center::after {
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.blended-video h6 {
+  line-height: inherit !important;
+
+  margin: 0 !important;
+}
+
+.blended-video input {
+  border: 1px solid #d5dfe2;
+  padding: 7px 15px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  width: 250px;
+  box-shadow: 0px 2px 15px rgb(55 82 95 / 6%) !important;
+  border-radius: 0 4px 4px 0 !important;
+  height: auto;
+}
+
+.blended-video p.placeholder span.inside {
+  background: #f2f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 4px 0 0 4px !important;
+  position: static;
+  border: 1px solid #d5dfe2;
+  border-right: 0;
+  width: 65px;
+}
+
+.blended-video p.v-label {
+  line-height: normal;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 5px 0 20px 0;
+  color: #8296a5;
+}
+
+.blended-video .copy-detail {
+  text-align: center !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.blended-video .copy-detail ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #8296a5;
+  font-weight: 300;
+  opacity: 0;
+}
+
+.blended-video .copy-detail input.pl-show::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 1;
+}
+.blended-video .comp-img-detail br {
+  display: none;
+}
+.blended-video p.placeholder .alert {
+  line-height: normal;
+  bottom: -35px !important;
+  left: 0;
+  top: initial;
+  color: #e14d43;
+  padding: 0;
+  font-size: 11px;
+  display: none;
+  width: 100%;
+  padding-left: 65px;
+}
+.blended-video p.placeholder .alert.for-mobile,
+.blended-video p.placeholder .alert.for-ctv {
+  bottom: -44px !important;
+
+  font-size: 15px;
+}
+.blended-video .alert-row {
+  min-height: 27px;
+  margin-bottom: 30px;
+}
+
+.blended-video p.alert-m {
+  color: #e14d43;
+  font-size: 13px;
+  font-weight: 400;
+  display: none;
+}
+
+.blended-video p.value {
+  color: #18303d;
+
+  font-weight: 400;
+  display: none;
+}
+
+#btn-blend img {
+  width: 21px;
+  margin-left: 4px;
+}
+
+@media (max-width: 667px) {
+  .page-id-458224 .line-teal {
+    margin-bottom: 0px !important;
+  }
+
+  .blended-video {
+    padding: 25px;
+    margin-top: 0;
+
+    margin-bottom: 40px;
+  }
+
+  .blended-video .copy-detail {
+    display: block;
+  }
+
+  .blended-video h5 {
+    margin-bottom: 30px !important;
+  }
+
+  .blended-video h6 {
+    line-height: inherit !important;
+    margin: 0 0 5px 0 !important;
+    font-size: 14px !important;
+  }
+
+  .blended-video .copy-detail {
+    margin-bottom: 20px;
+  }
+
+  .blended-video p.placeholder .alert {
+    font-weight: 300;
+  }
+
+  .bull-pros {
+    min-height: inherit !important;
+  }
+
+  .page-id-458224 .comp-icon-details.gutter-30 {
+    margin: 0;
+  }
+
+  .page-id-458224 .comp-icon-details.boxing-white .comp-icon-details_col {
+    margin: 0 0 20px 0 !important;
+    padding: 0;
+  }
+
+  .spacer-50 {
+    margin-top: 30px;
+  }
+}
+
+.comp-nl-form {
+}
+
+.comp-bp .comp-img-card .img-card {
+  max-height: 205px;
+}
+
+.comp-nl-form form.mktoForm .mktoButtonWrap button.mktoButton {
+  color: #18303d !important;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.comp-nl-form .mktoForm .mktoCheckboxList label#LblmktoCheckbox_36011_0 {
+  flex: 0 0 100%;
+}
+
+.comp-nl-form .creative {
+  max-width: 350px;
+}
+
+.comp-nl-form .mktoForm .mktoCheckboxList label {
+  flex: 0 0 50%;
+  font-weight: 400 !important;
+  margin: 15px 0 5px 0 !important;
+}
+
+.comp-nl-form .mktoForm label#LblgeneralNewsletter {
+  margin-top: 20px;
+}
+
+.comp-nl-form .mktoForm .mktoCheckboxList label#LblgeneralNewsletter {
+  top: 6px;
+}
+
+.comp-nl-form .mktoForm .mktoCheckboxList label:before {
+  top: 3px;
+}
+
+.page-id-407245 a.btn.btn-basic.border-gray {
+  border: 1px #8296a5 solid !important;
+  padding: 17px 25px;
+  color: #18303d !important;
+}
+
+.page-id-407245 a.btn.btn-basic.border-gray:hover {
+  border: 1px #18303d solid !important;
+  background: #18303d !important;
+  color: #fff !important;
+}
+
+.comp-bp .comp-img-card h5 {
+  line-height: 1.4 !important;
+  min-height: 59px;
+}
+
+.subscription-newsletter-block .mktoForm .mktoCheckboxList > label {
+  padding: 0 !important;
+  flex: 0 0 50% !important;
+  margin: 5px 0 8px 0 !important;
+}
+
+.subscription-newsletter-block form.mktoForm .mktoFormRow:nth-child(3) {
+  flex: 0 0 60%;
+}
+
+.subscription-newsletter-block form.mktoForm .mktoFormRow:nth-child(2) {
+  flex: 0 0 40%;
+}
+
+.subscription-newsletter-block
+  form.mktoForm
+  label#LblindustryNewsletter::before {
+  position: absolute !important;
+  top: 3px;
+}
+
+.subscription-newsletter-block
+  form.mktoForm
+  .mktoFormRow:nth-child(3)
+  .mktoFormCol:nth-child(2) {
+  margin-top: 0px !important;
+}
+
+.subscription-newsletter-block
+  form.mktoForm
+  .mktoFormCol
+  div.mktoFieldWrap
+  .mktoCheckboxList
+  input.mktoField {
+  position: absolute;
+}
+
+.subscription-newsletter-block form.mktoForm .mktoCheckboxList > label {
+  min-height: inherit;
+}
+
+.subscription-newsletter-block {
+  background: #f2f7f7;
+}
+
+.mktoForm .mktoGutter {
+  display: none !important;
+}
+
+.mktoForm .mktoFormCol {
+  min-height: inherit !important;
+}
+
+.mktoButtonRow.with-signup-nl .mktoButtonWrap {
+  margin: 0 !important;
+}
+
+@media (max-width: 667px) {
+  .blended-video p.placeholder {
+    width: 100% !important;
+  }
+  .blended-video p.placeholder .alert {
+    left: 0;
+
+    width: 100%;
+  }
+  .comp-nl-form .creative {
+    max-width: 150px;
+  }
+  .blended-video p.placeholder {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+  .blended-video p.placeholder span.inside {
+    background: #fff;
+    border-radius: 4px !important;
+    position: static;
+    border: 0;
+    border-right: 0;
+    width: 100%;
+    padding: 0;
+    font-size: 12px;
+  }
+  .blended-video p.placeholder .alert.for-mobile,
+  .blended-video p.placeholder .alert.for-ctv {
+    bottom: -36px !important;
+    font-size: 12px;
+  }
+  .blended-video h6 {
+    margin-top: 25px !important;
+  }
+  .subscription-newsletter-block form.mktoForm .mktoFormRow:nth-child(3) {
+    flex: 0 0 100%;
+  }
+
+  .subscription-newsletter-block form.mktoForm .mktoFormRow:nth-child(2) {
+    flex: 0 0 100%;
+  }
+
+  .subscription-newsletter-block .mktoForm .mktoCheckboxList > label {
+    flex: 0 0 100% !important;
+  }
+}
+
+section.team-section .grid {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+section.team-section .grid .grid-item {
+}
+
+section.team-section .grid .grid-item:hover {
+}
+
+section.team-section .grid-item .panel .panel-heading:hover {
+  /* 	border: 3px solid transparent;
+	background:#ccebe8 */
+}
+
+section.team-section .grid-item .panel .panel-heading .panel-heading-inner {
+  padding: 15px;
+}
+
+section.team-section .grid-item h3 {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+section.team-section .grid-item p {
+  line-height: normal;
+  font-size: 13px;
+}
+
+.about .team-section a.grid-item .panel {
+  pointer-events: inherit;
+}
+
+.br-50 {
+  border-radius: 50% !important;
+}
+
+.qsr-restaurant .bg-blue {
+  background: transparent !important;
+  background: url(https://www.groundtruth.com/wp-content/uploads/2022/09/qsr-map.png) !important;
+  background-size: cover !important;
+}
+
+.groundtruth-general-newsletter-sample {
+  pointer-events: initial !important;
+}
+
+.groundtruth-general-newsletter-sample .bg-gray {
+  background-color: #d5dfe2 !important;
+}
+
+.qsr-map-box {
+  background: #ffffff;
+  border-radius: 16px !important;
+  padding: 40px;
+  width: 380px;
+  margin-top: 425px;
+}
+
+.qsr-round-off {
+  display: flex;
+
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.qsr-round-off .qsr-round-off_item {
+  flex: 0 0 50%;
+  padding: 0 15px;
+  margin-top: 100px;
+}
+
+.qsr-round-off .qsr-round-off_item .boxing {
+  background: #fff;
+  border-radius: 20px !important;
+  padding: 80px 30px 20px 30px;
+  position: relative;
+
+  text-align: center;
+}
+
+.qsr-round-off .qsr-round-off_item .boxing span {
+  display: inline-block;
+  width: 100px;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.qsr-round-off .qsr-round-off_item .boxing span img {
+  width: 100%;
+}
+
+.qsr-round-off .qsr-round-off_item .boxing h5 {
+  letter-spacing: normal;
+  margin-bottom: 30px !important;
+}
+
+.qsr-round-off .qsr-round-off_item .boxing p {
+  text-align: left;
+}
+
+.qsr-round-off .qsr-round-off_item .boxing :last-child-margin {
+  margin-bottom: 0 !important;
+}
+
+.comp-img-card {
+  position: relative;
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+#mktoForm_1411 .mktoButtonRow {
+  justify-content: center;
+}
+
+.h-line {
+  height: 5px;
+  border-radius: 4px !important;
+  background: #b7ff03;
+  display: block;
+  max-width: 90px;
+  margin-top: 10px;
+}
+
+.li-less ul {
+  margin-top: -10px !important;
+}
+
+.li-less ul li {
+  margin-bottom: 5px;
+}
+
+.page-id-451998 .bg-mint {
+  background: transparent !important;
+  background: url(https://www.groundtruth.com/wp-content/uploads/2022/05/qsr-banner-4.jpg) !important;
+  background-size: cover !important;
+}
+
+.qsr-restaurant .bg-black {
+  background: #000 !important;
+
+  background-size: cover !important;
+}
+
+@media only screen and (max-width: 667px) {
+  .mdil {
+    display: inline-block;
+  }
+
+  .qsr-restaurant .bg-blue {
+    background-size: 100% !important;
+  }
+
+  section.team-section .grid .grid-item {
+    width: 50% !important;
+  }
+
+  section.team-section .grid {
+    flex-wrap: wrap;
+  }
+
+  .qsr-map-box {
+    text-align: left !important;
+    border-radius: 10px !important;
+    padding: 20px;
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .qsr-round-off {
+    display: block;
+    flex-wrap: wrap;
+    margin: 0px;
+  }
+
+  .qsr-round-off .qsr-round-off_item .boxing {
+    padding: 50px 20px 20px 20px;
+  }
+
+  .qsr-round-off .qsr-round-off_item {
+    padding: 0;
+    margin-top: 60px;
+  }
+
+  .qsr-round-off .qsr-round-off_item .boxing span {
+    width: 70px;
+
+    top: -35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-id-421831 .xs-ar-5625 {
+    overflow: inherit;
+    height: auto !important;
+  }
+
+  .page-id-421831 .main-navigation,
+  .page-id-421831 .mobile-menu-toggle {
+    display: none;
+  }
+}
+
+.section.section.header-section {
+  margin-top: 0;
+}
+body.page-template-default {
+  margin-top: 77px;
+}
+body.single-post,
+body.page-template-page-posts {
+  margin-top: 50px;
+}
+.header-spacer {
+  height: 0;
+}
+
+html,
+body {
+  background: #151e24;
+  margin-top: 0 !important;
+}
+
+body.page-template-default #main-content,
+body.page-template-page-solution #main-content,  body.single-product #main-content, body.single-person #main-content{
+  margin-top: 72px !important;
+}
+body.single-post #main-content,
+body.page-template-page-posts #main-content, #main-content, body.single-article #main-content {
+  margin-top: 45px !important;
+}body.search-results #main-content, body.our-solutions #main-content{
+  margin-top: 77px !important;
+}
+body.solid-nav header {
+  background: #151e24;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</style>
+		<noscript>&lt;style id="rocket-lazyload-nojs-css"&gt;.rll-youtube-player, [data-lazy-src]{display:none !important;}&lt;/style&gt;</noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>		
+		<script type="rocketlazyloadscript">
+			
+        // conditionizr.com
+        // configure environment tests
+        conditionizr.config({
+            assets: 'https://www.groundtruth.com/wp-content/themes/groundtruth',
+            tests: {}
+        });
+        var site_url = "https://www.groundtruth.com";
+        var theme_image_location = "https://www.groundtruth.com/wp-content/themes/groundtruth/img/";
+        </script>
+
+		<!-- Optimize snippet -->
+
+		<script type="rocketlazyloadscript" data-rocket-src="https://www.googleoptimize.com/optimize.js?id=OPT-M8GNWVF" defer=""></script>
+
+		<!-- Optimize snippet -->
+
+	<script type="rocketlazyloadscript">
+	!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+	},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+	a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+	// Insert Twitter Pixel ID and Standard Event data below
+	twq('init','o6pd6');
+	twq('track','PageView');
+</script></head>
+
+<!-- Twitter universal website tag code -->
+
+<!-- End Twitter universal website tag code -->
+
+
+	<body class="page-template-default page page-id-460858 privacy-policy">
+		<!-- Google Tag Manager (noscript) -->
+        <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7BXBJT";
+        height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+				<!-- Modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="float-left akkurat">Log In</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body clearfix">
+        <section class="section icon-grid-section ar-auto">
+          <div class="panel container">
+            <div class="col-xs-12 col-lg-offset-2 col-lg-8">
+            <!-- ===== BRANDS ====== -->
+                        <div class="icon-grid row grid match-height-by-row">
+            
+              <!-- ===== ICON ====== -->
+                          
+              <!-- ===== ICON ====== -->
+                          
+              <!-- ===== ICON ====== -->
+                                      </div>
+                      </div>
+          </div>
+      </section>
+      </div>
+  </div>
+</div>
+</div>		<!-- Modal -->
+<div class="modal fade" id="iframe-modal" tabindex="-1" role="dialog" aria-labelledby="iframe-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      	
+      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe src=""></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+				
+		<div class="hidden-md hidden-lg mobile-nav-container">
+			<nav class="social-navigation" role="navigation"><ul id="menu-social-menu" class="nav nav-pills"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-770"><a target="_blank" href="https://facebook.com/xadinc"><i class="fa fa-facebook tt"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-771" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-771"><a target="_blank" href="https://twitter.com/groundtruthco"><i class="fa fa-twitter"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-772"><a target="_blank" href="https://instagram.com/groundtruthco/"><i class="fa fa-instagram"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-773" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-773"><a target="_blank" href="https://www.linkedin.com/company/groundtruthco"><i class="fa fa-linkedin"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-774" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-774"><a target="_blank" href="https://youtube.com/c/GroundTruth"><i class="fa fa-youtube-play"></i></a></li>
+</ul></nav>
+			<div class="close-btn"><span>+</span></div>
+			<nav class="v-align-middle main-navigation align-center" role="navigation">
+				<ul id="menu-mobile-2022-menu" class="nav nav-pills"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455359" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-455359"><a href="https://www.groundtruth.com/"><span class="m-gt-logo"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/07/gt-logo-inline.png"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/07/gt-logo-inline.png"&gt;</noscript></span></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455304 dropdown"><a title="Work With Us" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true"><span class="menu-2022-main">Work With Us<i class="fa fa-angle-right"></i></span> <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455312" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455312"><a title="Self-Serve" href="/solutions/self-serve/">Self-Serve</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455313"><a title="Managed" href="/managed-services/">Managed</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455314"><a title="Partnership" href="/solutions/solutions-for-channel-partners/">Partnership</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455315"><a title="Programmatic" href="/programmatic/">Programmatic</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455305 dropdown"><a title="Products" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true"><span class="menu-2022-main">Products<i class="fa fa-angle-right"></i></span> <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455309"><a title="View All" href="/our-solutions/">View All</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455316 dropdown"><a title="Media" href="#"><span class="menu-2022-sub">Media<i class="fa fa-angle-right"></i></span></a>
+	<ul role="menu" class=" dropdown-menu">
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455662" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455662"><a title="Omnichannel" href="/omnichannel-solutions/">Omnichannel</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455317" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455317"><a title="Mobile" href="/product/mobile-advertising/">Mobile</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455318" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455318"><a title="CTV/OTT" href="/connected-tv-and-ott/">CTV/OTT</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455319"><a title="Desktop" href="/product/display-advertising/">Desktop</a></li>
+	</ul>
+</li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455320" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455320 dropdown"><a title="Targeting" href="#"><span class="menu-2022-sub">Targeting<i class="fa fa-angle-right"></i></span></a>
+	<ul role="menu" class=" dropdown-menu">
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455663" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455663"><a title="View All" href="/targeting-solutions/">View All</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455321" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455321"><a title="Audience Targeting" href="/product/audience-targeting/">Audience Targeting</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455322" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455322"><a title="Location Targeting" href="/product/location-targeting/">Location Targeting</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455323" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455323"><a title="Contextual Targeting" href="/product/contextual-targeting/">Contextual Targeting</a></li>
+	</ul>
+</li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455661" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455661"><a title="Activation" href="/activation/">Activation</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455306" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455306 dropdown"><a title="Technology" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true"><span class="menu-2022-main">Technology<i class="fa fa-angle-right"></i></span> <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455324" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455324"><a title="Blueprints" href="/our-data/#place-determination">Blueprints</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455325" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455325"><a title="Our Data" href="/mrc-accreditation/">Our Data</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455307" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455307 dropdown"><a title="Resources" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true"><span class="menu-2022-main">Resources<i class="fa fa-angle-right"></i></span> <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455311"><a title="View All" href="/insights/">View All</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455310" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455310"><a title="Blog" href="/insights/?category=21">Blog</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455329" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455329"><a title="Case Study" href="/insights/?category=8486">Case Study</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455327" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455327"><a title="Strategy Guide" href="/insights/?category=2990">Strategy Guide</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455326" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455326"><a title="Infographic" href="/insights/?category=58">Infographic</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455421" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455421"><a title="Report" href="/insights/?category=31">Report</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455328" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455328"><a title="Webinar" href="/insights/?category=6776">Webinar</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-455308 dropdown"><a title="Company" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true"><span class="menu-2022-main">Company<i class="fa fa-angle-right"></i></span> <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455330" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455330"><a title="News" href="/news/">News</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455331" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455331"><a title="Social Good" href="/impact/">Social Good</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455332"><a title="Events" href="/events/">Events</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455333" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455333"><a title="Careers" href="/careers/">Careers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455334"><a title="About Us" href="/about/">About Us</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-455335" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455335"><a title="Contact Us" href="https://www.groundtruth.com/contact/"><span class="mobile-cta-2022">Contact Us</span></a></li>
+</ul>				<a id="work-with-us-button" href="/contact/#workwithus" target="_self" class="bg-green black btn btn-basic border-none">Contact Us</a>
+			</nav>
+			<nav class="v-align-bottom sub-navigation" role="navigation"><ul id="menu-mobile-sub-menu" class="nav nav-pills"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-3068" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3068"><a title="News" href="https://www.groundtruth.com/news/">News</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-3067" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3067"><a title="Events" href="https://www.groundtruth.com/events/">Events</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-414050" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-414050"><a title="Social Good" href="https://www.groundtruth.com/impact/">Social Good</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-3070" class="search menu-item menu-item-type-custom menu-item-object-custom menu-item-3070"><a href="#search"><span><i class="fa fa-search"></i><i class="fa fa-times"></i></span></a></li>
+</ul></nav>
+		</div>
+		<!-- header -->
+				<header role="banner">
+			<!-- <nav class="sub-navigation" role="navigation">
+							</nav> -->
+			<nav id="mega-menu" class="">
+    <ul class="main-nav">
+
+        <li class="logo">
+            <a class="logo" href="/"></a>
+        </li>
+            <li class="item ">
+            <a href="#" class="nav-item">Work With Us <i class="fa fa-angle-down"></i></a>
+            
+                        <div class="mega-menu-detail">
+                                <div class="mega-menu-header">
+					<div class="mega-menu-header-container">
+                                        <h2>Work With Us</h2>
+<p>Make the process of growing your business seamless. Manage your campaigns through our professional services or do it yourself via our self-serve platform GroundTruth Ads Manager. Either way you can get support from our marketing experts. You choose.</p>
+					</div>
+                </div>
+				                <div class="mega-menu-content">
+                                            <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Self-Serve-1.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/01/Self-Serve-1.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link"><a href="/solutions/self-serve/"><span class="link-label"><i class="bi bi-person-bounding-box"></i>Self-Serve<i class="fa fa-angle-right"></i></span></a>Plan, activate, and measure your media campaigns in our easy-to-use self-serve platform GroundTruth Ads Manager.
+</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Managed-1.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/01/Managed-1.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link">
+<a href="/solutions/solutions-for-marketers/"><span class="link-label"><i class="bi bi-person-lines-fill"></i>Managed<i class="fa fa-angle-right"></i></span></a>Let our team of marketing experts generate real business results and manage campaigns for you.</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Partnership-1.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/01/Partnership-1.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link">
+<a href="/solutions/solutions-for-channel-partners/"><span class="link-label"><i class="bi bi-person-plus-fill"></i>Partnership<i class="fa fa-angle-right"></i></span></a>Supplement your core media offerings with GroundTruth’s geo-contextual marketing solutions.</div>
+<p></p>
+                                                            </div>
+                                                                    <!--<hr/>-->
+                                                                                    <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/07/programmatic.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/07/programmatic.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link">
+<a href="/programmatic/"><span class="link-label"><i class="bi bi-person-plus-fill"></i> Programmatic <i class="fa fa-angle-right"></i></span></a>Unlock all the benefits of GroundTruth’s verified intent data programmatically in a DSP of your choice.</div>
+<p></p>
+                                                            </div>
+                                                                                                    					                                </div> <!-- end mega-menu-content -->
+                <div class="mega-menu-sidebar">
+                    <p><a href="https://www.groundtruth.com/article/groundtruth-acquires-self-serve-local-ad-platform-addy/"></a></p><a href="https://www.groundtruth.com/article/groundtruth-acquires-self-serve-local-ad-platform-addy/">
+<h6><span>press release</span></h6>
+<p><img class="size-full wp-image-416000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="" width="100%" data-lazy-src="https://do7nu6l5erzu3.cloudfront.net/wp-content/uploads/2021/05/12010939/Addy-2021.jpg"><noscript>&lt;img class="size-full wp-image-416000" src="https://do7nu6l5erzu3.cloudfront.net/wp-content/uploads/2021/05/12010939/Addy-2021.jpg" alt="" width="100%" /&gt;</noscript></p>
+<h6>GroundTruth Acquires Self-Serve Local Ad Platform Addy </h6>
+</a><p><a href="https://www.groundtruth.com/article/groundtruth-acquires-self-serve-local-ad-platform-addy/"><span class="sidebar-cta">Learn More</span></a></p>
+                </div>
+            </div> <!-- end mega-menu-detail -->
+                    </li>
+            <li class="item ">
+            <a href="#" class="nav-item">Products <i class="fa fa-angle-down"></i></a>
+            
+                        <div class="mega-menu-detail">
+                                <div class="mega-menu-header">
+					<div class="mega-menu-header-container">
+                                        <h2>Products</h2>
+<p>Solutions built to support your most important business goals, whether that’s boosting awareness, driving store and website visits or increasing sales.<br>
+<a href="/our-solutions/" class="view-all-cta"><span class="link-label">View All <i class="fa fa-angle-right"></i><br>
+</span></a></p>
+					</div>
+                </div>
+				                <div class="mega-menu-content four-col-layout">
+                                            <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Media-1.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/01/Media-1.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link"><a href="/omnichannel-solutions/"><span class="link-label"><i class="bi bi-file-earmark-easel"></i>Media<i class="fa fa-angle-right"></i></span></a></div>
+<ul class="submenu-links">
+<li><a href="/product/mobile-advertising/"><i class="fa fa-caret-right" aria-hidden="true"></i>Mobile</a></li>
+<li><a href="/connected-tv-and-ott/"><i class="fa fa-caret-right" aria-hidden="true"></i>CTV/OTT</a></li>
+<li><a href="/product/display-advertising/"><i class="fa fa-caret-right" aria-hidden="true"></i>Desktop</a></li>
+<li><a href="/product/direct-mail/"><i class="fa fa-caret-right" aria-hidden="true"></i>Direct Mail</a></li>
+</ul>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Targeting-1.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/01/Targeting-1.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link"><a href="/targeting-solutions"><span class="link-label"><i class="bi bi-file-earmark-medical"></i>Targeting<i class="fa fa-angle-right"></i></span></a></div>
+<ul class="submenu-links">
+<li><a href="/product/audience-targeting/"><i class="fa fa-caret-right" aria-hidden="true"></i>Audience Targeting</a></li>
+<li><a href="/product/location-targeting/"><i class="fa fa-caret-right" aria-hidden="true"></i>Location Targeting</a></li>
+<li><a href="/product/contextual-targeting/"><i class="fa fa-caret-right" aria-hidden="true"></i>Contextual Targeting</a></li>
+</ul>
+<p></p>
+                                                            </div>
+                                                                                                    											<div class="mega-menu-content-block custom-link"></div>
+					                                </div> <!-- end mega-menu-content -->
+                <div class="mega-menu-sidebar">
+                    <p><a href="https://www.groundtruth.com/ctv-and-ott/"></a></p><a href="https://www.groundtruth.com/ctv-and-ott/">
+<h6><span>CTV &amp; OTT</span></h6>
+<p><img class="size-full wp-image-416000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="" width="100%" data-lazy-src="https://do7nu6l5erzu3.cloudfront.net/wp-content/uploads/2021/04/08072051/ctv-ott-1200x557.jpg"><noscript>&lt;img class="size-full wp-image-416000" src="https://do7nu6l5erzu3.cloudfront.net/wp-content/uploads/2021/04/08072051/ctv-ott-1200x557.jpg" alt="" width="100%" /&gt;</noscript></p>
+<h6>Reach streaming audiences on the big screen (CTV) and on any streaming device (OTT)</h6>
+<p><span class="sidebar-cta">Learn More</span></p>
+</a><p><a href="https://www.groundtruth.com/ctv-and-ott/"></a></p>
+<p>&nbsp;</p>
+                </div>
+            </div> <!-- end mega-menu-detail -->
+                    </li>
+            <li class="item ">
+            <a href="#" class="nav-item">Technology <i class="fa fa-angle-down"></i></a>
+            
+                        <div class="mega-menu-detail">
+                                <div class="mega-menu-header">
+					<div class="mega-menu-header-container">
+                                        <h2>Technology</h2>
+<p>Our technology is focused on generating business performance by reaching consumers during relevant moments throughout their everyday lives.</p>
+					</div>
+                </div>
+				                <div class="mega-menu-content four-col-layout">
+                                            <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Blueprints-01-1.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/01/Blueprints-01-1.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link"><a href="/our-data/#place-determination"><span class="link-label"><i class="bi bi-sim"></i>Blueprints<i class="fa fa-angle-right"></i></span></a>Learn how we map the real world with the highest levels of accuracy and precision.</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+															">
+								                                <strong>
+                                                                            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="title-icon" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Data-03-1.svg"><noscript>&lt;img src="https://www.groundtruth.com/wp-content/uploads/2022/01/Data-03-1.svg" class="title-icon" /&gt;</noscript>
+                                                                                                        </strong>
+								                                <p></p><div class="title-link"><a href="/mrc-accreditation"><span class="link-label"><i class="bi bi-file-earmark-ruled"></i>Our Data<i class="fa fa-angle-right"></i></span></a>How we’ve achieved the industry’s most accurate visitation data.</div>
+<p></p>
+                                                            </div>
+                                                                                                    											<div class="mega-menu-content-block custom-link"></div>
+					                                </div> <!-- end mega-menu-content -->
+                <div class="mega-menu-sidebar">
+                    <p><a href="https://www.groundtruth.com/mrc-accreditation/"></a></p><a href="https://www.groundtruth.com/mrc-accreditation/">
+<h6><span>MRC accreditation</span></h6>
+<p><img class="size-full wp-image-416000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="" width="100%" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2021/08/MRC-ad.jpg"><noscript>&lt;img class="size-full wp-image-416000" src="https://www.groundtruth.com/wp-content/uploads/2021/08/MRC-ad.jpg" alt="" width="100%" /&gt;</noscript></p>
+<h6>GroundTruth Visitation Data Accredited By The Media Rating Council (MRC)</h6>
+</a><p><a href="https://www.groundtruth.com/mrc-accreditation/"><span class="sidebar-cta">Read More</span></a></p>
+<p>&nbsp;</p>
+                </div>
+            </div> <!-- end mega-menu-detail -->
+                    </li>
+            <li class="item ">
+            <a href="#" class="nav-item">Resources <i class="fa fa-angle-down"></i></a>
+            
+                        <div class="mega-menu-detail">
+                                <div class="mega-menu-header">
+					<div class="mega-menu-header-container">
+                                        <h2>Resources</h2>
+<p>Access our vast library of consumer insights, expert commentary and foot traffic tools to help you make informed marketing decisions.<br>
+<a href="/insights/" class="view-all-cta"><span class="link-label">View All <i class="fa fa-angle-right"></i><br>
+</span></a></p>
+					</div>
+                </div>
+				                <div class="mega-menu-content four-col-layout">
+                                            <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/insights/?category=21|58"><span class="link-label"><i class="bi bi-file-earmark-richtext"></i>Blog<i class="fa fa-angle-right"></i></span></a>Expert analysis on trends impacting the marketing landscape.<p></p>
+<p>&nbsp;</p>
+</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/insights/?category=8486"><span class="link-label"><i class="bi bi-file-earmark-richtext"></i>Case Studies<i class="fa fa-angle-right"></i></span></a>Key learnings from well-known brands across major industries.<p></p>
+<p>&nbsp;</p>
+</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/insights/?category=2990|31"><span class="link-label"><i class="bi bi-file-earmark-richtext"></i>Insights Reports<i class="fa fa-angle-right"></i></span></a>Timely marketing guides to help create performance-driven campaigns.<p></p>
+<p>&nbsp;</p>
+</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/insights/?category=6776"><span class="link-label"><i class="bi bi-file-earmark-richtext"></i>Webinars<i class="fa fa-angle-right"></i></span></a>Insights from leading marketers and GroundTruth ad experts to help drive results.<p></p>
+<p>&nbsp;</p>
+</div>
+<p></p>
+                                                            </div>
+                                                                                                    											<div class="mega-menu-content-block custom-link"></div>
+					                                </div> <!-- end mega-menu-content -->
+                <div class="mega-menu-sidebar">
+                    <p><a href="https://go.groundtruth.com/01_01.25.2022_Best-Practices_SignUp" target="blank"></a></p><a href="https://go.groundtruth.com/01_01.25.2022_Best-Practices_SignUp" target="blank">
+<h6><span>UPCOMING WEBINAR</span></h6>
+<p><img class="size-full wp-image-416000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="" width="100%" data-lazy-src="https://www.groundtruth.com/wp-content/uploads/2022/01/Jan-Webinar_Best-Prectices_ad.jpg"><noscript>&lt;img class="size-full wp-image-416000" src="https://www.groundtruth.com/wp-content/uploads/2022/01/Jan-Webinar_Best-Prectices_ad.jpg" alt="" width="100%" /&gt;</noscript></p>
+<h6>Best Practices: <br>Revamping Recruitment, Real Estate, and Event Marketing Strategies</h6>
+<p style="margin-bottom: 10px;display:none">As you ramp up for the new year, set yourself up for success by sharpening your GroundTruth Ads Manager skills in order to maximize the impact of your marketing campaigns.</p>
+<p>Tuesday, January 25, 2022</p>
+<p><span class="sidebar-cta">sign up</span></p>
+</a><p><a href="https://go.groundtruth.com/01_01.25.2022_Best-Practices_SignUp" target="blank"></a></p>
+                </div>
+            </div> <!-- end mega-menu-detail -->
+                    </li>
+            <li class="item ">
+            <a href="#" class="nav-item">Company <i class="fa fa-angle-down"></i></a>
+            
+                        <div class="mega-menu-detail">
+                                <div class="mega-menu-header">
+					<div class="mega-menu-header-container">
+                                        <h2>Company</h2>
+					</div>
+                </div>
+				                <div class="mega-menu-content">
+                                            <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/news/"><span class="link-label"><i class="bi bi-newspaper"></i>News<i class="fa fa-angle-right"></i></span></a>Keep up to date with GroundTruth news.</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/impact/"><span class="link-label"><i class="bi bi-emoji-smile"></i>Social Good<i class="fa fa-angle-right"></i></span></a>See how GroundTruth is making an impact.</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/events/"><span class="link-label"><i class="bi bi-calendar2-check"></i>Events<i class="fa fa-angle-right"></i></span></a>Check out past events and line-up of upcoming events.</div>
+<p></p>
+                                                            </div>
+                                                                    <!--<hr/>-->
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/careers/"><span class="link-label"><i class="bi bi-shield-check"></i>Careers<i class="fa fa-angle-right"></i></span></a>Want to join our team? Come check out our open roles.</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/about/"><span class="link-label"><i class="bi bi-file-medical"></i>About Us<i class="fa fa-angle-right"></i></span></a>Learn about who we are and what we’re trying to achieve.</div>
+<p></p>
+                                                            </div>
+                                                                                    <div class="mega-menu-content-block custom-link
+								 no-icon							">
+								                                <p></p><div class="title-link"><a href="/contact/"><span class="link-label"><i class="bi bi-headset"></i>Contact Us<i class="fa fa-angle-right"></i></span></a>Need to speak to an expert?</div>
+<p></p>
+                                                            </div>
+                                                                                                    					                                </div> <!-- end mega-menu-content -->
+                <div class="mega-menu-sidebar">
+                    <p><a href="/careers/"></a></p><a href="/careers/">
+<h6><span>Ad Age 2021</span></h6>
+<p><img class="size-full wp-image-416000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="" width="100%" data-lazy-src="https://gtitstage.wpengine.com/wp-content/uploads/2021/05/ad-age-2021.jpg"><noscript>&lt;img class="size-full wp-image-416000" src="https://gtitstage.wpengine.com/wp-content/uploads/2021/05/ad-age-2021.jpg" alt="" width="100%" /&gt;</noscript></p>
+<h6>Best Places to Work</h6>
+<p>We are seeking top talent.</p>
+<p><span class="sidebar-cta">Visit our Careers Page</span></p>
+</a><p><a href="/careers/"></a></p>
+                </div>
+            </div> <!-- end mega-menu-detail -->
+                    </li>
+        </ul>
+    <div class="sub-items">
+        <a id="sign-in-button" class="btn btn-basic" title="Sign in" target="_blank" href="https://ads.groundtruth.com/?_ga=2.231808603.55524638.1615471940-1113564038.1614809515">Sign in</a>
+        <a id="work-with-us-button" href="/contact/#workwithus" target="_self" class="bg-green black btn btn-basic border-none">Contact Us</a>
+        <a href="#search" id="btn-search">
+            <span>
+                <i class="fa fa-search"></i>
+                <i class="fa fa-times"></i>
+            </span>
+        </a>
+        <ul id="menu-social-menu-1" class="nav nav-pills"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-770"><a target="_blank" href="https://facebook.com/xadinc"><i class="fa fa-facebook tt"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-771"><a target="_blank" href="https://twitter.com/groundtruthco"><i class="fa fa-twitter"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-772"><a target="_blank" href="https://instagram.com/groundtruthco/"><i class="fa fa-instagram"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-773"><a target="_blank" href="https://www.linkedin.com/company/groundtruthco"><i class="fa fa-linkedin"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-774"><a target="_blank" href="https://youtube.com/c/GroundTruth"><i class="fa fa-youtube-play"></i></a></li>
+</ul>    </div>
+    <div style="clear:both;"></div>
+</nav>
+
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	setTimeout(()=>{
+		const searchInput = document.querySelector("form.searchform input#s");
+		console.log('SEARCH INPUT', searchInput)
+		if(searchInput) searchInput.setAttribute("placeholder", "Search");
+	});
+
+    let menuItems = Array.from(document.querySelectorAll('#mega-menu > ul > li'));
+    console.log('menuItems', menuItems);
+    // Mega menu dropdowns are displayed with the `active` class. Assign pointer
+    // events to add/remove the class when mousing over the mega menu items.
+    menuItems.forEach((item)=>{
+        item.addEventListener(
+            'pointerenter',
+            (e) => {
+                resetMenu();
+                item.classList.add('active');
+            }
+        );
+        item.addEventListener(
+            'pointerleave',
+            (e) => resetMenu()
+        );
+    });
+
+    let resetMenu = () => {
+                menuItems.forEach((itm) => itm.classList.remove('active'));
+    }
+
+</script>			<div class="search-bar"><div class="container"><form role="search" method="get" id="searchform" class="searchform" action="https://www.groundtruth.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></div></div>
+			<nav class="main-navigation" role="navigation" style="position:relative;">
+				
+
+				<ul id="menu-main-menu" class="nav nav-pills">
+					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-750" class="btn-home menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-750 active">
+						<a href="/"><i class="fa fa-map-marker"></i></a>
+					</li>
+				</ul>
+
+
+			</nav>
+			<div class="hidden-md hidden-lg mobile-menu-toggle"><span></span><span></span><span></span></div>
+					</header>
+				<!-- /header -->
+		
+		<!-- wrapper -->
+		<div id="main-content" class="container-fluid">
+<!-- HEADER BANNER SECTION-->
+
+	 
+	
+<section class="section slider-section header-section no-margin sh-ar-40  bg-navy ar-40 xs-ar-110 comp-auto-header">
+	<div class="panel container for-copy">
+
+		<!-- ===== DETAIL ========== -->
+					<!-- ===== SLIDE DETAIL ========== -->
+
+<div class="detail section-detail header-section-detail white align-left bg-transparent col-md-12 col-md-offset-0 icon-float icon-float-none xs-ar-auto ar-inherit">
+	<div class="detail-inner header-section-detail-inner xs-v-align-top v-align-middle">
+						<div class="bg-color bg-transparent" style="opacity:1;"></div>
+
+				<div class="detail-content">
+					<!--DETAIL ICON-->
+	<div class="detail-icon invisible"></div>
+
+					
+					<!-- ===== TITLE ========== -->
+											<p class="title hidden"></p>
+					
+					<!-- ===== SUBHEAD ========== -->
+											<h4 class="subhead hidden"></h4>
+					
+					<!-- ===== HEADING ========== -->
+											<h1 class="heading">GroundTruth – Website &amp; <br>Ad Platform Privacy Policy</h1>
+					
+					<!-- ===== DESCRIPTION ====== -->
+											<div class="description"><p>The details of GroundTruth’s privacy policy are below. If you have questions about our mobile and website security or our privacy policy online, please email requests@groundtruth.com.</p>
+<p>This privacy policy applies to our corporate website www.groundtruth.com, or “Website”, as well as to our mobile advertising product and mobile advertising landing pages. This privacy policy describes how GroundTruth collects, uses, shares and secures the personal information you provide, and describes your choices regarding use, access and correction of your personal information.</p>
+</div>
+									</div>
+		
+		<!-- ===== BUTTONS ====== -->
+		<!-- ===== BUTTONS ====== -->
+	<div class="button-container hidden"></div>
+	</div>
+</div>		
+
+	</div>
+
+	<div class="panel for-bg">
+	<!-- ===== SLIDER ====== -->
+	
+	<!-- ===== Announcement ====== -->
+	
+		<!-- ===== VIDEO PLAYER ========== -->
+	
+	<!-- ===== BACKGROUND IMAGE ========== -->
+			</div>
+</section>	
+
+<!-- PAGE HEADER SECTION-->
+
+<!-- SECTIONS SECTION-->
+<div class="sections-container row bg-white">
+	 
+	
+<section class="section banner-detail-section xs-ar-auto ar-auto  no-margin bg-grey-normal">
+	<div class="panel container">
+
+		<!-- ===== HEADER ========== -->
+				<!-- ===== SLIDE DETAIL ========== -->
+
+		
+		<!-- ===== USE BANNER DETAL SLIDE ====== -->
+		<div class="slide detail-slide full-detail-slide xs-ar-auto ar-auto">
+	<div class="panel container">
+
+		<!-- ===== DETAIL ========== -->
+									<!-- ===== SLIDE DETAIL ========== -->
+
+<div class="detail col-xs-12  black align-left col-md-12 col-md-offset-0 bg-transparent icon-float icon-float-none xs-ar-auto ar-auto">
+	<div class="bg-color bg-transparent" style="opacity:1;"></div>
+	
+	<div class="detail-inner xs-v-align-top v-align-top">
+		<!-- ===== BUTTONS AFTER ====== -->
+		
+										
+				<div class="detail-content">
+					<!--DETAIL ICON-->
+	<div class="detail-icon float-none"><script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+  $(document).ready(function () {
+
+     $('a.sec-scroll').parents(".banner-detail-section").addClass("pp-mini");
+
+        $('a.sec-scroll').on("click", function (e) {
+
+      e.preventDefault();
+
+      var scrollId = $(this).attr("href");
+      if ($(window).width() < 767) {
+        $('html, body').animate({
+          scrollTop: $(scrollId).offset().top - 90
+        }, 1000);
+      } else {
+        $('html, body').animate({
+          scrollTop: $(scrollId).offset().top - 100
+        }, 1000);
+      }
+      
+    });
+
+   
+
+
+  });
+});</script></div>
+
+					
+					<!-- ===== TITLE ========== -->
+											<p class="title hidden"></p>
+					
+					<!-- ===== SUBHEAD ========== -->
+											<h4 class="subhead hidden"></h4>
+					
+					<!-- ===== HEADING ========== -->
+											<h2 class="heading hidden"></h2>
+					
+					<!-- ===== DESCRIPTION ====== -->
+											<div class="description"><ol class="nav nav-tabs" style="font-size: 14px" role="tablist">
+<li class="akkurat" role="presentation"><a href="#01" class="sec-scroll">Ad Platform Privacy Policy</a></li>
+<li class="akkurat" role="presentation"><a href="#02" class="sec-scroll">Website Privacy Policy</a></li>
+<li class="akkurat" role="presentation"><a href="#03" class="sec-scroll">U.S. States Privacy Rights</a></li>
+<li class="akkurat" role="presentation"><a href="#04" class="sec-scroll">Contact Us</a></li>
+</ol>
+</div>
+					
+					<!-- ===== BUTTONS ====== -->
+				</div>
+					
+		<!-- ===== BUTTONS AFTER ====== -->
+				<!-- ===== BUTTONS ====== -->
+	<div class="button-container hidden"></div>
+
+			</div>
+</div>						</div>
+</div>	</div>
+</section>	 
+	
+<section class="section banner-detail-section xs-ar-auto ar-auto  no-margin bg-transparent">
+	<div class="panel container">
+
+		<!-- ===== HEADER ========== -->
+				<!-- ===== SLIDE DETAIL ========== -->
+	<a name="Ad-Platform-Privacy-Policy"></a>
+
+		
+		<!-- ===== USE BANNER DETAL SLIDE ====== -->
+		<div class="slide detail-slide full-detail-slide xs-ar-auto ar-auto">
+	<div class="panel container">
+
+		<!-- ===== DETAIL ========== -->
+									<!-- ===== SLIDE DETAIL ========== -->
+
+<div class="detail col-xs-12  black align-left col-md-12 col-md-offset-0 bg-transparent icon-float icon-float-none xs-ar-auto ar-auto">
+	<div class="bg-color bg-transparent" style="opacity:1;"></div>
+	
+	<div class="detail-inner xs-v-align-top v-align-top">
+		<!-- ===== BUTTONS AFTER ====== -->
+		
+										
+				<div class="detail-content">
+					<!--DETAIL ICON-->
+	<div class="detail-icon invisible"></div>
+
+					
+					<!-- ===== TITLE ========== -->
+											<p class="title hidden"></p>
+					
+					<!-- ===== SUBHEAD ========== -->
+											<h4 class="subhead hidden"></h4>
+					
+					<!-- ===== HEADING ========== -->
+											<h2 class="heading hidden"></h2>
+					
+					<!-- ===== DESCRIPTION ====== -->
+											<div class="description"><section id="01" class="privacy-policy-section" style="margin-top:30px">
+<h2>Ad Platform Privacy Policy</h2>
+<div style="margin: 15px 0"><a href="//privacy.truste.com/privacy-seal/validation?rid=b4671d1c-59d8-41c7-97d3-26fb71c7391e" target="_blank" rel="noopener"><img style="border: none" src="//privacy-policy.truste.com/privacy-seal/seal?rid=b4671d1c-59d8-41c7-97d3-26fb71c7391e" alt="TRUSTe" data-lazy-src="//privacy-policy.truste.com/privacy-seal/seal?rid=b4671d1c-59d8-41c7-97d3-26fb71c7391e" data-ll-status="loaded" class="entered lazyloaded"><noscript>&lt;img style="border: none" src="//privacy-policy.truste.com/privacy-seal/seal?rid=b4671d1c-59d8-41c7-97d3-26fb71c7391e" alt="TRUSTe" /&gt;</noscript></a></div>
+<p><strong>Effective Date:</strong> January 1, 2023</p>
+<p>This privacy policy explains how xAd, Inc. dba GroundTruth (“we,” “us,” “our”) and our affiliates and subsidiaries collect, use, and share information via our mobile advertising service and mobile advertising landing pages (“Services”).</p>
+</section>
+<hr class="hr-grey-normal for-pp" style="padding-bottom:40px">
+<section id="digitaladvertising" class="privacy-policy-section">
+<h2>Overview of GroundTruth’s Services</h2>
+<p>GroundTruth is an advertising platform specializing in location powered ads. Our Services combine data, technology, and strategy to help advertisers reach the audiences most likely to be interested in their products or services.</p>
+<p>If you visit a website, use a mobile application, or interact with an Internet-connected device of one of our platform members, that property will have its own privacy policy and practices. You will need to refer to the member’s privacy policy for information about their data collection and use practices.</p>
+<p>GroundTruth adheres to the Digital Advertising Alliance’s (“DAA”) self-regulatory principles and the Digital Advertising Alliance Canada’s (“DAAC”) self-regulatory principles.</p>
+<h3>Data Collection &amp; Use</h3>
+<p>We may collect various types of information from connected devices and web browsers using scripts, cookies, web beacons, software development kits (“SDK”), or other similar techniques. These technologies are used to collect digital actions of users that visit and use websites, applications, and connected devices or interact with ads presented on websites and devices of our platform members. We also receive other data (e.g., demographic information and digital identifiers) from third parties or through analytical techniques that we combine with the data we collect or derive through the Services. </p>
+<p>The categories of data we collect or receive may include:</p>
+<ul style="padding-left: 20px;">
+<li>Digital identifiers, such as device identifiers and IP addresses;</li>
+<li>Information about the browser and operating system type and version, device type, and other data from or about a device;</li>
+<li>Purchase history and transactional data such as records of products or services purchased, obtained, or considered </li>
+<li>Precise geolocation data;</li>
+<li>Postal addresses; and</li>
+<li>Information about users’ web viewing, application usage, and device usage information including what advertisements are interacted with.</li>
+</ul>
+<p>We may collect or receive this data from a variety of sources, including over time across different mobile apps, websites, browsers, or Internet-connected devices. We may also receive data related to the location of a device from our platform members and other parties, such as consumer data resellers. We may also receive physical address information from our customers or other third parties, or we may derive address information from other location information we receive or collect from devices.<br>
+<a name="Choice"></a><br>
+We may use any of the data we collect and receive for a variety of business purposes including analytics; auditing; research; reporting; attribution; detecting security incidents and illegal, deceptive, or fraudulent activity; service enhancements and other business operations; predicting possible relationships among different browsers and devices; differentiating and/or associating multiple device users as well as associating devices or users with locations such as a household or workplace; frequency capping and other auditing purposes; and in multiple ways to make ads more relevant across various connected devices, browsers, through direct mail, and any other advertising channel, such as by inferring potential interests based on web viewing, application use, location, and device usage activity for advertising purposes.</p>
+<p>For instance, we may use location data for proximity or audience advertising. Proximity advertising uses location and other data to present ads based on a device’s current location. Another example would be using location and other data to create “audiences” – groups of Internet-connected devices that are inferred to share similar interests or other characteristics based on the information we collect – to deliver ads that we believe may be more relevant to those audiences through various advertising channels. We consider both proximity and audience advertising to be interest-based advertising as described in this policy. We retain data used for interest-based advertising only as long as we have a legitimate business purpose to retain such data, or as otherwise required by applicable law.</p>
+<h3>Choice</h3>
+<p>We use data collected across different devices and from non-affiliated websites, applications, and devices over time as well as other data described in this policy to provide advertising on behalf of our clients that is relevant to a device’s location and/or interests inferred from this data. This form of advertising is known as interest-based advertising. We may also partner with other ad companies to extend our audiences across different browsers, devices, and various other advertising channels for interest-based advertising purposes.</p>
+<p>Mobile Device Choice: You may download the DAA’s AppChoices mobile app, or the TRUSTe mobile app, on your iOS or Android device in order to exercise choice regarding the collection of mobile application use activity for interest-based advertising on this device by us and other companies that participate in those choice tools. Links to those applications are below:</p>
+<ul style="padding-left: 20px;">
+<li><a href="https://itunes.apple.com/us/app/appchoices/id894822870?mt=8" target="_blank" rel="noopener"><u>DAA AppChoices iOS</u></a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.DAA.appchoices&amp;hl=en" target="_blank" rel="noopener"><u>DAA AppChoices Android</u></a></li>
+<li><a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=551047372&amp;mt=8" target="_blank" rel="noopener"><u>TRUSTe mobile app iOS</u></a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.truste.mobile.consumer&amp;hl=en" target="_blank" rel="noopener"><u>TRUSTe mobile app Android</u></a></li>
+</ul>
+<p>Location Data Choice: The DAA’s AppChoices tool can also be used to exercise choice regarding the collection and use of precise location data by GroundTruth for interest-based advertising purposes. iOS and Android users can limit our collection of precise location data from a device by turning location services off through the settings on that device.</p>
+<p>Web Browser Choice: If you would like to exercise choice regarding our, and for other third parties that participate in the DAA Choice Page, collection of web viewing data from web browsers for interest-based advertising purposes on this device, <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener"><u>click here</u></a>.</p>
+<p>When you make your choices on your browser or device using these choice tools, we will stop collecting and using data from that browser or device for interest-based advertising on it. We will also stop using data collected from that browser or device on other browsers or devices associated with it, and will stop using data collected from those associated browsers, devices, or elsewhere for interest-based advertising on the opted-out browser or device. We will also stop collecting and using data from that browser or device to inform relevant advertising that is sent to you via direct mail.</p>
+<p>Note that electing to opt out from GroundTruth services will not stop advertising from appearing on your browser or device. It may make the ads you see less relevant to your interests. In addition, note that if you use a different browser or device, erase cookies from your browser, or reset your platform ad identifier, you may need to renew your opt-out choice. In addition, we may still collect data from browsers or devices for non-interest based advertising purposes such as for analytics and reporting purposes, operations, improving our services and frequency capping.</p>
+<h3>Data Sharing</h3>
+<p>We may share the various types of information we collect and infer about devices and users with our affiliates, third party partners and agents for advertisement targeting, audience extension across different browsers, devices and various other advertising channels, to make and create offers, for other marketing and advertising purposes, to provide reporting to advertisers and clients, to improve our systems and products, and for other research and analytical purposes.</p>
+<p>We may also share data with contractors and service providers who work on our behalf. We may disclose data in response to subpoenas, court orders, or other legal process, or to establish or exercise our legal rights and obligations or defend against legal claims. We may also transfer data in the event of an acquisition or merger with another company, including at bankruptcy.</p>
+<h3>Children</h3>
+<p>Our services are not intended for children under the age of 13, and we do not knowingly collect information from children under the age of 13.</p>
+</section>
+</div>
+					
+					<!-- ===== BUTTONS ====== -->
+				</div>
+					
+		<!-- ===== BUTTONS AFTER ====== -->
+				<!-- ===== BUTTONS ====== -->
+	<div class="button-container hidden"></div>
+
+			</div>
+</div>						</div>
+</div>	</div>
+</section>	 
+	
+<section class="section banner-detail-section xs-ar-auto ar-auto  no-margin bg-transparent">
+	<div class="panel container">
+
+		<!-- ===== HEADER ========== -->
+				<!-- ===== SLIDE DETAIL ========== -->
+	<a name="Website-Privacy-Policy"></a>
+
+		
+		<!-- ===== USE BANNER DETAL SLIDE ====== -->
+		<div class="slide detail-slide full-detail-slide xs-ar-auto ar-auto">
+	<div class="panel container">
+
+		<!-- ===== DETAIL ========== -->
+									<!-- ===== SLIDE DETAIL ========== -->
+
+<div class="detail col-xs-12  black align-left col-md-12 col-md-offset-0 bg-transparent icon-float icon-float-none xs-ar-auto ar-auto">
+	<div class="bg-color bg-transparent" style="opacity:1;"></div>
+	
+	<div class="detail-inner xs-v-align-top v-align-top">
+		<!-- ===== BUTTONS AFTER ====== -->
+		
+										
+				<div class="detail-content">
+					<!--DETAIL ICON-->
+	<div class="detail-icon invisible"></div>
+
+					
+					<!-- ===== TITLE ========== -->
+											<p class="title hidden"></p>
+					
+					<!-- ===== SUBHEAD ========== -->
+											<h4 class="subhead hidden"></h4>
+					
+					<!-- ===== HEADING ========== -->
+											<h2 class="heading hidden"></h2>
+					
+					<!-- ===== DESCRIPTION ====== -->
+											<div class="description"><hr class="hr-grey-normal for-pp">
+<section class="privacy-policy-section" id="02">
+<h2>Website Privacy Policy</h2>
+<div style="margin: 15px 0"><a href="//privacy.truste.com/privacy-seal/validation?rid=8b75829f-76b9-4da7-9aba-8bc8c44f884a" target="_blank" rel="noopener"><img style="border: none" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="TRUSTe" data-lazy-src="//privacy-policy.truste.com/privacy-seal/seal?rid=8b75829f-76b9-4da7-9aba-8bc8c44f884a"><noscript>&lt;img style="border: none" src="//privacy-policy.truste.com/privacy-seal/seal?rid=8b75829f-76b9-4da7-9aba-8bc8c44f884a" alt="TRUSTe" /&gt;</noscript></a></div>
+<h3>Voluntarily Submitted Information on our Websites</h3>
+<p>This privacy policy applies to our corporate websites and explains how xAd, Inc. dba GroundTruth (“we,” “us,” “our”) and our affiliates and subsidiaries collect, use, and share information on www.groundtruth.com, or other websites we control that link to this policy (collectively “Website”). By using the Website you agree to the terms of this Privacy Policy.</p>
+<h3>Information Collection &amp; Use:</h3>
+<h4>Personal Information</h4>
+<p>When you use the Website, you may encounter areas that allow you to voluntarily enter personal information, which includes contact information such as your name, email address, telephone number, and mailing address.</p>
+<p>You may provide this information to us when you sign up for our newsletter, request information about products, apply for a job, fill out surveys, or otherwise provide personal information to us.</p>
+<p>We may use personal information for, among other things:</p>
+<ul style="padding-left: 18px">
+<li>Internal record keeping and auditing;</li>
+<li>Communicating with you about site updates and your inquiries, as well as offer products, content, and services that we believe may be of interest to you;</li>
+<li>Customizing the Website;</li>
+<li>Verifying customer information; and</li>
+<li>For purposes disclosed at the time of collection.</li>
+</ul>
+<p>If you would prefer not to receive communications from us in the future, please follow the unsubscribe instructions available in each communication.</p>
+<p>We may retain your information for as long as necessary to fulfill a legitimate business need, such as to provide you with information or services, comply with our legal obligations, resolve disputes and enforce our agreements.</p>
+<h4>Usage Information</h4>
+<p>When you browse our Website we may also collect various types of usage information about your browser or device, including, but not limited to, online identifiers such as your IP address and your mobile device identifier, as well as information about your internet activity such as the web pages visited, links clicked, and your operating system and browser type. Such information is used for the purpose of operating, debugging, and improving our Website, analyzing demographic and statistical research about website usage, customizing offers, and to monitor the Website for compliance with our terms of service and the law, to detect security incidents and malicious, deceptive, fraudulent, or illegal activity, as well as other purposes. This usage information may be collected through various technologies, including but not limited to “cookies” when you visit the Website. For more information, please see the “Tracking Technologies” section below.</p>
+<h4>Information Sharing</h4>
+<p>We will not sell, rent, license, trade or disclose your contact information collected through our Websites to an unaffiliated third party, except with your permission or for circumstances described in this policy. We may share or disclose personal and usage information in certain circumstances, including sharing with:</p>
+<ul style="padding-left: 18px">
+<li>Service providers that perform a business function for us for purposes like CRM management and infrastructure support;</li>
+<li>Our subsidiaries and affiliates;</li>
+<li>Entities, such as government agencies, as required by a court order, subpoena, warrant, or when otherwise required by law;</li>
+<li>Entities as part of a sale or merger of all or part of our business, including at bankruptcy;</li>
+<li>Third parties for our direct marketing purposes; and</li>
+<li>Entities to protect our rights and the rights of third parties.</li>
+</ul>
+<p>The Website may contain links to third party websites that we do not control, and to which this privacy policy does not apply. We encourage you to read the privacy policy of every website you visit.</p>
+<h4>Security</h4>
+<p>We follow generally accepted standards to help protect the personal information submitted to us, both during transmission and once it is received.</p>
+<h4>Update Personal Information</h4>
+<p>If you wish to access, update or request deletion of the personal information you have previously provided to us through this website, such as your email or phone number, you may do so by writing us at <a href="mailto:requests@groundtruth.com">requests@groundtruth.com</a> stating that request. We will respond to your request within a reasonable timeframe.</p>
+<h4>Tracking Technologies</h4>
+<p>GroundTruth and our partners use cookies or similar technologies to analyze trends, administer the Websites, collect information about use of the Websites, and to gather demographic information about our user base as a whole. Users can control the use of cookies at the individual browser level, but if you choose to disable cookies, it may limit your use of certain features or functions on our Website or service. To manage Flash cookies, please <a href="https://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html" target="_blank" rel="noopener"><u>click here</u></a>.</p>
+<p>We use Google Analytics to better understand how visitors interact with our Websites. This service provides usage information including but not limited to data on where visitors came from, what actions they took on our Websites, and where visitors went when they left our Websites. We use this information to improve your experience when visiting our Websites. Please <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener"><u>click here</u></a> to learn more about this service and how to opt out of data collection by Google Analytics.</p>
+<h4>Digital Advertising</h4>
+<p>We may partner with ad networks and other ad serving providers (“Advertising Providers”) who serve ads on behalf of us and others on non-affiliated sites. Some of those ads may be personalized, meaning that they are intended to be relevant to you based on information Advertising Providers collect about your visits to this site and elsewhere on the Internet over time, as well as from various mobile applications you use, across different devices.</p>
+<p>You may visit <a href="https://www.aboutads.info" target="_blank" rel="noopener"><u>www.aboutads.info</u></a> to learn more about this type of advertising and how to opt-out of this type of advertising by companies participating in the Digital Advertising Alliance self-regulatory program. Additionally, if you would like to opt-out of this type of advertising in mobile apps, <a href="https://www.aboutads.info" target="_blank" rel="noopener"><u>you can visit here</u></a> and download the opt-out app for your device.</p>
+<p>GroundTruth adheres to the Digital Advertising Alliance’s Self-Regulatory Principles. Note that electing to opt out will not stop advertising from appearing in your browser or applications. It may make the ads you see less relevant to your interests. In addition, note that if you use a different browser or erase cookies from your browser, you may need to renew your opt-out choice. You can also opt out of browser-based interest-based advertising by us and other companies that offer choice by <a href="https://preferences-mgr.truste.com" target="_blank" rel="noopener"><u>clicking here</u></a>, or if located in the European Union you can <a href="https://www.youronlinechoices.com/uk/your-ad-choices" target="_blank" rel="noopener"><u>click here</u></a> to make choices with respect to companies integrated in the YourOnlineChoices consumer choice platform.</p>
+<h4>Children</h4>
+<p>This Website is not intended for the use of children under the age of 13. We do not knowingly collect personal information from children under the age of 13.</p>
+</section>
+</div>
+					
+					<!-- ===== BUTTONS ====== -->
+				</div>
+					
+		<!-- ===== BUTTONS AFTER ====== -->
+				<!-- ===== BUTTONS ====== -->
+	<div class="button-container hidden"></div>
+
+			</div>
+</div>						</div>
+</div>	</div>
+</section>	 
+	
+<section class="section banner-detail-section xs-ar-auto ar-auto  no-margin bg-transparent">
+	<div class="panel container">
+
+		<!-- ===== HEADER ========== -->
+				<!-- ===== SLIDE DETAIL ========== -->
+	<a name="California-Residents"></a>
+
+		
+		<!-- ===== USE BANNER DETAL SLIDE ====== -->
+		<div class="slide detail-slide full-detail-slide xs-ar-auto ar-auto">
+	<div class="panel container">
+
+		<!-- ===== DETAIL ========== -->
+									<!-- ===== SLIDE DETAIL ========== -->
+
+<div class="detail col-xs-12  black align-left col-md-12 col-md-offset-0 bg-transparent icon-float icon-float-none xs-ar-auto ar-auto">
+	<div class="bg-color bg-transparent" style="opacity:1;"></div>
+	
+	<div class="detail-inner xs-v-align-top v-align-top">
+		<!-- ===== BUTTONS AFTER ====== -->
+		
+										
+				<div class="detail-content">
+					<!--DETAIL ICON-->
+	<div class="detail-icon invisible"></div>
+
+					
+					<!-- ===== TITLE ========== -->
+											<p class="title hidden"></p>
+					
+					<!-- ===== SUBHEAD ========== -->
+											<h4 class="subhead hidden"></h4>
+					
+					<!-- ===== HEADING ========== -->
+											<h2 class="heading hidden"></h2>
+					
+					<!-- ===== DESCRIPTION ====== -->
+											<div class="description"><hr class="hr-grey-normal for-pp">
+<section class="privacy-policy-section" id="03">
+<h2>U.S. States Privacy Rights</h2>
+<p>This section contains disclosures required by the laws in California, Colorado, Connecticut, Utah, and Virginia (“Certain States”).  If you are a resident of such states, this section of the Privacy Policy contains disclosures required by law and explains rights that may be available to you. Our use of the terms “sell” and “share” below generally refers to these California definitions.  Consumers with disabilities may access this notice by utilizing standard screen readers.</p>
+<p>Personal Information We Collect, Process, Disclose, Sell/Share. We collect the categories of personal information identified in the chart below for the specified purposes. As further set forth in the chart below, in the past 12 months, we have disclosed and sold personal information to third parties for business or commercial purposes.</p>
+<div class="privacy-policy">
+<table cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr>
+<th>
+                <strong>Categories of Personal Information </strong>
+            </th>
+<th>
+<p><strong>Categories of sources from which information is collected: </strong></p>
+</th>
+<th>
+<p><strong>Business purposes for collection, use, and sharing: </strong></p>
+</th>
+<th>
+<p><strong>Disclosed for business purposes to the following categories of third parties: </strong></p>
+</th>
+<th>
+<p><strong>Sold to the following categories of third parties: </strong></p>
+</th>
+</tr>
+<tr>
+<td>
+<p>Personal identifiers (such as first and last name, email address)</p>
+</td>
+<td>
+<p>Customers (agencies and advertisers);<br>
+                    <a href="https://www.groundtruth.com/glossary_term/ad-inventory/?referrer=adwords&amp;utm_medium=paid_search&amp;utm_source=adwords&amp;utm_campaign=KD-pf-adw-Brand-20220421&amp;utm_creative=594050446993&amp;gclid=CjwKCAjw2OiaBhBSEiwAh2ZSP7v6ysFwjivZxQaAauNHJYVk9SpSdptW8zn_kRPkX2hnRH5COwG6TxoCAJsQAvD_BwE" target="_blank">Ad inventory</a>&nbsp;supply partners (Publishers);<br>
+                    Service providers;<br>
+                    Consumer data resellers; and<br>
+                    Other third party partners
+                </p>
+</td>
+<td>
+<p>Marketing;<br>
+                    Legal compliance;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>Service Providers</p>
+</td>
+<td>
+<p>This information was not sold in the past 12 months to third parties</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Online identifiers (such as unique online identifiers)</p>
+</td>
+<td>
+<p>Consumers;<br>
+                    Customers (agencies and advertisers);<br>
+                    Ad inventory supply partners (Publishers);<br>
+                    Service providers;<br>
+                    Consumer data resellers; and<br>
+                    Other third party partners</p>
+</td>
+<td>
+<p>Advertising;<br>
+                    Marketing;<br>
+                    Targeted advertising; Data analytics and insights; Measurement;<br>
+                    Attribution;<br>
+                    Reporting and fraud prevention;<br>
+                    Auditing;<br>
+                    Legal compliance;<br>
+                    Detecting and protecting against security incidents, fraud, and illegal activity;<br>
+                    Debugging;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    Internal research for technological improvement;<br>
+                    Internal operations;<br>
+                    Activities to develop, maintain and improve our products and services; and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>Service Providers</p>
+</td>
+<td>
+<p>Advertising networks;<br>
+                    Measurement companies;<br>
+                    Publisher partners;<br>
+                    Data analytics providers;<br>
+                    Companies to which we provide our products and services.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Demographic Information &nbsp;(such as gender)</p>
+</td>
+<td>
+<p>Consumers;<br>
+                    Ad inventory supply partners (Publishers); and<br>
+                    Consumer data resellers; and<br>
+                    Other third party partners</p>
+</td>
+<td>
+<p>Advertising services and advertising products; Targeted advertising;<br>
+                    Data analytics and insights;<br>
+                    Measurement;<br>
+                    Attribution;<br>
+                    Reporting and fraud prevention;<br>
+                    Legal compliance;<br>
+                    Detecting and protecting against security incidents, fraud, and illegal activity;<br>
+                    Debugging;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    Internal research for technological improvement;<br>
+                    Internal operations;<br>
+                    Activities to develop, maintain and improve our products and services; and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>This information is not disclosed to third parties in the past 12 months.</p>
+</td>
+<td>
+<p>Advertising networks</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Commercial or transactions information (such as records of products or services purchased, obtained,<br>
+                    or considered)</p>
+</td>
+<td>
+<p>Data resellers; and<br>
+                    Other third party partners</p>
+</td>
+<td>
+<p>Advertising;<br>
+                    Marketing;<br>
+                    Targeted advertising; Data analytics and insights; Measurement;<br>
+                    Attribution;<br>
+                    Reporting and fraud prevention;<br>
+                    Auditing;<br>
+                    Legal compliance;<br>
+                    Detecting and protecting against security incidents, fraud, and illegal activity;<br>
+                    Debugging;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    Internal research for technological improvement;<br>
+                    Internal operations;<br>
+                    Activities to develop, maintain and improve our products and services; and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>Commercial or transactions information (such as records of products or services purchased, obtained,<br>
+                    or considered)</p>
+</td>
+<td>
+<p>Data resellers; and<br>
+                    Other third party partners</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Internet or other electronic network activity information (such as browsing history, search history,<br>
+                    interactions with a website, email, application, or advertisement)</p>
+</td>
+<td>
+<p>Consumers;<br>
+                    Consumer data resellers; and<br>
+                    Other third party partners</p>
+</td>
+<td>
+<p>Advertising services and advertising products; Targeted advertising;<br>
+                    Data analytics and insights;<br>
+                    Measurement;<br>
+                    Attribution;<br>
+                    Reporting and fraud prevention;<br>
+                    Legal compliance;<br>
+                    Detecting and protecting against security incidents, fraud, and illegal activity;<br>
+                    Debugging;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    Internal research for technological improvement;<br>
+                    Internal operations;<br>
+                    Activities to develop, maintain and improve our products and services; and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>Service Providers</p>
+</td>
+<td>
+<p>Companies for which we provide advertising services</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Geolocation information</p>
+</td>
+<td>
+<p>Consumers;<br>
+                    Customers (agencies and advertisers);<br>
+                    Ad inventory supply partners (Publishers);<br>
+                    Service providers;<br>
+                    Consumer data resellers; and<br>
+                    Other third party partners</p>
+</td>
+<td>
+<p>Advertising services and advertising products; Targeted advertising;<br>
+                    Data analytics and insights;<br>
+                    Measurement;<br>
+                    Attribution;<br>
+                    Reporting and fraud prevention;<br>
+                    Legal compliance;<br>
+                    Detecting and protecting against security incidents, fraud, and illegal activity;<br>
+                    Debugging;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    Internal research for technological improvement;<br>
+                    Internal operations;<br>
+                    Activities to develop, maintain and improve our products and services; and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>Service Providers;<br>
+                    Analytics providers</p>
+</td>
+<td>
+<p>Companies for which we provide advertising services</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Inferences drawn from the above information about your predicted characteristics and preferences</p>
+</td>
+<td>
+<p>Service providers;<br>
+                    Other third party partners</p>
+</td>
+<td>
+<p>Advertising services and advertising products; Targeted advertising;<br>
+                    Data analytics and insights;<br>
+                    Measurement;<br>
+                    Attribution;<br>
+                    Reporting and fraud prevention;<br>
+                    Legal compliance;<br>
+                    Detecting and protecting against security incidents, fraud, and illegal activity;<br>
+                    Debugging;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    Internal research for technological improvement;<br>
+                    Internal operations;<br>
+                    Activities to develop, maintain and improve our products and services; and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>Service Providers</p>
+</td>
+<td>
+<p>Advertising/marketing companies; Advertising networks; and Companies for which we provide advertising<br>
+                    services</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Other information about you that is linked to the personal information above</p>
+</td>
+<td>
+<p>Consumers;<br>
+                    Customers (agencies and advertisers);<br>
+                    Ad inventory supply partners (Publishers);<br>
+                    Consumer data resellers; and<br>
+                    Other third party partners</p>
+</td>
+<td>
+<p>Advertising services and advertising products; Targeted advertising;<br>
+                    Data analytics and insights; Measurement;<br>
+                    Attribution;<br>
+                    Reporting and fraud prevention;<br>
+                    Legal compliance;<br>
+                    Detecting and protecting against security incidents, fraud, and illegal activity;<br>
+                    Debugging;<br>
+                    Performing services (for us or our service providers) such as account servicing, processing orders<br>
+                    and payments;<br>
+                    Internal research for technological improvement;<br>
+                    Internal operations;<br>
+                    Activities to develop, maintain and improve our products and services; and<br>
+                    Other one-time uses.</p>
+</td>
+<td>
+<p>This information is not disclosed to third parties in the past 12 months.</p>
+</td>
+<td>
+<p>Advertising networks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Employee and job applicant data, which may include the categories of personal information listed<br>
+                    above that are collected during the job application process and while individuals are GroundTruth<br>
+                    employees</p>
+</td>
+<td>
+<p>Consumers; service providers; and other third party partners</p>
+</td>
+<td>
+<p>Processing your application.<br>
+                    Using your information in connection with your employment roles and responsibilities. This includes,<br>
+                    for example:</p>
+<ul>
+<li>Providing you with services and tools to use in connection with your employment, such as email<br>
+                        service and information technologies;</li>
+<li>Responding to your requests;</li>
+<li>Maintaining compliance with our policies and procedures;</li>
+<li>Paying you and administering your employment benefits, including those provided to other<br>
+                        individuals like family members; and</li>
+<li>Responding to emergencies or safety concerns, such as by maintaining and using your emergency<br>
+                        contact information.</li>
+</ul>
+<p>Other business purposes, which include:</p>
+<ul>
+<li>Auditing related to our interactions with you;</li>
+<li>Legal compliance;</li>
+<li>Detecting and protecting against security incidents, fraud, and illegal activity;</li>
+<li>Debugging;</li>
+<li>Performing services (for us or our service providers) such as account servicing, processing<br>
+                        orders and payments, and analytics;</li>
+</ul>
+<p>Internal research for technological improvement;</p>
+<ul>
+<li>Internal operations;</li>
+<li>Activities to maintain and improve our business; and</li>
+<li>Other one-time uses.</li>
+</ul>
+</td>
+<td>
+<p>Service providers</p>
+</td>
+<td>
+<p>This information was not sold in the past 12 months to third parties</p>
+</td>
+</tr>
+</tbody></table>
+</div>
+<p>Information Retention.  We will retain each category of personal information we collect in accordance with applicable laws and as reasonably necessary for our processing purposes set out under this Privacy Policy.  </p>
+<p>Rights Regarding Personal Information.  Residents of Certain States have certain rights with respect to the personal information collected by businesses. You may exercise the following rights regarding your personal information, subject to certain exceptions and limitations contained in the relevant state law:</p>
+<ul style="padding-left: 20px;">
+<li>The right to confirm whether we process personal information about you.</li>
+<li>The right to correct inaccuracies in the personal information we have collected about you.</li>
+<li>The right to know the categories and specific pieces of personal information we collect, use, disclose, and sell about you, the categories of sources from which we collected your personal information, our purposes for collecting or selling your personal information, the categories of your personal information that we have either sold or disclosed for a business purpose, and the categories of third parties with which we have shared personal information;</li>
+<li>The right to request that we delete the personal information we have collected from you or maintain about you.</li>
+<li>The right to opt out of (i) the sharing of personal information for targeted advertising or (ii) the sale of personal information.  Please note that if you opt out of certain types of sales, we may be unable to provide you with the services that rely on such sales.  Additionally, we do not knowingly sell or share personal data of individuals under 16.</li>
+<li>Depending on your state, the right to receive a portable and readily usable copy of the personal information we have collected about you, to the extent feasible.</li>
+<li>Depending on your state, the right to limit our processing of certain “sensitive” personal information (or to withdraw consent for such processing if you previously gave it).
+</li><li>The right not to receive discriminatory treatment for the exercise of these privacy rights.</li></ul>
+<p>To exercise any of the above rights, please contact us using the following information and submit the required verifying information, as further described below:</p>
+<ul style="padding-left: 20px;">
+<li>Via email at <a href="mailto:privacyrights@groundtruth.com">privacyrights@groundtruth.com</a></li>
+<li>Online at <a href="https://www.groundtruth.com/privacy-rights">www.groundtruth.com/privacy-rights</a> </li>
+</ul>
+<p>We do not use or disclose sensitive personal information for purposes other than as permitted under the CCPA.</p>
+<p>We may require additional information from you to verify your identity before responding to your request. That verification process can be found <a href="https://www.groundtruth.com/privacy-rights/">here</a>. You may designate an authorized agent to make a request on your behalf. To do so you will need to provide the agent with signed written permission to act on your behalf. We do not knowingly sell the personal information of minors under 16 years of age.</p>
+<p>For Colorado, Connecticut, or Virginia residents, if you have submitted a request that you feel we have not reasonably fulfilled, you may contact us to appeal our decision by sending an email to <a href="mailto:privacyrightsappeals@groundtruth.com">privacyrightsappeals@groundtruth.com</a></p>
+<p>In the previous calendar year, GroundTruth:</p>
+<ul style="padding-left: 20px;">
+<li>Received 0 requests to know</li>
+<li>Received 0 request to delete</li>
+<li>Received 33,509 request to opt out of data sale, complied in whole or in part with 33,509 of them, and denied 0 of them.</li>
+</ul>
+<p>The median number of days within which GroundTruth substantively responded to California consumers’ requests to know, requests to delete, and requests to opt out in the previous calendar year is 1 day. </p>
+</section>
+</div>
+					
+					<!-- ===== BUTTONS ====== -->
+				</div>
+					
+		<!-- ===== BUTTONS AFTER ====== -->
+				<!-- ===== BUTTONS ====== -->
+	<div class="button-container hidden"></div>
+
+			</div>
+</div>						</div>
+</div>	</div>
+</section>	 
+	
+<section class="section banner-detail-section xs-ar-auto ar-auto  no-margin bg-transparent">
+	<div class="panel container">
+
+		<!-- ===== HEADER ========== -->
+				<!-- ===== SLIDE DETAIL ========== -->
+	<a name="Contact"></a>
+
+		
+		<!-- ===== USE BANNER DETAL SLIDE ====== -->
+		<div class="slide detail-slide full-detail-slide xs-ar-auto ar-auto">
+	<div class="panel container">
+
+		<!-- ===== DETAIL ========== -->
+									<!-- ===== SLIDE DETAIL ========== -->
+
+<div class="detail col-xs-12  black align-left col-md-12 col-md-offset-0 bg-transparent icon-float icon-float-none xs-ar-auto ar-auto">
+	<div class="bg-color bg-transparent" style="opacity:1;"></div>
+	
+	<div class="detail-inner xs-v-align-top v-align-top">
+		<!-- ===== BUTTONS AFTER ====== -->
+		
+										
+				<div class="detail-content">
+					<!--DETAIL ICON-->
+	<div class="detail-icon invisible"></div>
+
+					
+					<!-- ===== TITLE ========== -->
+											<p class="title hidden"></p>
+					
+					<!-- ===== SUBHEAD ========== -->
+											<h4 class="subhead hidden"></h4>
+					
+					<!-- ===== HEADING ========== -->
+											<h2 class="heading hidden"></h2>
+					
+					<!-- ===== DESCRIPTION ====== -->
+											<div class="description"><hr class="hr-grey-normal for-pp">
+<section class="privacy-policy-section" id="04">
+<h2>Privacy Policy Changes</h2>
+<p>We may update this privacy policy to reflect changes to our information practices. If we make any material changes with respect to our practices relating to your personal information, we will notify you by email (sent to the e-mail address specified in your account) or by means of a notice on this website prior to the change becoming effective. We encourage you to periodically review this page for the latest information on our privacy practices.</p>
+<h4>Contact Us</h4>
+<p>If you have questions or complaints regarding our privacy policy or practices, please contact us at:</p>
+<p>Global Headquarters<br>
+One World Trade<br>
+60th Floor<br>
+New York, NY 10007<br>
+<a href="mailto:privacy@groundtruth.com"><u>privacy@groundtruth.com</u></a></p>
+<p>If you have an unresolved privacy or data use concern that we have not addressed satisfactorily, please contact our U.S.-based third party dispute resolution provider (free of charge) at <a href="https://feedback-form.truste.com/watchdog/request" target="_blank" rel="noopener"><strong>www.feedback-form.truste.com/watchdog/request</strong></a>.<br>
+<strong><br>
+Privacy Policy Last Updated:</strong> January 1, 2023</p>
+</section>
+</div>
+					
+					<!-- ===== BUTTONS ====== -->
+				</div>
+					
+		<!-- ===== BUTTONS AFTER ====== -->
+				<!-- ===== BUTTONS ====== -->
+	<div class="button-container hidden"></div>
+
+			</div>
+</div>						</div>
+</div>	</div>
+</section>	</div>
+
+			<!-- footer -->
+						<footer class="footer" role="contentinfo">
+
+			<div class="comp-nl-footer">
+			  <div class="comp-item">
+			    <h3>Sign Up for Newsletters </h3>
+			    <p>Stay on top of the latest industry insights and marketing strategies.</p>
+			    
+			  </div>
+			  <div class="comp-item">
+			    
+			      <a class="comp-btn bg-seafoam charcoal h-ghost" href="/subscription-newsletter/?utm_medium=email&amp;utm_source=nl_sign_up_bottom_nav">Sign Up</a>
+			   
+			  </div>
+			</div>
+
+
+				<!-- navigation -->
+				<nav class="navigation main-navigation" role="navigation">
+					<div class="copy-block">
+						<a href="/"><i class="fa fa-map-marker"></i></a>
+						<p>
+						GroundTruth is a media company  that turns <span class="lfw-400"> real-world behavior</span> into marketing that delivers <span class="lfw-400">real business results</span>.
+
+						</p>
+						
+					</div>
+					<ul id="menu-footer-menu" class="nav nav-pills"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-418841 dropdown"><a title="Work With Us" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Work With Us <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418842" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-418842"><a title="Self-Serve" href="/solutions/self-serve/">Self-Serve</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-420355" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420355"><a title="Managed" href="/solutions/solutions-for-marketers/">Managed</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-420356" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420356"><a title="Partnership" href="/solutions/solutions-for-channel-partners/">Partnership</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-454889" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-454889"><a title="Programmatic" href="/programmatic/">Programmatic</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-420364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-420364 dropdown"><a title="Technology" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Technology <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-420360" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420360"><a title="Blueprints" href="/our-data/#place-determination">Blueprints</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-420361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420361"><a title="Our Data" href="/mrc-accreditation/">Our Data</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418849" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-418849 dropdown"><a title="Products" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Products <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-420357" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420357"><a title="Media" href="/omnichannel-solutions/">Media</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-420358" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420358"><a title="Targeting" href="/targeting-solutions/">Targeting</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418844" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-418844"><a title="Resources" href="#"><span class="footer-rec">Resources</span></a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-419836" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419836"><a title="Blog" href="/insights/?category=21|58">Blog</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-419837" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419837"><a title="Case Studies" href="/insights/?category=8486">Case Studies</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-419838" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419838"><a title="Insights Reports" href="/insights/?category=2990|31">Insights Reports</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-419835" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419835"><a title="Webinars" href="/insights/?category=6776">Webinars</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-419840" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419840"><a title="Glossary" href="/glossary/">Glossary</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-419839" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419839"><a title="FAQs" href="/faqs/">FAQs</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418843" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-418843 dropdown"><a title="Company" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Company <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418857"><a title="News" href="https://www.groundtruth.com/news/">News</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418856"><a title="Social Good" href="https://www.groundtruth.com/impact/">Social Good</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418858" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418858"><a title="Events" href="https://www.groundtruth.com/events/">Events</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418855"><a title="Careers" href="https://www.groundtruth.com/careers/">Careers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418854" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418854"><a title="About" href="https://www.groundtruth.com/about/">About</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-414907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-414907"><a title="Methodology" href="https://www.groundtruth.com/request-description-of-methodology/">Methodology</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418859"><a title="Testimonials" href="https://www.groundtruth.com/testimonials/">Testimonials</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-427737" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-427737"><a title="Contact Us" href="/contact/">Contact Us</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-238122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-238122"><a title="xAd" href="https://www.groundtruth.com/xad/">xAd</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-418845" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-418845 dropdown"><a title="Privacy" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Privacy <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-405050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-405050"><a title="Do Not Sell/Share My Personal Information" href="https://www.groundtruth.com/california-ccpa-rights/">Do Not Sell/Share My Personal Information</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-427089" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-427089 active"><a title="Privacy Policy" href="/privacy-policy/">Privacy Policy</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-17755" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-17755 active"><a title="AdChoices" href="https://www.groundtruth.com/privacy-policy/#Choice">AdChoices</a></li>
+</ul>
+</li>
+</ul>				</nav>
+				<nav class="hidden-xs hidden-sm navigation social-navigation" role="navigation">
+					<ul id="menu-social-menu-2" class="nav nav-pills"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-770"><a target="_blank" href="https://facebook.com/xadinc"><i class="fa fa-facebook tt"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-771"><a target="_blank" href="https://twitter.com/groundtruthco"><i class="fa fa-twitter"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-772"><a target="_blank" href="https://instagram.com/groundtruthco/"><i class="fa fa-instagram"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-773"><a target="_blank" href="https://www.linkedin.com/company/groundtruthco"><i class="fa fa-linkedin"></i></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-774"><a target="_blank" href="https://youtube.com/c/GroundTruth"><i class="fa fa-youtube-play"></i></a></li>
+</ul>				</nav>
+
+
+				<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.groundtruth.com/wp-content/cache/min/1/up_loader.1.1.0.js?ver=1679647698" data-rocket-type="text/javascript" defer=""></script> <script type="rocketlazyloadscript" data-rocket-type="text/javascript"> ttd_dom_ready( function() { if (typeof TTDUniversalPixelApi === 'function') { var universalPixelApi = new TTDUniversalPixelApi(); universalPixelApi.init("y0cj4v3", ["3898p6v"], "https://insight.adsrvr.org/track/up"); } }); </script>
+
+			</footer>
+						<!-- /footer -->
+
+		</div>
+
+	  	<div id="gdpr-modal" class="modal" tabindex="-1" role="dialog">
+		    <div class="modal-dialog" role="document">
+		      <div class="modal-content">
+		        <div class="modal-body">We use technologies, such as cookies, to analyze your use (i.e., pages visited), for our internal analytics purposes and for security and other purposes. By continuing to use this website, you agree to this usage. Please review our privacy policy for more details as well as for information on how to contact us to object to these activities.  To close this message, click close.</div>
+		        <div class="modal-footer">
+		          <a id="gdpr-close" class="btn btn-secondary" data-dismiss="modal">Close</a>
+		          <a href="https://www.groundtruth.com/privacy-policy" target="_blank" class="btn btn-primary">Privacy Policy</a>
+				  <a href="https://www.groundtruth.com/privacy-policy/#Choice" target="_blank" class="btn btn-primary">AdChoices</a>
+		        </div>
+		      </div>
+		    </div>
+	  	</div>
+
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/insight\/industry-foot-traffic-tracker\/|\/insight\/germany-industry-foot-traffic-tracker\/|\/insight\/uae-covid-foot-traffic-tracker\/|\/covid-19-insights\/|\/contact\/|\/insights\/|\/news\/|\/article\/groundtruth-named-to-ad-ages-best-places-to-work-for-3rd-consecutive-year\/|\/insight\/use-location-based-marketing-for-real-business-results\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.groundtruth.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="text/javascript" id="ajax-session-js-extra">
+/* <![CDATA[ */
+var ajax_session = {"ajax_url":"https:\/\/www.groundtruth.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.groundtruth.com/wp-content/themes/groundtruth/scripts/build/ajax-session.min.js?ver=1.0" id="ajax-session-js" defer=""></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://www.groundtruth.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+		<style>
+			.mktoForm .mktoFormRow:nth-child(10) .mktoCheckboxList {
+    width: 100% !important;
+}
+			</style>
+
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+        $(document).ready(function () {
+            $('#menu-mobile-2022-menu li').removeAttr('itemscope');
+            $('#menu-mobile-2022-menu li a.dropdown-toggle ').removeAttr('data-toggle');
+            $('#menu-mobile-2022-menu .menu-2022-main').parents("li").addClass("main-click");
+            $('#menu-mobile-2022-menu [title=Media]').parents("li").addClass("sub-click");
+            $('#menu-mobile-2022-menu [title=Targeting]').parents("li").addClass("sub-click");
+            $("#menu-mobile-2022-menu li.main-click.sub-click").removeClass("sub-click");
+		
+  $("a .m-gt-logo").parents("a").addClass("gt-logo-inline");
+
+
+
+            $('#menu-mobile-2022-menu li a.dropdown-toggle .menu-2022-main').on("click", function (e) {
+                e.preventDefault();
+                $(this).parents("li.main-click").find("a.dropdown-toggle").toggleClass("active");
+                $(this).parents("li.main-click").siblings().find("a.dropdown-toggle").removeClass("active");
+                
+                $(this).parents("li.main-click").find("ul.dropdown-menu").slideToggle();
+                $(this).parents("li.main-click").siblings().find("ul.dropdown-menu").slideUp();
+
+                $("#menu-mobile-2022-menu li.sub-click ul.dropdown-menu").hide();
+				$("#menu-mobile-2022-menu ul.dropdown-menu li.sub-click a").removeClass("active");
+
+				
+      
+            });
+
+            $('#menu-mobile-2022-menu li.sub-click .menu-2022-sub').on("click", function (e) {
+                e.preventDefault();
+           
+                $(this).parents("li.sub-click").find("a").toggleClass("active");
+                $(this).parents("li.sub-click").siblings().find("a").removeClass("active");
+
+                $(this).parents("li.sub-click").find("ul.dropdown-menu").slideToggle();
+                $(this).parents("li.sub-click").siblings().find("ul.dropdown-menu").slideUp();
+            });
+
+			
+        });
+    });</script>
+	<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript>&lt;link data-minify="1" rel='stylesheet' id='variable-css'  href='https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/build/variable.css?ver=1679647697' type='text/css' media='all' /&gt;&lt;link data-minify="1" rel='stylesheet' id='main-css'  href='https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/build/main.min.css?ver=1679647697' type='text/css' media='all' /&gt;&lt;link data-minify="1" rel='stylesheet' id='mega-menu-c-css'  href='https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/mega-menu-c.css?ver=1679647697' type='text/css' media='all' /&gt;&lt;link data-minify="1" rel='stylesheet' id='wp-css'  href='https://www.groundtruth.com/wp-content/cache/min/1/wp-content/themes/groundtruth/styles/build/wp.css?ver=1679647697' type='text/css' media='all' /&gt;</noscript>
+
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me --></body></html>

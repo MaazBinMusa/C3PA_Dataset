@@ -1,0 +1,1193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html id="sfFrontendHtml" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale = 1.0"><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-X3LTX2PVM9&amp;l=dataLayer&amp;cx=c"></script><script async="" src="https://sb.scorecardresearch.com/cs/18075227/beacon.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KGRTLQC"></script><script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"><link href="/ResourcePackages/Main/assets/dist/css/bootstrap-theme.css?package=Main" media="all" rel="stylesheet" type="text/css"><style type="text/css" media="all">/* -->[ * COSTAR BROWN IMPORT * ]<-- */
+/*@font-face {
+  font-family: 'CoStarBrown-Regular'; font-weight: normal; font-style: normal;
+  src: url('../fonts/CoStarBrown-Regular.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/CoStarBrown-Regular.otf') format('opentype'), 
+       url('../fonts/CoStarBrown-Regular.woff') format('woff'), 
+       url('../fonts/CoStarBrown-Regular.ttf') format('truetype'), 
+       url('../fonts/CoStarBrown-Regular.svg#CoStarBrown-Light') format('svg');
+}
+@font-face {
+  font-family: 'CoStarBrown-Light'; font-weight: normal; font-style: normal;
+  src: url('../fonts/CoStarBrown-Light.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/CoStarBrown-Light.otf') format('opentype'), 
+       url('../fonts/CoStarBrown-Light.woff') format('woff'), 
+       url('../fonts/CoStarBrown-Light.ttf') format('truetype'), 
+       url('../fonts/CoStarBrown-Light.svg#CoStarBrown-Light') format('svg');
+}
+@font-face {
+  font-family: 'CoStarBrown-Bold'; font-weight: normal; font-style: normal;
+  src: url('../fonts/CoStarBrown-Bold.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/CoStarBrown-Bold.otf') format('opentype'), 
+       url('../fonts/CoStarBrown-Bold.woff') format('woff'), 
+       url('../fonts/CoStarBrown-Bold.ttf')  format('truetype'), 
+       url('../fonts/CoStarBrown-Bold.svg#CoStarBrown-Bold') format('svg');
+}*/
+@font-face {
+	font-family: 'FontAwesome'; font-weight: normal; font-style: normal;
+	src:    url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?v=4.6.3);
+	src:    url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3) format('embedded-opentype'),
+            url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3) format('woff2'),
+            url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff?v=4.6.3) format('woff'),
+            url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.ttf?v=4.6.3) format('truetype'),
+            url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular) format('svg');
+}
+
+/* -->[ * ICONS IMPORT * ]<-- */
+@font-face {
+  font-family: 'apartmenticons';
+    src: url('https://www.apartments.com/content/fonts/apartmenticons.woff') format('woff'),
+         url('https://www.apartments.com/content/fonts/apartmenticons.woff') format('svg');
+  font-weight: normal; font-style: normal;
+}
+
+[class$="Icon"], [class*="Icon"] {
+  font-family: 'apartmentIcons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hamburgerIcon:before { content: "\e803";}
+.profileCarouselArrowRightIcon:before { content: "\e825"; }
+
+
+/* -->[ * BASE STYLING * ]<-- */
+h1,h2,h3,h4,h5,h6 { font-family: 'CoStarBrown-Regular'; vertical-align: baseline; }
+h1 { font-size: 32px; margin-bottom: 4rem; }
+h2 { font-size: 24px; }
+strong { font-family: 'CoStarBrown-Bold' !important; color: #222; }
+p { font-family: 'CoStarBrown-Light'; font-size: 16px; line-height: 140%; margin-bottom: 4rem; vertical-align: baseline; word-wrap: break-word; }
+ul, ol { width: 90%; margin: 0; }
+ul li, ol li { padding-bottom: 1rem; font-size: 16px; line-height: 24px; font-family: 'CoStarBrown-Light'; }
+
+
+@media screen and (min-width: 768px){
+  ul, ol { width: 75%; margin: 3rem 6rem; }
+  ul li, ol li { padding-bottom: 2rem; }
+}
+
+/* -->[ * STYLES FROM APN * ]<-- */
+
+header#mainHeader-adv {border-bottom: 1px solid #cacaca;}
+
+#mainHeaderNavigation-adv {height: 50px;}
+
+.logo-adv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.logo-adv img {width: 15em;}
+
+h1.post-title {
+    margin-top: 0.5em; padding: 0; color: #333;
+    vertical-align: baseline; letter-spacing: 0.28px;
+    background-color: #fff; line-height: 1.2em;
+}
+.post-entry {
+   vertical-align: baseline; clear: both;
+   color: #676767; letter-spacing: 0.28px;
+}
+
+#mainHeaderNavigation-adv #headerAddListing-adv {
+    z-index: 1000;
+    padding: 1.5rem 2.5rem;
+    color: #fff;
+    background-color: #666;
+    height: 100%;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+    top: -50px;
+}
+.search-adv a {
+    font-size: 16px; color: #77b800; padding: 10px 30px;
+ }
+
+@media screen and (min-width:600px){
+  #headerAddListing-adv {
+    float: right;
+    /* margin-top: -50px; */
+  }
+  
+  .header-box,.menu-top-extension,.top-nav {
+    display:none !important;
+  }
+}
+
+
+#header-wrapper { background-color: #ccc; }
+#header-wrapper .hgroup-wrapper {
+    height: 177px;
+    background-image: url('/images/librariesprovider2/logo/apt-header-lg.jpg?sfvrsn=dcfaf87e_2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#header-wrapper .logo {
+    max-width: 410px;
+    width: 100%;
+    left: 5%;
+    top: 50%;
+    display: inline-block;    
+}
+#header-wrapper .logo img {
+    height: auto;
+    width: 100%;
+}
+
+/* Kevin's Fix for click */
+.search-adv {
+    width: 200px; height: 100%;
+    margin: 0; padding: 0;
+    display: inline-flex;
+}
+.search-adv a,
+.search-adv a:visited {
+    display: inline-block;
+    position: relative;
+    padding: 0.9em 2em;
+    z-index: 10;
+}
+
+.container a,
+.container a:visited,
+.container a:hover { color: #87c44f;}
+
+/* .sf_colsOut.sf_1col_1_100.col-lg-12.col-md-12.col-sm-12.col-xs-12 {
+  padding: 0;
+} */
+
+.sf_colsIn.container.box-pad,
+.sf_colsIn.container-fluid.box-pad{
+  padding-top: 2em; padding-bottom: 4em; word-wrap: break-word;
+}
+
+/* .sf_colsIn.container { padding-left: 0; padding-right: 0; } */
+
+@media only screen and (max-width: 480px) and (min-width: 320px), 
+  only screen and (max-width: 568px) and (min-width: 320px), 
+  only screen and (-webkit-device-pixel-ratio: 3){
+  div#PublicWrapper.sfPublicWrapper {
+    width: 100%; padding-top: 0; padding-left: 0; padding-right: 0;
+  }
+}
+
+/*  -->[ * FOOTER CSS * ]<--  */
+.footer { width: 100%; padding: 4em; background-color: rgba(176,178,175,.24); font-family: 'CoStarBrown-Light' !important; overflow: hidden; border-top: 1px solid #cacaca; }
+    .footer .footerLogo { width: 100%; max-width: 330px; }
+    .footer .social { width: 22%; margin-right: 3%; text-align: right; position: relative; display: block; float: left; }
+    .footer .social .socialIcons { width: 90%; margin: auto; white-space: nowrap; }
+    .footerLinksWrapper { width: 75%; display: block; float: left; }
+    .footer .copyrightInfo { margin: 20px 0 0; color: #7f7e7e; }
+    .footer h5 { margin-bottom: 1em; margin-top: 0; font-size: .88em; font-weight: 600; font-style: normal; color: #4c4c4c; text-transform: uppercase; }
+    .footer ul { margin: 0 2% 0 0; padding: 0; display: block; float: left; }
+    .footer ul li { list-style-type: none; line-height: 1em; font-size: 15px; }
+    .footer a, 
+    .footer a:visited { color: #7f7e7e; text-decoration: none; }
+    .footer a:hover { color: #77b800; }
+
+    .footer .ehoLabel a,
+    .footer .ehoLabel a:visited,
+    .footer .ehoLabel a:hover { margin-top: 1em; color: #3f3f3f; display: inline-block; position: relative; }
+    .footer .ehoLabel em { margin-right: 8px; }
+    .footer .ehoIcon:before { content: "\e64e"; }
+
+    .footerLinks { width: 18%; margin-top: 2em; margin-right: 2%; float: left; display: block; }
+    .footerLinks li { padding-bottom: .75em; white-space: pre-line; word-wrap: break-word; }
+    .footerLinks li a { display: block; line-height: 1em; white-space: pre-line; word-wrap: break-word; }
+
+    .footer .socialIcons a, 
+    .footer .socialIcons a:visited { color: #cacaca; font-size: 32px; padding: 4px; display: inline-block; }
+    .footer .socialIcons a:hover { color: #999; }
+
+    .facebookIcon:before { content: "\e817"; }
+    .twitterIcon:before { content: "\e80c"; }
+    .linkedinIcon:before { content: "\e813"; }
+    .googleIcon:before { content: "\e812"; }
+    .pinterestIcon:before { content: "\e828"; }
+    .youtubeIcon:before { content: "\e80a"; }
+    .blogIcon:before { content: "\e907"; }
+
+    @media only screen and (max-width: 1280px){
+      .footer .social {width: 100%; margin: 0 auto; text-align: center; float: none;}
+      .footer .footerLinksWrapper {width: 100%; margin: 0 auto; float: none;}
+      .footerLinks { width: 32.333332%; margin-top: 2em; }
+      .copyrightInfo { margin: 20px auto 0; color: #7f7e7e; }
+    }
+    @media only screen and (max-width: 980px){
+      .footerLinks { width: 48%; }
+    }
+    @media only screen and (max-width: 600px){
+      .footer { padding: 4em 2em; }
+      .footerLinks { width: 95%; }
+    }
+</style><style type="text/css" media="all">.sf_colsOut.sf_3cols_2_34 { width: 95% !important; }
+h1 { color: #333 !important; }</style><style type="text/css" media="all">/*  -->[ * OFFCANVAS MENU * ]<--  */
+.hamburgerIcon:before { content: "\e803";}
+.profileCarouselArrowRightIcon:before { content: "\e825"; }
+.costarIcon:before { content: "\e933"; }
+
+button.menuHeader.primary.homeBtn {
+  width: 50px;
+  font-size: 21px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+}
+button.menuHeader.primary.homeBtn em { position: relative; }
+
+div#sidebar {
+  height: auto; min-height: -webkit-fill-available; font-family:'CostarBrown-Bold',sans-serif;
+  background-color: #fdfdfd; border-right: 1px solid #cacaca; border-bottom: 1px solid #cacaca;
+}
+div#sidebar ul { margin: 1em 0 0; padding: 0; list-style-type: none; }
+div#sidebar ul ul { margin: 0; }
+div#sidebar ul > li { margin: 0; padding: 0; }
+div#sidebar ul > li a em { float: right; color: #7cc243; }
+div#sidebar ul > li a,
+div#sidebar ul > li a:visited { width: 100%; padding: 8px 30px; color: #000; text-decoration: none; display: block; clear: both; }
+div#sidebar ul > li a:focus { background-color: #7cc243; color: #fff; }
+div#sidebar ul > li a:focus em { color: #fff; }
+div#sidebar ul > li a.mobile-listing,
+div#sidebar ul > li a.mobile-listing:visited { padding-top: 16px; padding-bottom: 16px; background-color: #666; color: #fff; }
+div#sidebar ul > li a.mobile-listing em { color: #fff; font-size: 18px;  }
+div#sidebar ul * li a { padding-left: 2em; color: #4c4c4c; font-family:'CostarBrown-Light',sans-serif; }
+
+.submenu { display: none; }
+.submenu li a,
+.submenu li a:visited { color: #4c4c4c; }
+.submenu li a:hover { color: #fff; }
+
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+          -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+  .row-offcanvas-right { right: 0; }
+  .row-offcanvas-left { left: 0; }
+  .row-offcanvas-right .sidebar-offcanvas { right: -280px; }
+  .row-offcanvas-left .sidebar-offcanvas { left: -280px; }
+  .row-offcanvas-right.active { right: 280px; }
+  .row-offcanvas-left.active { left: 280px; }
+
+  .sidebar-offcanvas { position: absolute; top: 0; width: 280px; }
+}
+
+/*  -->[ * MASTHEAD CSS * ]<--  */
+#mainHeader.mainHeader{width:100%;border-bottom:1px solid #cacaca;background:#fff;font-size:16px;font-family: CoStarBrown-Regular !important;}
+#mainHeader .mainHeaderNavigation{position:relative;width:100%;height:2.875em;display:-ms-inline-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-moz-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center}
+#mainHeader .mainHeaderNavigation>*:not(.logoSpacer):not(.logo){z-index:1001}
+#mainHeader .backToResultsSection{height:100%}
+#mainHeader .backToResultsSection .backToResults{display:-ms-inline-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-moz-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;padding:0 .875em;background:#77b800;color:#fff;cursor:pointer;height:100%}
+#mainHeader .backToResultsSection .backToResults .leftArrowIcon{margin-right:.4375em}
+#mainHeader .backToResultsSection .backToResults .mapText{display:inline}
+@media only screen and (max-width:1023px){#mainHeader .backToResultsSection .backToResults .mapText{display:none}}
+#mainHeader .backToResultsSection .backToResults:hover{background:#555;border:transparent}
+#mainHeader .menuSection{z-index:10;height:100%;margin-right:.625em;position:relative}
+#mainHeader .menuSection .primary {
+  background-color: transparent; border-color: transparent; padding: 0 .875em; height: 100%; color: #4c4c4c;
+}
+#mainHeader .menuSection .primary .hamburgerIcon {vertical-align:middle;font-size:24px}
+#mainHeader .menuSection .primary .hamburgerIcon+span {vertical-align: bottom;margin-left:.5em;font-size: 14px; display: inline-block; position: relative; top: 1px;}
+#mainHeader .menuSection .primary:hover {background-color:#555;border:1px solid #555;color:#fff}
+#mainHeader .menuSection .primary:focus {outline: none}
+#mainHeader .menuSection #headerMenuLink.open {color:#fff;background-color:#929292}
+#mainHeader .headerSwitchLanguageWrapper .headerSwitchLanguage{color:#4c4c4c}
+#mainHeader .headerSwitchLanguageWrapper .headerSwitchLanguage i{padding-right:.3125em}
+#mainHeader .headerSwitchLanguageWrapper a.disabled{pointer-events:none;cursor:default;background-color:transparent}
+#mainHeader .logoSpacer {z-index:0;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto}
+#mainHeader .logo {
+  position: absolute; top: 0; left: 0; height: 2.875em; width: 100%; text-align: center; z-index: 5; display: -ms-inline-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center;
+  -moz-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center;
+  -webkit-align-items: center; align-items: center;
+}
+#mainHeader .logo img {width:12.9375em}
+@media only screen and (max-width:768px){#mainHeader .logo img {width:8.75em}}
+#mainHeader .logo .listingProviderHeaderLogo{width:10.625em;position:relative;top:.21875em;border-left:1px solid #999;margin-left:.625em;padding-left:.625em;height:1.3125em}
+@media only screen and (max-width:768px){#mainHeader .logo .listingProviderHeaderLogo{width:7.5em;height:.77125em;position:relative;top:.0625em;margin-left:.3125em;padding-left:.3125em}}
+#mainHeader .notifications-wrapper{height:100%;padding-right:20px;box-sizing:border-box;display:flex;flex-flow:row;justify-content:center;align-items:center}
+@media only screen and (max-width:1366px){#mainHeader .notifications-wrapper{display:none}}
+#mainHeader .notifications-wrapper i.circleCloseIcon{font-size:18px;margin-left:2.5px;margin-top:2px;display:none}
+#mainHeader .notifications-wrapper .label{font-size:18px;display:none;margin-left:2.5px}
+#mainHeader .notifications-wrapper .notifications-alerts,#mainHeader .notifications-wrapper .notifications-new-listings-alerts,
+#mainHeader .notifications-wrapper .notifications-favorites{display:flex;flex-flow:row;justify-content:center;align-items:center;cursor:pointer;margin-right:10px;position:relative;height:100%}
+#mainHeader .notifications-wrapper .notifications-alerts:hover i.icon,
+#mainHeader .notifications-wrapper .notifications-new-listings-alerts:hover i.icon,
+#mainHeader .notifications-wrapper .notifications-favorites:hover i.icon{color:#2196f3;cursor:pointer;transition:all .25s ease-in-out}
+#mainHeader .notifications-wrapper .notifications-alerts:hover .notifications-count,
+#mainHeader .notifications-wrapper .notifications-new-listings-alerts:hover .notifications-count,
+#mainHeader .notifications-wrapper .notifications-favorites:hover .notifications-count{color:#2196f3}
+#mainHeader .notifications-wrapper .notifications-alerts i.icon,
+#mainHeader .notifications-wrapper .notifications-new-listings-alerts i.icon,
+#mainHeader .notifications-wrapper .notifications-favorites i.icon{font-size:20px;transition:all .25s ease-in-out}
+#mainHeader .notifications-wrapper .notifications-alerts .notifications-count,
+#mainHeader .notifications-wrapper .notifications-new-listings-alerts .notifications-count,
+#mainHeader .notifications-wrapper .notifications-favorites .notifications-count{margin-left:5px;font-size:16px}
+#mainHeader .notifications-wrapper .notifications-alerts.notification-selected,
+#mainHeader .notifications-wrapper .notifications-new-listings-alerts.notification-selected,
+#mainHeader .notifications-wrapper .notifications-favorites.notification-selected{color:#2196f3}
+#mainHeader .notifications-wrapper .notifications-alerts.notification-selected i.circleCloseIcon,
+#mainHeader .notifications-wrapper .notifications-new-listings-alerts.notification-selected i.circleCloseIcon,
+#mainHeader .notifications-wrapper .notifications-favorites.notification-selected i.circleCloseIcon{font-size:18px;color:#7f7e7e;margin-left:5px;margin-top:2px;display:block}
+#mainHeader .notifications-wrapper .notifications-alerts.notification-selected .label,
+#mainHeader .notifications-wrapper .notifications-new-listings-alerts.notification-selected .label,
+#mainHeader .notifications-wrapper .notifications-favorites.notification-selected .label{font-size:16px;display:block}
+#mainHeader .notifications-wrapper .notifications-alerts .notifications-circle{position:absolute;margin:auto;top:14px;right:-1px;background-color:#ff7363;width:8px;height:8px;border-radius:100%}
+#mainHeader .notifications-wrapper .notifications-favorites i.icon{font-size:22px}
+#mainHeader .loginPrevNextWrapper{display:-ms-inline-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-moz-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;-webkit-justify-content:flex-end;justify-content:flex-end;height:100%}
+#mainHeader .loginSection{display:-ms-inline-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:flex-end;justify-content:flex-end;white-space:nowrap;position:relative;padding-right:.875em}
+#mainHeader .loginSection .headerSignIn,
+#mainHeader .loginSection .headerSignUp {color:#4c4c4c}
+#mainHeader .loginSection .headerSignIn:hover,
+#mainHeader .loginSection .headerSignUp:hover {color:#77b800}
+#mainHeader .loginSection>span{padding:0 .4375em}
+#mainHeader .loginSection .headerSignIn{padding-left:0}
+#mainHeader .loginSection .primary{background:transparent}
+#mainHeader .loginSection .primary:hover{background:transparent;border-color:transparent;color:#77b800}
+#mainHeader .loginSection .username{color:#4c4c4c;cursor:pointer;white-space:nowrap;display:-ms-inline-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;max-width:10.9375em}
+#mainHeader .loginSection .username > span{text-decoration:underline;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:.4375em}
+#mainHeader .loginSection .username:hover {color:#77b800}
+#mainHeader .loginSection .username:hover .userMenu {display:block}
+#mainHeader .loginSection .username .menuArrowDownIcon {color:#77b800;min-width:.875em}
+#mainHeader .loginSection .username .userMenu {display:none;position:absolute;width:100%;min-height:5.6875em;top:.5625em;left:-.125em;z-index:1100}
+#mainHeader .loginSection .username .userMenuDropdown {background-color:#fff;position:absolute;top:2.375em;list-style:none;padding:.4375em 0;min-width:10.9375em;right:-.625em;border:1px solid #cacaca;margin-top:-.875em;box-shadow:0 .375em .75em rgba(0,0,0,.175);font-family:'CoStarBrown-Regular',sans-serif !important;}
+#mainHeader .loginSection .username .userMenuDropdown:before{content:'';width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:13px solid #cacaca;position:absolute;top:-13px;left:78%}
+#mainHeader .loginSection .username .userMenuDropdown:after{content:'';width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:13px solid #fff;position:absolute;top:-11px;left:78%}
+#mainHeader .loginSection .username .userMenuDropdown li{margin-bottom:.4375em;padding:0 .4375em}
+#mainHeader .loginSection .username .userMenuDropdown li:last-child{margin:0}
+#mainHeader .loginSection .username .userMenuDropdown a {display:inline-block;width:100%;cursor:pointer}
+#mainHeader .loginSection .username .userMenuDropdown #headerMyAccount,
+#mainHeader .loginSection .username .userMenuDropdown #headerSignOut {width:100%}
+#mainHeader .loginSection .username .userMenuDropdown #alertDashbaord {width:70%}
+#mainHeader .loginSection .preferred-header {border-left:1px dotted #cacaca;padding-left:.3125em;max-width:11.5625em}
+#mainHeader .loginSection .preferred-header .lower-user-menu-drop-down {top:2.8125em}
+#mainHeader .loginSection .preferred-header .preferred-initial-circle{font-family: 'CoStarBrown-Regular',sans-serif !important;width:2.1875em;height:2.1875em;background:#77b800;border-radius:100%;text-align:center;margin-right:.625em;color:#fff;font-size:1em;display:block}
+#mainHeader .loginSection .preferred-header .preferred-initial-circle span{line-height:2em;text-transform:uppercase}
+#mainHeader .loginSection .preferred-header .show-preferred-initial-circle{display:block}
+#mainHeader .loginSection .preferred-header .preferred-name-title-wrap{margin-right:.625em}
+#mainHeader .loginSection .preferred-header .preferred-name-title-wrap p{padding:0;margin:0}
+#mainHeader .loginSection .preferred-header .preferred-name-title-wrap .preferred-username{font-family: 'CoStarBrown-Regular',sans-serif !important;font-weight:bold;color:#000;text-overflow:ellipsis;overflow:hidden;width:6.25em}
+#mainHeader .loginSection .preferred-header .preferred-name-title-wrap .preferred-title{font-family:'CostarBrownBold',sans-serif;color:#2196f3;font-size:.5625em;text-transform:uppercase;display:none}
+#mainHeader .loginSection .preferred-header .preferred-name-title-wrap .show-preferred-title{display:block}
+#mainHeader .prevNextSection{display:-ms-inline-flexbox;display:-webkit-flex;display:flex;padding-right:.875em}
+#mainHeader .prevNextSection .previous,
+#mainHeader .prevNextSection .next{text-align:center;text-decoration:none;color:#77b800}
+#mainHeader .prevNextSection .previous .menuArrowLeftIcon,
+#mainHeader .prevNextSection .next .menuArrowLeftIcon,
+#mainHeader .prevNextSection .previous .menuArrowRightIcon,
+#mainHeader .prevNextSection .next .menuArrowRightIcon{font-size:.75em}
+#mainHeader .prevNextSection .previous:hover,
+#mainHeader .prevNextSection .next:hover{color:#4c4c4c}
+#mainHeader .prevNextSection .previous.disabledButton,
+#mainHeader .prevNextSection .next.disabledButton{color:#d4d4d4;cursor:default}
+@media only screen and (max-width:1024px){
+  #mainHeader .prevNextSection .previous,#mainHeader .prevNextSection .next{width:auto}
+  #mainHeader .prevNextSection .previous .previousText,
+  #mainHeader .prevNextSection .next .previousText,
+  #mainHeader .prevNextSection .previous .nextText,
+  #mainHeader .prevNextSection .next .nextText{display:none}
+}
+#mainHeader .prevNextSection .previous {padding-right:.875em}
+#mainHeader .prevNextSection .next {padding-left:.875em}
+#mainHeader #headerAddListing {
+  padding: 0 .875em; color: #fff; background-color: #666; height: 100%; 
+  display: -ms-inline-flexbox; display: -webkit-inline-flex; display: inline-flex; 
+  -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; text-decoration: none !important;
+  -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; 
+  -moz-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;
+}
+#mainHeader #headerAddListing:hover {background-color:#555}
+#menuNavWrapper{font-family:'CoStarBrown-Regular',sans-serif !important;font-size:1em;left:0;position:absolute;z-index:1001}
+#menuNavWrapper .open .menuHeader{color:#fff}
+
+#menuNavContainer {height:auto;background-color:transparent;width:15em;display: none;position:absolute;z-index:100;left:0;top:-2.875em}
+#menuNavContainer .menuHeader {width:100%;max-width:98px;height:100%;min-height:48px;font-size:.875em;border:0 none;background-color:#929292;color:#fff;cursor:pointer;display:-ms-inline-flexbox;display:-webkit-flex;display:flex;-webkit-box-pack:center;-moz-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;font-family: 'CoStarBrown-Regular',sans-serif !important}
+#menuNavContainer .menuHeader .hamburgerIcon {font-size:24px}
+#menuNavContainer .menuHeader .menuText {margin-left:.4375em}
+#menuNavContainer.open .menuHeader {color:transparent}
+#menuNavContainer .menuNavigation {
+  width: 100%; position: relative; top: -.125em; border: 0 none; margin: 0; list-style: none; color:#4c4c4c;
+  padding: 0; font-size: .87em; z-index: 20; background-color: #fff; border:.0625em solid #cacaca; z-index: 20;
+}
+#menuNavContainer ul.menuNavigation li { padding: 0; font-size: 14px;}
+#menuNavContainer .menuNavigation li:not(.menuSubLinkItem){font-family:'CostarBrown-Regular',sans-serif;color:#000;margin:0;vertical-align: middle;}
+#menuNavContainer .menuNavigation li:not(.menuSubLinkItem)+.menuSubLinkItem{margin-top:-.375em}
+#menuNavContainer .menuNavigation li.menuSubLinkItem {margin-top:-.375em}
+#menuNavContainer .menuNavigation li.menuNavCategory:hover {background-color:#fff;color:#77b800}
+#menuNavContainer .menuNavigation li em {color:#77b800;font-size:.75em;margin-top:.3125em;position:absolute;right:1.6875em}
+#menuNavContainer .menuNavigation li em.mapZoomInIcon {display:none}
+#menuNavContainer .menuNavigation li a {position:relative;text-decoration: none;}
+#menuNavContainer .menuNavigation li a,
+#menuNavContainer .menuNavigation li .expandable {padding:0.4em 1.74em;display:block;width:calc(100.0625%);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#4c4c4c;vertical-align: middle;}
+#menuNavContainer .menuNavigation li .submenu {display:none;position:absolute;left:100%;background-color:#fff;border:.0625em solid #cacaca;list-style-type:none; margin: 0; padding: 0;}
+#menuNavContainer .menuNavigation li .submenu.tools {top:-.0625em; width:15.625em}
+#menuNavContainer .menuNavigation li .submenu:not(.tools) {top: -40px; z-index: 30;}
+#menuNavContainer .menuNavigation li .submenu li {margin:0}
+#menuNavContainer .menuNavigation li .submenu li:hover a,
+#menuNavContainer .menuNavigation li .submenu li:active a {color: #fff !important}
+#menuNavContainer .menuNavigation li .submenu a {color: #4c4c4c !important; font-family: 'CoStarBrown-Light', sans-serif;}
+#menuNavContainer .menuNavigation li:hover {cursor:pointer;background-color:#77b800;color:#fff}
+#menuNavContainer .menuNavigation li:hover em,
+#menuNavContainer .menuNavigation li:hover a,
+#menuNavContainer .menuNavigation li:hover span {color:#fff}
+#menuNavContainer .menuNavigation li.open .submenu {display:block;}
+#menuNavContainer .open {display: block;}
+.menuSection.open #menuNavContainer {display: block;}
+
+@media only screen and (max-width: 420px){
+  #mainHeader #headerAddListing { display: none; }
+  #mainHeader .menuSection .primary .hamburgerIcon+span { display: none; }
+  #menuNavContainer .menuHeader .menuText { display: none; }
+  #mainHeader .menuSection .primary {
+    width: 60px; height: 100%; min-height: 48px; padding: 0 .875em; cursor: pointer;
+    color: #4c4c4c; background-color: #fff; border-color: transparent;
+    display: -ms-inline-flexbox; display: -webkit-flex; display: flex;
+    -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center;
+    -webkit-justify-content: center; justify-content: center;
+    -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center;
+    -webkit-align-items: center; align-items: center; margin-top: -2px;
+  }
+  #menuNavContainer .menuHeader { width: 100%; max-width: 60px; height: 100%; min-height: 48px; margin-top: -2px; }
+}
+
+.collapseShow {display: block;}
+.collapseHide {display: none;}
+.culture-es #menuNavContainer .menuNavigation {width: 19.6875em;}</style><script type="text/javascript">
+// '[ * CUSTOM JS * ]' 
+$(document).ready(function(){
+  $('.menuNavigation .expandable').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+  $('[data-toggle="offcanvas"]').click(function () {
+    $('.row-offcanvas').toggleClass('active')
+  });
+  $('.dropdown').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+
+</script><script type="text/javascript" src="//assets.adobedtm.com/82b415af070c8631298abd39d35e543a20fcdf4c/satelliteLib-10633b7109f06fb0269f7ce26856bec9df08e32b.js"></script><script type="text/javascript">
+<!-- Google Tag Manager -->
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KGRTLQC');
+<!-- End Google Tag Manager -->
+
+</script><meta name="Generator" content="Sitefinity 13.0.7300.0 PU"><link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nAQmT2sJzVhjhZygTb16TE9O8gaKY2DtPS3nZ7lRJZH5qWApJGPPHV22M46hi-suD-AQv-FVJOxW_0TX0H7GcUQJTvOOFKtaW1znOiGhVH1G0&amp;t=638227109199744065&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%2c+Version%3d13.0.7300.0%2c+Culture%3dneutral%2c+PublicKeyToken%3db28c218413bdf563%3aen%3a9c89fe50-1afd-41c0-a3c3-7b16353b6192%3a7a90d6a" type="text/css" rel="stylesheet"><title>
+	Privacy Notice | Apartments.com
+</title><script>bazadebezolkohpepadr="1947438985"</script><script type="text/javascript" src="https://www.apartments.com/akam/13/74138c4a" defer=""></script><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+<body>
+    <form method="post" action="./privacy-notice" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl14_TSM" id="ctl14_TSM" value=";;System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35:en-US:74e2d6b4-8086-4964-ae5a-39250647f25e:ea597d4b:b25378d2">
+<input type="hidden" name="ctl15_TSSM" id="ctl15_TSSM" value=";Telerik.Sitefinity.Resources, Version=13.0.7300.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:en:9c89fe50-1afd-41c0-a3c3-7b16353b6192:7a90d6a">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/QDOPPOmnJfhU1b8JUWubqHDEJZE+lo/qHl/EpYLrytmC8RphWjbHNpGGr+gZfdpLYAJXripWcREgKxC1VfsfP+cQxmF24k9YrWhSieghVw=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZK_7pG3veJSAtjT_SbLnSD8_FMzW5OB5vTZ2ziOGksskp47K_P9mBmlCCJK5sG0UNg2&amp;t=638259218771233176" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"en","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"$","NaNSymbol":"NaN","CurrencyNegativePattern":0,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135578800000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, MMMM d, yyyy h:mm:ss tt","LongDatePattern":"dddd, MMMM d, yyyy","LongTimePattern":"h:mm:ss tt","MonthDayPattern":"MMMM d","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"M/d/yyyy","ShortTimePattern":"h:mm tt","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"eras":[1,"A.D.",null,0]};//]]>
+</script>
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl14_TSM&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen%3a74e2d6b4-8086-4964-ae5a-39250647f25e%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F481D3FF">
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl14', 'aspnetForm', [], [], [], 90, '');
+//]]>
+</script>
+<input type="hidden" name="ctl14" id="ctl14">
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl14", "ctl14");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+
+
+
+        <div id="PublicWrapper" class="sfPublicWrapper">        
+            
+<!-- Google Tag Manager (noscript) -->
+<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGRTLQC"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="sf_cols">
+    <div class="sf_colsOut sf_1col_1_100">
+        <div id="T39FC1615001_Col00" class="sf_colsIn sf_1col_1in_100">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="sf_cols row-offcanvas row-offcanvas-left">
+    <div class="sf_colsOut sf_1col_1_100" data-placeholder-label="Masthead" style="">
+        <div id="T7BAD68B9001_Col00" class="sf_colsIn sf_1col_1in_100">
+<div>
+    <div class="sfContentBlock sf-Long-text"><header class="mainHeader" id="mainHeader"><nav class="mainHeaderNavigation" id="mainHeaderNavigation"><div class="menuSection hidden-xs"><button class="dropdownToggle primary homeBtn" data-toggle="dropdown" id="headerMenuLink" type="button"><em class="hamburgerIcon"></em><span>Menu</span></button><div class="menuNavWrapper" id="menuNavWrapper"><div id="menuNavContainer"><div class="menuOpenWrapper"><span class="menuHeader" id="menuHeader"><em class="hamburgerIcon"></em><span class="menuText">Menu</span></span>
+								<ul class="menuNavigation" id="menuNavigation"><li><a data-requirelogin="true" href="https://www.apartments.com/my-account/#SavedSearches" id="menuNavLnkSaveSearches" rel="nofollow">My Saved Searches</a>
+									</li><li><a href="https://www.apartments.com/my-account/#FavoriteListings" id="menuNavLnkFavorites" rel="nofollow">My Favorites</a>
+									</li><li><a href="https://www.apartments.com/my-account/#UserNotificationSettings" id="menuNavLnkUserNotificationSettings" rel="nofollow"><span>Notification Settings</span></a>
+									</li><li><a class="expandable" data-requirelogin="false" href="https://www.apartments.com/">Apartments For Rent<em class="profileCarouselArrowRightIcon"></em><em class="mapZoomInIcon"></em></a>
+										<ul class="submenu"><li><a href="https://www.apartments.com/austin-tx/">Austin Apartments</a></li><li><a href="https://www.apartments.com/boston-ma/">Boston Apartments</a></li><li><a href="https://www.apartments.com/charlotte-nc/">Charlotte Apartments</a></li><li><a href="https://www.apartments.com/chicago-il/">Chicago Apartments</a></li><li><a href="https://www.apartments.com/houston-tx/">Houston Apartments</a></li><li><a href="https://www.apartments.com/las-vegas-nv/">Las Vegas Apartments</a></li><li><a href="https://www.apartments.com/los-angeles-ca/">Los Angeles Apartments</a></li><li><a href="https://www.apartments.com/new-york-ny/">New York City Apartments</a></li><li><a href="https://www.apartments.com/san-diego-ca/">San Diego Apartments</a></li><li><a href="https://www.apartments.com/seattle-wa/">Seattle Apartments</a></li></ul></li><li><a class="expandable" data-requirelogin="false" href="https://www.apartments.com/houses/">Homes For Rent<em class="profileCarouselArrowRightIcon"></em><em class="mapZoomInIcon"></em></a>
+										<ul class="submenu"><li><a href="https://www.apartments.com/houses/charlotte-nc/">Charlotte Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/dallas-tx/">Dallas Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/fresno-ca/">Fresno Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/houston-tx/">Houston Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/louisville-ky/">Louisville Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/memphis-tn/">Memphis Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/nashville-tn/">Nashville Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/phoenix-az/">Phoenix Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/san-antonio-tx/">San Antonio Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/tampa-fl/">Tampa Houses for Rent</a></li></ul></li><li><a class="expandable" data-requirelogin="false" href="https://www.apartments.com/condos/">Condos For Rent<em class="profileCarouselArrowRightIcon"></em><em class="mapZoomInIcon"></em></a>
+										<ul class="submenu"><li><a href="https://www.apartments.com/condos/atlanta-ga/">Atlanta Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/charlotte-nc/">Charlotte Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/chicago-il/">Chicago Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/houston-tx/">Houston Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/jacksonville-fl/">Jacksonville Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/las-vegas-nv/">Las Vegas Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/miami-fl/">Miami Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/nashville-tn/">Nashville Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/orlando-fl/">Orlando Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/san-diego-ca/">San Diego Condos for Rent</a></li></ul></li><li><a class="expandable" data-requirelogin="false" href="https://www.apartments.com/townhomes/">Townhomes For Rent<em class="profileCarouselArrowRightIcon"></em><em class="mapZoomInIcon"></em></a>
+										<ul class="submenu"><li><a href="https://www.apartments.com/townhomes/atlanta-ga/">Atlanta Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/charlotte-nc/">Charlotte Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/dallas-tx/">Dallas Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/denver-co/">Denver Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/houston-tx/">Houston Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/jacksonville-fl/">Jacksonville Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/nashville-tn/">Nashville Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/omaha-ne/">Omaha Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/raleigh-nc/">Raleigh Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/san-antonio-tx/">San Antonio Townhomes for Rent</a></li></ul></li><li><a data-requirelogin="false" href="https://www.apartments.com/mobile/" id="menuNavLnkMobileApps" target="_blank">Mobile Apps</a>
+									</li></ul></div></div></div></div><span class="visible-xs"><button class="menuHeader primary homeBtn" data-toggle="offcanvas" type="button"><em class="hamburgerIcon"></em></button></span><div class="logoSpacer"></div><div class="logo"><a href="https://www.apartments.com/"><img alt="Apartments.com Logo" src="/images/default-source/logos/apartments-com-logo-network-packages-330w.png?sfvrsn=a46eabb6_7"></a>
+				</div><a class="hidden-xs" href="https://www.apartments.com/add-edit-listing/" id="headerAddListing" target="_blank" title="Add a Listing"><span>Add a Property</span></a></nav></header><div class="container"><div class="row"><div class="sidebar-offcanvas visible-xs" id="sidebar"><ul><li><a data-requirelogin="true" href="https://www.apartments.com/my-account/#SavedSearches" id="menuNavLnkSaveSearches" rel="nofollow">My Saved Searches</a>
+						</li><li><a href="https://www.apartments.com/my-account/#FavoriteListings" id="menuNavLnkFavorites" rel="nofollow">My Favorites</a>
+						</li><li><a href="https://www.apartments.com/my-account/#UserNotificationSettings" id="menuNavLnkUserNotificationSettings" rel="nofollow"><span>Notification Settings</span></a>
+						</li><li><a class="dropdown" href="https://www.apartments.com/">Apartments For Rent<em class="profileCarouselArrowRightIcon"></em></a>
+							<ul class="submenu"><li><a href="https://www.apartments.com/austin-tx/">Austin Apartments</a></li><li><a href="https://www.apartments.com/boston-ma/">Boston Apartments</a></li><li><a href="https://www.apartments.com/charlotte-nc/">Charlotte Apartments</a></li><li><a href="https://www.apartments.com/chicago-il/">Chicago Apartments</a></li><li><a href="https://www.apartments.com/houston-tx/">Houston Apartments</a></li><li><a href="https://www.apartments.com/las-vegas-nv/">Las Vegas Apartments</a></li><li><a href="https://www.apartments.com/los-angeles-ca/">Los Angeles Apartments</a></li><li><a href="https://www.apartments.com/new-york-ny/">New York City Apartments</a></li><li><a href="https://www.apartments.com/san-diego-ca/">San Diego Apartments</a></li><li><a href="https://www.apartments.com/seattle-wa/">Seattle Apartments</a></li></ul></li><li><a class="dropdown" href="https://www.apartments.com/houses/">Homes For Rent<em class="profileCarouselArrowRightIcon"></em></a>
+							<ul class="submenu"><li><a href="https://www.apartments.com/houses/charlotte-nc/">Charlotte Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/dallas-tx/">Dallas Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/fresno-ca/">Fresno Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/houston-tx/">Houston Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/louisville-ky/">Louisville Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/memphis-tn/">Memphis Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/nashville-tn/">Nashville Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/phoenix-az/">Phoenix Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/san-antonio-tx/">San Antonio Houses for Rent</a></li><li><a href="https://www.apartments.com/houses/tampa-fl/">Tampa Houses for Rent</a></li></ul></li><li><a class="dropdown" href="https://www.apartments.com/condos/">Condos For Rent<em class="profileCarouselArrowRightIcon"></em></a>
+							<ul class="submenu"><li><a href="https://www.apartments.com/condos/atlanta-ga/">Atlanta Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/charlotte-nc/">Charlotte Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/chicago-il/">Chicago Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/houston-tx/">Houston Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/jacksonville-fl/">Jacksonville Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/las-vegas-nv/">Las Vegas Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/miami-fl/">Miami Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/nashville-tn/">Nashville Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/orlando-fl/">Orlando Condos for Rent</a></li><li><a href="https://www.apartments.com/condos/san-diego-ca/">San Diego Condos for Rent</a></li></ul></li><li><a class="dropdown" href="https://www.apartments.com/townhomes/">Townhomes For Rent<em class="profileCarouselArrowRightIcon"></em></a>
+							<ul class="submenu"><li><a href="https://www.apartments.com/townhomes/atlanta-ga/">Atlanta Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/charlotte-nc/">Charlotte Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/dallas-tx/">Dallas Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/denver-co/">Denver Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/houston-tx/">Houston Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/jacksonville-fl/">Jacksonville Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/nashville-tn/">Nashville Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/omaha-ne/">Omaha Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/raleigh-nc/">Raleigh Townhomes for Rent</a></li><li><a href="https://www.apartments.com/townhomes/san-antonio-tx/">San Antonio Townhomes for Rent</a></li></ul></li><li><a data-requirelogin="false" href="https://www.apartments.com/mobile/" id="menuNavLnkMobileApps" target="_blank">Mobile Apps</a>
+						</li><li><a class="mobile-listing button" href="https://www.apartments.com/add-edit-listing/" target="_blank" title="Add a Listing"><em class="costarIcon"></em><span>Add a Listing</span></a>
+						</li></ul></div><!--/.sidebar-offcanvas-->
+			</div><!--/row-->
+		</div></div>    
+</div>
+            
+        </div>
+    </div>
+</div><div class="sf_cols row-offcanvas row-offcanvas-left">
+    <div class="sf_colsOut sf_1col_1_100" data-placeholder-label="Main Content" style="width: 100%;">
+        <div id="T7BAD68B9002_Col00" class="sf_colsIn sf_1col_1in_100"><div id="C004_Col00" class="sf_colsIn container-fluid box-pad" data-sf-element="Container" data-placeholder-label="Container"><div id="C005_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="Container">
+<div id="costar-privacy-policy">            <article role="article">    
+            <div>                       <div class="coh-container ssa-component coh-component ssa-component-instance-aaeb53f9-680b-407c-a6d6-5c192fb0a579 coh-component-instance-aaeb53f9-680b-407c-a6d6-5c192fb0a579  coh-style-padding-bottom--md coh-style-padding-top--md coh-style-text-gray  ssa-instance-aaeb53f9-680b-407c-a6d6-5c192fb0a579 coh-ce-cpt_one_column-cd5436c5"> <div class="coh-container  coh-style-max-width-1060-with-15-padding coh-ce-cpt_one_column-a645b8b6" id="">           <div class="coh-wysiwyg ssa-component coh-component ssa-component-instance-3324d170-56ba-4a4a-b258-cff62db2d919 coh-component-instance-3324d170-56ba-4a4a-b258-cff62db2d919 coh-ce-cpt_wysiwyg-6f674488">    <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+#sec2_cal_residents td,
+  #sec2_cal_residents tr,
+  #sec2_cal_residents tbody,
+  #sec2_cal_residents thead {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #sec2_cal_residents tr:first-child {
+    font-weight: 700 !important;
+  }
+/*--><!]]>*/
+</style>
+<h1>Global Privacy Notice</h1>
+<h4>Last Modified: August 21, 2023</h4>
+<p>As the leading provider of information, analytics, and online marketplaces to the commercial real estate industry, CoStar Realty Information, Inc. and our affiliates (collectively, “CoStar,” “we,” or “us”) respect your privacy and are committed to protecting your Personal Information (defined below). This Global Privacy Notice describes the types of Personal Information we collect and our practices for using, maintaining, sharing, and protecting it. It also describes the rights and choices you may have with respect to your Personal Information and how you may contact us about our privacy practices. Our privacy practices may vary among the countries in which we operate to reflect local practices and legal requirements, and specific privacy practices may apply to some of our products and services. By using our products and services, you consent to the collection, storage, use, and disclosure of your Personal Information as described in this Global Privacy Notice.</p>
+<p>This Global Privacy Notice applies to the CoStar Marketplaces (defined below), CoStar Products (defined below), and any associated websites, products, services, mobile applications, or other websites or applications which we currently own, or in the future may own or control, to which this Global Privacy Notice is posted (collectively, “Services”).</p>
+<h3>CoStar Marketplaces:</h3>
+<table class="table table-bordered"><tbody>
+<tr>
+<td>Apartments.com and related brands</td>
+<td>Homes.com and related brands</td>
+<td>Showcase.com</td>
+</tr>
+<tr>
+<td>Land.com and related brands</td>
+<td>Ten-X.com and related brands</td>
+<td>LoopNet.com and related brands</td>
+</tr>
+<tr>
+<td>STR.com and related brands</td>
+<td>BizBuySell.com and related brands</td>
+<td>Thomas-daily.de</td>
+</tr>
+<tr>
+<td>Grecam.com</td>
+<td>Businessimmo.com</td>
+<td>Bureauxlocaux.com</td>
+</tr>
+<tr>
+<td>Belbex.com</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table>
+<p>&nbsp;</p>
+<h3>CoStar Products:</h3>
+<table class="table table-bordered"><tbody>
+<tr>
+<td>CoStar Property Professional®</td>
+<td>Professional Directory™</td>
+<td>CoStar Properties and CoStar For Sale™</td>
+</tr>
+<tr>
+<td>CoStar COMPS Professional®</td>
+<td>CoStar Marketing Center™</td>
+<td>Metropolis™</td>
+</tr>
+<tr>
+<td>CoStar Tenant®</td>
+<td>CoStar Mobile™</td>
+<td>CoStar Portfolio Strategy™</td>
+</tr>
+<tr>
+<td>CoStar Suite® with Market Analytics</td>
+<td>CoStar Go®</td>
+<td>CoStar Investment Analysis™</td>
+</tr>
+<tr>
+<td>CoStar News</td>
+<td>CoStar Lease Analysis®</td>
+<td>CoStar Brokerage Applications</td>
+</tr>
+<tr>
+<td>CoStar Connect®</td>
+<td>CoStar Lease Comps™</td>
+<td>CoStar Information and Analytics</td>
+</tr>
+<tr>
+<td>CoStar Real Estate Manager</td>
+<td>CoStar Risk Analytics</td>
+<td>CoStar For Lease ™</td>
+</tr>
+<tr>
+<td>CoStar Loan, Capital Markets</td>
+<td>CoStar Advanced Reporting</td>
+<td>CoStar Advisory Services</td>
+</tr>
+</tbody></table>
+<p>If you are a current or former CoStar job applicant, employee, owner, director, officer, or contractor, please <a href="#s11">Contact Us</a> for the appropriate privacy policy that describes our collection, use, and disclosure of your personal information.</p>
+<p>When using our Services, you may choose to interact with features from third parties that operate independently from CoStar, such as social media widgets and links to third-party websites. CoStar has no control over and is not responsible for the privacy practices of such third parties. This Global Privacy Notice does not apply to the extent CoStar does not own or control any linked websites or features you visit or use. We recommend that you familiarize yourself with the privacy practices of these third parties.</p>
+<p>Children Under 16</p>
+<p>CoStar Services are not intended for children under 16 years of age, and we do not knowingly collect Personal Information from children under 16. If you are under 16, do not use or provide any information on the Services, register, or make any purchases. If we learn we have collected or received Personal Information from a child under 16 without verification of parental consent, we will delete it. If you believe we might have any information from or about a child under 16, please <a href="#s11">Contact Us</a>.</p>
+<h3><span class="coh-color-blue">Table of Contents</span></h3>
+<ol id="tblOfContents">
+<li><a href="#s1">Types of Personal Information</a></li>
+<li><a href="#s2">Collection of Personal Information</a></li>
+<li><a href="#s3">Use of Personal Information</a></li>
+<li><a href="#s4">Disclosure of Personal Information</a></li>
+<li><a href="#s5">International Transfer of Personal Information</a></li>
+<li><a href="#s6">Security of Personal Information</a></li>
+<li><a href="#s7">Retention of Personal Information</a></li>
+<li><a href="#s8">Manage Your Personal Information</a></li>
+<li><a href="#s9">Jurisdiction Specific Notices </a></li>
+<li><a href="#s10">Global Policy Notice Changes</a></li>
+<li><a href="#s11">Contact Us</a></li>
+</ol>
+<p><a name="s1" id="s1"></a></p>
+<h3 id="s1"><span class="coh-color-brand-blue">1. Types of Personal Information</span></h3>
+<p>“Personal Information” means any information directly or indirectly relating to an identified or identifiable individual. Personal Information may not include de-identified or aggregate information, certain publicly available information, or information covered by other legal frameworks.</p>
+<table class="table table-bordered"><tbody>
+<tr>
+<td>Category</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td><p>Contact information</p></td>
+<td>
+<p>Name, nickname, mailing address, email address, phone number.</p>
+<p>This may also include the contact information of individuals that you share with us, such as when providing guarantors on a rental application within Apartments.com.</p>
+<p>This may also include individuals whose contact information you provide to us if you would like to refer them to our Services. We typically send these individuals a one-time email to invite them to our Services. We store this information for the limited purpose of sending this one-time email and for tracking the success of our referral program.</p>
+</td>
+</tr>
+<tr>
+<td><p>Demographics</p></td>
+<td>
+<p>Gender, date of birth, age, language preference.</p>
+<p>This may also include additional information that we collect through STR, such as household income, presence of children in household, educational history, and race and/or ethnicity, as permitted by local laws and regulations.</p>
+</td>
+</tr>
+<tr>
+<td><p>Business and employment information</p></td>
+<td>
+<p>Business contact information, department, job title / description, broker license number.</p>
+<p>This may include your employment history within the context of a rental application on Apartments.com. This may also include your listing information, and broker performance within the context of certain CoStar Products.</p>
+</td>
+</tr>
+<tr>
+<td><p>Log-in credentials</p></td>
+<td><p>Username and password, if you chose to create an account with us.</p></td>
+</tr>
+<tr>
+<td><p>Personal images</p></td>
+<td><p>We may collect pictures that you choose to provide to us or share in other public domains. Some CoStar Products may offer or require facial recognition as a means of authentication, which requires the collection of your biometric data. For more information about this, please see “<a href="#Biometric-S1">Biometric and Geolocation Information</a>.”</p></td>
+</tr>
+<tr>
+<td><p>Social media information</p></td>
+<td><p>Username, biography, and other information that you chose to publicly share on social media networks. We may also collect information associated with your social media account if you choose to use that account to log in to our Services.</p></td>
+</tr>
+<tr>
+<td><p>Audio and visual information, including usage details</p></td>
+<td>
+<p>Log-on activity and browsing information such as search history, saved searches, and viewed properties. This may include partial or full video clips of your online interactions with us, including cursor movements, scrolling activity, and other items that you download or view.</p>
+<p>This may also include audio and/or video recordings of your customer service interactions with us, meetings or calls that you host on Costar Products, or other calls you place to inquire about certain listings on the Services.</p>
+</td>
+</tr>
+<tr>
+<td><p>Technical details</p></td>
+<td><p>IP address, geolocation information, information about your browser and operating system, unique device or hardware IDs.</p></td>
+</tr>
+<tr>
+<td><p>Payment and financial information</p></td>
+<td>
+<p>This includes your credit card or other payment information.</p>
+<p>For example, this may include information that you provide within the context of a rental application on Apartments.com and related brands, such as proof of income and income history. This may also include similar information within the context of a real estate financing and transaction, such as proof of funds information that we collect on Ten-X and related brands. This may also include your income or credit score within the context of our mortgage tools on Homes.com and related brands, and when qualifying buyers of businesses on our BizBuySell platform.</p>
+</td>
+</tr>
+<tr>
+<td><p>Identification</p></td>
+<td><p>This includes Social Security number, other government issued identification (e.g., tax identification number), and vehicle information that you may provide within the context of a rental application on Apartments.com or a real estate financing and transaction.</p></td>
+</tr>
+<tr>
+<td><p>Commercial information</p></td>
+<td><p>This includes past properties, goods, or services purchased or leased either on our Services or in other contexts. We may collect this information through the use of third parties, including third-party tracking tools from data analytics providers and advertising and marketing networks.</p></td>
+</tr>
+</tbody></table>
+<p>Additionally, we may collect any other information that you choose to share with us on the Services. We may use this information and the other information identified in the above table to draw inferences about you regarding your preferences, characteristics, or behavior.</p>
+<div id="Biometric-S1">&nbsp;</div>
+<p>Biometric and Geolocation Information</p>
+<p>Some areas of CoStar Products may require or request you to opt-in to CoStar collecting photos, facial geometry, and geolocation information from you when you log in to certain CoStar Products. We use geolocation information to provide you with relevant information that you have requested, such as local searches for rental properties and corresponding maps or directions. If you don’t want to use these location-based features, you can turn off or disable location services on your device or browser. We also use this information to authenticate you as the user of such CoStar Products, maintain a secure session, and detect potential abuse and fraudulent use of the CoStar Products. For example, CoStar may scan and analyze a photo you submit to us through the use of your device’s camera to confirm your identity for security purposes each time you access the CoStar Products. CoStar does this by using facial recognition technology to compare your photo to the most recent photo uploaded to your account. CoStar will securely store this information on servers located in the United States, and this information will only be accessed by authorized CoStar employees. We will retain biometric information until the initial purpose for collecting or obtaining such information has been satisfied or within three years, whichever occurs first. If you have questions regarding CoStar’s use of biometric or geolocation information, please <a href="#s11">Contact Us</a>.</p>
+<h3 id="s2"><span class="coh-color-brand-blue">2. Collection of Personal Information</span></h3>
+<p>CoStar may collect Personal Information using the following methods:</p>
+<ul style="list-style: circle;">
+<li>Directly from you when you provide it to us, or to others through the Services. This includes information you enter into web forms or chatbots, information you provide in phone calls, video conferences, subscription agreements, and contracts or other content you submit to the Services.</li>
+<li>Through your participation in conferences, research, focus groups, surveys, promotions, and contests, whether operated by us or our vendors or business partners.</li>
+<li>From references or sources that you provide or are publicly available online or in other formats, such as brochures, property listings, public records, or industry groups. In addition to sources you may provide, this includes parties such as other property owners, tenants, landlords, agents, managers, or developers.</li>
+<li>From third-party vendors including data analytics and email marketing service providers.</li>
+<li>From researching public websites where permitted by the website Terms of Use. For example, this may include company websites, search engines, news websites, and social media platforms.</li>
+<li>Automatically through tracking technologies (such as cookies, web beacons, or log files), including over time and across third-party websites or other online services.</li>
+</ul>
+<p>For more information about how we use Personal Information collected through tracking technologies and the ways you may be able to manage it, see <a href="#s3">Use of Personal Information</a>, our <a href="https://www.costar.com/about/cookie-policy">Cookie Policy</a>, and <a href="#s8">Manage Your Personal Information</a>.</p>
+<p><a name="s3" id="s3"></a></p>
+<h3 id="s3"><span class="coh-color-brand-blue">3. Use of Personal Information</span></h3>
+<p>We may use your Personal Information for the following purposes:</p>
+<ul style="list-style: circle;">
+<li>Communicating with you.</li>
+<li>Providing you with or otherwise facilitating the Services, or specific products or services requested through the Services.</li>
+<li>Authenticating use, detecting potential fraudulent use, and otherwise maintaining the security of the Services.</li>
+<li>Developing, testing, improving, and demonstrating the Services.</li>
+<li>Creating and maintaining a customer relationship management system, member directories, and invitation lists for CoStar events.</li>
+<li>Carrying out our legal and contractual obligations and enforcing our rights, including tax preparation, billing and payment processing.</li>
+<li>Anonymizing and aggregating information for analytics and reporting.</li>
+<li>Advertising, marketing, and selling the Services, including linking together or merging Personal Information with other Personal Information so that we may better understand your needs and inform you about our Services and those of our partners.</li>
+<li>Administering, registering, or enrolling you in, or facilitating your participation in recreational, educational, or entertainment activities; surveys or questionnaires; promotions or sweepstakes, or any other services, events, or activities sponsored by us or third parties, or offered in connection with our Services.</li>
+<li>Sending you prizes and gifts.</li>
+<li>Short-term transient use, as defined in the California Consumer Privacy Act.</li>
+<li>Training and quality assurance.</li>
+<li>For any other purpose with your consent.</li>
+</ul>
+<p><span class="coh-color-blue">Online Advertising</span></p>
+<p>When you use the Services, we and third parties may use cookies and other tracking technologies to collect information, including Personal Information, to help us target content to you on the Services or elsewhere. This information may be associated with other information or combined with information from other sources, including information these third parties might track about your online activities over time and across the Internet. Third parties use this information to provide interest-based advertising and retargeting on our behalf, which may include placing our advertisements on other websites you visit, including your social media accounts, or matching a cookie or device ID to your email address so we can send you promotional emails that may be of interest to you.</p>
+<p>To make informed choices about targeted advertising, see <a href="#s8">Manage Your Personal Information</a>.</p>
+<p>Automated Decision-Making</p>
+<p>We may use an automated process to identify properties that may be of particular interest to you and to bring these to your attention. We may do this by profiling your activity when using the Services. This profiling takes place based on properties you browse, searches you conduct, and your location. It helps us to understand what sort of properties you are interested in and to categorize your activity to help us determine the Services that may be best suited to your needs.</p>
+<p><a name="s4" id="s4"></a></p>
+<h3 id="s4"><span class="coh-color-brand-blue">4. Disclosure of Personal Information </span></h3>
+<p>We may disclose Personal Information:</p>
+<ul style="list-style: circle;">
+<li>To affiliates and other entities within CoStar’s group of companies, business or distribution partners, and service providers.</li>
+<li>To other CoStar customers or subscribers to the Services, such as the listing agent when you visit their profile page, indicate an interest in a particular listing, or submit a bid or request for more information.</li>
+<li>To other CoStar customers or subscribers within the context of any directories or inventories we may provide on the Services or that you opt into.</li>
+<li>To other CoStar customers or subscribers within the Services within the context of our content sharing or messaging features, or other community forum or pages offered through the Services. Please exercise caution when sharing or posting within our Services, and do not include information that you do not wish to make public.</li>
+<li>To third parties with whom you choose to share content on the Services or otherwise refer to our Services, for example, through our “Email a Listing to Friend” feature or similar features.</li>
+<li>With background check providers and/or consumer credit reporting agencies.</li>
+<li>To third parties when you use a third-party feature in our Services. This may include social media networks when you share content through those networks or use a social media account to log in to our Services.</li>
+<li>To enforce or apply our Terms of Use and other agreements or comply with any court order, law, or legal process, including government or regulatory requests.</li>
+<li>To a buyer or other successor in the evaluation and/or event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of CoStar’s assets.</li>
+<li>To advisors, consultants, auditors, or similar professionals to assess our business, financial, and legal obligations, or operations.</li>
+<li>If we believe it is necessary to protect the rights, property, or safety of CoStar or others.</li>
+<li>For any other purpose disclosed by us when you provide Personal Information.</li>
+<li>With your consent, such as when you choose to provide your information to third parties.</li>
+</ul>
+<p><span class="coh-color-blue">Service Providers</span></p>
+<p>CoStar discloses your Personal Information to third-party service providers to assist us in our business. For example, we use service providers to assist with data analytics, email marketing, payment processing, customer relationship management, and IT infrastructure and support. CoStar may permit these affiliates and service providers to access your Personal Information in order to assist us in providing the Services. As appropriate, we seek reasonable contractual obligations from these providers regarding their use of Personal Information that we disclose.</p>
+<p><a name="s5" id="s5"></a></p>
+<h3 id="s5"><span class="coh-color-brand-blue">5. International Transfer of Personal Information </span></h3>
+<p>CoStar is a global business. We may transfer your Personal Information to the United States, where we are headquartered, and to other countries which may not have the same privacy laws as the country in which you initially provided the information, but we will protect your Personal Information in accordance with this Global Privacy Notice, or as otherwise disclosed to you.</p>
+<p><a name="s6" id="s6"></a></p>
+<h3 id="s6"><span class="coh-color-brand-blue">6. Security of Personal Information </span></h3>
+<p>CoStar implements security safeguards to protect your Personal Information.</p>
+<p>We take steps to secure Personal Information through administrative, technical and physical safeguards designed to protect against the risk of accidental, unlawful or unauthorized destruction, loss, alteration, access, disclosure, or use. For example, we encrypt payment card information in accordance with the Payment Card Industry Data Security Standard (PCI DSS) and store sensitive information such as geolocation data on CoStar servers located in the United States with access limited to authorized CoStar employees.</p>
+<p>Unfortunately, we cannot guarantee the security of information transmitted through the Internet, and where we have given you (or where you have chosen) a password, you are responsible for keeping this password confidential.</p>
+<p>CoStar has designated a Cybersecurity Team to investigate and respond to all security issues and vulnerabilities regarding its offerings. You can contact this team at: <a href="mailto:CoStarSecurity1@costar.com">CoStarSecurity1@costar.com</a>.</p>
+<p><a name="s7" id="s7"></a></p>
+<h3 id="s7"><span class="coh-color-brand-blue">7. Retention of Personal Information </span></h3>
+<p>CoStar will retain your information only for as long as is reasonably necessary for the purposes set out on this Global Privacy Notice, for as long as your account is active (i.e., for the lifetime of your CoStar customer account), or as needed to provide the Services to you. If you no longer want CoStar to use your information to provide the Services to you, you may close your account. CoStar will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, enforce our agreements, and as otherwise described in this Global Privacy Notice. Please note that closing an account may not make your email address, username, or property name (if any) available for reuse on a new account. We also retain log files for internal analysis purposes. These log files are retained for a brief period of time, except in cases where they are used to protect the safety and security of the Services, to maintain and improve functionality of the Services, or to comply with legal obligations.</p>
+<p><a name="s8" id="s8"></a></p>
+<h3 id="s8"><span class="coh-color-brand-blue">8. Manage Your Personal Information</span></h3>
+<p>You may manage your Personal Information by making certain choices. If you believe that any Personal Information you have provided to us is out-of-date or inaccurate, you may review and correct such information if it is within your online account by logging in at any time or <a href="https://www.costar.com/about/privacy-notice#s11">Contact Us</a>. You may also have additional rights detailed below depending on where you live. As a security precaution, we may need to request information from you to help us confirm your identity when exercising a right related to your Personal Information. When you use the Services, you agree to receive direct mail, email newsletters and other promotional email communications, as well as promotional telephone communications.</p>
+<p>Direct Marketing Opt-Out</p>
+<p>If you no longer wish to receive direct marketing emails from CoStar, you may click the “Unsubscribe” link in an email at any time to stop receiving emails for that particular subject. Depending on the Services, you may also be able to manage notification preferences in your account. Note that CoStar may still contact you about the Terms of Use, Global Privacy Notice, or other legal notices, or in connection with providing you Services you have requested from us.</p>
+<p>Tracking/Online Advertising Opt-Out</p>
+<p>You may disable or delete browser cookies through your browser settings. Cookies are generally easy to disable or delete, but the method varies between browsers. To learn how you can manage Flash cookies, visit <a href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html#117717">Adobe’s Flash player settings page.</a>. If you disable or delete cookies, or if you are running third-party software that intercepts or deletes cookies, please note that some parts of our websites may not work properly.</p>
+<p>You can opt out of third parties collecting your Personal Information for targeted advertising purposes in the United States or Canada by visiting the National Advertising Initiative’s (NAI) <a href="http://optout.networkadvertising.org/?c=1">opt-out page</a> and the Digital Advertising Alliance’s (DAA) opt-out page and in the European Economic Area (EEA) by visiting the Programme’s <a href="https://www.youronlinechoices.eu/">opt-out page</a>.</p>
+<p>Our Services do not recognize “Do Not Track” signals.</p>
+<p><a name="s9" id="s9"></a></p>
+<h3 id="s9"><span class="coh-color-brand-blue">9. Jurisdiction Specific Notices </span></h3>
+<h3 id="s9-1"><span class="coh-color-brand-blue">9.1 Additional Notice to California Residents </span></h3>
+<p>We collect the Personal Information identified in the table in Section 1 (“Types of Personal Information”), which falls into the following categories of Personal Information according to the California Consumer Privacy Act:</p>
+<ul style="list-style: circle;">
+<li>Identifiers</li>
+<li>Categories of Personal Information described in California Civil Code § 1798.80(e)</li>
+<li>Characteristics of protected classifications under state or federal law</li>
+<li>Commercial information</li>
+<li>Audio and visual information</li>
+<li>Internet or other electronic network activity information</li>
+<li>Geolocation data</li>
+<li>Professional or employment-related information</li>
+<li>Inferences drawn from other Personal Information (e.g., profile reflecting your preferences, characteristics, and behavior)</li>
+<li>Sensitive personal information, including: precise geolocation, biometric information, login credentials (username and password), and the content of messages sent through the Services</li>
+</ul>
+<p>As described in more detail in Section 2 (“Collection of Personal Information”), CoStar collects Personal Information from the following categories of sources:</p>
+<ul style="list-style: circle;">
+<li>Directly and indirectly from you</li>
+<li>Other CoStar customers</li>
+<li>Service providers, including data analytics providers</li>
+<li>Third parties, including advertising services and social media networks</li>
+<li>Consumer reporting agencies</li>
+<li>Companies with public websites</li>
+<li>Government entities</li>
+</ul>
+<p>CoStar discloses the following categories of Personal Information for the business or commercial purposes identified above in Section 3 (“Use of Personal Information”) and Section 4 (“Disclosure of Personal Information”) with the following categories of third parties in the 12 months preceding the date this Global Privacy notice was last modified:</p>
+<table class="table table-bordered"><tbody>
+<tr>
+<th>Personal Information</th>
+<th>Third Parties</th>
+</tr>
+<tr>
+<td><p>Identifiers</p></td>
+<td><p>Service providers, data analytics and advertising providers, brokerages (and other parties directly involved in any transactions related to your use of the Services), operating systems and platforms, social networks, other CoStar customers or subscribers, and consumer reporting agencies.</p></td>
+</tr>
+<tr>
+<td><p>Categories of Personal Information described in California Civil Code § 1798.80(e)</p></td>
+<td><p>Service providers, other CoStar customers or subscribers, consumer reporting agencies, and data analytics and advertising providers.</p></td>
+</tr>
+<tr>
+<td><p>Commercial information</p></td>
+<td><p>Affiliates, distribution partners, other CoStar customers or subscribers, data analytics and advertising providers.</p></td>
+</tr>
+<tr>
+<td><p>Audio and visual information</p></td>
+<td><p>Service providers</p></td>
+</tr>
+<tr>
+<td><p>Internet or other electronic network activity information</p></td>
+<td><p>Service providers, data analytics and advertising providers, other CoStar customers or subscribers.</p></td>
+</tr>
+<tr>
+<td><p>Geolocation data</p></td>
+<td><p>Service providers, data analytics and advertising providers, other CoStar customers or subscribers.</p></td>
+</tr>
+<tr>
+<td><p>Professional or employment-related information</p></td>
+<td><p>Service providers, other CoStar customers or subscribers.</p></td>
+</tr>
+<tr>
+<td><p>Inferences</p></td>
+<td><p>Service providers, including data analytics and advertising providers.</p></td>
+</tr>
+<tr>
+<td><p>Categories of personal information required for 1099 tax reporting</p></td>
+<td><p>Service providers, government agencies.</p></td>
+</tr>
+<tr>
+<td><p>Sensitive Personal Information, including precise geolocation, biometric information, login credentials, and the contents of messages sent through the Services</p></td>
+<td><p>Service providers</p></td>
+</tr>
+</tbody></table>
+<p>CoStar may also “sell” or “share” certain Personal Information. In the 12 months preceding the date this Global Privacy Notice was last modified, CoStar sold or shared:</p>
+<ul style="list-style: circle;">
+<li>Identifiers (e.g., IP address and other online identifiers), categories of Personal Information described in California Civil Code § 1798.80(e), geolocation, Internet or other electronic network activity information, and commercial information (e.g., purchasing tendencies or records of products or services purchased or considered) to advertising providers for the purpose of advertising our Services. We may also “sell” these categories to other CoStar customers or subscribers so that they may contact you about properties or services you may be interested in.</li>
+<li>For CoStar Products: Identifiers (e.g., name, email address), categories of personal information described in California Civil Code §1798.80(e) (e.g., phone number), and professional information (e.g., name, title, email address, business address) to other CoStar customers or subscribers for the purpose of making business contact information available through the Professional Directory or similar features in CoStar Products.</li>
+</ul>
+<p>If you are a resident of California, you have the right to: (1) request that CoStar disclose what Personal Information we collect, use, disclose, and sell; (2) request deletion of Personal Information, subject to certain exceptions; (3) request that CoStar correct inaccurate or incomplete Personal Information; (4) opt-out of the sale of Personal Information; (5) opt-out of the “sharing,” or disclosing Personal Information for the purposes of cross-context behavioral advertising, and (6) not receive discriminatory treatment by CoStar for exercising these rights.</p>
+<p>Requests to Know</p>
+<p>You have the right to request that we disclose the following information:</p>
+<ul style="list-style: circle;">
+<li>Specific pieces of Personal Information CoStar has collected about you;</li>
+<li>Categories of Personal Information CoStar has collected about you, disclosed about you for a business purpose, or sold;</li>
+<li>Categories of sources from which the Personal Information is collected;</li>
+<li>Categories of third parties with whom CoStar shares or to whom CoStar sells Personal Information; and</li>
+<li>The business or commercial purpose for collecting, selling, and sharing Personal Information.</li>
+</ul>
+<p>Opt-Out of the Sale or Sharing of Personal Information</p>
+<p>You have the right to opt-out of the sale of your Personal Information. To make such a request, please <a href="#s11">Contact Us</a> by email or visit <a href="https://www.costar.com/about/do-not-sell-my-personal-information-california-residents">Do Not Sell My Personal Information</a>. To opt-out of CoStar sharing your Personal Information with third parties to advertise our Services, please additionally manage <a href="#s8">Tracking/Online Advertising Opt-Out</a> privacy controls.</p>
+<p>Please <a href="https://www.costar.com/sites/costar.com.na/files/2023-08/2022%20CCPA%20Consumer%20Request%20Metrics%20Reporting%20-%20Consolidated.pdf">click here</a> for statistics relating to California Consumer Privacy Act requests received by CoStar brands under this Global Privacy Notice in the prior calendar year.</p>
+<p>We do not have actual knowledge that we sell or share the Personal Information of consumers under the age of 16.</p>
+<p>We do not use or disclose sensitive personal information for purposes other than those specified in Cal. Civ Code § 1798.121.</p>
+<p>Exercising Your Rights</p>
+<p>To make such a request, please follow the instructions in Section 9.5 Exercising Your Rights <a href="#s9-5">below</a>.</p>
+<p>“Shine the Light” Request</p>
+<p>California residents may also have the right to request certain information regarding our disclosure of Personal Information to third parties for their direct marketing purposes. To make such a request, please <a href="#s11">Contact Us</a>.</p>
+<h3 id="s9-2"><span class="coh-color-brand-blue">9.2 Additional Notice to Certain Other U.S. Residents</span></h3>
+<p>If you are a resident of certain U.S. States, you may have some or all of the following rights. Specifically, these states include Nevada, Virginia, Colorado, Connecticut, Utah, and Iowa. These rights are based on verifiable residency status, and CoStar reserves the right to honor your request to exercise these rights based on your residency. You may have the right to request the following: (1) that CoStar disclose and provide a copy of what Personal Information we collect, use, disclose, and sell; (2) that CoStar delete your Personal Information, subject to certain exceptions; (3) that CoStar correct inaccurate or incomplete Personal Information; (4) opt-out of the sale of Personal Information; (5) opt-out of targeted advertising; (6) opt out of profiling in furtherance of decisions that produce legal or similarly significant effects about you, and (7) not receive discriminatory treatment by CoStar for exercising these rights.</p>
+<p>To make such a request, please follow the instructions in Section 9.5 Exercising Your Rights <a href="#s9-5">below</a>.</p>
+<p>If you are appealing our decision, please email us following the instructions in the below section, <a href="#s11">Contact Us</a>, and reference and/or attach information to identify your original request. In order to verify your request, CoStar may require you to provide additional information to confirm your identity.</p>
+<h3 id="s9-3"><span class="coh-color-brand-blue">9.3 Additional Notice to European Economic Area (EEA) and United Kingdom Residents </span></h3>
+<p>Where we need to collect Personal Information by law or under the terms of a contract we have with you and you fail to provide that information when requested, we may not be able to perform the contract we have or are trying to enter into with you. In this case, we may have to cancel a product or service you have with us but will notify you first.</p>
+<p>We rely on the following lawful bases to process your Personal Information for these non-exhaustive purposes:</p>
+<p>Consent</p>
+<p>We may obtain your consent to process your Personal Information in certain circumstances, which may include when we send you relevant marketing, you elect to receive information from us, or you <a href="#s11">Contact Us</a> to register an interest in our Services or company. We may also rely upon our legitimate interest in developing our business as a basis for sending you marketing information and information about our Services (see below).</p>
+<p>Performance of a Contract</p>
+<p>We rely on this lawful processing ground when we process your Personal Information to perform a contract which we have with you, or when we take steps in anticipation of entering into a contract with you, for example in connection within the provision of our Services to you and the management of our relationships with third parties.</p>
+<p>Compliance with a Legal Obligation</p>
+<p>We rely on this lawful processing ground when we process your Personal Information to meet legal and regulatory obligations which apply to us.</p>
+<p>Legitimate Interests</p>
+<p>We rely on this lawful processing ground when we process your Personal Information to provide our Services, to respond to specific requests, to manage our business operations, to manage our relationships with you and with third parties in connection with our business, and when we provide you with marketing information or other information in relation to our Services which we believe may interest you.</p>
+<p>If you wish to have more information regarding the legitimate interests assessments we have conducted in order to reach these conclusions, please <a href="#s11">Contact Us</a>.</p>
+<p>For information about how users based in the EEA and United Kingdom can object to our automated decision-making, see Manage Your Personal Information. For more information, please Contact Us.</p>
+<p>If you live in the EEA or United Kingdom, we may transfer Personal Information to countries for which adequacy decisions have been issued, and use contractual protections for the transfer of Personal Information to third parties, such as an intra-company agreement or the European Commission’s Standard Contractual Clauses or their equivalent under applicable law.</p>
+<p>You may <a href="#s11">Contact Us</a> to obtain a copy of the safeguards we use to transfer Personal Information outside of the EEA or United Kingdom.</p>
+<p>If you live in the EEA or United Kingdom, you may have the right to (1) request access to, rectification, or erasure of your Personal Information or restrict the processing of your Personal Information; (2) object to processing; (3) data portability (receive and transfer your Personal Information); (4) lodge a complaint with a supervisory authority; and, (5) where processing of your Personal Information is based on consent, withdraw your consent at any time without affecting the lawfulness of the processing of Personal Information that occurred before you withdraw consent.</p>
+<p>To make such a request, please follow the instructions in Section 9.5 Exercising Your Rights <a href="#s9-5">below</a>.</p>
+<h3 id="s9-4"><span class="coh-color-brand-blue">9.4 Additional Notice to Canada Residents </span></h3>
+<p>We may use service providers located outside of Canada, including, without limitation, in the United States of America, to process Personal Information, and may transfer your Personal Information to such service providers for this purpose. When your Personal Information is processed outside of Canada, it will be subject to the laws of the countries where the information is processed and may be accessible to law enforcement and national security authorities of those countries in accordance with their laws.</p>
+<p>You may <a href="#s11">Contact Us</a> to obtain information about our policies and practices regarding the use of service providers located outside of Canada.</p>
+<p>If you live in Canada, in addition to the other rights you may have hereunder, you may have the right to (1) request access to, review and to correct inaccuracies or omissions in your Personal Information; (2) to withdraw consent for collection, use or disclosure of, or to request deletion of, your Personal Information (provided that, if you do so, we may no longer be able to provide services to you that rely on such Personal Information); (3) to ask questions about our policies and practices, and to lodge complaints about our compliance with them with us or with regulatory authorities; and (4) for Quebec residents, to request an electronic copy of the Personal Information you have provided to us in a structured and commonly used technological format.</p>
+<p>To make such a request, please follow the instructions in Section 9.5 Exercising Your Rights <a href="#s9-5">below</a>.</p>
+<h3 id="s9-5"><span class="coh-color-brand-blue">9.5 Exercising Your Rights </span></h3>
+<p>To make a request, please <a href="#s11">Contact Us</a> by email, call us toll-free at (800) 204-5960, or submit the request through your CoStar account or our rights request <a href="https://privacyportal.onetrust.com/webform/69fc85af-b1e4-4eae-966b-cf91a3cca94c/5f1a45b9-bb79-49dc-ad4d-064548192246">web form </a>. In order to verify your request, CoStar may require you to provide additional information to confirm your identity.</p>
+<p>Only you, or someone legally authorized to act on your behalf, may make a verifiable consumer request related to your Personal Information. To make a request on your behalf, an authorized agent may <a href="#s11">Contact Us</a> by email with proof of your written and signed permission to do so. Note that CoStar may also require you to verify your identity and confirm that you gave permission.</p>
+<p><a name="s10" id="s10"></a></p>
+<h3 id="s10"><span class="coh-color-brand-blue">10. Global Privacy Notice Changes </span></h3>
+<p>This Global Privacy Notice may be updated periodically to reflect changes in our privacy practices.</p>
+<p>We will post changes on this page and identify the date the privacy notice was last revised at the top of the page. If we make material changes to our privacy practices, we will notify you through a notice on the home page of the websites covered by this Global Privacy Notice. If a material change will apply to Personal Information we have already collected, including any new purposes for which the Personal Information will be used or disclosed to which you have not previously consented, we will additionally seek your affirmative consent.</p>
+<h3 id="s11"><span class="coh-color-brand-blue">Contact Us </span></h3>
+<p>We have appointed a Data Protection Officer to investigate and respond to privacy issues and to be accountable for our compliance with this Global Privacy Notice. You can contact us, depending on the nature of your inquiry, by using the relevant contact information below.</p>
+<p>In order to properly respond to your privacy questions or requests about our services, please email the relevant department outlined below or call the relevant department using the below toll-free numbers:</p>
+<table><tbody>
+<tr>
+<td>Service</td>
+<td>Contact Information</td>
+</tr>
+<tr>
+<td><p>CoStar services<br>(e.g., CoStar Information and Analytics, CoStar Portfolio Strategy, CoStar Risk Analytics, CoStar Real Estate Manager, CoStar Investment Analysis, and CoStar Brokerage Applications)</p></td>
+<td><p>Email: <a href="mailto:CoStarPrivacy1@costar.com">CoStarPrivacy1@costar.com</a></p></td>
+</tr>
+<tr>
+<td><p>LoopNet and Cityfeet services<br>(e.g., CoStar Information and Analytics, CoStar Portfolio Strategy, CoStar Risk Analytics, CoStar Real Estate Manager, CoStar Investment Analysis, and CoStar Brokerage Applications)</p></td>
+<td>
+<p>Email: <a href="mailto:LoopNetPrivacy1@costar.com">LoopNetPrivacy1@costar.com</a></p>
+<p>phone: <a href="tele:(800)%20613-1303">(800) 613-1303</a></p>
+</td>
+</tr>
+<tr>
+<td><p>Apartments.com services<br>(e.g., Apartments.com, ApartmentFinder.com, ApartmentHomeLiving.com, ForRent.com, Cozy.com)</p></td>
+<td>
+<p>Email: <a href="mailto:ApartmentsPrivacy1@costar.com%E2%80%AF%20">ApartmentsPrivacy1@costar.com  </a></p>
+<p>phone: <a href="tele:(888)%20658-7368">(888) 658-7368</a></p>
+</td>
+</tr>
+<tr>
+<td><p>Homes.com services<br>(e.g., Homes.com, HomeSnap.com, CitySnap.com)</p></td>
+<td><p>Email: <a href="mailto:Privacysupport@homes.com">Privacysupport@homes.com</a></p></td>
+</tr>
+<tr>
+<td><p>Businesses for Sale<br>(e.g., BizBuySell.com, BizQuest.com or FindAFranchise.com)</p></td>
+<td>
+<p>Email: <a href="mailto:BizBuySellPrivacy1@costar.com">BizBuySellPrivacy1@costar.com</a></p>
+<p>phone: <a href="tele:%20(888)%20777-9893"> (888) 777-9893</a></p>
+</td>
+</tr>
+<tr>
+<td><p>Rural land and real estate listing services<br>(e.g., LandsOfAmerica.com, LandAndFarm.com, LandWatch.com, etc.)</p></td>
+<td>
+<p>Email: <a href="mailto:LandPrivacy1@costar.com">LandPrivacy1@costar.com</a></p>
+<p>phone: <a href="tele:(512)%20263-5600">(512) 263-5600</a></p>
+</td>
+</tr>
+<tr>
+<td><p>Ten-X services<br>(e.g., Ten-X.com)</p></td>
+<td>
+<p>Email: <a href="mailto:Privacy@ten-x.com">Privacy@ten-x.com</a></p>
+<p>phone: <a href="tele:(888)%20952-6393">(888) 952-6393</a></p>
+</td>
+</tr>
+<tr>
+<td><p>STR services<br>(e.g., CoStar Information and Analytics, CoStar Portfolio Strategy, CoStar Risk Analytics, CoStar Real Estate Manager, CoStar Investment Analysis, and CoStar Brokerage Applications)</p></td>
+<td>
+<p>Email: <a href="mailto:Privacy@str.com%20">Privacy@str.com </a></p>
+<p>phone: <a href="tele:(615)%20824-8664">(615) 824-8664</a></p>
+</td>
+</tr>
+</tbody></table>
+<p>You may also write to:</p>
+<p>CoStar Realty Information, Inc.<br>1331 L Street, NW<br>Washington, DC 20005<br>Attn: Legal Department</p>
+<p>European Economic Area (EEA) and United Kingdom Residents</p>
+<p>If you are a resident of the EEA or the United Kingdom, CoStar Realty Information, Inc. and its affiliates are the entities responsible for the processing of your Personal Information. In order to properly respond to your privacy questions or requests about our services, please email the relevant department as outlined below:</p>
+<p>Email: CoStarUKPrivacy1@costar.co.uk – for Belbex and BureauxLocaux</p>
+<p>Email: dpo@businessimmo.fr – for Business Immo</p>
+<p>Email: Datenschutz@thomas-daily.de – for Thomas Daily</p>
+<p>or write to:</p>
+<p>CoStar UK Limited<br>26th Floor, The Shard, 32 London Bridge Street,<br>London SE1 9SG, United Kingdom</p>
+<p>You may also make a complaint to your local data protection authority.</p>
+<style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+table,
+    td,
+    th {
+        border: 1px solid;
+        padding: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+/*--><!]]>*/
+</style> </div> 
+   </div> </div> 
+
+ 
+</div>
+        </article> 
+
+ </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function(event) {
+			div = document.getElementById('costar-privacy-policy')
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'https://cdn.apartmenthomeliving.com/policies/privacy_policy.html');
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					div.innerHTML = xhr.response
+				}else{ alert('Request failed.  Returned status of ' + xhr.status); }
+			}
+			xhr.send();
+	});
+	function toggle_visibility(eleId) {
+		var ele = document.getElementById(eleId)
+		if (ele.style.display == 'none') {
+			ele.style.display = 'block'
+		}else{
+			ele.style.display = 'none'
+		}
+	}
+</script>
+</div>
+
+</div>
+<div id="T7BAD68B9003_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="Main Content">
+</div>
+<div class="sf_cols ">
+    <div class="sf_colsOut sf_1col_1_100" data-placeholder-label="Footer" style="">
+        <div id="T7BAD68B9004_Col00" class="sf_colsIn sf_1col_1in_100"><div id="T7BAD68B9005_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="Footer Container">
+</div>
+
+            
+        </div>
+    </div>
+</div>
+            
+        </div>
+    </div>
+</div>
+<div>
+    <div class="sfContentBlock sf-Long-text"><footer class="footer"><div><div class="social"><a href="http://apartments.com/" target="_blank"><img alt="Apartments.com Logo" class="footerLogo" data-displaymode="Original" src="/images/default-source/logos/apartments-com-logo-network-packages-330w.png?sfvrsn=a46eabb6_9" title="apartments-com-logo-330w"></a>
+					<p class="copyrightInfo">© <span id="currentYear">2023</span> CoStar Group, Inc.</p><span class="socialIcons"><a class="facebookIcon" href="https://facebook.com/apartments.com" target="_blank"></a><a class="twitterIcon" href="https://twitter.com/apartmentscom" target="_blank"></a><a class="linkedinIcon" href="https://linkedin.com/company/apartments-com" target="_blank"></a><a class="pinterestIcon" href="http://pinterest.com/apartmentscom" target="_blank"></a><a class="youtubeIcon" href="https://www.youtube.com/user/apartmentscom/custom" target="_blank"></a><a class="blogIcon" href="https://www.apartments.com/blog" target="_blank"></a></span>
+					<p class="ehoLabel"><a href="https://www.apartments.com/advertise/disclaimers/equal-opportunity-in-housing-statement/" target="_blank" title="Equal Housing Opportunity"><em class="ehoIcon"></em>Equal Housing Opportunity
+						</a>
+					</p></div><div class="footerLinksWrapper"><div class="footerLinks"><h5>Advertisers</h5><ul><li><a href="/advertise" title="Advertise your Apartment, Home or Condo for Rent on Apartments.com">Advertise</a></li><li><a href="/add-edit-listing/" title="Add your listing on Apartments.com">Add a Property</a></li><li><a href="/advertise/advfeeds" title="Digital Feeds Program">Digital Feeds Program</a></li><li><a href="/customers/" title="Customer Portal">Customer Portal</a></li><li><a href="/advertise/resources" title="Apartment Community Resources">Community Voice</a></li></ul></div><div class="footerLinks"><h5>The Marketplace</h5><ul><li><a href="https://www.apartamentos.com/">Apartamentos.com</a></li><li><a href="https://www.apartmentfinder.com/">ApartmentFinder.com</a></li><li><a href="https://www.apartmenthomeliving.com/">ApartmentHomeLiving.com</a></li><li><a href="https://www.westsiderentals.com/">WestsideRentals.com</a></li><li><a href="http://www.loopnet.com/">LoopNet.com</a></li><li><a href="https://www.cityfeet.com/">Cityfeet.com</a></li><li><a href="http://www.showcase.com/">Showcase.com</a></li><li><a href="https://realla.co/">Realla.co</a></li><li><a href="https://www.bizbuysell.com/">BizBuySell.com</a></li><li><a href="https://www.landsofamerica.com/">LandsofAmerica.com</a></li></ul></div><div class="footerLinks"><h5>Neighborhoods</h5><ul><li><a href="/canton-baltimore-md/" title="Apartments in Canton, Baltomore, MD">Canton</a></li><li><a href="/downtown-indianapolis-indianapolis-in/" title="Downtown Indianapolis Apartments">Downtown Indianapolis</a></li><li><a href="/downtown-portland-portland-or/" title="Downtown Portland Apartments">Downtown Portland</a></li><li><a href="/east-village-new-york-ny/" title="East Village Apartments for Rent">East Village</a></li><li><a href="/hyde-park-chicago-il/" title="Hyde Park Apartments for Rent">Hyde Park</a></li><li><a href="/jamaica-plain-ma/" title="Jamaica Plain Apartments For Rent">Jamaica Plain</a></li><li><a href="/logan-circle-washington-dc/" title="Apartments in Logan Circle, Washington DC">Logan Circle</a></li><li><a href="/nob-hill-san-francisco-ca/" title="Nob Hill Apartments for Rent">Nob Hill</a></li><li><a href="/old-fourth-ward-atlanta-ga/" title="Apartments in Old Fourth Ward, Atlanta, GA">Old Fourth Ward</a></li><li><a href="/uptown-dallas-tx/" title="Uptown Dallas Apartments">Uptown Dallas</a></li></ul></div><div class="footerLinks"><h5>Featured Cities</h5><ul><li><a href="/bellevue-wa/">Bellevue, WA</a></li><li><a href="/birmingham-al/">Birmingham, AL</a></li><li><a href="/cherry-hill-nj/">Cherry Hill, NJ</a></li><li><a href="/columbia-sc/">Columbia, SC</a></li><li><a href="/crystal-lake-il/">Crystal Lake, IL</a></li><li><a href="/fayetteville-nc/">Fayetteville, NC</a></li><li><a href="/green-bay-wi/">Green Bay, WI</a></li><li><a href="/indianapolis-in/">Indianapolis, IN</a></li><li><a href="/irvine-ca/">Irvine, CA</a></li><li><a href="/lafayette-in/">Lafayette, IN</a></li><li><a href="/plano-tx/">Plano, TX</a></li></ul></div><div class="footerLinks"><h5>About Us</h5><ul><li><a href="/advertise/about" title="About Apartments.com">About Us</a></li><li><a href="https://www.costargroup.com/careers" title="Job Opportunities at Apartments.com">Careers</a></li><li><a href="/about/contact" title="Contact Apartments.com">Contact Us</a></li><li><a href="/about/terms-of-service">Terms of Service</a></li><li><a href="/about/privacy-notice">Privacy Notice</a></li><li><a href="/about/equal-opportunity-in-housing-statement" title="Equal Housing Opportunity">Equal Housing</a></li><li><a href="/about/avoid-scams-and-fraud" title="Avoid Rental Scams and Fraud">Avoid Scams</a></li><li><a href="/about/accessibility" title="Accessibility Commitment">Accessibility</a></li><li><a href="/blog" title="Advice and Resources for Rental Life">Blog</a></li><li><a href="/sitemap">Sitemap</a></li><li><a href="/about/covid-19">COVID-19 Response</a></li><li><a href="https://www.costar.com/about/do-not-sell-my-personal-information-california-residents" target="_blank">CA: Do Not Sell My Personal Info</a></li></ul></div></div></div></footer></div>    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    <script type="text/javascript" src="/ResourcePackages/Main/assets/dist/js/bootstrap.min.js?package=Main"></script><script type="text/javascript">
+document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+</script><script type="text/javascript">
+_satellite.pageBottom();
+</script><script type="text/javascript">
+piAId = '494101';
+piCId = '42932';
+piHostname = 'pi.pardot.com';
+
+(function() {
+function async_load(){
+var s = document.createElement('script'); s.type = 'text/javascript';
+s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+}
+if(window.attachEvent) { window.attachEvent('onload', async_load); }
+else { window.addEventListener('load', async_load, false); }
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl14_TSM');;(function() {
+                        function loadHandler() {
+                            var hf = $get('ctl15_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Sitefinity.Resources, Version=13.0.7300.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:en:9c89fe50-1afd-41c0-a3c3-7b16353b6192:7a90d6a';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();//]]>
+</script>
+</form>
+<noscript>&lt;img src="https://www.apartments.com/akam/13/pixel_74138c4a?a=dD00YTFmMmZlZDJhNWEwZGNlOThmZTllNmQyMzUyZTY0MGIzOWRiNTYxJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /&gt;</noscript>
+
+
+<script type="text/javascript" id="">var _comscore=_comscore||[];_comscore.push({c1:"2",c2:"18075227"});(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="https://sb.scorecardresearch.com/cs/18075227/beacon.js";b.parentNode.insertBefore(a,b)})();</script>
+<noscript>
+  &lt;img src="https://sb.scorecardresearch.com/p?c1=2&amp;amp;c2=18075227&amp;amp;cv=3.6.0&amp;amp;cj=1"&gt;
+</noscript>
+</body></html>

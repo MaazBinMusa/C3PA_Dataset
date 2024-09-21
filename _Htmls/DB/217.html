@@ -1,0 +1,1132 @@
+<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" type="text/css" href="https://cdn.freshbots.ai/assets/share/css/chat-combined.min.css?v=0.26"><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="facebook-domain-verification" content="z0rbs1wwj9frm1y2zshvurea7rb5l2">
+	
+	<!-- Google Tag Manager -->
+	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://connect.facebook.net/signals/config/320480943340042?v=2.9.100&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="spd-busns-spt" async="" data-self-init="false" data-init-type="opt" src="https://cdn.freshbots.ai/assets/share/js/freshbots.min.js" data-client="0c0675999d23aa80fde16fcee46f9f00f2d9b0a1" data-bot-hash="2c6e60d6867e0c78f6c43ab8e5cb175cc49aedfb" data-env="prod" data-region="us"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-W9XKPBB"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T2JWTVR"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-T2JWTVR');</script>
+	<!-- End Google Tag Manager -->
+	
+	
+	<title>Heartbeat AI - Search 11M+ Healthcare &amp; Medical Professionals</title>
+	<meta property="og:title" content="Heartbeat AI - Search 11M+ Healthcare &amp; Medical Professionals">
+	<meta name="description" content="Heartbeat AI lets you quickly find Healthcare &amp; Medical Professionals’ direct contact info: email addresses, direct telephone, and cell / mobile phone numbers. Perfect for Staffing, Recruiting, or Sales Prospecting within the Healthcare Industry.">
+	<meta name="keywords" content="Heartbeat.ai, Heartbeat AI, healthcare, medical, staffing, recruiting, candidates, contact info, email address, email addresses, cell phone number, mobile phone number, npi lookup, contact database, contact list, email lookup, phone lookup, personal emails, business emails, physicians, doctors, nurses">
+	
+
+	
+
+	<meta charset="UTF-8">
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+	<meta property="og:url" content="https://heartbeat.ai/">
+	<meta property="og:image" content="https://heartbeat.ai/static/images/heartbeat_OG.png">
+	<meta property="og:image:secure_url" content="https://heartbeat.ai/static/images/heartbeat_OG.png">
+	<meta property="og:image:width" content="1200"> 
+	<meta property="og:image:height" content="627">
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+	<link rel="icon" type="image/favicon" sizes="16x16" href="/static/images/favicon.ico">
+	<meta property="og:site_name" content="Heartbeat AI">
+	<!-- <link rel="manifest" href="/static/images/site.webmanifest"> -->
+	<!-- <link rel="mask-icon" href="/static/images/safari-pinned-tab.svg" color="#5bbad5"> -->
+	<meta name="msapplication-TileColor" content="#FF8277">
+	<meta name="theme-color" content="#ffffff">	
+
+	
+	<link rel="stylesheet" href="/static/css/main-search.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="stylesheet" href="/static/css/main-search.css" media="all" onload="this.media='all'">
+	
+	<link rel="stylesheet" href="/static/css/header-panel.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="stylesheet" href="/static/css/header-panel.css" media="all" onload="this.media='all'">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" media="all" onload="this.media='all'">
+
+	<!--Free Trial Popup-->
+	<link rel="stylesheet" href="/static/css/popup_sign_up.css">
+	<!--Free Trial Popup-->
+
+	
+
+	<link rel="stylesheet" href="/static/css/popups.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="stylesheet" href="/static/css/popups.css" media="all" onload="this.media='all'">
+	
+	<!-- <link rel="preload" href="/static/css/style.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="stylesheet" href="/static/css/style.css" media="print" onload="this.media='all'"> -->
+
+	<link rel="stylesheet" href="/static/css/style.min.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="stylesheet" href="/static/css/style.min.css" media="all" onload="this.media='all'">
+	
+	<link rel="stylesheet" href="/static/css/footer.css" as="style" onload="this.rel='stylesheet'">
+	<link rel="stylesheet" href="/static/css/footer.css" media="all" onload="this.media='all'">
+
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" media="all" onload="this.media='all'">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-4-grid@3.4.0/css/grid.min.css" media="all" onload="this.media='all'">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+
+
+	
+
+	
+	<!-- Smartlook -->
+	<script type="text/javascript">
+		window.smartlook||(function(d) {
+	 	var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+	    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+	    c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+	    })(document);
+	    smartlook('init', 'b148b60af278ef42acfa8672746eb3df34ec71b2');
+	    
+	</script><script async="" type="text/javascript" charset="utf-8" src="https://rec.smartlook.com/recorder.js"></script>
+	<!-- Smartlook -->
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-132888443-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-132888443-2');
+	</script>
+
+	<!-- clearbit -->
+	<script type="text/javascript">
+		(function (d, u, h, s) {
+			h = d.getElementsByTagName('head')[0];
+			s = d.createElement('script');
+			s.async = 1;
+			s.src = u + new Date().getTime();
+			h.appendChild(s);
+		})(document, 'https://grow.clearbitjs.com/api/pixel.js?v=');
+	</script><script async="" src="https://grow.clearbitjs.com/api/pixel.js?v=1679964938778"></script>
+
+	
+	
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W9XKPBB');</script>
+	<!-- End Google Tag Manager -->
+	
+<script src="https://rec.smartlook.com/polyfills.e6fe390528369c513e50.js"></script><script src="https://rec.smartlook.com/es6/init.72c8792e49b00369e7f4.js" type="module"></script><script src="https://rec.smartlook.com/es5/init.f5e6152b99797c575b79.js" nomodule=""></script></head>
+<body>
+	
+	<!-- Google Tag Manager (noscript) -->
+	<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2JWTVR"
+					  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	
+	
+	<!-- Google Tag Manager (noscript) -->
+<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9XKPBB"
+	height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+<header>
+	<div class="container-fluid" style="box-shadow: none;">
+		<div class="header-row">
+			<div class="header-logo">
+				<a href="/">
+					<img src="/static/images/logo_healthcare.svg" alt="Logo">
+				</a>
+			</div>
+			<nav class="header-nav header-nav-landings">
+				<ul>
+					<li><a href="/our-data">Why Heartbeat Data?</a></li>
+					<li id="nav-menu-dropdown">
+						<div class="hc-dropdown-lists hc-dropdown-lists-menu-dropdown" style="display: none;">
+							<div class="hc-dropdown-lists-inner">
+								<a href="/product-heartbeat" class="hc-dropdown-lists-row ">
+									Heartbeat Prospector
+								</a>
+								<!-- <a href="/product-email-automation" class="hc-dropdown-lists-row ">
+									Email Automation
+								</a> -->
+								<a href="/product-extension" class="hc-dropdown-lists-row ">
+									Chrome Extension
+								</a>
+								<a href="/upload-file" class="hc-dropdown-lists-row ">
+									File Upload
+								</a>
+							</div>
+						</div>
+						Products<i class="fas fa-angle-down"></i>
+					</li>
+
+					<!-- <li >
+						<a href="/solutions">Solutions</a>
+					</li> -->
+
+					<li><a href="/pricing">Pricing</a></li>
+					<!-- <li >
+						<a href="/our-data">Our Data</a>
+					</li> -->
+					
+					<!-- <li >
+						<a href="/search-result">Demo</a>
+					</li> -->
+					
+				</ul>
+			</nav>
+			<div class="header-login">
+				
+
+				<ul class="header-login-not">
+					<li><a class="btn_coral btnSize240 header-white-button desck-talk-spec-demo move_5" href="/vi/search-result">
+						<!-- <img style="width: 18px;margin-right: 10px;" src="/static/images/hand-o-up.svg" alt="hand o up"> -->
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="708.000000pt" height="980.000000pt" viewBox="0 0 708.000000 980.000000" preserveAspectRatio="xMidYMid meet">
+
+							<g transform="translate(0.000000,980.000000) scale(0.100000,-0.100000)" fill="#FF8277" stroke="none">
+							<path d="M2490 9185 l0 -615 150 0 150 0 0 615 0 615 -150 0 -150 0 0 -615z"></path>
+							<path d="M766 8898 c-49 -61 -89 -117 -90 -124 -1 -11 934 -778 940 -771 30
+							31 184 232 182 238 -2 5 -818 669 -933 760 -6 4 -46 -37 -99 -103z"></path>
+							<path d="M3991 8631 c-256 -207 -466 -381 -468 -386 -3 -10 172 -235 183 -235
+							7 0 932 749 940 761 5 9 -172 240 -184 238 -4 0 -216 -170 -471 -378z"></path>
+							<path d="M2518 8260 c-310 -56 -536 -263 -620 -565 l-22 -80 -6 -1413 -5
+							-1413 -100 86 c-269 231 -503 394 -710 496 -185 91 -287 120 -435 126 -139 6
+							-204 -5 -303 -54 -93 -47 -220 -171 -260 -256 -125 -261 -35 -606 304 -1169
+							50 -84 271 -423 489 -753 516 -780 666 -1021 954 -1532 392 -697 852 -1163
+							1431 -1449 685 -338 1517 -376 2203 -100 921 370 1547 1215 1632 2201 8 89 10
+							460 8 1165 l-3 1035 -33 95 c-39 112 -66 162 -138 251 -91 114 -249 214 -404
+							256 -88 24 -290 24 -378 -1 -81 -22 -161 -57 -218 -96 -25 -16 -47 -30 -50
+							-30 -2 0 -4 21 -4 48 0 61 -32 193 -64 266 -84 190 -249 338 -451 405 -231 76
+							-498 40 -699 -95 -38 -25 -69 -44 -70 -42 -1 2 -12 26 -25 53 -88 189 -278
+							348 -487 406 -101 29 -265 31 -369 4 -72 -18 -186 -67 -242 -105 l-32 -21 -3
+							818 c-4 805 -4 819 -26 898 -74 270 -270 471 -532 545 -84 23 -257 34 -332 20z
+							m251 -319 c150 -47 277 -177 315 -326 14 -52 16 -249 16 -1692 l0 -1633 155 0
+							154 0 3 588 3 588 39 80 c115 233 377 331 601 224 108 -52 197 -147 242 -260
+							16 -40 19 -94 23 -480 l5 -435 153 -3 152 -3 0 254 c0 276 7 326 58 421 43 81
+							129 161 219 204 75 35 82 37 183 37 101 0 108 -2 183 -37 90 -43 176 -123 219
+							-204 55 -102 58 -133 58 -571 l0 -403 154 0 154 0 4 133 c3 130 4 135 40 208
+							122 247 412 341 637 206 72 -44 153 -133 193 -215 l33 -67 3 -1040 c2 -718 -1
+							-1071 -8 -1140 -105 -936 -834 -1765 -1760 -2000 -195 -49 -280 -59 -535 -59
+							-245 -1 -328 6 -525 45 -769 152 -1372 656 -1930 1614 -264 454 -490 817
+							-1010 1630 -486 760 -630 1024 -675 1241 -27 132 -4 219 77 288 145 125 393
+							70 740 -163 242 -163 505 -389 834 -718 l204 -204 0 1739 c0 1123 4 1758 10
+							1793 31 164 166 312 330 364 66 20 177 18 249 -4z"></path>
+							<path d="M905 7099 c-280 -65 -543 -126 -582 -135 -58 -13 -73 -20 -73 -34 0
+							-10 14 -77 31 -150 l31 -131 32 7 c176 38 1150 265 1154 269 9 9 -61 295 -72
+							294 -6 0 -240 -54 -521 -120z"></path>
+							<path d="M3841 7118 c-11 -51 -26 -117 -33 -145 -6 -29 -9 -55 -7 -58 7 -6
+							1181 -277 1185 -273 7 8 67 288 63 293 -4 4 -1170 275 -1183 275 -2 0 -13 -42
+							-25 -92z"></path>
+							</g>
+						</svg>
+						See Interactive Demo <i class="fas fa-arrow-right"></i></a></li>
+					<li><a href="/login">Log In</a></li> 
+				</ul>
+				<div id="header-account-dropdown" class="header-login-user-menu no-session">
+					<div class="header-login-user-menu-icon">
+						<!-- <img src="/static/images/icon-arrow-down-coral.svg" alt="arrow"> -->
+						<div id="menuToggle">
+							<input type="checkbox">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+					<div class="hc-dropdown-lists hc-dropdown-lists-header-dropdown">
+						<div class="hc-dropdown-lists-inner scrollBarMini">
+							<a href="/our-data" class="hc-dropdown-lists-row mobile">
+								Why Heartbeat Data?
+							</a>
+							<a href="/product-heartbeat" class="hc-dropdown-lists-row mobile">
+								Heartbeat Prospector
+							</a>
+							<a href="/product-extension" class="hc-dropdown-lists-row mobile">
+								Chrome Extension
+							</a>
+							<a href="/upload-file" class="hc-dropdown-lists-row mobile">
+								File Upload
+							</a>
+							<a href="/pricing" class="hc-dropdown-lists-row mobile">
+								Pricing
+							</a>
+							<!-- <a href="/our-data" class="hc-dropdown-lists-row mobile">
+								Our Data
+							</a> -->
+							<a rel="noopener noreferrer" target="_blank" href="https://help.heartbeat.ai/" class="hc-dropdown-lists-row mobile">
+								Knowledge Base
+							</a>
+							<!--open-sign-up-->
+							<a href="/login" class="hc-dropdown-lists-row mobile">Log In</a>
+							<a href="/vi/search-result" class="hc-dropdown-lists-row mobile desck-talk-spec-demo">See Interactive Demo <i class="fas fa-arrow-right"></i></a>
+							<a href="javascript:void(0);" class="hc-dropdown-lists-row mobile mob-talk-spec">Get FREE Trial <i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</header>
+<div class="menu-landing-top-filler"></div>
+
+
+
+
+
+
+<link rel="stylesheet" href="/static/css/landings.css">
+<link rel="stylesheet" href="/static/css/terms.css">
+
+
+<div class="main">
+	<section class="greeting terms">
+		<div class="container-fluid">
+			<div class="landing-wrapper landing-center">
+				<div class="greeting-landing-title-wrap">
+					<div class="greeting-landing-title">
+						<h1 class="landing-title">YOUR CALIFORNIA PRIVACY RIGHTS 
+							SUPPLEMENT TO HEARTBEAT.AI PRIVACY 
+							POLICY</h1>
+						<!-- <p class="landing-subtitle"></p> -->
+					</div>
+				</div>
+			</div>
+			<div class="landing-container big-text-page-container policy">
+				<h4 class="up-to-date">Last Updated:  January 17, 2022</h4>
+				<p>
+					THIS SUPPLEMENT IS INTENDED FOR RESIDENTS OF CALIFORNIA. WE
+					ENCOURAGE YOU TO READ THIS SUPPLEMENT CAREFULLY AND USE 
+					IT TO MAKE INFORMED DECISIONS. BY USING OUR SERVICES, YOU 
+					AGREE TO THE TERMS OF <span class="td"><a target="_blank" rel="noopener noreferrer" style="color: #1010ee;" href="/policy">THE PRIVACY POLICY</a></span> AND THIS 
+					SUPPLEMENT, AND YOUR CONTINUED USE OF THE SERVICES 
+					CONSTITUTES YOUR ONGOING AGREEMENT TO THE PRIVACY POLICY
+					AND THIS SUPPLEMENT.
+				</p>
+
+				<div class="point">
+					<h2 class="coral-color">GENERAL</h2>
+				</div>
+				<p>
+					This Privacy Policy Supplement entitled “Your California Privacy Rights” 
+					outlines the individual rights Heartbeat.AI Inc. (the “Heartbeat,” “we,” “us,” or 
+					“our”) provides to the residents of California with respect to collecting, using 
+					and disclosing personal information when providing our online services 
+					(collectively, the “Services”) and constitutes an integral part of Heartbeat’s 
+					Terms of Service (“Terms,” and collectively, the “Agreement”).
+				</p>
+				<p>This Supplement is an integral part of the Heartbeat Privacy Policy linked 
+					<a>here</a>. It is not a standalone privacy policy. Rather, this Supplement provides 
+					privacy disclosures to California residents as required by California law to 
+					supplement the Privacy Policy. In particular, it discusses categories of 
+					personal information Heartbeat has collected and individual rights of California
+					residents relative to that personal information.</p>	
+				<p>
+					As stated in the Privacy Policy, we collect personal information from “Users,” 
+					who are Heartbeat individual customers or business customer representatives
+					who use the Heartbeat Services and website (“Site”). We also collect personal
+					information from “Contacts,” who are individual healthcare or medical 
+					professionals whose information is provided to Users based on Users’ 
+					searches using the Heartbeat Prospector Service. Using the Heartbeat 
+					Services via the Site, Users can lookup “Profiles” of Contacts by Users who 
+					submit queries to the Heartbeat Prospector by searching for healthcare or 
+					medical professionals by full name, specialization, credential, state of 
+					licensure, years or experience, whether the individual is a sole proprietor, city, 
+					state, zip code, gender, pharmaceuticals provides or relationships with 
+					pharmaceutical companies, school attended, graduation year, or license/NPI 
+					number. The Services return the available “Data” for a Contact.  In specific, 
+					Profiles of healthcare and medical professionals consist of available contact 
+					information (email addresses, direct telephone numbers, cell/mobile phone 
+					numbers, fax numbers, and postal addresses to the extent available to 
+					Heartbeat). The Data provided by Heartbeat may also include (to the extent 
+					available) other information about a healthcare or medical professional, such 
+					as specialties, credential obtained, years of experience, whether the 
+					professional is a sole proprietor, states in which the professional is licensed, 
+					gender, information about pharmaceuticals provided and supplier 
+					relationships, education, year graduated, and license/NPI number.
+				</p>
+
+				<div class="point">
+					<h2 class="coral-color">CALIFORNIA CONSUMER PRIVACY ACT DISCLOSURES</h2>
+				</div>
+				<div class="point">
+					<h3>i.</h3>
+					<div class="point-second-element">
+						<h3>Categories of Personal Information and Recipients</h3>
+					</div>
+				</div>
+				<p>The table below summarizes the categories of personal information we collect
+					from California residents (and have collected in the last 12 months), the 
+					purposes for which the categories of personal information will be used, and 
+					the categories of recipients to whom Heartbeat has disclosed (including for a 
+					business purpose) and sold personal information (and has done so in the past
+					12 months).
+				</p>
+				<div class="table-wrapper">
+					<table class="typography-body-small">
+					  <tbody><tr>
+						<th colspan="2">Categories of Personal Information Collected</th>
+						<th>Purposes of Use</th>
+						<th>
+						  Categories of Recipients to Whom The Personal Information
+						  Was Disclosed and Sold
+						</th>
+					  </tr>
+					  <tr>
+						<td colspan="2">
+							“Identifiers” such as a real 
+							name, alias, postal address, 
+							telephone number, email 
+							address, and account name.
+							<br>
+							<br>
+							We collect all the above 
+							Identifiers from Users.  We collect name, phone number, 
+							email address, location (city 
+							and country), company name, 
+							and job title from Users and 
+							about Contacts.
+						</td>
+						<td>
+							Users: Identifiers about Users are used for marketing, for 
+							opening new user accounts to use Heartbeat’s Services, and to maintain existing accounts. 
+							Contacts: Identifiers are used to provide 
+							Services to Users. Users query our Services and receive Identifiers of Contacts in response.
+						</td>
+						<td>
+							Identifiers of Contacts are sold and disclosed to Users.
+						</td>
+					  </tr>
+					  <tr>
+						<td rowspan="4">
+							Information (other than Identifiers 
+							already described above) that identifies, relates to, 
+							describes, or is capable of being associated with, a particular individual, including, but not 
+							limited to:
+						</td>
+						<td>Signature</td>
+						<td>
+							We may collect signatures on forms used for identity verification purposes for
+							California residents or their agents seeking to exercise individual rights.
+						</td>
+						<td>Not applicable.</td>
+					  </tr>
+					  <tr>
+						<td>
+						  Employment information (job title and business contact
+						  information).
+						</td>
+						<td>
+						  We collect company name and job title for Contacts. This
+						  information is used to provide Services to Users in response
+						  to their queries.
+						</td>
+						<td>
+							Company name and job title for of Contacts are sold and disclosed to Users.
+						</td>
+					  </tr>
+					  <tr>
+						<td>
+						  Bank account number, credit card number, debit card number,
+						  or any other financial information. We collect this
+						  information from Users.
+						</td>
+						<td>Payment information is used for paying for Services.</td>
+						<td>
+						  Payment information is never sold. It is, however, disclosed
+						  to payment gateway service providers that process payments
+						  from Users on behalf of Heartbeat.
+						</td>
+					  </tr>
+					  <tr>
+						<td>
+							Context-specific personal information not 
+							specifically covered within the other categories in this table: the 
+							Heartbeat website uses the Smartlook service operated by 
+							Smartlook.com, s.r.o. The Smartlook service records session information 
+							showing how visitors use and take action on websites and mobile apps.
+						</td>
+						<td>The recordings of uses of the Heartbeat website is collected for 
+							amongst other things troubleshooting errors and bugs as well as for 
+							research and analytics purposes about your use of the Services.
+						</td>
+						<td>
+							Not applicable.  
+							Heartbeat uses the personal 
+							information collected in this category strictly for internal use.
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="2">
+						  Commercial information, including records of products and
+						  services purchased, obtained, or considered, or other
+						  purchasing or consuming histories or tendencies. We collect
+						  this information about Users.
+						</td>
+						<td>
+						  For our accounting records, we maintain records of what
+						  purchases Users made, when and for how much.
+						</td>
+						<td>
+						  Our accountants and financial advisors may have access to
+						  commercial information of Users.
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="2">
+						  Electronic information. The information in this table is
+						  almost all in electronic form.
+						</td>
+						<td>See the other cells in table.<br><br>
+							We may also collect information about your 
+							use of the Services (including by using the 
+							the Site), such as certain log files, User 
+							activity (e.g. pages viewed, the amount of 
+							time spent on particular pages, online browsing,
+							clicks, actions, installs, etc.), time stamps, alerts, etc
+						</td>
+						<td>See the other cells in table.</td>
+					  </tr>
+					  <tr>
+						<td colspan="2">
+						  Professional or employment-related information (job title
+						  and business contact information).
+						</td>
+						<td>
+							The Profile personal information we collect about Contacts may 
+							include (to the extent available) information about a healthcare or 
+							medical professional’s profession or employment, such as 
+							specialties, credential obtained, years of experience, whether the
+							professional is a sole proprietor, states in which the professional
+							is licensed, gender, 
+							information about pharmaceuticals provided and supplier 
+							relationships, education, year graduated, and license/NPI number.
+						</td>
+						<td>
+							Profile information is sold and disclosed to Users.
+						</td>
+					  </tr>
+					</tbody>
+				</table>
+				</div>
+
+				<div class="point">
+					<h3>ii.</h3>
+					<div class="point-second-element">
+						<h3>Individual Rights Under CCPA</h3>
+					</div>
+				</div>
+				<p class="mb-20"><i>Right of Access and Data Portability</i></p>
+				<p class="mb-20">Upon request, we will tell a California resident the categories and specific 
+					pieces of personal information we have collected about that resident in the 
+					previous 12 months.  In addition, upon request, we will disclose to a California
+					resident:
+				</p>
+				<ul class="text-page-list-singl mb_ul">
+					<li>
+						<p>The categories of personal information we have collected about that 
+							California resident.
+						</p>
+					</li>
+					<li>
+						<p>The categories of sources from which the personal information is 
+							collected.
+						</p>
+					</li>
+					<li>
+						<p>The business or commercial purpose for collecting that California 
+							resident’s personal information.
+						</p>
+					</li>
+					<li>
+						<p>The categories of third parties with whom we share personal 
+							information.
+						</p>
+					</li>
+					<li>
+						<p>The specific pieces of personal information we have collected about 
+							that California resident.
+						</p>
+					</li>
+					<li>
+						<p>The categories of personal information that we have sold about that 
+							California resident.
+						</p>
+					</li>
+					<li>
+						<p>The categories of personal information that we disclosed about a 
+							California resident for a business purpose.
+						</p>
+					</li>
+				</ul>
+				<p>
+					The identity of any person making such a request must be verified as a 
+					condition of providing the requested information.
+				</p>
+				<p class="mb-20"><i>Right of Deletion</i></p>
+				<p class="mb-20">
+					You have the right to request that we delete any of your personal information 
+					that we collected from you and retained by us, subject to certain conditions 
+					and exceptions under the law.  For instance, we have the right to retain 
+					personal information needed to:
+				</p>
+				<ul class="text-page-list-singl mb_ul">
+					<li>
+						<p>
+							Complete the transaction for which the personal information was 
+							collected, provide a good or service requested by the California 
+							resident, or reasonably anticipated within the context of our ongoing 
+							business relationship with the California resident, or otherwise 
+							perform a contract between our business and the California resident.
+						</p>
+					</li>
+					<li>
+						<p>
+							Detect security incidents, protect against malicious, deceptive, 
+							fraudulent, or illegal activity; or prosecute those responsible for that 
+							activity.
+						</p>
+					</li>
+					<li>
+						<p>
+							Conduct solely internal uses that are reasonably aligned with the 
+							expectations of the California resident based on the California 
+							resident’s relationship with us.
+						</p>
+					</li>
+					<li>
+						<p>
+							Comply with a legal obligation.
+						</p>
+					</li>
+					<li>
+						<p>
+							Use the personal information internally, in a lawful manner that is 
+							compatible with the context in which the California resident provided 
+							it.
+						</p>
+					</li>
+				</ul>
+				<p>
+					The identity of any person making such a request must be verified in 
+					accordance with the verification procedures below as a condition of deleting 
+					the personal information as requested.
+				</p>
+				<p class="mb-20"><i>How to Exercise Individual Rights</i></p>
+				<p>
+					If you wish to contact us about any of your rights as set out in this section, 
+					please contact us by one of the methods listed below in the Contact Us 
+					section.  Please contact us using one of these methods if you wish to have an 
+					authorized agent make a request for individual rights on your behalf.
+				</p>
+				<p class="mb-20"><i>Verification of Requests to Exercise Individual Rights</i></p>
+				<p class="mb-20">
+					For Users:  We will verify your identity in response to a request to exercise 
+					your individual rights by requiring you to log into your password-protected 
+					account, going to the Section in your profile called “Exercising Individual 
+					Privacy Rights,” checking the box next to the individual rights you wish to 
+					exercise, and saving your preferences. 
+				</p>
+				<p lass="mb-20">
+					For Contacts that are not Users: 
+				</p>
+				<ul class="text-page-list-singl mb_ul">
+					<li>
+						<p>
+							We will verify your identity in response to a request to exercise your 
+							individual rights by requiring that you to provide two pieces of 
+							information that Heartbeat already has in the Contact’s Profile from the 
+							following categories:  for instance, email address or telephone number.
+						</p>
+					</li>
+					<li>
+						<p>
+							In addition, in the case of a request for specific pieces of personal 
+							information, we will ask for an additional piece of information that 
+							Heartbeat already has in the Contact’s Profile in addition to the two 
+							pieces described above, together with a signed declaration under 
+							penalty of perjury that the requestor is the consumer whose personal 
+							information is the subject of the request or a representative acting on 
+							behalf of that consumer.
+						</p>
+					</li>
+				</ul>
+				<p>
+					We will not provide or delete information as requested if we are unable to 
+					verify the identity of the requestor as required above or have reason to believe
+					that the request is fraudulent. We may ask for additional verification if we 
+					suspect fraud, such as a copy of an identification credential from the 
+					requestor. We will use any such additional information strictly for identity 
+					verification purposes, and it will be deleted following the completion of the 
+					verification process.
+				</p>
+				<p class="mb-20"><i>Policy Against Discrimination</i></p>
+				<p class="mb-20">
+					California residents have a right not to receive discriminatory treatment by any
+					business covered by the CCPA for the exercise of the privacy rights conferred
+					by the CCPA. Accordingly, Heartbeat will not discriminate against individual 
+					California residents for exercising any of their rights under the CCPA, 
+					including by:
+				</p>
+				<ul class="text-page-list-singl mb_ul">
+					<li>
+						<p>
+							Denying goods or services to the California resident
+						</p>
+					</li>
+					<li>
+						<p>
+							Charging different prices or rates for goods or services, including 
+							through the use of discounts or other benefits or imposing penalties.
+						</p>
+					</li>
+					<li>
+						<p>
+							Providing a different level or quality of goods or services
+						</p>
+					</li>
+					<li>
+						<p>
+							Suggesting that the California resident will receive a different price or
+							rate for goods or services or a different level or quality of goods or 
+							services
+						</p>
+					</li>
+				</ul>
+				<p class="mb-20"><i>Sale of Personal Information of Minors</i></p>
+				<p>
+					Heartbeat does not knowingly sell the personal information of minors under 16
+					years of age.
+				</p>
+
+				<div class="point">
+					<h2 class="coral-color">NOTICE TO CALIFORNIA RESIDENTS REGARDING “DO 
+						NOT TRACK” SIGNALS
+					</h2>
+				</div>
+				<p>
+					Under California law, online service providers must disclose in their privacy 
+					policies how they respond to “do not track” settings. These are settings users 
+					can set in their browser software. Currently, there is no standard governing 
+					what, if anything, a website operator should do when receiving a “do not track”
+					signal. Accordingly, Heartbeat does not currently take action in response to a 
+					“do not track” browser setting. As industry standards regarding do not track 
+					settings emerge, Heartbeat will revisit and amend this policy to account for 
+					these standards.
+				</p>
+
+				<div class="point">
+					<h2 class="coral-color">
+						CONTACT US
+					</h2>
+				</div>
+				<p>
+					If you have any questions, comments or concerns about this Supplement or 
+					about our privacy practices, seek to exercise any of your privacy rights under 
+					applicable law, or wish to access, change, or update personal information we 
+					have about you, you should first contact us by email at <a target="_blanck" href="mailto:contact@heartbeat.ai">contact@heartbeat.ai</a>. 
+					You may also contact us at this email address if you are aware of abuse or 
+					misuse of our Services. If you are a Contact, you may also opt out of the sale 
+					of your personal information as stated in the next section.
+				</p>
+
+				<div class="point">
+					<h2 class="coral-color">
+						NOTICE OF RIGHT TO OPT OUT
+					</h2>
+				</div>
+				<p>
+					If you prefer that we not sell your personal information (by disclosing your 
+					Profile to our Users, vendors or business partners), you may opt-out by filling 
+					in your relevant details at here – <a target="_blank" rel="noopener noreferrer" style="color: #1010ee;" href="/optout">www.heartbeat.ai/Optout</a>.
+				</p>
+
+				<div class="point">
+					<h2 class="coral-color">
+						COMPLAINTS
+					</h2>
+				</div>
+				<p dt="">
+					If you have a complaint about our privacy practices regarding California 
+					residents, please follow the procedures in our Privacy Policy in the section 
+					titled <span class="td">Contact Us; Exercising Individual Rights; Complaints.</span>
+				</p>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+<nav role="navigation" abr="US">
+	<footer>
+		<div class="container-fluid">
+			<div class="row" style="justify-content: space-between;">
+				<!-- <div class="col-md-3 contact_footer"> -->
+					<!-- <img src="/static/images/logo_healthcare.svg" class="logo_footer" alt="Logo"
+						 title="Swordfish">
+					<p>Sales/Support</p>
+					<ul>
+						<li><span><img src="/static/images/desktop_icon.svg" alt="demo"></span><a href="/vi/search-result">Free
+							Trial</a></li>open-sign-up -->
+						<!-- <li><span><img src="/static/images/a_icon.svg" alt="contact"></span><a target="_blank"
+																							   href="mailto:contact@heartbeat.ai">contact@heartbeat.ai</a>
+						</li>
+						<li><span><img src="/static/images/question_icon.svg" alt="help"></span><a
+								target="_blank"
+								href="https://help.heartbeat.ai/">Help
+							Center</a></li>
+					</ul> -->
+				<!-- </div> -->
+				<!-- <div class="col-md-3 col-xl-2 footer-columns">
+					<p>Products</p>
+					<ul>
+						<li><a href="/product-heartbeat">Heartbeat Prospector</a></li>
+						<li><a href="/product-extension">Chrome Extension</a></li>
+						<li><a href="/directory/A">Healthcare Professionals</a></li>
+						<li><a href="/upload-file">File Upload</a></li>
+					</ul>
+				</div> -->
+				<!-- <div class="col-md-2 footer-columns">
+					<p>Company</p>
+					<ul>
+						<li><a href="/our-data">Our Data</a></li>
+						<li><a href="/contact">Contact</a></li> -->
+						<!-- <li><a class="click-open-intercome-chat" href="javascript:void(0);">Contact</a></li> -->
+						<!-- <li><a target="_blank" href="mailto:contact@heartbeat.ai">Contact</a></li> -->
+						<!-- <li><a target="_blank" href="https://swordfish.ai/about-us">About Us</a></li> -->
+
+						<!-- <li><a href="/affiliates">Affiliates</a></li>
+						<li><a href="/faq">FAQ</a></li> -->
+						<!-- <li><a href="/healthcare/">Healthcare News</a></li>
+					</ul>
+				</div> -->
+				<!-- <div class="col-md-2 footer-columns">
+					<p>Legal</p>
+					<ul> -->
+						<!-- <li><a href="/GDPR">GDPR</a></li> -->
+						<!-- <li><a href="/optout">Opt-Out<br><span>Do Not Sell My Info</span></a></li>
+						<li><a href="/terms">Terms</a></li>
+						<li><a href="/policy">Privacy</a></li>
+						<li><a href="/policy-ccpa">CCPA</a></li>
+					</ul>
+				</div> -->
+
+				<!-- <div class="col-md-2 footer-columns">
+					<p>Contact</p>
+					<ul>
+						<li><a class="click-open-intercome-chat" href="javascript:void(0);">Submit Enquiry</a></li>
+						<li>
+							<ul class="contact_one_ul">
+								<li><a target="_blank" href="mailto:contact@heartbeat.ai"><img
+										src="/static/images/mailCircleSVG.svg" alt="envelope"></a></li>
+								<li><a href="https://twitter.com/healthcarecruit" target="_blank"><img
+										src="/static/images/twitterCircleSVG.svg" alt="twitter"></a></li>
+								<li><a href="https://www.linkedin.com/company/swordfish-chrome-extension/" target="_blank"><img
+										src="/static/images/linkedINCircleSVG.svg" alt="linkedin"></a></li>
+								<li><a href="https://www.facebook.com/Heartbeat-AI-Healthcare-100581732196577"
+									   target="_blank"><img src="/static/images/facebookCircleSVG.svg" alt="facebook"></a></li>
+								<li><a href="https://www.instagram.com/heartbeataihealthcare" target="_blank"><img
+										src="/static/images/instagramCircleSVG.svg" alt="instagram"></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div> -->
+
+				<!--new-->
+				<div class="col-md-2 footer-columns">
+					<p>Products</p>
+					<ul>
+						<li><a href="/product-heartbeat" rel="dofollow">Heartbeat</a></li>
+						<li><a href="/product-extension" rel="dofollow">Chrome Extension</a></li>
+						<!-- <li><a href="javascript:void(0);">Email Automation</a></li> -->
+						<li><a href="/upload-file" rel="dofollow">File Upload</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 footer-columns">
+					<p>Company</p>
+					<ul>
+						<li><a href="/our-data" rel="dofollow">Why Heartbeat Data?</a></li>
+						<li><a href="/company" rel="dofollow">About</a></li>
+						<li><a href="/pricing" rel="dofollow">Pricing</a></li>
+						<li><a href="/contact" rel="dofollow">Contact</a></li> 
+						<!-- <li><a href="javascript:void(0);">Customers</a></li> -->
+						<!-- <li><a href="javascript:void(0);">Careers</a></li> -->
+						<li><a href="/healthcare/" rel="dofollow">Blog</a></li>
+					</ul>
+				</div>
+				<!-- <div class="col-md-2 footer-columns">
+					<p>Solutions</p>
+					<ul>
+						<li><a href="javascript:void(0);">Healthcare Recruitment</a></li>
+						<li><a href="javascript:void(0);">Pharmaceutical Sales</a></li>
+					</ul>
+				</div> -->
+				<div class="col-md-2 footer-columns">
+					<p>Legal</p>
+					<ul>
+						<!-- <li><a href="/GDPR">GDPR</a></li> -->
+						<li><a href="/terms" rel="dofollow">Terms</a></li>
+						<li><a href="/policy" rel="dofollow">Privacy</a></li>
+						<li><a href="/policy-ccpa" rel="dofollow">CCPA</a></li>
+						<li><a href="/optout" rel="dofollow">Opt-Out<br><span>Do Not Sell My Info</span></a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 footer-columns">
+					<p>Resources</p>
+					<ul>
+						<li><a href="https://help.heartbeat.ai/">Help Center Support</a></li>
+						<li><a href="/api" rel="dofollow">API Documentation</a></li>
+						<li><a href="/directory/A" rel="dofollow">Companies Directory</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 footer-columns">
+					<p>Social Resources</p>
+					<ul>
+						<li>
+							<ul class="contact_one_ul">
+								<!-- <li><a href="https://www.linkedin.com/company/swordfish-chrome-extension/" target="_blank"><img
+									src="/static/images/new_home_page/linkedINSVG.svg" alt="linkedin"></a></li>
+								<li><a href="https://www.facebook.com/Heartbeat-AI-Healthcare-100581732196577"
+										target="_blank"><img src="/static/images/new_home_page/facebookSVG.svg" alt="facebook"></a></li>
+								<li><a href="https://twitter.com/healthcarecruit" target="_blank"><img
+										src="/static/images/new_home_page/twitterSVG.svg" alt="twitter"></a></li>
+								<li><a target="_blank" href="javascript:void(0);"><img
+									src="/static/images/new_home_page/githubSVG.svg" alt="github"></a></li>
+								<li><a target="_blank" href="javascript:void(0);"><img
+									src="/static/images/new_home_page/somethSVG.svg" alt=""></a></li> -->
+								<li><a rel="noopener noreferrer" target="_blank" href="mailto:contact@heartbeat.ai"><img src="/static/images/mailCircleSVG.svg" alt="envelope"></a></li>
+								<li><a href="https://twitter.com/healthcarecruit" target="_blank" rel="noopener noreferrer"><img src="/static/images/twitterCircleSVG.svg" alt="twitter"></a></li>
+								<li><a href="https://www.linkedin.com/company/swordfish-chrome-extension/" target="_blank" rel="noopener noreferrer"><img src="/static/images/linkedINCircleSVG.svg" alt="linkedin"></a></li>
+								<li><a href="https://www.facebook.com/Heartbeat-AI-Healthcare-100581732196577" target="_blank" rel="noopener noreferrer"><img src="/static/images/facebookCircleSVG.svg" alt="facebook"></a></li>
+								<li><a rel="noopener noreferrer" href="https://www.instagram.com/heartbeataihealthcare" target="_blank"><img src="/static/images/instagramCircleSVG.svg" alt="instagram"></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div> 
+			</div>
+			<div class="mobile-footer">
+				<div class="panel">
+					<div class="panel-heading">
+						<a href="javascript:void(0);">Products <i class="fas fa-chevron-down"></i></a>
+					</div>
+					<div class="panel-collapse">
+						<div class="panel-body">
+							<ul>
+								<li><a href="/product-heartbeat" rel="dofollow">Heartbeat</a></li>
+								<li><a href="/product-extension" rel="dofollow">Chrome Extension</a></li>
+								<!-- <li><a href="javascript:void(0);">Email Automation</a></li> -->
+								<li><a href="/upload-file" rel="dofollow">File Upload</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-heading">
+						<a href="javascript:void(0);">Company <i class="fas fa-chevron-down"></i></a>
+					</div>
+					<div class="panel-collapse">
+						<ul>
+							<li><a href="/our-data" rel="dofollow">Why Heartbeat Data?</a></li>
+							<li><a href="/company" rel="dofollow">About</a></li>
+							<li><a href="/pricing" rel="dofollow">Pricing</a></li>
+							<li><a href="/contact" rel="dofollow">Contact</a></li> 
+							<!-- <li><a href="javascript:void(0);">Customers</a></li> -->
+							<!-- <li><a href="javascript:void(0);">Careers</a></li> -->
+							<li><a href="/healthcare/" rel="dofollow">Blog</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-heading">
+						<a href="javascript:void(0);">Legal <i class="fas fa-chevron-down"></i></a>
+					</div>
+					<div class="panel-collapse">
+						<div class="panel-body">
+							<ul>
+								<!-- <li><a href="/GDPR">GDPR</a></li> -->
+								<li><a href="/terms" rel="dofollow">Terms</a></li>
+								<li><a href="/policy" rel="dofollow">Privacy</a></li>
+								<li><a href="/policy-ccpa" rel="dofollow">CCPA</a></li>
+								<li><a href="/optout" rel="dofollow">Opt-Out<br><span>Do Not Sell My Info</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-heading">
+						<a href="javascript:void(0);">Resources <i class="fas fa-chevron-down"></i></a>
+					</div>
+					<div class="panel-collapse">
+						<ul>
+							<li><a href="https://help.heartbeat.ai/">Help Center Support</a></li>
+							<li><a href="/api" rel="dofollow">API Documentation</a></li>
+							<li><a href="/directory/A" rel="dofollow">Companies Directory</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-columns mobile-footer-columns">
+					<p>Social Resources</p>
+					<ul>
+						<li>
+							<ul class="contact_one_ul">
+								<!-- <li><a href="https://www.linkedin.com/company/swordfish-chrome-extension/" target="_blank"><img
+									src="/static/images/new_home_page/linkedINSVG.svg" alt="linkedin"></a></li>
+								<li><a href="https://www.facebook.com/Heartbeat-AI-Healthcare-100581732196577"
+										target="_blank"><img src="/static/images/new_home_page/facebookSVG.svg" alt="facebook"></a></li>
+								<li><a href="https://twitter.com/healthcarecruit" target="_blank"><img
+										src="/static/images/new_home_page/twitterSVG.svg" alt="twitter"></a></li>
+								<li><a target="_blank" href="javascript:void(0);"><img
+									src="/static/images/new_home_page/githubSVG.svg" alt="github"></a></li>
+								<li><a target="_blank" href="javascript:void(0);"><img
+									src="/static/images/new_home_page/somethSVG.svg" alt=""></a></li> -->
+								<li><a rel="noopener noreferrer" target="_blank" href="mailto:contact@heartbeat.ai"><img src="/static/images/mailCircleSVG.svg" alt="envelope"></a></li>
+								<li><a href="https://twitter.com/healthcarecruit" target="_blank" rel="noopener noreferrer"><img src="/static/images/twitterCircleSVG.svg" alt="twitter"></a></li>
+								<li><a href="https://www.linkedin.com/company/swordfish-chrome-extension/" target="_blank" rel="noopener noreferrer"><img src="/static/images/linkedINCircleSVG.svg" alt="linkedin"></a></li>
+								<li><a href="https://www.facebook.com/Heartbeat-AI-Healthcare-100581732196577" target="_blank" rel="noopener noreferrer"><img src="/static/images/facebookCircleSVG.svg" alt="facebook"></a></li>
+								<li><a rel="noopener noreferrer" href="https://www.instagram.com/heartbeataihealthcare" target="_blank"><img src="/static/images/instagramCircleSVG.svg" alt="instagram"></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row footer_logo_block">
+				<img src="/static/images/new_home_page/logo_healthcare_footer.svg" class="logo_footer" alt="Logo" title="Swordfish">
+				<p class="copy_p">Ⓒ <span> Copyright 2023 Heartbeat.AI Inc. All rights reserved.</span></p>
+			</div>
+		</div>
+	</footer>
+</nav>
+
+
+	<div class="schedule-free-trial">
+	<div>
+	  <a href="javascript:void(0);" class="typography-body btn_white_coral_border desck-talk-spec">
+		Get Free Trial
+		<i class="fas fa-arrow-right"></i>
+	  </a>
+	</div>
+  </div>
+
+
+
+<!-- Calendly inline widget begin -->
+<div id="calendly-inline-widget-wrapper" class="calendly-inline-widget" data-auto-load="false">
+	<div class="calendly-popup-close"><i class="fas fa-times"></i></div>
+</div>
+<!-- Calendly inline widget end -->
+
+<!-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"> -->
+<script src="/static/js/healthcare.js"></script>
+<script defer="" src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<script defer="" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+
+
+<script>
+	if ($(window).width() > 767) {
+		//***************** FreshBot *******************************
+		 (function (d, w, c) { if(!d.getElementById("spd-busns-spt")) { var n = d.getElementsByTagName('script')[0], s = d.createElement('script'); var loaded = false; s.id = "spd-busns-spt"; s.async = "async"; s.setAttribute("data-self-init", "false"); s.setAttribute("data-init-type", "opt"); s.src = 'https://cdn.freshbots.ai/assets/share/js/freshbots.min.js'; s.setAttribute("data-client", "0c0675999d23aa80fde16fcee46f9f00f2d9b0a1"); s.setAttribute("data-bot-hash", "2c6e60d6867e0c78f6c43ab8e5cb175cc49aedfb"); s.setAttribute("data-env", "prod"); s.setAttribute("data-region", "us"); if (c) { s.onreadystatechange = s.onload = function () { if (!loaded) { c(); } loaded = true; }; } n.parentNode.insertBefore(s, n); } }) (document, window, function () { Freshbots.initiateWidget({ autoInitChat: false, getClientParams: function () { return ; } }, function(successResponse) { }, function(errorResponse) { }); });
+		//***********************************************************
+	}
+ </script>
+
+
+<script type="text/javascript">
+	_linkedin_partner_id = "3862721";
+	window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+	window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+	</script><script type="text/javascript">
+	(function(l) {
+	if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+	window.lintrk.q=[]}
+	var s = document.getElementsByTagName("script")[0];
+	var b = document.createElement("script");
+	b.type = "text/javascript";b.async = true;
+	b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+	s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=3862721&amp;fmt=gif" /&gt;
+</noscript>
+
+
+
+<script>
+	if (getCookie('demo_access')==null) {
+		setCookie('demo_access','1',20)
+	}
+</script>
+
+
+
+
+<script>
+	$(document).ready(function(){
+		if ($(window).width() < 768) {
+			$('.banner .fa-times').click();
+		}
+		$(".copy_p span").text(' Copyright ' + new Date().getFullYear() + ' Heartbeat.AI Inc. All rights reserved.');
+		$('.panel-heading').click(function () {
+			$(this).toggleClass('in').next().slideToggle();
+			$('.panel-heading').not(this).removeClass('in').next().slideUp();
+        });
+	});
+	$(document).on('click', '.mob-talk-spec', function() {
+		$('.button-talk-to-a-specialist').click();
+	});
+
+	setInterval(function() {
+		addMoveClass();
+		removeMoveClass();
+	}, 5000);
+
+	function addMoveClass() {
+		$('header .header-white-button').addClass('move_5');
+	}
+
+	function removeMoveClass() {
+		setTimeout(function() {
+			$('header .header-white-button').removeClass('move_5');
+		}, 2000);
+	}
+
+	$(document).ajaxComplete(function(event,request,settings) {
+		console.log(request.status);
+        if([401, 403, 406].includes(request.status)) {document.location.href='/login'}
+    });
+	
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="">_linkedin_partner_id="3862721";window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script><script type="text/javascript" id="">(function(a){a||(window.lintrk=function(c,d){window.lintrk.q.push([c,d])},window.lintrk.q=[]);a=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=!0;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";a.parentNode.insertBefore(b,a)})(window.lintrk);</script>
+<noscript>
+&lt;img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=3862721&amp;amp;fmt=gif"&gt;
+</noscript>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","320480943340042");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=320480943340042&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+<script id="message-template" type="text/x-handlebars-template">{{#if publicNote}}<li class="joe-clearfix"><div class="joe-message my-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}" hash="{{hash}}">{{#ifCond msgCntntTyp "==" "img"}}<img src="{{messageOutput}}" class="img-file" style="max-width:100%; max-height: 250px;"/><br/>{{else ifCond msgCntntTyp "==" "fl"}}<div class="file-message"><div class="uploaded-file-wrapper"><div class="file-icon-wrapper"><div class="file-icon"></div></div>{{#if mtdt.file.fileName}}<div class="file-mtdt"><div class="file-mtdt-name bold" title="{{mtdt.file.fileName}}">{{mtdt.file.fileName}}</div><span class="file-size">{{mtdt.file.fileMetadata.fileSize}}</span></div>{{else}}<div class="file-mtdt"><div class="file-mtdt-name bold" title="{{getLanguageBasedTerm "file_attachment"}}">{{getLanguageBasedTerm "file_attachment"}}</div></div>{{/if}}<a href="{{messageOutput}}" target="_blank"><div class="user-file-download-icon"></div></a></div></div>{{else ifCond msgCntntTyp "==" "loader"}}<div style="text-align: center;" class="file_loader"><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i></div>{{else}}<span style="">{{linkify messageOutput}}</span><br/>{{/ifCond}}<div class="joe-my-message-satus"><span class="font-sm msg-status {{#if msgSent}}fbots-delivered-status{{else}}fbots-sending-status{{/if}}">{{#if msgSent}}{{getLanguageBasedTerm "delivered"}}&nbsp;&nbsp;{{else}}{{getLanguageBasedTerm "sending"}}&nbsp;&nbsp;{{/if}}</span><span class="font-sm joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div></div></li>{{/if}}</script><script id="multi-message-template" type="text/x-handlebars-template">{{#if publicNote}}<li class="joe-clearfix"><div class="joe-message my-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}" hash="{{hash}}">{{#each messageOutput}}<span class="multi-message">{{linkify this}}</span>{{/each}}<div class="joe-my-message-satus"><span class="font-sm msg-status {{#if msgSent}}fbots-delivered-status{{else}}fbots-sending-status{{/if}}">{{#if msgSent}}{{getLanguageBasedTerm "delivered"}}&nbsp;&nbsp;{{else}}{{getLanguageBasedTerm "sending"}}&nbsp;&nbsp;{{/if}}</span><span class="font-sm joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div></div></li>{{/if}}</script><script id="joe-message-group-template" type="text/x-handlebars-template">{{#if publicNote}}<div class="joe-message-group" author="{{author}}"></div>{{/if}}</script><script id="header-menu-list-template" type="text/x-handlebars-template"><div class="Slsh-list-items" id="joe-menu-dropdown" style="background: transparent; margin-left:0px; height: auto; overflow-y:visible; top:24px; right:16px; z-index: 1000; display: none; width:auto; "><ul class="font-1x joe-shadow joe-menu-list-items" style="margin-left:10px;display:inline-block;min-width: 150px;max-width: 250px;text-align: left;border-radius: 3px;padding:5px 0px;position: relative;background-color: white;box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.19) !important;">{{#each menuItems}}{{#ifCond this.cmnd "!=" "/share-fb"}}{{#ifCond this.cmnd "!=" "/share-wa"}}<li sendText="{{this.cmnd}}" style="border-top: none;padding: 5px 10px!important;font-size: 14px !important;">{{this.dispVl}}</li>{{/ifCond}}{{/ifCond}}{{/each}}</ul></div></script><script id="full-body-input-template" type="text/x-handlebars-template"><div class="joe-chat-body-overlay prevent-hide" id="joe-chat-body-overlay" style="background: white;"><span class="joe-helper"></span><div style="display:inline-block; vertical-align: middle; width:100%; text-align:center;"><div style="width:80%;text-align:center; margin:auto; position: relative;"><h4 style="margin-bottom: -32px;font-size: 25px;text-align: left; color:#42A5F5;"> {{getLanguageBasedTerm "i_want"}} </h4><input class="center-input-text joe-input-shadow" id="joe-center-input" style="width:100%; font-family: inherit; padding: 0px 0px 0px 85px; box-sizing: border-box;" placeholder=""/><button class="joe-btn bold" id="joe-center-input-send" style="border-radius:5px; padding: 10px 20px; font-size:16px; width:auto;"> {{getLanguageBasedTerm "send"}} </button></div></div></div></script><script id="header-menu-icons-template" type="text/x-handlebars-template"><div class="joe-chat-icon-header" id="joe-chat-icon-header"><ul><li><button sendText="/startover" class="joe-chat-menu-button" style="color:#1a73e8;" title="Start Over">{{getLanguageBasedTerm "start_over"}}</button></li></ul></div></script><script id="chat-rate-template" type="text/x-handlebars-template"><div class="joe-chat-body-overlay" id="joe-chat-body-overlay"><div class="text-center joe-end-chat-alert"><div style="text-align: right; margin-top: -10px;"><span id="joe-overlay-cross-btn" class="joe-overlay-cross-btn joe-rate-div"><i class="fa fa-times" aria-hidden="true"></i></span></div><div class="text-center joe-star-rating" id="joe-star-rate"><div class="font-2x joe-text-div">{{getLanguageBasedTerm "kindly_rate_chat_exp"}}</div><i class="fa fa-star fa-2x" aria-hidden="true"></i> <i class="fa fa-star fa-2x" aria-hidden="true"></i> <i class="fa fa-star fa-2x" aria-hidden="true"></i> <i class="fa fa-star fa-2x" aria-hidden="true"></i> <i class="fa fa-star fa-2x" aria-hidden="true"></i></div><div class="text-center joe-feedback" id="joe-feedback"><div class="font-2x joe-text-div">{{getLanguageBasedTerm "please_give_feedback"}}</div><textarea class="joe-textarea" id="joe-feedback-txt"></textarea><input type='hidden' id='ticket-hash-rate' data-ticket='{{tcktHsh}}'/><div class="font-2x joe-text-div"><button class="joe-btn" id="joe-feedback-btn">{{getLanguageBasedTerm "send"}}</button></div></div></div></script><script id="end-chat-confirmation-template" type="text/x-handlebars-template"><div class="joe-chat-body-overlay" id="joe-chat-body-overlay"><div class="text-center joe-end-chat-alert"><div class="input-widget-loader" style="display:none; position:relative;"></div><lable class="lt-blck font-2x" style="display:block;">{{getLanguageBasedTerm "would_you_really_want_to_end_chat"}}</lable><button id="joe-chat-end-yes" class="joe-chat-yes-btn"> {{getLanguageBasedTerm "yes"}} </button><button id="joe-chat-end-no" class="joe-chat-no-btn"> {{getLanguageBasedTerm "no"}} </button></div></div></script><script id="trim-message-confirmation-template" type="text/x-handlebars-template"><div class="joe-chat-body-overlay" id="joe-chat-body-overlay"><div class="text-center joe-end-chat-alert"><div class="input-widget-loader" style="display:none; position:relative;"></div><lable class="lt-blck font-2x" style="display:block;">{{getLanguageBasedTerm "maximum"}}  (2000) {{getLanguageBasedTerm "limit"}} {{getLanguageBasedTerm "exceeded"}}. {{getLanguageBasedTerm "would_you_like_to_trim_message"}}</lable><button id="joe-trim-yes" style="margin-right: 10px" class="joe-chat-yes-btn">  {{getLanguageBasedTerm "yes"}} </button><button id="joe-trim-no" class="joe-chat-no-btn"> {{getLanguageBasedTerm "no"}} </button></div></div></script><script id="full-img-mobview-template" type="text/x-handlebars-template"><div class="joe-chat-body-overlay" id="joe-chat-body-overlay" style="text-align: center;"><div style="text-align: right; margin-right: 5px;"><span id="joe-overlay-cross-btn" class="joe-overlay-cross-btn" style="margin-right: 5px; color:white;"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span></div><span class="joe-helper"></span><img src="{{imgSrc}}" style="max-width:100%; max-height:100%; vertical-align: middle; "/></div></script><script id="full-img-fullview-template" type="text/x-handlebars-template"><div class="joe-chat-full-body-overlay" id="joe-chat-full-body-overlay" style="text-align: center;"><div style="text-align: right; margin-right: 5px;"><span id="joe-full-overlay-cross-btn" class="joe-full-overlay-cross-btn" style="margin-right: 5px;"><i class="fa fa-times" aria-hidden="true"></i></span></div><span class="joe-helper"></span><img src="{{imgSrc}}" style="max-width:90%; max-height:90%; vertical-align: middle; "/></div></script><script id="Slsh-Cmnds-List-Items-template" type="text/x-handlebars-template"><ul class="font-1x fbot-bottom-list Slsh-list-items joe-box hide" id="Slsh-Cmnds-List-Items" style="bottom:100%;left:0;">{{#each slshCmndsItems}}{{#ifCond this.cmnd "!=" "/share-fb"}}{{#ifCond this.cmnd "!=" "/share-wa"}}<li sendText="{{this.cmnd}}">{{this.intnt}}</li>{{/ifCond}}{{/ifCond}}{{/each}}</ul></script><script id="Bots-List-Items-template" type="text/x-handlebars-template"><ul class="font-1x fbot-bottom-list Slsh-list-items joe-box hide" id="Bots-List-Items" style="bottom:100%;left:0;">{{#each bots}}<li sendText="{{this.nm}}">{{this.nm}}</li>{{/each}}</ul></script><script id="message-date-template" type="text/x-handlebars-template"><div class="h-divide {{key}}" style="text-align:center; margin-bottom: 5px; margin-top:5px; padding-bottom: 1px;"><div class="text-devide-ul"> <div class="text-devide-li"><div class="d-line-left"></div></div> <div class="text-devide-li"><span class="date">{{translatedValue}}</span></div> <div class="text-devide-li"><div class="d-line-right"></div></div> </div></div></script><script id="new-message-template" type="text/x-handlebars-template"><div class="h-divide joe-new-message" style="text-align:center; margin-bottom: 10px; margin-top:5px; padding-bottom: 5px;"><div class="text-devide-ul"> <div class="text-devide-li"><div class="line"></div></div> <div class="text-devide-li"><span class="text">{{key}}</span></div> <div class="text-devide-li"><div class="line"></div></div> </div></div></script><script id="notification-template" type="text/x-handlebars-template"><div class="notification-container" id="notification-container"><div class="notification-box">{{#ifCond isOffline "||" isDisconnected}}<div class="notification-line-orange"></div>{{else}}<div class="notification-line-blue"></div>{{/ifCond}}<div class="notification-body"><div class="notification-content"><div class="notification-icon">{{#ifCond isOffline "===" true}}<img src="https://cdn.freshbots.ai/assets/imgs/g3_icons/wifi_icon.svg" width="16" height="16" />{{else ifCond isDisconnected "===" true}}<img src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon.svg" width="16" height="16" />{{else}}{{/ifCond}}</div><div class="notification-text">{{#ifCond isOffline "===" true}}{{getLanguageBasedTerm "offline_notification"}}{{else ifCond isDisconnected "===" true}}{{getLanguageBasedTerm "disconnect_notification"}}{{else}}{{/ifCond}}</div></div>{{#ifCond isDisconnected "===" true }}{{#ifCond isOffline "===" false}}<div class="refresh-btn"><img src="https://cdn.freshbots.ai/assets/imgs/g3_icons/refresh_icon.svg" width="16" height="16" /><div class="refresh-text">{{getLanguageBasedTerm "refresh"}}</div></div>{{/ifCond}}{{/ifCond}}</div></div></div></script><script id="message-response-template" type="text/x-handlebars-template">{{#if publicNote}}{{#ifCond msgCntntTyp "==" "img"}}<li class="joe-clearfix"><div class="joe-agent-pic" style="background-image: url({{sndrImg}})"></div><div class="joe-message other-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}"  data-tm-millis="{{crtDtTmstmp}}" data-node-id="{{nodeId}}" data-node-intent="{{nodeIntent}}"><div class="joe-agent-name" data-agent-name="{{sndrNm}}"><span class="bold"><!--<i class="fa fa-circle online"></i> -->{{sndrNm}}</span> &nbsp;<span class="font-sm joe-msg-date-time joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div><div class="joe-img-palceholder-div"><img src="{{response}}" style="max-width:100%; background:#EFEFEF;"/></br></div>{{#if longDesc}}<span class="">{{linkify longDesc isAgent}}</span><br/>{{/if}}</div></li>{{/ifCond}}{{#ifCond msgCntntTyp "==" "video"}}<li class="joe-clearfix"><div class="joe-agent-pic" style="background-image: url({{sndrImg}})"></div><div class="joe-message other-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}"  data-tm-millis="{{crtDtTmstmp}}" data-node-id="{{nodeId}}" data-node-intent="{{nodeIntent}}"><div class="joe-agent-name" data-agent-name="{{sndrNm}}"><span class="bold"><!--<i class="fa fa-circle online"></i> -->{{sndrNm}}</span> &nbsp;<span class="font-sm joe-msg-date-time joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div><div class="joe-img-palceholder-div"><iframe title="{{response}}" src="{{response}}" allowfullscreen style="max-width:100%; background:#EFEFEF;"></iframe></br></div>{{#if longDesc}}<span class="">{{linkify longDesc isAgent}}</span><br/>{{/if}}</div></li>{{/ifCond}}{{#ifCond msgCntntTyp "==" "fl"}}<li class="joe-clearfix"><div class="joe-agent-pic" style="background-image: url({{sndrImg}})"></div><div class="joe-message other-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}" hash="{{hash}}"><div class="joe-agent-name" data-agent-name="{{sndrNm}}"><span class="bold">{{sndrNm}}</span> &nbsp;<span class="font-sm joe-msg-date-time joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div><div class="file-message"><div class="uploaded-file-wrapper"><div class="file-icon-wrapper"><div class="file-icon"></div></div>{{#if mtdt.file.fileName}}<div class="file-mtdt"><div class="file-mtdt-name bold" title="{{mtdt.file.fileName}}">{{mtdt.file.fileName}}</div><span class="file-size">{{mtdt.file.fileMetadata.fileSize}}</span></div>{{else}}<div class="file-mtdt"><div class="file-mtdt-name bold" title="{{getLanguageBasedTerm "file_attachment"}}">{{getLanguageBasedTerm "file_attachment"}}</div></div>{{/if}}{{#if mtdt.file.fileName}}<div class="file-download-icon" data-filenodehash="{{mtdt.file.fileMetadata.fileNodeHash}}"></div>{{else}}<a href="{{response}}" target="_blank"><div class="file-download-icon"></div></a>{{/if}}</div></div>{{#if longDesc}}<span class="file-desc">{{linkify longDesc isAgent}}</span><br/>{{/if}}</div></li>{{/ifCond}}{{#ifCond msgCntntTyp '==' 'pymnt'}}<li class="joe-clearfix"><div class="joe-message other-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}"  data-tm-millis="{{crtDtTmstmp}}" data-node-id="{{nodeId}}" data-node-intent="{{nodeIntent}}"><span class="bold"><i class="fa fa-circle online"></i> {{sndrNm}}</span><br/>{{#if paymentCard.amnt}}<span class=''>{{getLanguageBasedTerm 'payment_for'}}<i class='fa fa-inr' aria-hidden='true'></i> {{paymentCard.amnt}}</span><br/>{{/if}}<span class="font-sm joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span><br/><a href='{{paymentCard.url}}' target='_blank'><button class='joe-button-0 joe-box'> {{paymentCard.btnTxt}}</button></a><br/></div></li>{{/ifCond}}{{#ifCond msgCntntTyp "==" "ordrSmry"}}<div style="padding: 0px 10px"><div class="joe-card font-1x" style="display: block;"><div class="joe-box" style="margin-bottom: 3px;padding: 6px;"><div class="" style="width:20%;display: inline-block;vertical-align: middle;"><img src="https://cdn.freshbots.ai/assets/imgs/yes-icon-v1.png" width="50px"/></div><div class="" style="width:60%;display: inline-block;vertical-align: middle;"><span><b>Heading</b></span></br><span style="font-size:11px;">Lorem ipsum </span></div><div class="" style="width:20%;display: inline-block;vertical-align: middle;text-align: right;"><span><i class="fa fa-inr" aria-hidden="true"></i><b>&nbsp;2000</b></span></div></div><div class="" style="margin-bottom: 3px;padding:6px;background-color: #EFEFEF"><div style="width:80%;display:inline-block;text-align: center;vertical-align: bottom;"><address class="">{{getLanguageBasedTerm "address"}}<br/>Box 564, Disneyland USA</address></div><div style="width:20%;display:inline-block;text-align:right;vertical-align: middle"><span><b>Total</b><br/><i class="fa fa-inr" aria-hidden="true"></i><b>&nbsp;4000</b></span></div></div></div></div>{{/ifCond}}{{#ifCond msgCntntTyp "==" "ordrSts"}}<div style="padding: 0 10px;"><table class="joe-table joe-card"> <colgroup><col width="30%"><col width="40%"><col width="30%"></colgroup><tr><th colspan="3" style="text-align: center; color: beige; background-color: gray; border-radius: 5px 5px 0px 0px;">{{getLanguageBasedTerm "order_status"}}</th></tr><tr><th>{{getLanguageBasedTerm "order_id" }}: </th><th colspan="2">{{orderStatusCard.ordrId}}</th></tr>{{#if orderStatusCard.ordrSts}}<tr><th>{{getLanguageBasedTerm "status"}}: </th><th colspan="2">{{orderStatusCard.ordrSts}}</th></tr>{{/if}}{{#if orderStatusCard.ordrPlcdDt}}<tr><th>{{getLanguageBasedTerm "placed_on"}}: </th><th colspan="2">{{orderStatusCard.ordrPlcdDt}}</th></tr>{{/if}}{{#each orderStatusCard.itms}}<tr><td colspan="2">{{this.nm}}<br/>{{#ifCond this.sts '==' 'Delivered'}}<span class='status-done'>{{else ifCond this.sts '==' 'Cancelled'}}<span class='status-cancelled'>{{else}}<span class='status-pending'>{{/ifCond}}{{this.sts}}</span>{{#if this.trckLnk}}&nbsp;&nbsp;<span><a href="{{this.trckLnk}}" target="_blank" style="color: blue;">{{this.trckLnkBtnTxt}}</a></span>{{/if}}</td><td width="30%"><img src="{{this.imgUrl}}" width="100%"/></td></tr>{{/each}}</table><div>{{/ifCond}}{{#ifCond tmorplycntnttyp "==" "artcl"}}{{#ifCond msgCntntTyp "!=" "img"}}<li class="joe-clearfix"><div class="joe-agent-pic" style="background-image: url({{sndrImg}})"></div><div class="joe-message other-message shadow-box animate-msg" style="padding: 12px 0px;" ticketMessageHash="{{ticketMessageHash}}"  data-tm-millis="{{crtDtTmstmp}}" data-node-id="{{nodeId}}" data-node-intent="{{nodeIntent}}"><div class="joe-agent-name" data-agent-name="{{sndrNm}}" style="margin-left:0px;"><span class="bold"><!--<i class="fa fa-circle online"></i> -->{{sndrNm}}</span> &nbsp;<span class="font-sm joe-msg-date-time joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div><div style="padding: 0px 15px;"><span>{{linkify response isAgent}}</span></div></div></li>{{/ifCond}}<div class="article-container animate-msg" style="margin-top: 10px;">{{#each ticketmsgoptn}}<div class="joe-faq-items" id="{{../ticketMessageHash}}{{this.id}}"><div class="faq-item"><div class="article-icon" class="left-icon"></div><div class="joe-faq-item-text">{{linkify this.displayText isAgent}}</div></div></div>{{/each}}{{#if mrUrl}}<div style="padding:10px 15px 15px 15px; text-align:center; margin-bottom: -10px;"><a href="{{mrUrl}}" target="_blank" style="text-decoration: none"><span class="joe-more-articels"> {{getLanguageBasedTerm "more_articels"}}</span></a></div></div>{{/if}}{{/ifCond}}{{#ifCond tmorplycntnttyp "==" "itm"}}{{#ifCond msgCntntTyp "!=" "img"}}<li class="joe-clearfix"><div class="joe-agent-pic" style="background-image: url({{sndrImg}})"></div><div class="joe-message other-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}"  data-tm-millis="{{crtDtTmstmp}}" data-node-id="{{nodeId}}" data-node-intent="{{nodeIntent}}"><div class="joe-agent-name" data-agent-name="{{sndrNm}}"><span class="bold"><!--<i class="fa fa-circle online"></i> -->{{sndrNm}}</span> &nbsp;<span class="font-sm joe-msg-date-time joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div><span class="">{{linkify response isAgent}}</span><br/></div></li>{{/ifCond}}<div class="joe-slider-container animate-msg" style="padding-bottom: 10px; position:relative;" msghash="{{ticketMessageHash}}"> <div class="joe-slider_wrapper" style="display: table; border-spacing: 5px 0px; table-layout: fixed;"> <div class="joe-image_slider image_slider{{ticketMessageHash}}" style="display: table-row;" id="image_slider{{ticketMessageHash}}" crntImg="0" imgNbr=""> {{#each ticketmsgoptn}}{{#ifCond this.cntntTyp "==" "itm"}}{{#if this.mtdt}}<div style="display:table-cell; vertical-align: top; -moz-box-sizing: border-box; min-width: 223px; border-radius: 5px 5px 0 0; border-bottom: none;" class="joe-listitem bg-white"> <div style="height: 100%; overflow: auto; -moz-box-sizing: border-box;"> <div class="bg-white" style="position:relative; height:100%; margin-bottom: 0px; border-radius: 5px 5px 0 0"> {{#if this.mtdt.itm.imgUrl}}<div class="joe-flip" style="text-align: center; min-height: 1px; max-height: 200px; overflow: hidden; border-radius: 0 0 5px 5px;"> <img class="joe-flip" src="{{this.mtdt.itm.imgUrl}}"> </div> {{/if}} <div class="slider-card-content-section"> {{#if this.mtdt.itm.nm}}<div class="joe-padd-tb-5 block-with-text el-max-height"><span class="joe-slider-card-title">{{linkify this.mtdt.itm.nm isAgent}}</span></div> {{/if}}{{#if this.mtdt.itm.sbTtl}}<div class="joe-card-border-up"></div> <div class="joe-padd-tb-5 block-with-text el-max-height"><span class="joe-slider-card-subtitle">{{linkify this.mtdt.itm.sbTtl isAgent}}</span></div> {{/if}}{{#if this.mtdt.itm.rtng}}<div class="joe-padd-tb-5"> <span class="font-sm"> &nbsp; &nbsp; <i class="fa fa-star fa-2x joe-star-active" aria-hidden="true"></i>&nbsp;<span class="font-2x">{{this.mtdt.itm.rtng}}</span></span> </div> {{/if}}{{#if this.mtdt.itm.shrtDscrptn}}<div class="joe-padd-tb-5"><div class="joe-slider-card-desc block-with-text">{{linkify this.mtdt.itm.shrtDscrptn isAgent}}</div></div> {{/if}}{{#if this.mtdt.itm.dscPrcntg}}<div class="" style="display:inline-block; min-width: 30%;"><span class="font-2x joe-padd-tb-5 status-done"><i class="fa fa-inr" aria-hidden="true"></i> {{this.mtdt.itm.dscPrcntg}}</span></div> {{/if}}{{#ifCond this.mtdt.itm.ofrPrc "||" this.mtdt.itm.mrp}}<div class="" style="text-align: right; display:inline-block; min-width: 70%;">{{#if this.mtdt.itm.mrp}}{{#ifCond this.mtdt.itm.mrp "!=" this.mtdt.itm.ofrPrc}}<del class="joe-slider-card-baseprice font-2x joe-padd-tb-5" style="color:#9e9e9e; margin-right: 10px;"><i class="fa fa-inr" aria-hidden="true"></i> {{this.mtdt.itm.mrp}}</del> {{/ifCond}}{{/if}}{{#if this.mtdt.itm.ofrPrc}}<span class="font-2x joe-padd-tb-5" style="color:#424242;"><i class="fa fa-inr" aria-hidden="true"></i> {{this.mtdt.itm.ofrPrc}}</span>{{/if}}</div> {{/ifCond}}</div> </div> </div> </div> {{/if}}{{/ifCond}}{{/each}}</div> <div style="clear: both;"></div><div class="joe-image_slider image_slider{{ticketMessageHash}}" style="display: table-row;"> {{#each ticketmsgoptn}}{{#ifCond this.cntntTyp "==" "itm"}}<div class="joe-bottom-section joe-listitem bg-white" style="display: table-cell; vertical-align: top;  min-width:223px; height: 100%; overflow: auto; -moz-box-sizing: border-box; border-radius: 0 0 5px 5px; border-top: none;"> {{#ifCond ../inptTyp "!=" "SINGLE_SELECT"}}<div class="slider-card-content-section" style="padding-bottom:0px"> <button class="joe-btn carousel-multi-select-btn carousel-unselected" value="{{this.id}}" displayText="{{this.mtdt.itm.nm}}" style="width: 100%;margin-bottom:5px" type="button"><span class="tick-unselected"></span>{{linkify this.mtdt.itm.prmryBtnTxt isAgent}}</button></div>{{/ifCond}}{{#ifCond this.mtdt.itm.prmryBtnTxt "||" this.mtdt.itm.btn2Txt}}<div class="slider-card-content-section joe-card-border-up bg-white">{{#if this.mtdt.itm.prmryBtnTxt}}{{#if ../adhocCallSupported}}<div class="joe-prmry-btn">{{else}}<div class="joe-prmry-btn hide-post-sbmt joe-hide">{{/if}}{{#ifCond ../inptTyp "==" "SINGLE_SELECT"}}{{#if this.mtdt.itm.btn2Txt}}<button class="joe-btn joe-itemslider-btn joe-bdrds-5 joe-box" style="width: 100%; margin-top: 0px "  value="{{this.id}}" displayText="{{this.mtdt.itm.nm}}" data-send-private-message="{{this.mtdt.itm.sndPrvtMsg}}" ref-tm-hash="{{../ticketMessageHash}}">{{else}}<button class="joe-btn joe-itemslider-btn joe-bdrds-5 joe-box" style="width: 100%; margin-top: 0px "  value="{{this.id}}" displayText="{{this.mtdt.itm.nm}}" data-send-private-message="{{this.mtdt.itm.sndPrvtMsg}}" ref-tm-hash="{{../ticketMessageHash}}">{{/if}}{{linkify this.mtdt.itm.prmryBtnTxt isAgent}} {{/ifCond}}</button></div> {{/if}}{{#if this.mtdt.itm.btn2Txt}}{{#if this.mtdt.itm.prmryBtnTxt}}<a href="{{sanitizeURL this.mtdt.itm.btn2Url}}" target="_blank"><button class="joe-btn joe-bdrds-5 joe-box" style="width: 100%; margin-top: 0px "> {{linkify this.mtdt.itm.btn2Txt isAgent}} </button></a> {{else}}{{#if this.mtdt.itm.btn3Txt}}<a href="{{sanitizeURL this.mtdt.itm.btn2Url}}" target="_blank"><button class="joe-btn joe-bdrds-5 joe-box" style="width: 100%; margin-top: 0px "> {{linkify this.mtdt.itm.btn2Txt isAgent}} </button></a> {{else}}<a href="{{sanitizeURL this.mtdt.itm.btn2Url}}" target="_blank"><button class="joe-btn joe-bdrds-5 joe-box" style="width: 100%; margin-top: 0px "> {{linkify this.mtdt.itm.btn2Txt isAgent}} </button></a> {{/if}}{{/if}}{{/if}}{{#if this.mtdt.itm.btn3Txt}}<a href="{{sanitizeURL this.mtdt.itm.btn3Url}} " target="_blank"><button class="joe-btn joe-bdrds-5 joe-box" style="width: 100%; margin-top: 0px "> {{linkify this.mtdt.itm.btn3Txt isAgent}} </button></a> {{/if}}</div> {{/ifCond}}</div> {{/ifCond}}{{/each}}</div></div> <span class="joe-nvgt joe-prev" id="prev{{ticketMessageHash}}"></span> <span class="joe-nvgt joe-next" id="next{{ticketMessageHash}}"></span> </div>{{/ifCond}}{{#ifCond tmorplycntnttyp "==" "img"}}{{#ifCond msgCntntTyp "!=" "img"}}<li class="joe-clearfix"><div class="joe-message other-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}"  data-tm-millis="{{crtDtTmstmp}}" data-node-id="{{nodeId}}" data-node-intent="{{nodeIntent}}"><span class="bold"><i class="fa fa-circle online"></i> {{sndrNm}}</span><br/><span class="">{{linkify response isAgent}}</span><br/><span class="font-sm joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div></li>{{/ifCond}}<div class="joe-slider-container animate-msg" style="padding-bottom: 10px; position:relative;" msghash="{{ticketMessageHash}}"> <div class="joe-slider_wrapper" style="display: table; border-spacing: 5px 0px; table-layout: fixed;"> <div class="joe-image_slider image_slider{{ticketMessageHash}}" style="display: table-row;" id="image_slider{{ticketMessageHash}}" crntImg="0" imgNbr=""> {{#each ticketmsgoptn}}{{#ifCond this.cntntTyp "==" "img"}}{{#if this.mtdt}}<div style="display:table-cell; vertical-align: top; -moz-box-sizing: border-box; min-width: 223px; border-radius: 5px 5px 0 0; border-bottom: none;" class="joe-listitem bg-white"> <div style="height: 100%; overflow: auto; -moz-box-sizing: border-box;"> <div class="bg-white" style="position:relative; height:100%; margin-bottom: 0px; border-radius: 5px 5px 0 0"> {{#if this.mtdt.imgDtl.imgUrl}}<div class="joe-flip" style="text-align: center; min-height: 1px; max-height: 270px; overflow: hidden; border-radius: 0 0 5px 5px;"> <img class="joe-flip" src="{{this.mtdt.imgDtl.imgUrl}}"> </div> {{/if}} <div class="slider-card-content-section"> {{#if this.mtdt.imgDtl.lngDscrptn}}<div class="joe-padd-tb-5"><span class="joe-slider-card-desc" title="{{this.mtdt.imgDtl.lngDscrptn}}">{{trimString this.mtdt.imgDtl.lngDscrptn 0 50}}</span></div> {{/if}}</div> </div> </div> </div> {{/if}}{{/ifCond}}{{/each}}</div> <div style="clear: both;"></div><div class="joe-image_slider image_slider{{ticketMessageHash}}" style="display: table-row;"> {{#each ticketmsgoptn}}{{#ifCond this.cntntTyp "==" "img"}}<div class="joe-bottom-section joe-listitem bg-white" style="display: table-cell; vertical-align: top;  min-width:223px; height: 100%; overflow: auto; -moz-box-sizing: border-box; border-radius: 0 0 5px 5px; border-top: none;"> {{#ifCond this.mtdt.imgDtl.prmryBtnTxt "||" this.mtdt.imgDtl.btn2Txt}}<div class="slider-card-content-section joe-card-border-up bg-white" style="text-align: right;"> {{#if this.mtdt.imgDtl.prmryBtnTxt}}{{#if ../adhocCallSupported}}<span class="joe-prmry-btn">{{else}}<span class="joe-prmry-btn hide-post-sbmt joe-hide">{{/if}}<button class="joe-btn joe-itemslider-btn joe-bdrds-5 joe-box" style="width: auto; margin-top: 0px "  value="{{this.id}}" displayText="{{this.mtdt.imgDtl.nm}}" ref-tm-hash="{{../ticketMessageHash}}"> {{this.mtdt.imgDtl.prmryBtnTxt}} </button></span> {{/if}}{{#if this.mtdt.imgDtl.btn2Txt}}<a href="{{this.mtdt.imgDtl.btn2Url}}" target="_blank"><button class="joe-btn joe-bdrds-5 joe-box" style="width: auto; margin-top: 0px "> {{this.mtdt.imgDtl.btn2Txt}} </button></a> {{/if}}{{#if this.mtdt.imgDtl.btn3Txt}}<a href="{{this.mtdt.imgDtl.btn3Url}} " target="_blank"><button class="joe-btn joe-bdrds-5 joe-box" style="width: auto; margin-top: 0px "> {{this.mtdt.imgDtl.btn3Txt}} </button></a> {{/if}}</div> {{/ifCond}}</div> {{/ifCond}}{{/each}}</div></div> <span class="joe-nvgt joe-prev" id="prev{{ticketMessageHash}}"></span> <span class="joe-nvgt joe-next" id="next{{ticketMessageHash}}"></span> </div>{{/ifCond}}{{#ifCond msgCntntTyp "!=" "img"}}{{#ifCond msgCntntTyp "!=" "video"}}{{#ifCond msgCntntTyp "!=" "fl"}}{{#ifCond msgCntntTyp "!=" "ordrSts"}}{{#ifCond msgCntntTyp "!=" "ordrSmry"}}{{#ifCond msgCntntTyp '!=' 'pymnt'}}{{#ifCond tmorplycntnttyp "!=" "artcl"}}{{#ifCond tmorplycntnttyp "!=" "itm"}}{{#ifCond tmorplycntnttyp "!=" "img"}}<li class="joe-clearfix"><div class="joe-agent-pic" style="background-image: url({{sndrImg}})"></div><div class="joe-message other-message shadow-box animate-msg" ticketMessageHash="{{ticketMessageHash}}"  data-tm-millis="{{crtDtTmstmp}}" data-node-id="{{nodeId}}" data-node-intent="{{nodeIntent}}" assigned-to-agent="{{assignedToAgent}}"><div class="joe-agent-name" data-agent-name="{{sndrNm}}"><span class="bold"><!--<i class="fa fa-circle online"></i> -->{{sndrNm}}</span> &nbsp;<span class="font-sm joe-msg-date-time joe-msg-time" data-msg-timestamp="{{crtDtTmstmp}}" data-timestamp-type="{{timestampType}}">{{time}}</span></div><span class="">{{linkify response isAgent}}</span><br/></div></li>{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{#ifCond tmorplycntnttyp "!=" "itm"}}{{#ifCond tmorplycntnttyp "!=" "artcl"}}{{#ifCond replyContentType "==" "opt"}}{{#ifCond mnOptnsFrDrpDwn '>' ticketmsgoptn.length}}{{#ifCond inptTyp '==' 'SINGLE_SELECT'}}<div class='joe-radio-list-btn animate-msg'>{{#each ticketmsgoptn}}{{#if this.icnUrl}}<div><input id='joe-radio-{{this.id}}' name='listOptions' type='radio' data-display='{{this.displayText}}' class='with-font' value='{{this.id}}' /><label data-display='{{this.displayText}}' value='{{this.id}}' for='joe-radio-{{this.id}}'><img src='{{this.icnUrl}}' width='25px' style='vertical-align: middle; margin-right: 5px; margin-bottom: 2px;'/>{{linkify this.displayText}}</label></div>{{else}}<div><input id='joe-radio-{{this.id}}' name='listOptions' type='radio' data-display='{{this.displayText}}' class='with-font' value='{{this.id}}' /><label data-display='{{this.displayText}}' value='{{this.id}}' for='joe-radio-{{this.id}}'>{{linkify this.displayText}}</label></div>{{/if}}{{/each}}</div>{{else}}<div class='joe-radio-list-btn animate-msg'>{{#each ticketmsgoptn}}{{#if this.icnUrl}}<div class='nio-btn nio-unselected'><span class='tick-unselected'></span><input id='joe-radio-{{this.id}}' name='listOptions' type='radio' data-display='{{this.displayText}}' class='with-font' value='{{this.id}}' /><label data-display='{{this.displayText}}' value='{{this.id}}' for='joe-radio-{{this.id}}'><img src='{{this.icnUrl}}' width='25px' style='vertical-align: middle; margin-right: 5px; margin-bottom: 2px;'/>{{linkify this.displayText}}</label></div>{{else}}<div class='nio-btn nio-unselected'><span class='tick-unselected'></span><input id='joe-radio-{{this.id}}' name='listOptions' type='radio' data-display='{{this.displayText}}' class='with-font' value='{{this.id}}' /><label data-display='{{this.displayText}}' value='{{this.id}}' for='joe-radio-{{this.id}}'>{{linkify this.displayText}}</label></div>{{/if}}{{/each}}</div>{{/ifCond}}{{else}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/ifCond}}{{/if}}</script><script id="popup-message-template" type="text/x-handlebars-template">{{#if publicNote}}{{#ifCond msgCntntTyp "==" "img"}}<div class="joe-msg-bubble-container" style="position:absolute;z-index: 10000; width:100%; right:0; bottom:100%;"><div style="display:block; padding: 0px; padding-bottom: 6px; font-size: 13px; text-align:right;"><div class="joe-msg-hovertext"><span class="msg-bubble-btnclose joe-popup-close-btn"><img src="https://cdn.freshbots.ai/assets/imgs/g3_icons/close.svg"></span>{{#if longDesc}}<span class="">{{linkify longDesc}}</span><br/>{{/if}}<img src="{{response}}" style="max-width: 100%; max-height:200px;"/></div></div></div>{{else}}<div class="joe-msg-bubble-container" style="position:absolute;z-index: 10000; width:100%; right:0; bottom:100%;"><div style="display:block; padding: 0px; padding-bottom: 6px; font-size: 13px; text-align:right;"><div class="joe-msg-hovertext"><span class="msg-bubble-btnclose joe-popup-close-btn"><img src="https://cdn.freshbots.ai/assets/imgs/g3_icons/close.svg"></span><span class="">{{linkify response}}</span><br/></div></div></div>{{/ifCond}}{{/if}}</script><script id="quick-reply-input-template" type="text/x-handlebars-template"><div class="qck-rply-div">{{#if quickReplyList}}<div class="qck-rply-lst" style="text-align:center;">{{#each quickReplyList}}<button class="{{stringConcatOnCondition (isResendOtpClicked this.type) 'hide' '' 'font-1x btn-color-main joe-quickReplyList joe-card' ' '}}" value="{{this.vl}}" id="{{this.type}}">{{this.dsplyTxt}}</button>{{#ifCond this.type "==" "RESEND_OTP"}}<div class="resend-otp-wrapper {{#unless (isResendOtpClicked this.type)}}hide{{/unless}}" style="display:inline-block; font-size: 14px; color: #12344D; line-height: 17px; padding: 0 16px;"><bdi><span class="resend-otp-wrapper-text">{{getLanguageBasedTerm "resend_otp_counter"}}</span></bdi><span>{{concat ' ' " :" "00:"}}</span><bdi><span class="resend-otp-wrapper-counter">{{getCurrentCounterValue}}</span></bdi></div>{{/ifCond}}{{/each}}</div>{{/if}}</div></script><script id="faq-item-full-template" type="text/x-handlebars-template">{{#each ticketmsgoptn}}<div class="joe-faq-item-full joe-hide" data-target="{{../ticketMessageHash}}{{this.id}}"><div class="joe-faq-inner-container"><div class="joe-faq-header-container"><div class="bg-header joe-faq-header"><div style="display:table; height:100%; width:100%;"><div style="display:table-cell; vertical-align:middle;"><span class="joe-back-arrow"></span> {{#if this.mtdt.artcl.url}}<a href="{{sanitizeURL this.mtdt.artcl.url}}" target="_blank"><span class="joe-open-tab"></span></a>{{/if}}<div class="joe-clearfix"></div><label class="title-chat" style="color:#ffffff; margin-top:10px; max-height: 60px;overflow: hidden;" title="{{strip-html this.mtdt.artcl.ttl}}">{{trimString (linkify this.mtdt.artcl.ttl) 0 45}}</label></div></div></div></div><div class="joe-faq-body"><div style="font-size:14px; padding:20px; line-height:1.71;">{{linkify this.mtdt.artcl.mnCntnt}}</div>{{#if this.mtdt.fdbckStngs}}<div class="art-feedback"><div class="tmo-feedback-error joe-red-alert-text text-center hide">{{getLanguageBasedTerm "unexpected_error_please_try_again"}}. </div><div class="tmo-feedback-div"> <label class="joe-fdbk-message">{{this.mtdt.fdbckStngs.qstn}}</label>{{#ifCond this.mtdt.fdbckStngs.fdbckTyp "==" "OPTIONS"}}{{#each this.mtdt.fdbckStngs.optns}}<div class="joe-faq-fdbk-btn" data-value="{{this.vl}}" data-tmo-id="{{../this.id}}" ticket-message-hash="{{../../ticketMessageHash}}">{{linkify this.dsplyTxt}}</div>{{/each}}{{/ifCond}}</div></div>{{/if}}</div></div></div>{{/each}}</script><script id="last-message-node-input" type="text/x-handlebars-template"><div class="text-box-wrp text-input-box"><input type="text" class="lt-grsy inputText" placeholder="{{getLanguageBasedTerm "type_your_message_here"}}" fieldType="text" id="message-to-send" maxlength="2000" autocomplete="off"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_message"}}</span></div></div></script><script id="agent-msg-submit-template" type="text/x-handlebars-template"><div class="fbots-chat-footer-main" id="agent-msg-submit">{{#if rstrctInpt}}{{else}}{{#if fdbckStngs.mndtry}}{{#ifCond fdbckStngs.fdbckTyp "==" "OPTIONS"}}<div class="feedback-box-wrp" style="display:none"> <div class="tick-mark"> </div><div class="fdbk-msg"> </div></div><div class="text-box-wrp" style="height:auto;"> <div class="fdbk-opt"> <label class="joe-fdbk-message" style="margin:7px 30px;">{{fdbckStngs.qstn}}</label>{{#each fdbckStngs.optns}}<div class="joe-faq-fdbk-btn" style="margin:5px 8px 10px 8px;" data-value="{{this.vl}}" ticket-message-hash="{{../ticketMessageHash}}" data-tmo-id="">{{#if ../isIntentFdbck}}{{#ifCond this.dsplyTxt "===" "Yes"}}{{getLanguageBasedTerm "yes"}}{{else ifCond this.dsplyTxt "===" "No"}}{{getLanguageBasedTerm "no"}}{{else}}{{linkify this.dsplyTxt}}{{/ifCond}}{{else}}{{linkify this.dsplyTxt}}{{/if}}</div>{{/each}}</div><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "error_while_sending_please_try_again"}}</span></div></div>{{/ifCond}}{{#ifCond fdbckStngs.fdbckTyp "==" "RATING_AND_REVIEW"}}<div class="feedback-box-wrp" style="display:none"> <div class="tick-mark"> </div><div class="fdbk-msg"> </div></div><div class="text-box-wrp">{{#ifCond fdbckStngs.qstn "===" null}}<input type="text" class="lt-grsy inputText" placeholder="{{getLanguageBasedTerm "enter_type_here"}}" fieldType="feedback" id="message-to-send" maxlength="2000" autocomplete="off"/>{{else}}<input type="text" class="lt-grsy inputText" placeholder="{{fdbckStngs.qstn}}" fieldType="feedback" id="message-to-send" maxlength="2000" autocomplete="off"/>{{/ifCond}}<button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_message"}}</span></div></div> {{/ifCond}}{{#ifCond fdbckStngs.fdbckTyp "==" "RATING"}}<div class="feedback-box-wrp" style="display:none"> <div class="tick-mark"> </div><div class="fdbk-msg"> </div></div><div class="text-box-wrp" style="height:auto;"> <label class="joe-fdbk-message" style="margin:7px 30px;">{{fdbckStngs.qstn}}</label><div class="str-pad"><div class="str-rtng"> <div class="highlight-star hide"></div>{{#each fdbckStngs.rtngMtDt}}<div class="star" star-index="{{this.rating}}" rtng-txt="{{this.ratingText}}" ticket-message-hash="{{../ticketMessageHash}}"></div><div class="rtng-txt joe-hide" star-index={{this.rating}}>{{this.ratingText}}</div>{{/each}}</div><div class="rtng-txt joe-hide" star-index={{this.rating}}>{{this.ratingText}}</div></div></div> {{/ifCond}}{{/if}}{{#if showInputfld}}{{#ifCond tmorplycntnttyp "==" "itm"}}{{#ifCond inptTyp "==" "MULTI_SELECT"}}<div class="footer-section-container"><div class="footer-section-top"><div class="item-selected-count">0 {{getLanguageBasedTerm "selected_caret_text"}}</div></div><div class="footer-section-bottom"><div class="footer-section-btn-container"><button class="carousel-cancel-btn">{{getLanguageBasedTerm "deselect_button"}}</button><button class="carousel-submit-btn">{{getLanguageBasedTerm "submit_button"}}</button></div></div></div>{{/ifCond}}{{else ifCond tmorplycntnttyp "==" "img"}}{{else ifCond tmorplycntnttyp "==" "artcl"}}{{else}}{{#ifCond replyContentType "==" "opt"}}{{#ifCond mnOptnsFrDrpDwn '>' ticketmsgoptn.length}}{{#ifCond inptTyp "==" "MULTI_SELECT"}}<div class="footer-section-container"><div class="footer-section-top"><div class="item-selected-count">0 {{getLanguageBasedTerm "selected_caret_text"}}</div></div><div class="footer-section-bottom"><div class="footer-section-btn-container"><button class="nio-cancel-btn">{{getLanguageBasedTerm "deselect_button"}}</button><button class="nio-submit-btn">{{getLanguageBasedTerm "submit_button"}}</button></div></div></div>{{/ifCond}} {{else}}{{#ifCond inptTyp '==' 'SINGLE_SELECT'}}<select id='listOptions'>{{else}}<select id='listOptions' multiple>{{/ifCond}}<option id="" value="">{{getLanguageBasedTerm "start_typing_to_see_options"}}...</option>{{#each ticketmsgoptn}}{{#if this.mtdt}}{{#ifCond this.mtdt.dflt '==' 'true'}}<option id='joe-select-opsn-{{this.id}}' value='{{this.id}}' selected>{{this.displayText}}</option>{{else}}<option id='joe-select-opsn-{{this.id}}' value='{{this.id}}'>{{this.displayText}}</option>{{/ifCond}}{{else}}<option id='joe-select-opsn-{{this.id}}' value='{{this.id}}'>{{this.displayText}}</option>{{/if}}{{/each}}</select>{{/ifCond}}{{else ifCond replyContentType "==" "time"}}<div class="text-box-wrp time-input-box"><input class="timepicker" id="message-to-send" type="text" fieldType="time" placeholder="{{getLanguageBasedTerm "enter_your_time_here"}}" autocomplete="off"><div id="msg-send-btn" fieldType="time" class="file-preview-send-button align-send-btn"></div><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_time_format"}}</span></div>{{else ifCond replyContentType '==' 'date'}} <div class="datepicker-container"><div class="selected-date-container"><div class="selected-date-label">Selected Date</div><input class="selected-date-display-box"></input></div><div class="datepicker-pad"><input class='datetimepicker' type='text'/></div><div class="datepicker-btn-container"><div id="msg-send-btn" fieldType="date" class="datepicker-btn">{{getLanguageBasedTerm "select_date"}}</div></div></div>{{else ifCond replyContentType "==" "gender"}}{{#if isMob}}{{#each ticketmsgoptn}}{{#if this.icnUrl}}<div class="optionBtn"><img src="{{this.icnUrl}}" class="option-to-send" name="cnfrmtn" value="{{this.displayText}}"/>{{linkify this.displayText}}</div>{{else}}<div class="optionBtn"><img src="https://cdn.freshbots.ai/assets/imgs/yes-icon-v1.png" class="option-to-send hide" name="cnfrmtn" value="{{this.displayText}}"/>{{linkify this.displayText}}</div>{{/if}}{{/each}}{{else}}<select id="listOptions"><option id="" value="" selected>{{getLanguageBasedTerm "male_or_female"}}</option>{{#each ticketmsgoptn}}<option id="joe-select-opsn-{{this.id}}" value="{{this.displayText}}">{{this.displayText}}</option>{{/each}}</select>{{/if}}{{else ifCond replyContentType "==" "yes_no"}}<div class='joe-radio-list-btn' style='text-align:center'> {{#each ticketmsgoptn}}{{#if this.icnUrl}}<div class='optionBtn'><input id='joe-radio-{{this.id}}' name='listOptions' type='radio' data-display='{{this.displayText}}' class='with-font' value='{{this.id}}' /><label data-display='{{this.displayText}}' value='{{this.id}}' for='joe-radio-{{this.id}}'><img src='{{this.icnUrl}}' width='25px' style='vertical-align: middle; margin-right: 5px; margin-bottom: 2px;'/>{{linkify this.displayText}}</label></div>{{else}}<div class='optionBtn'><input id='joe-radio-{{this.id}}' name='listOptions' type='radio' data-display='{{this.displayText}}' class='with-font' value='{{this.id}}' /><label data-display='{{this.displayText}}' value='{{this.id}}' for='joe-radio-{{this.id}}'>{{linkify this.displayText}}</label></div>{{/if}}{{/each}}</div> {{else ifCond replyContentType "==" "google_address"}}<div class="text-box-wrp"> <input type="text" class="font-1x lt-grsy" fieldType="address" id="message-to-send" style="position:relative;" autocomplete="off"/><input type="hidden" id="joe-address"/><input type="hidden" id="joe-city"/><input type="hidden" id="joe-state"/><input type="hidden" id="joe-longitude"/><input type="hidden" id="joe-latitude"/><input type="hidden" id="joe-postalCode"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button></div>{{else ifCond replyContentType "==" "mobile"}}<div class="text-box-wrp"><div id="fbots-country-code"></div><input type="text" class="font-1x lt-grsy" placeholder="{{getLanguageBasedTerm "enter_mobile_number"}}.." fieldType="phone" id="message-to-send" autocomplete="off" maxlength="10"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_phone_number"}}</span></div></div>{{else ifCond replyContentType "==" "name"}}<div class="text-box-wrp"> <input type="text" class="font-1x lt-grsy" placeholder="{{getLanguageBasedTerm "enter_your_name_here"}}" id="message-to-send" autocomplete="off" maxlength="40"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_first_name"}}</span></div></div>{{else ifCond replyContentType "==" "full_name"}}<div class="text-box-wrp"> <input type="text" class="font-1x lt-grsy" placeholder="{{getLanguageBasedTerm "type_your_full_name_hit_enter"}}" id="message-to-send" autocomplete="off" maxlength="40"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_full_name"}}</span></div></div>{{else ifCond replyContentType "==" "email"}}<div class="text-box-wrp"> <input type="text" class="font-1x lt-grsy" placeholder="{{getLanguageBasedTerm "enter_mail_id"}}" fieldType="email" id="message-to-send" autocomplete="off"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span><img height="14px" width="14px" style="top:2px; position:relative;" src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon_red.svg"/>&nbsp;{{getLanguageBasedTerm "enter_valid_mail"}}</span></div></div>{{else ifCond replyContentType "==" "number"}}<div class="text-box-wrp"> <input type="text" class="font-1x lt-grsy" placeholder="{{getLanguageBasedTerm "enter_number"}}.." fieldType="number" id="message-to-send" autocomplete="off"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_number"}}</span></div></div>{{else ifCond replyContentType "==" "password"}}<div class="text-box-wrp"> <input type="password" class="font-1x lt-grsy" placeholder="{{getLanguageBasedTerm "enter_password"}}.." fieldType="password" id="message-to-send" autocomplete="off"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button></div>{{else ifCond replyContentType "==" "new_chat"}}<div class="text-box-wrp text-center"> <button class="joe-new-btn shadow-box btn-color-main" id="strt-new-chat">{{getLanguageBasedTerm "start_new_conversation"}}</button></div>{{else ifCond replyContentType "==" "image"}}<div class="text-box-wrp"> <input type="text" style="width:65%;" class="lt-grsy inputText" placeholder="{{getLanguageBasedTerm "type_your_message_here"}}" fieldType="text" id="message-to-send" autocomplete="off"/><div class="font-3x pull-right joe-img-btn btn-color-main"><form method="post" id="fileinfo" name="fileinfo"><input class="" style="z-index:100; width: 100%; height: 100%; position: absolute; padding:0px !important; cursor: pointer; opacity: 0; left: 0px;" name="file" type="file" id="joeImgInp" accept="image/*"/></form></div><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button></div>{{else ifCond replyContentType "==" "file"}}<div><div class="text-box-wrp"><div class="font-3x pull-right joe-file-btn" id="fbots-file-upload"><form method="post" id="fileupload" name="fileupload"><i class="fa fa-paperclip" aria-hidden="true" style="padding:10px 0px;float:right; margin-right: 20px;"></i><input class="" style="font-size:0; z-index:100; width: 100%; display:inline; height: 48px; position: absolute; padding:0px !important; cursor: pointer; opacity: 0; left: 0px" name="file" type="file" id="joeFileInp" title="" accept="/*"/><div class="upload-file-text">{{getLanguageBasedTerm "upload_file_and_image"}}</div></form></div><div class="joe-input-unsupportedFileError joe-input-errorMessage joe-hide"><img height="14px" width="14px" style="top:1px" src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon_red.svg"/>&nbsp;{{getLanguageBasedTerm "unsupported_format_error"}}</div><div class="joe-input-fileSizeError joe-input-errorMessage joe-hide"><img height="14px" width="14px" style="top:1px" src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon_red.svg"/>&nbsp;{{getLanguageBasedTerm "exceeding_file_size_error"}}</div><div class="joe-input-imageSizeError joe-input-errorMessage joe-hide"><img height="14px" width="14px" style="top:1px" src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon_red.svg"/>&nbsp;{{getLanguageBasedTerm "exceeding_image_size_error"}}</div></div><div id="image-preview-container" class="image-preview-container joe-hide"><img class="image-preview" id="image-preview" alt="File Preview" /><div id="joe-chat-send-file-no" class="file-preview-cancel-button"></div><div id="joe-chat-send-file-yes" class="file-preview-send-button"></div></div><div id="file-preview-container" class="file-preview-container joe-hide"><div class="file-preview"><div class="file-preview-head"><div class="file-preview-img"></div></div><div class="file-preview-footer"><div class="file-preview-icon"></div><div class="file-name"></div></div></div><div id="joe-chat-send-file-no" class="file-preview-cancel-button"></div><div id="joe-chat-send-file-yes" class="file-preview-send-button"></div></div></div>{{else ifCond replyContentType "==" "file_and_image"}}<div><div class="text-box-wrp"><input type="text" style="width: calc(100% - 35px); box-sizing: border-box;" class="lt-grsy inputText" placeholder="{{getLanguageBasedTerm "type_your_message_here"}}" fieldType="text" id="message-to-send" autocomplete="off"/><div class="font-3x pull-right joe-file-btn" style="width: 35px;" id="fbots-file-upload"><form method="post" id="fileupload" name="fileupload"><i class="fa fa-paperclip" aria-hidden="true" style="padding:10px 0px;float:right; margin-right: 20px;"></i><input class="" style="font-size:0; z-index:100; width: 100%; display:inline; height: 200%; position: absolute; padding:0px !important; cursor: pointer; opacity: 0; left: 0px; top:-15px" name="file" type="file" id="joeFileInp" accept="/*"/></form></div><div class="joe-input-unsupportedFileError joe-input-errorMessage joe-hide"><img height="14px" width="14px" style="top:1px" src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon_red.svg"/>&nbsp;{{getLanguageBasedTerm "unsupported_format_error"}}</div><div class="joe-input-fileSizeError joe-input-errorMessage joe-hide"><img height="14px" width="14px" style="top:1px" src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon_red.svg"/>&nbsp;{{getLanguageBasedTerm "exceeding_file_size_error"}}</div><div class="joe-input-imageSizeError joe-input-errorMessage joe-hide"><img height="14px" width="14px" style="top:1px" src="https://cdn.freshbots.ai/assets/imgs/g3_icons/info_icon_red.svg"/>&nbsp;{{getLanguageBasedTerm "exceeding_image_size_error"}}</div><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></div><div id="image-preview-container" class="image-preview-container joe-hide"><img class="image-preview" id="image-preview" alt="File Preview" /><div id="joe-chat-send-file-no" class="file-preview-cancel-button"></div><div id="joe-chat-send-file-yes" class="file-preview-send-button"></div></div><div id="file-preview-container" class="file-preview-container joe-hide"><div class="file-preview"><div class="file-preview-head"><div class="file-preview-img"></div></div><div class="file-preview-footer"><div class="file-preview-icon"></div><div class="file-name"></div></div></div><div id="joe-chat-send-file-no" class="file-preview-cancel-button"></div><div id="joe-chat-send-file-yes" class="file-preview-send-button"></div></div>{{else}}<div class="text-box-wrp text-input-box"><input type="text" class="lt-grsy inputText" placeholder="{{getLanguageBasedTerm "type_your_message_here"}}" fieldType="text" id="message-to-send" maxlength="2000" autocomplete="off"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_message"}}</span></div></div>{{/ifCond}}{{/ifCond}}{{/if}}{{#ifCond tmorplycntnttyp "==" "artcl"}}{{#if isFaq}}<div class="text-box-wrp text-input-box"><input type="text" class="lt-grsy inputText" placeholder="{{getLanguageBasedTerm "type_your_message_here"}}" fieldType="text" id="message-to-send" maxlength="2000" autocomplete="off"/><button class="pull-right joe-send-btn shadow-box inputText btn-color-main" id="msg-send-btn"></button><div id="alert-text" class="hide font-1x"><span>{{getLanguageBasedTerm "enter_valid_message"}}</span></div></div>{{/if}}{{/ifCond}}{{/if}}</div></script><script id="file-upload-prev-template" type="text/x-handlebars-template"><div class="joe-chat-body-overlay" id="joe-chat-body-overlay" style="text-align: center;"><div style="width:100%; display:inline-block; vertical-align: middle; height: 100%; overflow: auto;"><div style="text-align: right; margin-right: 5px;"><span id="joe-overlay-cross-btn" class="joe-overlay-cross-btn" style="margin-right: 5px; color:white;"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span></div><span class="joe-helper"></span><div class="text-center joe-end-chat-alert" style="margin-top:10px; display: inline-block;"><span style="font-weight: bold; font-size: 13px;">{{fileSrc}}</span><lable class="font-2x" style="display:block;">{{getLanguageBasedTerm "would_you_want_to_send_this_file"}}</lable><button id="joe-chat-send-file-yes" class="joe-chat-yes-btn"> {{getLanguageBasedTerm "yes"}} </button><button id="joe-chat-send-file-no" class="joe-chat-no-btn"> {{getLanguageBasedTerm "no"}} </button></div></div></div></script><script id="img-upload-prev-template" type="text/x-handlebars-template"><div class="joe-chat-body-overlay" id="joe-chat-body-overlay" style="text-align: center;"><span class="joe-helper"></span><div style="width:100%; display:inline-block; vertical-align: middle; height: 100%; overflow: auto;"><div style="text-align: right; margin-right: 5px;"><span id="joe-overlay-cross-btn" class="joe-overlay-cross-btn" style="margin-right: 5px; color:white;"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span></div><img src="{{imgSrc}}" style="max-width:100%; vertical-align: middle; max-height: 50%;"/><div class="text-center joe-end-chat-alert" style="margin-top:10px;"><lable class="font-2x" style="display:block;">{{getLanguageBasedTerm "would_you_really_want_to_send_this_image"}}</lable><button id="joe-chat-send-img-yes" class="joe-chat-yes-btn"> {{getLanguageBasedTerm "yes"}} </button><button id="joe-chat-send-img-no" class="joe-chat-no-btn"> {{getLanguageBasedTerm "no"}} </button></div></div></div></script><script id="widget-header-template" type="text/x-handlebars-template">{{#if headerStngs.shw}}<div id="widget-header"><div class="header-top">{{#if headerStngs.lftIcns}}{{#each (reverse headerStngs.lftIcns)}}<div style="{{#unless this.actn}}cursor: default;{{/unless}}"class="left-joe-icon" data-action="{{JSON2string this.actn}}"><span class="left-icon" style="background-image: url({{this.icnUrl}})"></span></div>{{/each}}{{/if}}<div class="right-icon-container">{{#if headerStngs.rghtIcns}}{{#each (reverse headerStngs.rghtIcns)}}{{#ifCond this.typ "===" "MENU"}}{{#if this.icns}}<div class="pull-right joe-icon joe-menu-btn" style="overflow: visible;" title="{{this.ttl}}" data-action="{}"><span style="background-image:url({{this.icnUrl}})"></span><div class="Slsh-list-items" id="joe-menu-dropdown" style="background: transparent; margin-left:0px; height: auto; overflow-y:visible; top:24px; right:16px; z-index: 1000; display: none; width:auto; "><ul class="font-1x joe-shadow joe-menu-list-items" style="margin-left:10px;display:inline-block;min-width: 150px;max-width: 250px;text-align: left;border-radius: 3px;padding:5px 0px;position: relative;background-color: white;box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.19) !important;">{{#each this.icns}}<li class="menu-joe-icon" style="border-top: none;padding: 5px 10px!important;font-size: 14px !important;" data-action="{{JSON2string this.actn}}">{{this.ttl}}</li>{{/each}}</ul></div></div>{{/if}}{{else ifCond this.typ "===" "NORMAL"}}<div class="pull-right joe-icon" title="{{this.ttl}}" {{#unless this.actn}}style="cursor: default;"{{/unless}} data-action="{{JSON2string this.actn}}"><span style="background-image:url({{this.icnUrl}})"></span></div>{{/ifCond}}{{/each}}{{/if}}</div> </div><div class="header-bottom"><div class="title-subtitle-container"><div class="fbots-chat-header-title" style="margin-bottom: 4px;">{{#if headerStngs.ttl}}<label class="title-chat" title="{{headerStngs.ttl}}">{{headerStngs.ttl}}</label>{{/if}}</div><div class="fbots-chat-header-subtitle" style="">{{#if headerStngs.sbTtl}}<label class="title-chat" title="{{headerStngs.sbTtl}}">{{headerStngs.sbTtl}}</label>{{/if}}</div></div><div class="right-brand-icon"><span class="right-icon" style="background-image:url({{avatorIcon}})"></span></div> </div></div>{{/if}}</script><script id="widget-menu-template" type="text/x-handlebars-template"><div class="Slsh-list-items" id="joe-menu-dropdown" style="background: transparent; margin-left:0px; height: auto; overflow-y:visible; top:24px; right:16px; z-index: 1000; display: none; width:auto; "><ul class="font-1x joe-shadow joe-menu-list-items" style="margin-left:10px;display:inline-block;min-width: 150px;max-width: 250px;text-align: left;border-radius: 3px;padding:5px 0px;position: relative;background-color: white;box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.19) !important;">{{#each menuIcns}}<li class="menu-joe-icon" style="border-top: none;padding: 5px 10px!important;font-size: 14px !important;" data-action="{{JSON2string this.actn}}">{{this.ttl}}</li>{{/each}}</ul></div></script></body></html>

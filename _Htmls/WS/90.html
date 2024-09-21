@@ -1,0 +1,206 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&amp;family=Source+Sans+Pro:wght@400;700&amp;display=block" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"><script src="//unpkg.com/alpinejs" defer=""></script><style>body {
+  font-family: 'Source Sans Pro', sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.nowrap {
+  white-space: nowrap;
+}
+h1 {
+  font-family: 'Lora', serif !important;
+}
+.navbar.is-ud, .navbar.is-ud .navbar-menu {
+  background-color: #1D2335;
+}
+.navbar.is-ud .navbar-item a {
+  color: white;
+}</style></head><body><nav class="navbar is-ud" x-data="{isOpen: false}"><div class="container"><div class="navbar-brand"><a class="navbar-item" href="/"><svg width="101" height="24" viewBox="0 0 101 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.8949 21.2721C17.5328 21.7168 16.6212 21.9255 16.16 21.9255C15.6173 21.9255 14.7979 21.7498 13.7018 21.4093C12.6056 21.0579 11.8351 20.734 11.3847 20.4045L7.3257 21.8541C6.4846 21.618 5.94196 21.4478 5.68692 21.338C5.07373 21.036 4.66132 20.6516 4.44969 20.1574L3.90704 20.6351L3.4675 19.806L3.71169 15.1718C3.73339 14.9357 3.70084 14.6117 3.60859 14.167C3.51634 13.7222 3.4675 13.4092 3.4675 13.2006C3.4675 12.9205 3.51634 12.4978 3.60859 11.9157C3.70084 11.3447 3.74967 10.9109 3.74967 10.6309C3.74967 9.61508 3.46207 8.89029 2.89772 8.44554C2.31167 8.61026 1.75274 8.69262 1.25894 8.69262L0.819393 8.1106L0.472101 8.00627C0.287602 7.77017 0.124808 7.51759 0 7.2101L0.748849 6.48532C2.02949 6.39197 2.68609 6.34256 2.73493 6.34256C2.87602 6.34256 3.76053 6.57866 5.39931 7.02891L5.5404 7.4517C5.63265 7.66035 5.68149 7.80311 5.68149 7.87449C5.68149 8.35219 5.46443 9.62606 5.03574 11.6796L5.38303 11.9926C5.17683 13.1512 5.07373 13.7551 5.07373 13.8265C5.07373 14.3976 5.29078 15.9185 5.71947 18.3564C6.88616 18.7792 7.49392 18.9769 7.56446 18.9769C8.9265 18.9769 10.4025 18.4882 11.9707 17.4944C12.3614 16.4566 12.6382 15.1937 12.8227 13.6893C12.9638 12.3934 13.0886 11.0976 13.2025 9.7798L13.6204 9.46683V8.81342L12.5568 8.08863H9.82187L9.61566 7.18814L11.3901 6.39197L13.1646 7.04538L14.1196 6.66102L14.939 7.01243C15.1723 7.5121 15.2863 7.8086 15.2863 7.87449C15.2863 8.20394 15.2158 8.67066 15.0801 9.28563C14.9661 9.87864 14.9064 10.3454 14.9064 10.6638C14.9064 10.6419 15.0204 11.3776 15.2537 12.8821L14.8739 13.1621L15.6227 18.4882L16.2359 18.0654C17.0065 18.4882 18.0267 19.0812 19.2802 19.8609L18.9329 21.2391L18.8949 21.2721ZM33.9207 21.2721H32.9982L32.3199 21.8211L33.9207 21.2721ZM33.9207 21.2721H32.9982L32.3199 21.8211C31.7067 21.6784 31.0827 21.585 30.4749 21.5411L30.2307 21.8211L28.071 20.6077C27.9082 20.6791 27.333 20.9207 26.3291 21.3325C25.602 21.6619 24.9996 21.8211 24.5167 21.8486L24.2725 22.0572C22.5415 21.9145 21.136 21.1128 20.0399 19.6413C19.0143 18.2631 18.5042 16.6268 18.5042 14.76C18.5042 12.7284 18.998 10.9548 20.0019 9.43388C21.1469 7.70428 22.6554 6.84222 24.5492 6.84222C24.9671 6.84222 25.564 7.05087 26.3617 7.46268C27.1811 7.88547 27.8051 8.08314 28.2446 8.08314L28.4509 8.0502L29.0261 6.90811C28.5865 6.51277 28.3912 5.73857 28.4129 4.59648L28.4454 3.66304L27.8702 3.00964C27.6857 3.05905 27.4904 3.08102 27.295 3.08102C26.926 3.08102 26.0361 2.92727 24.6306 2.63626L24.457 2.42761L24.6632 1.24709C25.0322 1.08236 25.2275 1 25.2764 1L28.147 1.31298L28.4237 1.03294L29.8563 1.2416L30.3989 2.10365C30.2144 2.9108 30.1222 3.3281 30.1222 3.35556C30.1222 3.49832 30.171 3.70697 30.2633 3.97602C30.3772 4.25605 30.4369 4.45372 30.4369 4.59648C30.4369 4.89847 30.3881 5.35421 30.2958 5.97467C30.2036 6.59513 30.1548 7.06185 30.1548 7.35286C30.1548 7.46817 30.2036 7.64388 30.2958 7.869C30.3881 8.10511 30.4369 8.27532 30.4369 8.38514C30.4369 8.45652 30.3338 8.95618 30.1276 9.9006L30.4369 10.1806L30.0896 11.4655L30.3989 11.7785L30.0896 12.6405C30.2958 13.3049 30.4803 14.2383 30.6323 15.4408C30.7951 16.7696 30.9416 17.7085 31.0718 18.2411C32.0757 19.1416 33.123 19.5699 34.2083 19.5589L34.4851 19.839V20.701L33.9099 21.2501L33.9207 21.2721ZM27.8648 12.0475L28.1741 11.1141L27.4578 10.0379H26.8826L25.9276 9.13738C24.7175 8.92873 24.0717 8.8244 23.9795 8.8244C23.5888 8.8244 22.9647 9.25818 22.0965 10.1093C21.2554 10.9603 20.8267 11.5808 20.8267 11.9761V13.2939C20.8267 13.3159 20.8972 13.5136 21.0329 13.8759L20.8267 14.123V15.2322C20.8267 15.946 21.874 17.3077 23.9632 19.3064L25.9113 18.62L26.8663 17.3681H27.5121C27.5121 16.6323 27.8377 15.7593 28.4671 14.7435L27.8539 12.0475" fill="white"></path><path d="M95 0H44C42.3431 0 41 1.34315 41 3V21C41 22.6569 42.3431 24 44 24H95C96.6569 24 98 22.6569 98 21V3C98 1.34315 96.6569 0 95 0Z" fill="white"></path><path d="M54.5037 17V7.0896H56.7381V17H54.5037ZM59.0756 17V7.0896H61.3708L63.9548 12.0144L64.9276 14.2032H64.9884C64.9479 13.6763 64.8922 13.0885 64.8212 12.44C64.7503 11.7915 64.7148 11.1733 64.7148 10.5856V7.0896H66.8428V17H64.5476L61.9636 12.06L60.9908 9.9016H60.93C60.9807 10.4488 61.0364 11.0365 61.0972 11.6648C61.1682 12.2931 61.2036 12.9011 61.2036 13.4888V17H59.0756ZM69.1842 17V7.0896H75.4314V8.9744H71.4186V11.2696H74.8538V13.1544H71.4186V17H69.1842ZM81.0349 17.1824C80.1431 17.1824 79.3578 16.9747 78.6789 16.5592C78.0101 16.1437 77.4831 15.5509 77.0981 14.7808C76.7231 14.0005 76.5357 13.0733 76.5357 11.9992C76.5357 10.9149 76.7231 9.99787 77.0981 9.248C77.4831 8.488 78.0101 7.9104 78.6789 7.5152C79.3578 7.10987 80.1431 6.9072 81.0349 6.9072C81.9266 6.9072 82.7069 7.10987 83.3757 7.5152C84.0546 7.9104 84.5815 8.488 84.9565 9.248C85.3415 10.008 85.5341 10.9251 85.5341 11.9992C85.5341 13.0733 85.3415 14.0005 84.9565 14.7808C84.5815 15.5509 84.0546 16.1437 83.3757 16.5592C82.7069 16.9747 81.9266 17.1824 81.0349 17.1824ZM81.0349 15.252C81.7138 15.252 82.2509 14.9581 82.6461 14.3704C83.0413 13.7827 83.2389 12.9923 83.2389 11.9992C83.2389 11.0061 83.0413 10.2309 82.6461 9.6736C82.2509 9.11627 81.7138 8.8376 81.0349 8.8376C80.3559 8.8376 79.8189 9.11627 79.4237 9.6736C79.0285 10.2309 78.8309 11.0061 78.8309 11.9992C78.8309 12.9923 79.0285 13.7827 79.4237 14.3704C79.8189 14.9581 80.3559 15.252 81.0349 15.252Z" fill="#1D2335"></path></svg></a><a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" :class="{ 'is-active': isOpen }" @click="isOpen = !isOpen"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div><div class="navbar-menu" :class="{ 'is-active': isOpen }"><div class="navbar-end"><div class="navbar-item"><a class="is-light" href="/content-guidelines/">Content Guidelines</a></div><div class="navbar-item"><a class="is-light" href="/dmca/">DMCA</a></div><div class="navbar-item"><a class="is-light" href="/privacy/">Privacy Policy</a></div><div class="navbar-item"><a class="is-light" href="/tos/">Terms of Service</a></div><div class="navbar-item"><a class="is-light" href="https://www.urbandictionary.com/">Return to Urban Dictionary</a></div></div></div></div></nav><div class="content section"><div class="container"><h1>Privacy Policy</h1>
+<p>This privacy policy discloses:</p>
+<ul>
+<li>When and how we collect, use and share your information</li>
+<li>When and how third-party advertising networks might collect your information when you visit urbandictionary.com</li>
+<li>What your privacy rights are and how you can exercise them</li>
+</ul>
+<p>Your use of Urban Dictionary is also subject to our <a href="https://about.urbandictionary.com/tos">Terms of Service</a>.</p>
+<h2>Table of contents</h2>
+<ul>
+<li><a href="#the_information_we_collect_in_brief">The information we collect, in brief</a></li>
+<li><a href="#how_we_use_your_information">How we use your information</a></li>
+<li><a href="#when_we_disclose_your_information">When we disclose your information</a></li>
+<li><a href="#the_information_we_sell">The information we sell</a></li>
+<li><a href="#the_information_we_share">The information we share</a></li>
+<li><a href="#your_privacy_rights">Your privacy rights</a></li>
+<li><a href="#requests_to_know_and_requests_to_delete">Requests to know and requests to delete</a></li>
+<li><a href="#your_opt_out_right">Your opt-out right</a></li>
+<li><a href="#cookies_and_web_beacons">Cookies and web beacons</a></li>
+<li><a href="#data_storage">Data storage</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#california_consumer_privacy_disclosures">California consumer privacy disclosures</a></li>
+<li><a href="#children">Children</a></li>
+<li><a href="#changes">Changes</a></li>
+<li><a href="#questions">Questions</a></li>
+</ul>
+<h2><a name="the_information_we_collect_in_brief">The information we collect, in brief</a></h2>
+<p>We collect (a) the e-mail addresses of those who communicate with us via e-mail, (b) aggregate information concerning what pages users access or visit, (c) information you choose to send to us (such as survey information and/or site registrations) and (d) information related to your use of the site, including IP address, rough geographic location, and the date and time of your request. More detail on this collection are and how it relates to our use of your information is available in the <a href="#california_consumer_privacy_disclosures">California consumer privacy disclosures</a> section of this policy.</p>
+<h2><a name="how_we_use_your_information">How we use your information</a></h2>
+<p>We collect your information to improve the content of our website, to improve the quality of our service, to provide you products and services including through our store, to identify and authenticate our users, to contact you if necessary or with your permission. We may also use your anonymized information for research purposes. More details are available in the <a href="#california_consumer_privacy_disclosures">California consumer privacy disclosures</a> section of this policy.</p>
+<h2><a name="when_we_disclose_your_information">When we disclose your information</a></h2>
+<p>We do not disclose your information to other organizations for commercial purposes, except to provide products or services you've requested, when we have your permission, or under the following circumstances:</p>
+<ul>
+<li>If it is necessary to share information in order to investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the physical safety of any person, violations of our Terms of Service, or as required by law.</li>
+<li>If Urban Dictionary is acquired by or merged with another company, we will transfer your information along with the Urban Dictionary website. Should this happen, Urban Dictionary will provide advance notice of the transfer and of resulting changes to these terms on the Urban Dictionary website and, where possible, by email.</li>
+<li>We may provide information to trusted businesses or persons for the sole purpose of processing personally identifying information on our behalf. When this is done, it is subject to agreements that oblige those parties to process such information only on our instructions and in compliance with this Privacy Policy and appropriate confidentiality and security measures.</li>
+<li>We may provide information to a company controlled by, or under common control with, Urban Dictionary for any purpose permitted by this Privacy Policy.</li>
+</ul>
+<p>More details are available in the <a href="#california_consumer_privacy_disclosures">California consumer privacy disclosures</a> section of this policy.</p>
+<h2><a name="the_information_we_sell">The information we sell</a></h2>
+<p>We do not sell the personal information that we collect.</p>
+<h2><a name="the_information_we_share">The information we share</a></h2>
+<p>Our ad management partners ("Ad Partners") may collect information from you directly when you visit our website, using technologies like cookies and web beacons. You may opt out of Ad Partner information collection using the process described in the <a href="#your_opt_out_right">your  opt-out right</a> section of this policy. You can learn more about our Ad Partner information collection practices in the <a href="#cookies_and_web_beacons">cookies and web beacons</a> section of this policy.</p>
+<p><a href="#your_opt_out_right">You have the right to opt out of this information sharing.</a></p>
+<h2><a name="your_privacy_rights">Your privacy rights</a></h2>
+<p>Urban Dictionary provides California Consumer Privacy Act (CCPA) consumer rights to all our users. You have the following rights concerning the information we collect:</p>
+<ul>
+<li>The right to request disclosure of the categories of personal information and the specific pieces of personal information that we have collected about you.</li>
+<li>The right to know our purpose for collecting your personal information, the categories of third parties to which we disclose personal information, and the sources from which we collect personal information.</li>
+<li>The right to be informed about the information we collect about you. This information is available in this Privacy Policy and in the <a href="#california_consumer_privacy_disclosures">California Privacy Disclosures</a>, below.</li>
+<li>The right to delete any personal information we collect about you.</li>
+<li>The right to correct inaccurate personal information we have collected about you.</li>
+<li>The right to know how and when we sell your personal information or share it for the purpose of cross-context behavioral advertising.</li>
+<li>The right to opt out of the sale or sharing of your personal information. We provide a frictionless opt-out <a href="#your_opt_out_right">as described in this policy</a>.</li>
+<li>The right to limit the use and disclosure of your sensitive personal information.</li>
+<li>The right to exercise the above rights without facing retaliatory discrimination.</li>
+</ul>
+<p>Please understand that the above rights are subject to exceptions in some cases and that your request may require verification. We will always consider and verify your privacy request in accordance with California regulations before we take responsive action.</p>
+<h3><a name="requests_to_know_and_requests_to_delete">Requests to know and requests to delete</a></h3>
+<p>You may request disclosure and/or deletion of any information we have collected about you by either:</p>
+<ul>
+<li>filling out the form available <a href="https://privacyportal.cookiepro.com/webform/1f3ee98b-8600-4aae-954a-cf9d215eb0ab/4419f43d-8c61-4ba7-9b40-58e2c4cc5fc8">here</a>, or</li>
+<li>emailing us with the details of your request at <a href="mailto:support@urbandictionary.com">support@urbandictionary.com</a></li>
+</ul>
+<p>We will be in touch after receiving your request to verify your identity and to process your request. Please note that requests are considered on a case-by-case basis and are subject to legal requirements and, in some cases, verification.</p>
+<h3><a name="your_opt_out_right">Your opt-out right</a></h3>
+<p>We provide a “frictionless” opt out of sharing using a <a href="https://globalprivacycontrol.org/">Global Privacy Control</a> signal. Please visit the <a href="https://globalprivacycontrol.org/">Global Privacy Control</a> website to learn more about how to use the Global Privacy Control signal for a frictionless opt out.</p>
+<p>In some cases, users may also click the "Do Not Sell My Personal Information Link" available in a banner on the bottom of our website to opt out of Ad Partner information collection.</p>
+<h2><a name="cookies_and_web_beacons">Cookies and web beacons</a></h2>
+<p>A cookie is a small amount of data, which often includes an anonymous unique identifier, which is sent to your browser from a website's computers and stored on your computer's hard drive. Cookies are required to use some Urban Dictionary services. Urban Dictionary and its Ad Partners use cookies to record current session information.</p>
+<p>Our Ad Partners may also from time to time use web beacons (also known as Internet tags, pixel tags and clear GIFs). These web beacons are provided by our Ad Partners and allow Ad Partners to obtain information such as the IP address of the computer that downloaded the page on which the beacon appears, the URL of the page on which the beacon appears, the time the page containing the beacon was viewed, the type of browser used to view the page and the information in cookies set by the Ad Partners. Web beacons enable our Ad Partners to recognize a unique cookie on your web browser, which in turn enables us to learn which advertisements bring users to our website.</p>
+<p>With both cookies and web beacon technology, the information that we collect and share is anonymous. It does not contain your name, address, telephone number, or email address.</p>
+<p>You can opt-out of Google Analytics data collection with the <a href="https://tools.google.com/dlpage/gaoptout/">Google Analytics Opt-out Browser Add-on</a>. You can opt out of Ad Partner information collection using the process described in the <a href="#your_opt_out_right">your opt-out right</a> section of this policy.</p>
+<h2><a name="data_storage">Data storage</a></h2>
+<p>Urban Dictionary uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Urban Dictionary. Urban Dictionary owns the code, databases, and all rights to the Urban Dictionary application.</p>
+<h2><a name="security">Security</a></h2>
+<p>We take precautions to ensure the security of your personal information. However, we cannot guarantee that hackers or unauthorized personnel may gain access to your personal information despite our efforts. You should note that in using the Urban Dictionary service, your information will travel through third party infrastructures which are not under our control.</p>
+<p>We cannot protect, nor does this Privacy Policy apply to, any information that you transmit to other users. You should never transmit personal or identifying information to other users.</p>
+<h2><a name="california_consumer_privacy_disclosures">California consumer privacy disclosures</a></h2>
+<p>The disclosures below reflect how we collect personal information, as defined in the CCPA, and how we have collected personal information over the last 12 months. You have privacy rights regarding the data we collect, <a href="#your_privacy_rights">detailed here</a>, and can <a href="#your_opt_out_right">opt out </a> of the sale and/or sharing of your personal information.</p>
+<h3>Information We Do Not Collect</h3>
+<p>We do not collect personal information that belongs to any of the following categories:</p>
+<ul>
+<li>sensitive personal information;</li>
+<li>protected classification characteristics;</li>
+<li>biometric information;</li>
+<li>audio/electronic/visual/thermal/olfactory/ and similar information;</li>
+<li>professional or employment-related information;</li>
+<li>education information; or</li>
+<li>inference-based consumer profiling</li>
+</ul>
+<h3>The Information We Collect from All Users</h3>
+<p>Below we provide details about the categories of personal information we have collected about all visitors to our site in the last year, and the categories of personal information we have disclosed about those users for a business purpose in the last year. We collect additional information from users with accounts, about users who make purchases from our store, and other individuals, as detailed in the following sections.</p>
+<hr>
+<hr>
+<p>Categories: identifiers; geolocation data</p>
+<p>We collect: IP address</p>
+<p>Purpose: to analyze trends; to help improve and secure our website; for sharing with third-party advertisers</p>
+<p>How long we keep the information: for a limited time as determined by our security and compliance requirements</p>
+<p>How we disclose the information: to our service providers; to third-party advertisers</p>
+<p>Service Providers that process the information: hosting, security, cloud storage and computing, and analytics service providers</p>
+<p>How shared or sold: shared with third-party advertisers</p>
+<p>Source(s): automatic collection</p>
+<hr>
+<p>Category: network activity</p>
+<p>We collect: internet service providers' names; web browser types; mobile device types; computer operating system information; data about browsing activity when using our website; search data on our website</p>
+<p>Purpose: to analyze trends; to help improve and secure our website; for sharing with third-party advertisers</p>
+<p>How long we keep the information: for a limited time as determined by our security and compliance requirements</p>
+<p>How we disclose the information: to our service providers; to third-party advertisers</p>
+<p>Service Providers that process the information: hosting, security, cloud storage and computing, and analytics service providers</p>
+<p>How shared or sold: shared with third-party advertisers</p>
+<p>Source(s): automatic collection</p>
+<hr>
+<hr>
+<h3>The Information We Collect from Users with Accounts</h3>
+<p>Below we provide details about the categories of personal information we have collected about users with user accounts on our website in the last year, and the categories of personal information we have disclosed about those users for a business purpose in the last year. We collect additional information about all users of our website, users who make purchases in our store, and other individuals, as detailed elsewhere in this policy.</p>
+<hr>
+<hr>
+<p>Category: identifiers</p>
+<p>We collect: any pseudonym or handle used on our website; email address</p>
+<p>Purpose: to allow you to submit definitions to the Urban Dictionary website and to use our services; to communicate with you about our website and services</p>
+<p>How long we keep the information: until you delete your account and/or opt out of communications about our services, or as long as is necessary for our security and compliance purposes, whichever is longer</p>
+<p>How we disclose the information: to our service providers</p>
+<p>Service Providers that process the information: email, hosting, security, cloud storage and computing, and analytics service providers</p>
+<p>How shared or sold: n/a</p>
+<p>Source(s): you</p>
+<hr>
+<p>Category: Definitions</p>
+<p>We collect: definitions that are submitted, but not published, on Urban Dictionary</p>
+<p>Purpose: to provide our services</p>
+<p>How long we keep the information: as long as is necessary for our security and compliance purposes</p>
+<p>How we disclose the information:: to our service providers</p>
+<p>Service Providers that process the information: email, hosting, security, cloud storage and computing, and analytics service providers</p>
+<p>How shared or sold: n/a</p>
+<p>Source(s): you</p>
+<hr>
+<hr>
+<h3>The Information We Collect from Users who Purchase from our Store</h3>
+<p>Below we provide details about the categories of personal information we have collected about users who have made a purchase from our store in the last year, and the categories of personal information we have disclosed about those users for a business purpose in the last year. We collect additional information about all users of our website, users with accounts, and other individuals, as detailed elsewhere in this policy.</p>
+<hr>
+<hr>
+<p>Category: identifiers</p>
+<p>We collect: name, email address, address, phone number, payment information</p>
+<p>Purpose: to process transactions with our store</p>
+<p>How long we keep the information: as long as is necessary to process your transaction and provide customer service for your transaction, or for our security and compliance purposes, whichever is longer</p>
+<p>How we disclose the information: to our service providers</p>
+<p>Service Providers that process the information: payment processing and point-of-sale system service providers</p>
+<p>How shared or sold: n/a</p>
+<p>Source(s): you</p>
+<hr>
+<p>Category: commercial information</p>
+<p>We collect: purchase history, payment information</p>
+<p>Purpose: to process transactions with our store; to improve our store and our products</p>
+<p>How long we keep the information: we keep purchase history indefinitely, otherwise, we keep information for as long as is necessary for our security and compliance purposes</p>
+<p>How we disclose the information: to our service providers</p>
+<p>Service Providers that process the information: payment processing and point-of-sale system service providers</p>
+<p>How shared or sold: n/a</p>
+<p>Source(s): you</p>
+<hr>
+<hr>
+<h3>Other Information We Collect from Individuals Who Communicate with Us</h3>
+<p>Below we provide details about the categories of personal information we have collected about individuals who have communicated with us in the last year, and the categories of personal information we have disclosed about those individuals for a business purpose in the last year. We collect additional information in other circumstances, as detailed above.</p>
+<hr>
+<hr>
+<p>Category: identifiers</p>
+<p>We collect: email addresses, names</p>
+<p>Purpose: for communicating with you</p>
+<p>How long we keep the information: for as long as your communications remain relevant or actionable, or as long as is otherwise necessary for security and compliance purposes</p>
+<p>How we disclose the information: to our service providers</p>
+<p>Service Providers that process the information: email and hosting service providers</p>
+<p>How shared or sold: n/a</p>
+<p>Source(s): you</p>
+<hr>
+<hr>
+<h2><a name="children">Children</a></h2>
+<p>The Urban Dictionary service is not intended for children under 16, and we do not knowingly collect information from children under the age of 16.</p>
+<h2><a name="changes">Changes</a></h2>
+<p>Urban Dictionary may periodically update this policy. We may notify you about significant changes in the way we treat personal information by placing a prominent notice on our site.</p>
+<h2><a name="questions">Questions</a></h2>
+<p>Any questions about this Privacy Policy should be addressed to this address: <a href="mailto:legal@urbandictionary.com">legal@urbandictionary.com</a></p>
+<p>Or by mail at:</p>
+<blockquote>
+<p>Urban Dictionary LLC,<br>
+Attn: Privacy Policy Inquiries,<br>
+PO Box 7775,<br>
+ECM #82617,<br>
+San Francisco, CA 94120</p>
+</blockquote>
+<p>Updated: July 1, 2023</p>
+</div></div></body></html>

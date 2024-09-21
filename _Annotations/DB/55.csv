@@ -1,0 +1,511 @@
+RANumb,Text,Label
+ra3,"Effective Date: December 22, 2022",Updated Privacy Policy
+ra3,"Information We Collect\nWe collect and use several types of information from you or from our data partners that help us (or our data partners) serve ads that are better tailored to your interests and to provide reporting and analytics services, such as inferring ads that performed better or worse based on user behavior.  This information includes:\n\nDevice identifiers\nEg., mobile advertising IDs like iOS IDFA and Android AAID, IP address, OTT/CTV IDs, gaming console IDs, cookie IDs, proprietary IDs, or other pseudonymized identifiers (e.g., a randomized string of characters).\nZIP +4 and ZIP +11 postal codes\nPublicly available household postal codes; used to identify a household address, which devices and segments are associated to for “household-level” targeting.\nHousehold identifiers\nPseudonymous IDs for ZIP+4/ZIP+11 above.\nHousehold addresses\nA master address list used for purposes such as address verification and appending ZIP11 and latitude/longitude.\nDevice metadata\nE.g., device type, browser type, operating system type, and settings.\nGeolocation data\nE.g., latitude/longitude coordinates or other geolocation information (e.g., based on IP address).\nSegments/demographics and interests\nA group of household IDs or device IDs that may share a common interest, trait, or preference, such as “auto intenders” or “guitar buyers”. These can be either our own segments or segments from data partners.\nWe may receive demographic information or use data science to understand general demographics or interests, which can be used to make inferences for segment purposes (e.g., household income, number of household members, geographic area, retail interests) or to understand the value of a certain advertising opportunity presented in a bid request.\nAd interaction data\nE.g., interactions with or in relation to an ad, such as clickthroughs, actions taken on landing page where ad takes you, app downloads, and purchases. This helps understand ad campaign effectiveness and what ads you respond more favorably to.\nThis interaction data and other ad analytics can sometimes be provided to data partners for measurement/attribution purposes, described below, in the form of a document called an “impression log.”\nOther ad analytics\nE.g., TV content viewed, viewership data, which ads were shown to which devices or households, where and what they were shown, and at what time.\nEmail addresses\nEmail addresses that are either uploaded in “plain text” and then matched with a hashed email or hashed by us or our clients/data partners (i.e., utilize one-way cryptography such that it is a random string of characters).\nClient information\nClients can upload their own information, such as their customer data, to our Platform (e.g., email addresses, postal address, device IDs) which we can then “match” with our own data and use for enhanced targeting.\n4. Source of Information We Collect\nThe above information is collected through various sources, including:\n\nClients\nAs mentioned above, clients can upload their own information to our Platform for matching and enhanced targeting purposes.\nBid requests\n“Bid requests” contain information describing advertising space that is available for purchase on that particular digital property (e.g., website, app, OTT device) and are typically sent by ad exchanges/sell-side platforms (SSPs). The fields within a bid request can depend on the specification (e.g., OpenRTB) but bid requests typically contain information about the particular user or device, such as device ID, geolocation information, content or URL being viewed, device metadata, and demographic information (e.g., age, gender).\nTV/OTT Platforms and App Providers\nThese entities may send similar information as those described in bid requests but can also send information regarding what video content is being watched on a device or app or viewership data more broadly.\nPixels/Cookies/Macros\nCookies are essentially small files of data that can be stored within a device to collect information across websites. Pixels are pieces of code that are inserted onto pages or ads, which can collect information from a device or read/write cookies.\nAd macros operate similar conceptually to pixels and also collect similar information in relation to ads that we have served\nMobile SDKs\nIn essence, the mobile version of pixels. These are usually placed by our partners within apps, which collects information that can be provided to us, such as device IDs or geolocation information.\nData Partners\nWe use a variety of partners that provide the information described in this Services Privacy Policy to us, such as consumer panel providers (i.e., provides insights from consumers based on surveys), geolocation providers, ad exchanges/SSPs mentioned above, other DSP or data management platforms (DMPs), measurement partners, address verification providers, point-of-interest (POI) data providers, and segment providers.\n",Categories of Personal Information Collected
+ra3,"How We Use Information We Collect\nWe use the information we collect to help clients and data partners better target ads to you or analyze trends and create reports about how users react to such ads. More specifically, our uses include:\n\nAd delivery and personalization\nDelivery of a personalized ad based on your interests or the interests of a household.\nAudience/matching/onboarding\nMatching client-uploaded information, such as device IDs, with household information stored within our identity map to provide a broader range of targetable device IDs.\nDevice mapping\nInferring whether a device is associated to a household or other general location.\nAlso includes making correlations between actions on one device (such as a browser on a computer) with actions on another device (such as an app on a phone) to determine whether they belong to the same household or whether devices belong to the same user.\nSegment creation\nCreation of interest-based segments, as further described below.\nMeasurement\nMeasuring whether a user clicked on an ad, took some action afterwards (e.g., downloaded something, went to a retail store), ad viewability, and other analytics to determine how well an ad performed.\nAttribution\nInferred determination of whether a user took an action due to seeing an ad (e.g., saw an ad and then purchased something). In other words, trying to reasonably correlate whether an ad prompted the user action, however such action is defined.\nReporting\nA report on the performance of an ad campaign, based on measurement and attribution and associated analytics.\nFrequency capping and ad analytics\nTracking how many times an ad was shown to a particular user (and how many times a particular user should be seeing an ad in general), where the ad was displayed, and when.\nFraud detection\nPreventing invalid or fraudulent ad traffic or malicious activity, such as those caused by bots or malware.\nAnonymization\nInformation collected may be de-identified or anonymized and used for any purpose, including marketing or research purposes.\nMore about “segments”: We make certain inferences about you (on the device level, rather than directly identifying you by name, government identifier, phone number, or similar information) or about your household generally, in either case, based on the information collected above.\n\nFor example, we may analyze information associated with your mobile device ID, such as what apps you’ve viewed, what ads you’ve seen and clicked on (and actions you’ve taken afterwards), and where you are located, to determine whether that device, along with other devices, share certain interests, traits, or other demographics.  Where we have found these common interests, traits, or other demographics, we put those devices into “segments” (e.g., “interested in clothes,” “auto-intender,” “travel enthusiast”).\n\nIn many cases, we will look at these device-level characteristics to determine interests, traits, or demographics at the household level and roll those devices into these household-level segments (e.g., this household contains users interested in clothes, musical instruments, fashion, etc., or household race composition, income level, or education level).\n\nWe also receive segments from our data partners, including those of the nature described above and similar segments.\n\nOur segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.\n\nNote: In some cases, we receive certain health-related segments from our data partners, some of which may be considered “sensitive” under certain regulatory frameworks. We also create and receive political interest-based segments. Please see a list of our health-related and political interest-based segments, which includes both our standard segments and a representative list of our custom segments relating thereto.",Categories of Personal Information Shared / Disclosed
+ra3,"How We Use Information We Collect\nWe use the information we collect to help clients and data partners better target ads to you or analyze trends and create reports about how users react to such ads. More specifically, our uses include:\n\nAd delivery and personalization\nDelivery of a personalized ad based on your interests or the interests of a household.\nAudience/matching/onboarding\nMatching client-uploaded information, such as device IDs, with household information stored within our identity map to provide a broader range of targetable device IDs.\nDevice mapping\nInferring whether a device is associated to a household or other general location.\nAlso includes making correlations between actions on one device (such as a browser on a computer) with actions on another device (such as an app on a phone) to determine whether they belong to the same household or whether devices belong to the same user.\nSegment creation\nCreation of interest-based segments, as further described below.\nMeasurement\nMeasuring whether a user clicked on an ad, took some action afterwards (e.g., downloaded something, went to a retail store), ad viewability, and other analytics to determine how well an ad performed.\nAttribution\nInferred determination of whether a user took an action due to seeing an ad (e.g., saw an ad and then purchased something). In other words, trying to reasonably correlate whether an ad prompted the user action, however such action is defined.\nReporting\nA report on the performance of an ad campaign, based on measurement and attribution and associated analytics.\nFrequency capping and ad analytics\nTracking how many times an ad was shown to a particular user (and how many times a particular user should be seeing an ad in general), where the ad was displayed, and when.\nFraud detection\nPreventing invalid or fraudulent ad traffic or malicious activity, such as those caused by bots or malware.\nAnonymization\nInformation collected may be de-identified or anonymized and used for any purpose, including marketing or research purposes.\nMore about “segments”: We make certain inferences about you (on the device level, rather than directly identifying you by name, government identifier, phone number, or similar information) or about your household generally, in either case, based on the information collected above.\n\nFor example, we may analyze information associated with your mobile device ID, such as what apps you’ve viewed, what ads you’ve seen and clicked on (and actions you’ve taken afterwards), and where you are located, to determine whether that device, along with other devices, share certain interests, traits, or other demographics.  Where we have found these common interests, traits, or other demographics, we put those devices into “segments” (e.g., “interested in clothes,” “auto-intender,” “travel enthusiast”).\n\nIn many cases, we will look at these device-level characteristics to determine interests, traits, or demographics at the household level and roll those devices into these household-level segments (e.g., this household contains users interested in clothes, musical instruments, fashion, etc., or household race composition, income level, or education level).\n\nWe also receive segments from our data partners, including those of the nature described above and similar segments.\n\nOur segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.\n\nNote: In some cases, we receive certain health-related segments from our data partners, some of which may be considered “sensitive” under certain regulatory frameworks. We also create and receive political interest-based segments. Please see a list of our health-related and political interest-based segments, which includes both our standard segments and a representative list of our custom segments relating thereto.",Categories of Personal Information Sold
+ra3,"How We Use Information We Collect\nWe use the information we collect to help clients and data partners better target ads to you or analyze trends and create reports about how users react to such ads. More specifically, our uses include:\n\nAd delivery and personalization\nDelivery of a personalized ad based on your interests or the interests of a household.\nAudience/matching/onboarding\nMatching client-uploaded information, such as device IDs, with household information stored within our identity map to provide a broader range of targetable device IDs.\nDevice mapping\nInferring whether a device is associated to a household or other general location.\nAlso includes making correlations between actions on one device (such as a browser on a computer) with actions on another device (such as an app on a phone) to determine whether they belong to the same household or whether devices belong to the same user.\nSegment creation\nCreation of interest-based segments, as further described below.\nMeasurement\nMeasuring whether a user clicked on an ad, took some action afterwards (e.g., downloaded something, went to a retail store), ad viewability, and other analytics to determine how well an ad performed.\nAttribution\nInferred determination of whether a user took an action due to seeing an ad (e.g., saw an ad and then purchased something). In other words, trying to reasonably correlate whether an ad prompted the user action, however such action is defined.\nReporting\nA report on the performance of an ad campaign, based on measurement and attribution and associated analytics.\nFrequency capping and ad analytics\nTracking how many times an ad was shown to a particular user (and how many times a particular user should be seeing an ad in general), where the ad was displayed, and when.\nFraud detection\nPreventing invalid or fraudulent ad traffic or malicious activity, such as those caused by bots or malware.\nAnonymization\nInformation collected may be de-identified or anonymized and used for any purpose, including marketing or research purposes.\nMore about “segments”: We make certain inferences about you (on the device level, rather than directly identifying you by name, government identifier, phone number, or similar information) or about your household generally, in either case, based on the information collected above.\n\nFor example, we may analyze information associated with your mobile device ID, such as what apps you’ve viewed, what ads you’ve seen and clicked on (and actions you’ve taken afterwards), and where you are located, to determine whether that device, along with other devices, share certain interests, traits, or other demographics.  Where we have found these common interests, traits, or other demographics, we put those devices into “segments” (e.g., “interested in clothes,” “auto-intender,” “travel enthusiast”).\n\nIn many cases, we will look at these device-level characteristics to determine interests, traits, or demographics at the household level and roll those devices into these household-level segments (e.g., this household contains users interested in clothes, musical instruments, fashion, etc., or household race composition, income level, or education level).\n\nWe also receive segments from our data partners, including those of the nature described above and similar segments.\n\nOur segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.\n\nNote: In some cases, we receive certain health-related segments from our data partners, some of which may be considered “sensitive” under certain regulatory frameworks. We also create and receive political interest-based segments. Please see a list of our health-related and political interest-based segments, which includes both our standard segments and a representative list of our custom segments relating thereto.",Categories of Personal Information Collected
+ra3,"How We Share Information We Collect\nThe information may be shared as follows:\n\nTo clients/data partners\nClients can export information they have uploaded or matched on our Platform, such as to themselves (in some cases) or to their (or our) partners. Further, clients may wish to receive the reports described above or similar information, such as information collected through macros or other technologies within the ads we serve.\nOur clients or data partners may wish to license our segments or other information we collect or create, such as the information contained within our ID map (e.g., ZIP+4/+11, device IDs).\nWe may disclose certain data to facilitate “matching” with our clients or data partners, such as household IDs or ZIP+4/ZIP+11, for communication of segments or other information.\nData partners, such as measurement providers, may receive “impression logs” (e.g., information about campaign, timestamp, household ID) or similar information, which are received from our other data partners (e.g., exchanges) or through our own technology.\nTo our service providers that store or process data or otherwise perform services on our behalf, such as technical or operational services.\nThese companies are authorized to use your personal information only as necessary to provide these services to us to assist us in our business activities.\nExamples include technical or customer support, operations, web or data hosting, billing, accounting, security, marketing, data management, validation, enhancement or hygiene, or otherwise assisting us to provide, develop, maintain and improve our services.\nTo investigate or prevent potential or actual fraud, fake traffic, malicious activity, or other similar harmful activity.\nIn response to lawful requests by public authorities, including to meet national security, law enforcement requirements, or otherwise complying with legal process or regulatory investigations (e.g., a subpoena, court order).\nWhere we believe in good faith it is necessary to comply with applicable law, enforce or apply our Terms of Service and other agreements, or protect the rights, property, or safety of Cadent and its employees or others.\nIn the event of a merger, dissolution, reorganization, or similar corporate event, or the sale of all or substantially all of our assets, or any due diligence relating thereto.\nIn such a case, the information that we have collected may be transferred to, acquired by, or otherwise controlled by a third party.\nIn aggregate or otherwise anonymized form to third parties or publicly.",Categories of Personal Information Shared / Disclosed
+ra3,"How We Share Information We Collect\nThe information may be shared as follows:\n\nTo clients/data partners\nClients can export information they have uploaded or matched on our Platform, such as to themselves (in some cases) or to their (or our) partners. Further, clients may wish to receive the reports described above or similar information, such as information collected through macros or other technologies within the ads we serve.\nOur clients or data partners may wish to license our segments or other information we collect or create, such as the information contained within our ID map (e.g., ZIP+4/+11, device IDs).\nWe may disclose certain data to facilitate “matching” with our clients or data partners, such as household IDs or ZIP+4/ZIP+11, for communication of segments or other information.\nData partners, such as measurement providers, may receive “impression logs” (e.g., information about campaign, timestamp, household ID) or similar information, which are received from our other data partners (e.g., exchanges) or through our own technology.\nTo our service providers that store or process data or otherwise perform services on our behalf, such as technical or operational services.\nThese companies are authorized to use your personal information only as necessary to provide these services to us to assist us in our business activities.\nExamples include technical or customer support, operations, web or data hosting, billing, accounting, security, marketing, data management, validation, enhancement or hygiene, or otherwise assisting us to provide, develop, maintain and improve our services.\nTo investigate or prevent potential or actual fraud, fake traffic, malicious activity, or other similar harmful activity.\nIn response to lawful requests by public authorities, including to meet national security, law enforcement requirements, or otherwise complying with legal process or regulatory investigations (e.g., a subpoena, court order).\nWhere we believe in good faith it is necessary to comply with applicable law, enforce or apply our Terms of Service and other agreements, or protect the rights, property, or safety of Cadent and its employees or others.\nIn the event of a merger, dissolution, reorganization, or similar corporate event, or the sale of all or substantially all of our assets, or any due diligence relating thereto.\nIn such a case, the information that we have collected may be transferred to, acquired by, or otherwise controlled by a third party.\nIn aggregate or otherwise anonymized form to third parties or publicly.",Categories of Personal Information Sold
+ra3,"Right of Access\n\nYou may request access to the personal information that we have collected and maintained about you on a device-by-device level.\n\nFor purposes of the California Consumer Privacy Act (CCPA), for the personal information we collect from users within the preceding twelve (12) months, and the business and commercial purposes for use of this information (including related disclosures), please see the relevant sections above.",Description of Right to Know PI Collected
+ra3,"Right to Correction\n\nYou have the right to request that any inaccuracies in your personal information be corrected, taking into account the nature of the personal data and the purposes of processing your personal information.",Description of Right to Correct Information
+ra3,"Right of Deletion\n\nYou have the right to request that we delete the personal information collected and maintained about you on a device-by-device basis. Note that the deletion of your personal information may be subject to certain exceptions (e.g., required for legal purposes, may infringe our or a third party’s rights, have compelling legitimate interests to keep, an exception set forth under applicable U.S. state privacy laws).",Description of Right to Delete
+ra3,"Right to Opt-Out of “Sales” and “Sharing”/Processing of Personal Information for Targeted Advertising\n\nCertain U.S. state privacy laws provide a right to opt-out of “sales” of personal information to third parties. Further, these U.S. state laws provide a form of opt-out right for the processing of personal information for targeted advertising (i.e., under the CCPA, you may opt-out of “sharing” for “cross-context behavioral advertising” while other U.S. state privacy laws provide a right to opt-out of the processing of personal information for “targeted advertising” more generally). Though the scope of these rights differs slightly depending on the state privacy law, you can exercise these rights collectively for your convenience as set forth under Exercising Your Rights below.",Description of Right to Opt-out of sale of PI
+ra3,"We “sell” or “share” personal information in connection with our targeted advertising-related and identity resolution-related activities (and, more broadly, we process personal information for targeted advertising). More specifically, our services include “selling” and “sharing” the following categories of information to buy-side or sell-side clients (e.g., advertisers, vMVPDs) or data partners (e.g., segment providers) for purposes of ID matching, segment export, and licensing of our data: Device identifiers and associated ZIP+4/+11 and household IDs, along with segments relating thereto. For purposes of the CCPA, these categories of personal information would be considered “identifiers,” “commercial information,” “internet or other network information,” and “sensitive personal information.”  We also process such information for our internal targeted advertising-related and identity resolution-related purposes.",Categories of Personal Information Sold
+ra3,"We “sell” or “share” personal information in connection with our targeted advertising-related and identity resolution-related activities (and, more broadly, we process personal information for targeted advertising). More specifically, our services include “selling” and “sharing” the following categories of information to buy-side or sell-side clients (e.g., advertisers, vMVPDs) or data partners (e.g., segment providers) for purposes of ID matching, segment export, and licensing of our data: Device identifiers and associated ZIP+4/+11 and household IDs, along with segments relating thereto. For purposes of the CCPA, these categories of personal information would be considered “identifiers,” “commercial information,” “internet or other network information,” and “sensitive personal information.”  We also process such information for our internal targeted advertising-related and identity resolution-related purposes.",Categories of Personal Information Shared / Disclosed
+ra3,"Right to Limit the Use and Disclosure of Sensitive Personal Information\n\nWe process “sensitive personal information” as defined under certain U.S. state privacy laws. Any obligation on Cadent to obtain consent for processing “sensitive personal information” will be limited to what is required by Cadent under such corresponding U.S. state privacy laws, as such state laws become effective.\n\nYou have the right to opt-out of our processing of your “sensitive personal information” as set forth under Exercising Your Rights below. In such cases, we may still be able to process your “sensitive personal information” for reserved purposes as provided under applicable law.",Description of Right to Limit use of PI
+ra3,"Exercising Your Rights\n\nAs a U.S. resident, to make requests for access or deletion, as such rights are described above, please submit a request to us by either:\n\nSubmitting a request form.\nEmailing us at privacy@cadentdev.wpengine.com.\nFor “correction” requests, please email a request to us at privacy@cadentdev.wpengine.com.\n\nFor opt-out of “sales” and “shares” (or processing of personal information for “targeted advertising”) or to opt-out of the processing of your “sensitive personal information” (as these rights are further described above), please use the “Your Privacy Choices” link above or, under the CCPA only, send us an email at privacy@cadentdev.wpengine.com requesting these opt-out rights.\n\nWe do not use any information that you submit for your data rights request for any other purpose besides our verification and fraud prevention process and to otherwise resolve your request (described below). A record of your request may be kept for legal compliance purposes.\n\nVerifying and Resolving Your Request\n\nFor Access, Correction, and Deletion Requests: You must provide your household address and one or more device IDs that belong to you.  To the extent we have associated a device ID with that household address, we will provide access or deletion rights in relation to each such associated device ID.\n\nNote that device IDs include mobile advertising IDs (e.g., iOS IDFA, Android AAID), IP addresses, OTT/connected TV device IDs, gaming console IDs, etc.  Please consult your device’s documentation for more information on how you may obtain such IDs.\n\nFor Opt-Out of “Sales”/“Shared” (and Processing for Targeted Advertising) and Sensitive Personal Information Requests: You must provide your household address, after which we will opt-out that household accordingly. You do not need to provide an associated device ID for these requests.\n\nFor any of the requests set forth above (e.g., access, correction, deletion, opt-out requests), we reserve the right to require additional proof of your identity and residency, as permitted by applicable law, or to reject requests that we reasonably believe are fraudulent or otherwise invalid (e.g., where you have submitted a household address or device identifier that does not belong to you or otherwise are not permitted to make such a request). Further, we may withhold any information where we reasonably believe verification has not been achieved to a sufficient degree of reliability or that release of the information may pose too great a risk of security to the user to whom the data may pertain.\n\nAuthorized Agents: Under California and Colorado’s respective state privacy laws only, you may also designate an agent to make requests to exercise your rights described above. We will take steps both to verify the identity of the person seeking to exercise their rights as listed above and to verify that the corresponding agent has been authorized to make a request on that person’s behalf, such as by providing us with a signed written authorization. Agents must provide information demonstrating that they have been duly authorized to our email address above before submitting any request to us.\n\nResponse Timing: We aim to resolve any request described herein in forty-five (45) days or less (unless otherwise required by applicable law), though we may extend for another forty-five (45) days when reasonably necessary and as permitted under applicable law. Please note that we may charge a reasonable fee or refuse to act on a request if such request is excessive, repetitive, or manifestly unfounded.\n\nNon-Discrimination and Appeals: You have the right to not receive discriminatory treatment for exercising the rights set forth above.",Methods to exercise rights
+ra3,This site uses cookies to offer you a better browsing experience. Learn more about how this site uses cookies and how can you change your cookies preferences.,Categories of Personal Information Collected
+ra3,"This cookie is installed by Google Analytics. The cookie is used to calculate visitor, session, campaign data and keep track of site usage for the site's analytics report. The cookies store information anonymously and assign a randomly generated number to identify unique visitors. ||| This cookie is installed by Google Analytics. Is is used to throttle request rate. ||| This cookie is installed by Google Analytics. The cookie is used to store information of how visitors use a website and helps in creating an analytics report of how the website is doing. The data collected including the number visitors, the source where they have come from, and the pages visted in an anonymous form.",Categories of Personal Information Collected
+ra5,"Effective Date: December 22, 2022",Updated Privacy Policy
+ra5,"Overview of Our Platform
+Cadent works with “demand-side” and “supply side” clients.  In other words, we work with brands, advertising agencies, and data partners that are interested in buying and serving ads on publishers’ digital properties, such as websites, apps, and OTT/CTV devices (e.g., streaming devices, “Smart TVs”) and inventory partners such as vMVPDs that provide the ad space on their properties.",Categories of Personal Information Sold
+ra5,"Overview of Our Platform
+Cadent works with “demand-side” and “supply side” clients.  In other words, we work with brands, advertising agencies, and data partners that are interested in buying and serving ads on publishers’ digital properties, such as websites, apps, and OTT/CTV devices (e.g., streaming devices, “Smart TVs”) and inventory partners such as vMVPDs that provide the ad space on their properties.",Categories of Personal Information Shared / Disclosed
+ra5,"In order to understand whether the ad campaign was effective or not, our Platform provides “reporting” directly or allows the ability to use a third-party measurement partner, which, in either case, will include analytics on interactions with ads served, clicks, downloads, or other ad interactions.",Categories of Personal Information Shared / Disclosed
+ra5,"In order to understand whether the ad campaign was effective or not, our Platform provides “reporting” directly or allows the ability to use a third-party measurement partner, which, in either case, will include analytics on interactions with ads served, clicks, downloads, or other ad interactions",Categories of Personal Information Sold
+ra5,"In order to understand whether the ad campaign was effective or not, our Platform provides “reporting” directly or allows the ability to use a third-party measurement partner, which, in either case, will include analytics on interactions with ads served, clicks, downloads, or other ad interactions",Categories of Personal Information Collected
+ra5,"To carry out the above, our Platform is comprised of different service offerings, each of which are interconnected.  Primarily, this includes our:
+
+Demand-Side Platform (DSP)
+Allows clients to buy and serve targeted advertising on digital properties and measure effectiveness via reporting.
+Audience Builder Service
+Allows clients to onboard their data (also known as “audience matching”) and combine with other data in order to create and export targetable “segments” or otherwise receive analytics and insights on their audiences (e.g., inferred interests).
+Identity Mapping Solution
+Primarily, an internal mapping of device identifiers to households.
+Addressable TV Service
+Use of demographics, viewership data (content viewed on TV), and data “segments” to plan, execute, and measure the effectiveness of these TV advertising campaigns (e.g., cable, broadcast) via reporting.",Categories of Personal Information Shared / Disclosed
+ra5,"To carry out the above, our Platform is comprised of different service offerings, each of which are interconnected.  Primarily, this includes our:
+
+Demand-Side Platform (DSP)
+Allows clients to buy and serve targeted advertising on digital properties and measure effectiveness via reporting.
+Audience Builder Service
+Allows clients to onboard their data (also known as “audience matching”) and combine with other data in order to create and export targetable “segments” or otherwise receive analytics and insights on their audiences (e.g., inferred interests).
+Identity Mapping Solution
+Primarily, an internal mapping of device identifiers to households.
+Addressable TV Service
+Use of demographics, viewership data (content viewed on TV), and data “segments” to plan, execute, and measure the effectiveness of these TV advertising campaigns (e.g., cable, broadcast) via reporting",Categories of Personal Information Sold
+ra5,"To carry out the above, our Platform is comprised of different service offerings, each of which are interconnected.  Primarily, this includes our:
+
+Demand-Side Platform (DSP)
+Allows clients to buy and serve targeted advertising on digital properties and measure effectiveness via reporting.
+Audience Builder Service
+Allows clients to onboard their data (also known as “audience matching”) and combine with other data in order to create and export targetable “segments” or otherwise receive analytics and insights on their audiences (e.g., inferred interests).
+Identity Mapping Solution
+Primarily, an internal mapping of device identifiers to households.
+Addressable TV Service
+Use of demographics, viewership data (content viewed on TV), and data “segments” to plan, execute, and measure the effectiveness of these TV advertising campaigns (e.g., cable, broadcast) via reporting.",Categories of Personal Information Collected
+ra5,"In summary, through our Platform, we help our clients reach consumers with greater efficiency and relevance across various digital channels, including web, mobile, and OTT/CTV.  We reach these consumers through their device IDs (which are pseudonymous; i.e., a randomized string of characters, rather than directly identifying you by name, government identifier, phone number, or similar information) as associated with their household.
+
+To do this, we collect and use the information that we’ve described in this Services Privacy Policy.",Categories of Personal Information Collected
+ra5," Information We Collect
+We collect and use several types of information from you or from our data partners that help us (or our data partners) serve ads that are better tailored to your interests and to provide reporting and analytics services, such as inferring ads that performed better or worse based on user behavior.  This information includes:
+
+Device identifiers
+Eg., mobile advertising IDs like iOS IDFA and Android AAID, IP address, OTT/CTV IDs, gaming console IDs, cookie IDs, proprietary IDs, or other pseudonymized identifiers (e.g., a randomized string of characters).
+ZIP +4 and ZIP +11 postal codes
+Publicly available household postal codes; used to identify a household address, which devices and segments are associated to for “household-level” targeting.
+Household identifiers
+Pseudonymous IDs for ZIP+4/ZIP+11 above.
+Household addresses
+A master address list used for purposes such as address verification and appending ZIP11 and latitude/longitude.
+Device metadata
+E.g., device type, browser type, operating system type, and settings.
+Geolocation data
+E.g., latitude/longitude coordinates or other geolocation information (e.g., based on IP address).
+Segments/demographics and interests
+A group of household IDs or device IDs that may share a common interest, trait, or preference, such as “auto intenders” or “guitar buyers”. These can be either our own segments or segments from data partners.
+We may receive demographic information or use data science to understand general demographics or interests, which can be used to make inferences for segment purposes (e.g., household income, number of household members, geographic area, retail interests) or to understand the value of a certain advertising opportunity presented in a bid request.
+Ad interaction data
+E.g., interactions with or in relation to an ad, such as clickthroughs, actions taken on landing page where ad takes you, app downloads, and purchases. This helps understand ad campaign effectiveness and what ads you respond more favorably to.
+This interaction data and other ad analytics can sometimes be provided to data partners for measurement/attribution purposes, described below, in the form of a document called an “impression log.”
+Other ad analytics
+E.g., TV content viewed, viewership data, which ads were shown to which devices or households, where and what they were shown, and at what time.
+Email addresses
+Email addresses that are either uploaded in “plain text” and then matched with a hashed email or hashed by us or our clients/data partners (i.e., utilize one-way cryptography such that it is a random string of characters).
+Client information
+Clients can upload their own information, such as their customer data, to our Platform (e.g., email addresses, postal address, device IDs) which we can then “match” with our own data and use for enhanced targeting.",Categories of Personal Information Collected
+ra5," Information We Collect
+We collect and use several types of information from you or from our data partners that help us (or our data partners) serve ads that are better tailored to your interests and to provide reporting and analytics services, such as inferring ads that performed better or worse based on user behavior.  This information includes:
+
+Device identifiers
+Eg., mobile advertising IDs like iOS IDFA and Android AAID, IP address, OTT/CTV IDs, gaming console IDs, cookie IDs, proprietary IDs, or other pseudonymized identifiers (e.g., a randomized string of characters).
+ZIP +4 and ZIP +11 postal codes
+Publicly available household postal codes; used to identify a household address, which devices and segments are associated to for “household-level” targeting.
+Household identifiers
+Pseudonymous IDs for ZIP+4/ZIP+11 above.
+Household addresses
+A master address list used for purposes such as address verification and appending ZIP11 and latitude/longitude.
+Device metadata
+E.g., device type, browser type, operating system type, and settings.
+Geolocation data
+E.g., latitude/longitude coordinates or other geolocation information (e.g., based on IP address).
+Segments/demographics and interests
+A group of household IDs or device IDs that may share a common interest, trait, or preference, such as “auto intenders” or “guitar buyers”. These can be either our own segments or segments from data partners.
+We may receive demographic information or use data science to understand general demographics or interests, which can be used to make inferences for segment purposes (e.g., household income, number of household members, geographic area, retail interests) or to understand the value of a certain advertising opportunity presented in a bid request.
+Ad interaction data
+E.g., interactions with or in relation to an ad, such as clickthroughs, actions taken on landing page where ad takes you, app downloads, and purchases. This helps understand ad campaign effectiveness and what ads you respond more favorably to.
+This interaction data and other ad analytics can sometimes be provided to data partners for measurement/attribution purposes, described below, in the form of a document called an “impression log.”
+Other ad analytics
+E.g., TV content viewed, viewership data, which ads were shown to which devices or households, where and what they were shown, and at what time.
+Email addresses
+Email addresses that are either uploaded in “plain text” and then matched with a hashed email or hashed by us or our clients/data partners (i.e., utilize one-way cryptography such that it is a random string of characters).
+Client information
+Clients can upload their own information, such as their customer data, to our Platform (e.g., email addresses, postal address, device IDs) which we can then “match” with our own data and use for enhanced targeting.",Categories of Personal Information Shared / Disclosed
+ra5,"Information We Collect
+We collect and use several types of information from you or from our data partners that help us (or our data partners) serve ads that are better tailored to your interests and to provide reporting and analytics services, such as inferring ads that performed better or worse based on user behavior.  This information includes:
+
+Device identifiers
+Eg., mobile advertising IDs like iOS IDFA and Android AAID, IP address, OTT/CTV IDs, gaming console IDs, cookie IDs, proprietary IDs, or other pseudonymized identifiers (e.g., a randomized string of characters).
+ZIP +4 and ZIP +11 postal codes
+Publicly available household postal codes; used to identify a household address, which devices and segments are associated to for “household-level” targeting.
+Household identifiers
+Pseudonymous IDs for ZIP+4/ZIP+11 above.
+Household addresses
+A master address list used for purposes such as address verification and appending ZIP11 and latitude/longitude.
+Device metadata
+E.g., device type, browser type, operating system type, and settings.
+Geolocation data
+E.g., latitude/longitude coordinates or other geolocation information (e.g., based on IP address).
+Segments/demographics and interests
+A group of household IDs or device IDs that may share a common interest, trait, or preference, such as “auto intenders” or “guitar buyers”. These can be either our own segments or segments from data partners.
+We may receive demographic information or use data science to understand general demographics or interests, which can be used to make inferences for segment purposes (e.g., household income, number of household members, geographic area, retail interests) or to understand the value of a certain advertising opportunity presented in a bid request.
+Ad interaction data
+E.g., interactions with or in relation to an ad, such as clickthroughs, actions taken on landing page where ad takes you, app downloads, and purchases. This helps understand ad campaign effectiveness and what ads you respond more favorably to.
+This interaction data and other ad analytics can sometimes be provided to data partners for measurement/attribution purposes, described below, in the form of a document called an “impression log.”
+Other ad analytics
+E.g., TV content viewed, viewership data, which ads were shown to which devices or households, where and what they were shown, and at what time.
+Email addresses
+Email addresses that are either uploaded in “plain text” and then matched with a hashed email or hashed by us or our clients/data partners (i.e., utilize one-way cryptography such that it is a random string of characters).
+Client information
+Clients can upload their own information, such as their customer data, to our Platform (e.g., email addresses, postal address, device IDs) which we can then “match” with our own data and use for enhanced targeting.",Categories of Personal Information Sold
+ra5,"Source of Information We Collect
+The above information is collected through various sources, including:
+
+Clients
+As mentioned above, clients can upload their own information to our Platform for matching and enhanced targeting purposes.
+Bid requests",Categories of Personal Information Collected
+ra5,"The fields within a bid request can depend on the specification (e.g., OpenRTB) but bid requests typically contain information about the particular user or device, such as device ID, geolocation information, content or URL being viewed, device metadata, and demographic information (e.g., age, gender).
+TV/OTT Platforms and App Providers
+These entities may send similar information as those described in bid requests but can also send information regarding what video content is being watched on a device or app or viewership data more broadly.
+Pixels/Cookies/Macros",Categories of Personal Information Collected
+ra5,"Pixels are pieces of code that are inserted onto pages or ads, which can collect information from a device or read/write cookies.
+Ad macros operate similar conceptually to pixels and also collect similar information in relation to ads that we have served
+Mobile SDKs",Categories of Personal Information Collected
+ra5,"These are usually placed by our partners within apps, which collects information that can be provided to us, such as device IDs or geolocation information.
+Data Partners
+We use a variety of partners that provide the information described in this Services Privacy Policy to us, such as consumer panel providers (i.e., provides insights from consumers based on surveys), geolocation providers, ad exchanges/SSPs mentioned above, other DSP or data management platforms (DMPs), measurement partners, address verification providers, point-of-interest (POI) data providers, and segment providers.",Categories of Personal Information Collected
+ra5," Source of Information We Collect
+The above information is collected through various sources, including:
+
+Clients
+As mentioned above, clients can upload their own information to our Platform for matching and enhanced targeting purposes.
+Bid requests",Categories of Personal Information Shared / Disclosed
+ra5,"The fields within a bid request can depend on the specification (e.g., OpenRTB) but bid requests typically contain information about the particular user or device, such as device ID, geolocation information, content or URL being viewed, device metadata, and demographic information (e.g., age, gender).",Categories of Personal Information Shared / Disclosed
+ra5,"TV/OTT Platforms and App Providers
+These entities may send similar information as those described in bid requests but can also send information regarding what video content is being watched on a device or app or viewership data more broadly.
+Pixels/Cookies/Macros",Categories of Personal Information Shared / Disclosed
+ra5,"Pixels are pieces of code that are inserted onto pages or ads, which can collect information from a device or read/write cookies.
+Ad macros operate similar conceptually to pixels and also collect similar information in relation to ads that we have served
+Mobile SDKs",Categories of Personal Information Shared / Disclosed
+ra5,"These are usually placed by our partners within apps, which collects information that can be provided to us, such as device IDs or geolocation information.
+Data Partners
+We use a variety of partners that provide the information described in this Services Privacy Policy to us, such as consumer panel providers (i.e., provides insights from consumers based on surveys), geolocation providers, ad exchanges/SSPs mentioned above, other DSP or data management platforms (DMPs), measurement partners, address verification providers, point-of-interest (POI) data providers, and segment providers.",Categories of Personal Information Shared / Disclosed
+ra5,"Source of Information We Collect
+The above information is collected through various sources, including:
+
+Clients
+As mentioned above, clients can upload their own information to our Platform for matching and enhanced targeting purposes.
+Bid requests",Categories of Personal Information Sold
+ra5,"The fields within a bid request can depend on the specification (e.g., OpenRTB) but bid requests typically contain information about the particular user or device, such as device ID, geolocation information, content or URL being viewed, device metadata, and demographic information (e.g., age, gender).
+TV/OTT Platforms and App Providers
+These entities may send similar information as those described in bid requests but can also send information regarding what video content is being watched on a device or app or viewership data more broadly.
+Pixels/Cookies/Macros",Categories of Personal Information Sold
+ra5,"Pixels are pieces of code that are inserted onto pages or ads, which can collect information from a device or read/write cookies.
+Ad macros operate similar conceptually to pixels and also collect similar information in relation to ads that we have served
+Mobile SDKs",Categories of Personal Information Sold
+ra5,"These are usually placed by our partners within apps, which collects information that can be provided to us, such as device IDs or geolocation information.
+Data Partners
+We use a variety of partners that provide the information described in this Services Privacy Policy to us, such as consumer panel providers (i.e., provides insights from consumers based on surveys), geolocation providers, ad exchanges/SSPs mentioned above, other DSP or data management platforms (DMPs), measurement partners, address verification providers, point-of-interest (POI) data providers, and segment providers.",Categories of Personal Information Sold
+ra5,"How We Use Information We Collect
+We use the information we collect to help clients and data partners better target ads to you or analyze trends and create reports about how users react to such ads. More specifically, our uses include:
+
+Ad delivery and personalization
+Delivery of a personalized ad based on your interests or the interests of a household.
+Audience/matching/onboarding
+Matching client-uploaded information, such as device IDs, with household information stored within our identity map to provide a broader range of targetable device IDs.
+Device mapping
+Inferring whether a device is associated to a household or other general location.
+Also includes making correlations between actions on one device (such as a browser on a computer) with actions on another device (such as an app on a phone) to determine whether they belong to the same household or whether devices belong to the same user.
+Segment creation
+Creation of interest-based segments, as further described below.
+Measurement
+Measuring whether a user clicked on an ad, took some action afterwards (e.g., downloaded something, went to a retail store), ad viewability, and other analytics to determine how well an ad performed.
+Attribution
+Inferred determination of whether a user took an action due to seeing an ad (e.g., saw an ad and then purchased something). In other words, trying to reasonably correlate whether an ad prompted the user action, however such action is defined.
+Reporting
+A report on the performance of an ad campaign, based on measurement and attribution and associated analytics.
+Frequency capping and ad analytics
+Tracking how many times an ad was shown to a particular user (and how many times a particular user should be seeing an ad in general), where the ad was displayed, and when.
+Fraud detection
+Preventing invalid or fraudulent ad traffic or malicious activity, such as those caused by bots or malware.
+Anonymization
+Information collected may be de-identified or anonymized and used for any purpose, including marketing or research purposes.",Categories of Personal Information Collected
+ra5,"How We Use Information We Collect
+We use the information we collect to help clients and data partners better target ads to you or analyze trends and create reports about how users react to such ads. More specifically, our uses include:
+
+Ad delivery and personalization
+Delivery of a personalized ad based on your interests or the interests of a household.
+Audience/matching/onboarding
+Matching client-uploaded information, such as device IDs, with household information stored within our identity map to provide a broader range of targetable device IDs.
+Device mapping
+Inferring whether a device is associated to a household or other general location.
+Also includes making correlations between actions on one device (such as a browser on a computer) with actions on another device (such as an app on a phone) to determine whether they belong to the same household or whether devices belong to the same user.
+Segment creation
+Creation of interest-based segments, as further described below.
+Measurement
+Measuring whether a user clicked on an ad, took some action afterwards (e.g., downloaded something, went to a retail store), ad viewability, and other analytics to determine how well an ad performed.
+Attribution
+Inferred determination of whether a user took an action due to seeing an ad (e.g., saw an ad and then purchased something). In other words, trying to reasonably correlate whether an ad prompted the user action, however such action is defined.
+Reporting
+A report on the performance of an ad campaign, based on measurement and attribution and associated analytics.
+Frequency capping and ad analytics
+Tracking how many times an ad was shown to a particular user (and how many times a particular user should be seeing an ad in general), where the ad was displayed, and when.
+Fraud detection
+Preventing invalid or fraudulent ad traffic or malicious activity, such as those caused by bots or malware.
+Anonymization
+Information collected may be de-identified or anonymized and used for any purpose, including marketing or research purposes",Categories of Personal Information Shared / Disclosed
+ra5,"How We Use Information We Collect
+We use the information we collect to help clients and data partners better target ads to you or analyze trends and create reports about how users react to such ads. More specifically, our uses include:
+
+Ad delivery and personalization
+Delivery of a personalized ad based on your interests or the interests of a household.
+Audience/matching/onboarding
+Matching client-uploaded information, such as device IDs, with household information stored within our identity map to provide a broader range of targetable device IDs.
+Device mapping
+Inferring whether a device is associated to a household or other general location.
+Also includes making correlations between actions on one device (such as a browser on a computer) with actions on another device (such as an app on a phone) to determine whether they belong to the same household or whether devices belong to the same user.
+Segment creation
+Creation of interest-based segments, as further described below.
+Measurement
+Measuring whether a user clicked on an ad, took some action afterwards (e.g., downloaded something, went to a retail store), ad viewability, and other analytics to determine how well an ad performed.
+Attribution
+Inferred determination of whether a user took an action due to seeing an ad (e.g., saw an ad and then purchased something). In other words, trying to reasonably correlate whether an ad prompted the user action, however such action is defined.
+Reporting
+A report on the performance of an ad campaign, based on measurement and attribution and associated analytics.
+Frequency capping and ad analytics
+Tracking how many times an ad was shown to a particular user (and how many times a particular user should be seeing an ad in general), where the ad was displayed, and when.
+Fraud detection
+Preventing invalid or fraudulent ad traffic or malicious activity, such as those caused by bots or malware.
+Anonymization
+Information collected may be de-identified or anonymized and used for any purpose, including marketing or research purposes.",Categories of Personal Information Sold
+ra5,"More about “segments”: We make certain inferences about you (on the device level, rather than directly identifying you by name, government identifier, phone number, or similar information) or about your household generally, in either case, based on the information collected above.
+
+For example, we may analyze information associated with your mobile device ID, such as what apps you’ve viewed, what ads you’ve seen and clicked on (and actions you’ve taken afterwards), and where you are located, to determine whether that device, along with other devices, share certain interests, traits, or other demographics.  Where we have found these common interests, traits, or other demographics, we put those devices into “segments” (e.g., “interested in clothes,” “auto-intender,” “travel enthusiast”).
+
+In many cases, we will look at these device-level characteristics to determine interests, traits, or demographics at the household level and roll those devices into these household-level segments (e.g., this household contains users interested in clothes, musical instruments, fashion, etc., or household race composition, income level, or education level).
+
+We also receive segments from our data partners, including those of the nature described above and similar segments.
+
+Our segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.",Categories of Personal Information Collected
+ra5,"More about “segments”: We make certain inferences about you (on the device level, rather than directly identifying you by name, government identifier, phone number, or similar information) or about your household generally, in either case, based on the information collected above.
+
+For example, we may analyze information associated with your mobile device ID, such as what apps you’ve viewed, what ads you’ve seen and clicked on (and actions you’ve taken afterwards), and where you are located, to determine whether that device, along with other devices, share certain interests, traits, or other demographics.  Where we have found these common interests, traits, or other demographics, we put those devices into “segments” (e.g., “interested in clothes,” “auto-intender,” “travel enthusiast”).
+
+In many cases, we will look at these device-level characteristics to determine interests, traits, or demographics at the household level and roll those devices into these household-level segments (e.g., this household contains users interested in clothes, musical instruments, fashion, etc., or household race composition, income level, or education level).
+
+We also receive segments from our data partners, including those of the nature described above and similar segments.
+
+Our segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.",Categories of Personal Information Shared / Disclosed
+ra5,"More about “segments”: We make certain inferences about you (on the device level, rather than directly identifying you by name, government identifier, phone number, or similar information) or about your household generally, in either case, based on the information collected above.
+
+For example, we may analyze information associated with your mobile device ID, such as what apps you’ve viewed, what ads you’ve seen and clicked on (and actions you’ve taken afterwards), and where you are located, to determine whether that device, along with other devices, share certain interests, traits, or other demographics.  Where we have found these common interests, traits, or other demographics, we put those devices into “segments” (e.g., “interested in clothes,” “auto-intender,” “travel enthusiast”).
+
+In many cases, we will look at these device-level characteristics to determine interests, traits, or demographics at the household level and roll those devices into these household-level segments (e.g., this household contains users interested in clothes, musical instruments, fashion, etc., or household race composition, income level, or education level).
+
+We also receive segments from our data partners, including those of the nature described above and similar segments.
+
+Our segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.",Categories of Personal Information Sold
+ra5,"How We Share Information We Collect
+The information may be shared as follows:
+
+To clients/data partners
+Clients can export information they have uploaded or matched on our Platform, such as to themselves (in some cases) or to their (or our) partners.",Categories of Personal Information Shared / Disclosed
+ra5,"Our clients or data partners may wish to license our segments or other information we collect or create, such as the information contained within our ID map (e.g., ZIP+4/+11, device IDs).
+We may disclose certain data to facilitate “matching” with our clients or data partners, such as household IDs or ZIP+4/ZIP+11, for communication of segments or other information.
+Data partners, such as measurement providers, may receive “impression logs” (e.g., information about campaign, timestamp, household ID) or similar information, which are received from our other data partners (e.g., exchanges) or through our own technology.",Categories of Personal Information Shared / Disclosed
+ra5,"To clients/data partners
+Clients can export information they have uploaded or matched on our Platform, such as to themselves (in some cases) or to their (or our) partners.",Categories of Personal Information Sold
+ra5,"Our clients or data partners may wish to license our segments or other information we collect or create, such as the information contained within our ID map (e.g., ZIP+4/+11, device IDs).
+We may disclose certain data to facilitate “matching” with our clients or data partners, such as household IDs or ZIP+4/ZIP+11, for communication of segments or other information.
+Data partners, such as measurement providers, may receive “impression logs” (e.g., information about campaign, timestamp, household ID) or similar information, which are received from our other data partners (e.g., exchanges) or through our own technology.",Categories of Personal Information Sold
+ra5,"To our service providers that store or process data or otherwise perform services on our behalf, such as technical or operational services",Categories of Personal Information Shared / Disclosed
+ra5,"Examples include technical or customer support, operations, web or data hosting, billing, accounting, security, marketing, data management, validation, enhancement or hygiene, or otherwise assisting us to provide, develop, maintain and improve our services.",Categories of Personal Information Shared / Disclosed
+ra5,"To our service providers that store or process data or otherwise perform services on our behalf, such as technical or operational services.",Categories of Personal Information Sold
+ra5,"Examples include technical or customer support, operations, web or data hosting, billing, accounting, security, marketing, data management, validation, enhancement or hygiene, or otherwise assisting us to provide, develop, maintain and improve our services.",Categories of Personal Information Sold
+ra5,"To investigate or prevent potential or actual fraud, fake traffic, malicious activity, or other similar harmful activity.
+In response to lawful requests by public authorities, including to meet national security, law enforcement requirements, or otherwise complying with legal process or regulatory investigations (e.g., a subpoena, court order).
+Where we believe in good faith it is necessary to comply with applicable law, enforce or apply our Terms of Service and other agreements, or protect the rights, property, or safety of Cadent and its employees or others.
+In the event of a merger, dissolution, reorganization, or similar corporate event, or the sale of all or substantially all of our assets, or any due diligence relating thereto.",Categories of Personal Information Shared / Disclosed
+ra5,In aggregate or otherwise anonymized form to third parties or publicly.,Categories of Personal Information Shared / Disclosed
+ra5,"In the event of a merger, dissolution, reorganization, or similar corporate event, or the sale of all or substantially all of our assets, or any due diligence relating thereto.",Categories of Personal Information Sold
+ra5,"Right of Access
+
+You may request access to the personal information that we have collected and maintained about you on a device-by-device level.",Description of Right to Know PI Collected
+ra5,"Right of Access
+
+You may request access to the personal information that we have collected and maintained about you on a device-by-device level.",Description of Right to Know PI sold / shared
+ra5,"Right to Correction
+
+You have the right to request that any inaccuracies in your personal information be corrected, taking into account the nature of the personal data and the purposes of processing your personal information.",Description of Right to Correct Information
+ra5,"Right of Deletion
+
+You have the right to request that we delete the personal information collected and maintained about you on a device-by-device basis. Note that the deletion of your personal information may be subject to certain exceptions (e.g., required for legal purposes, may infringe our or a third party’s rights, have compelling legitimate interests to keep, an exception set forth under applicable U.S. state privacy laws).",Description of Right to Delete
+ra5,"Right to Opt-Out of “Sales” and “Sharing”/Processing of Personal Information for Targeted Advertising
+
+Certain U.S. state privacy laws provide a right to opt-out of “sales” of personal information to third parties. Further, these U.S. state laws provide a form of opt-out right for the processing of personal information for targeted advertising (i.e., under the CCPA, you may opt-out of “sharing” for “cross-context behavioral advertising” while other U.S. state privacy laws provide a right to opt-out of the processing of personal information for “targeted advertising” more generally",Description of Right to Opt-out of sale of PI
+ra5,"Right to Limit the Use and Disclosure of Sensitive Personal Information
+
+We process “sensitive personal information” as defined under certain U.S. state privacy laws. Any obligation on Cadent to obtain consent for processing “sensitive personal information” will be limited to what is required by Cadent under such corresponding U.S. state privacy laws, as such state laws become effective.",Description of Right to Limit use of PI
+ra5,"Exercising Your Rights
+
+As a U.S. resident, to make requests for access or deletion, as such rights are described above, please submit a request to us by either:
+
+Submitting a request form.
+Emailing us at privacy@cadentdev.wpengine.com.
+For “correction” requests, please email a request to us at privacy@cadentdev.wpengine.com.
+
+For opt-out of “sales” and “shares” (or processing of personal information for “targeted advertising”) or to opt-out of the processing of your “sensitive personal information” (as these rights are further described above), please use the “Your Privacy Choices” link above or, under the CCPA only, send us an email at privacy@cadentdev.wpengine.com requesting these opt-out rights.",Methods to exercise rights
+ra5,Non-Discrimination and Appeals: You have the right to not receive discriminatory treatment for exercising the rights set forth above.,Description of Right to Non-discrimination on exercising rights
+ra5,"You may opt-out of receiving targeted advertising from us across various channels via the below mechanisms. Please keep in mind that even after you opt-out, you may continue to receive ads but we will no longer tailor those ads based on your interests or activity.",Description of Right to Opt-out of sale of PI
+ra5,"Website Opt-Out:
+You may opt-out of web-based targeting conducted by Cadent and other member companies of the Digital Advertising Alliance (DAA)by visiting the DAA website here.
+This opt-out is browser-based and you will need to opt-out on each browser (and for each user that has a separate log-in on the same computer).
+Further, this opt-out is cookie-based. If you delete your cookies (which can happen if you clear or delete your browser history), then you will need to repeat the process. Additionally, an opt-out cookie may not be able to be set if your browser is set to block third-party cookies.",Methods to exercise rights
+ra5,"Website Opt-Out:
+You may opt-out of web-based targeting conducted by Cadent and other member companies of the Digital Advertising Alliance (DAA)by visiting the DAA website here.",Description of Right to Opt-out of sale of PI
+ra5,"Mobile Opt-Out:
+To opt-out of interest-based advertising in the mobile app environment, please utilize the AppChoices mobile app via your phone, which you can download from your app store or via the Digital Advertising Alliance AppChoices page here: https://youradchoices.com/appchoices.",Description of Right to Opt-out of sale of PI
+ra5,"To opt-out of interest-based advertising in the mobile app environment, please utilize the AppChoices mobile app via your phone, which you can download from your app store or via the Digital Advertising Alliance AppChoices page here: https://youradchoices.com/appchoices.
+Please note that, if you change your mobile device, you must renew your opt-out choice and, if you use more than one device, you must opt-out of each device via the AppChoices app on that device.",Methods to exercise rights
+ra5," Children’s Information
+We do not knowingly collect personal information from those under sixteen (16) years of age via our Platform.  If we are made aware that we have received personal information from someone under sixteen (16), we will use reasonable efforts to remove that information from our records.",Updated Privacy Policy
+ra5,"Changes to This Services Privacy Policy
+From time to time, we may revise this Services Privacy Policy to reflect changes to the services or for other reasons",Updated Privacy Policy
+ra5,Any change to this Services Privacy Policy shall be effective once the modified Services Privacy Policy is made available on this website (or as otherwise stated by us) and we will update the “Effective Date” accordingly.,Updated Privacy Policy
+ra5,"Privacy Overview
+This website uses cookies to improve your experience while you navigate through the website",Categories of Personal Information Collected
+ra5,Necessary cookies are absolutely essential for the website to function properly. This category only includes cookies that ensures basic functionalities and security features of the website. These cookies do not store any personal information.,Categories of Personal Information Collected
+ra5,"Functional cookies help to perform certain functionalities like sharing the content of the website on social media platforms, collect feedbacks, and other third-party features.",Categories of Personal Information Collected
+ra5,Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.,Categories of Personal Information Collected
+ra5,"We “sell” or “share” personal information in connection with our targeted advertising-related and identity resolution-related activities (and, more broadly, we process personal information for targeted advertising). More specifically, our services include “selling” and “sharing” the following categories of information to buy-side or sell-side clients (e.g., advertisers, vMVPDs) or data partners (e.g., segment providers) for purposes of ID matching, segment export, and licensing of our data: Device identifiers and associated ZIP+4/+11 and household IDs, along with segments relating thereto",Categories of Personal Information Shared / Disclosed
+ra5,"Therefore, it is important to check this Services Privacy Policy periodically. It is the obligation of those visiting this website to learn of changes to this Services Privacy Policy since their last visit. ",Updated Privacy Policy
+ra4,3. Information We Collect,Categories of Personal Information Collected
+ra4,"We collect and use several types of information from you or from our data partners that help us (or our data partners) serve ads that are better tailored to your interests and to provide reporting and analytics services, such as inferring ads that performed better or worse based on user behavior.",Categories of Personal Information Collected
+ra4,"Device identifiers
+Eg., mobile advertising IDs like iOS IDFA and Android AAID, IP address, OTT/CTV IDs, gaming console IDs, cookie IDs, proprietary IDs, or other pseudonymized identifiers (e.g., a randomized string of characters).
+ZIP +4 and ZIP +11 postal codes
+Publicly available household postal codes; used to identify a household address, which devices and segments are associated to for “household-level” targeting.
+Household identifiers
+Pseudonymous IDs for ZIP+4/ZIP+11 above.
+Household addresses
+A master address list used for purposes such as address verification and appending ZIP11 and latitude/longitude.
+Device metadata
+E.g., device type, browser type, operating system type, and settings.
+Geolocation data
+E.g., latitude/longitude coordinates or other geolocation information (e.g., based on IP address).
+Segments/demographics and interests
+A group of household IDs or device IDs that may share a common interest, trait, or preference, such as “auto intenders” or “guitar buyers”. These can be either our own segments or segments from data partners.
+We may receive demographic information or use data science to understand general demographics or interests, which can be used to make inferences for segment purposes (e.g., household income, number of household members, geographic area, retail interests) or to understand the value of a certain advertising opportunity presented in a bid request.
+Ad interaction data
+E.g., interactions with or in relation to an ad, such as clickthroughs, actions taken on landing page where ad takes you, app downloads, and purchases. This helps understand ad campaign effectiveness and what ads you respond more favorably to.
+This interaction data and other ad analytics can sometimes be provided to data partners for measurement/attribution purposes, described below, in the form of a document called an “impression log.”
+Other ad analytics
+E.g., TV content viewed, viewership data, which ads were shown to which devices or households, where and what they were shown, and at what time.
+Email addresses
+Email addresses that are either uploaded in “plain text” and then matched with a hashed email or hashed by us or our clients/data partners (i.e., utilize one-way cryptography such that it is a random string of characters).
+Client information
+Clients can upload their own information, such as their customer data, to our Platform (e.g., email addresses, postal address, device IDs) which we can then “match” with our own data and use for enhanced targeting.",Categories of Personal Information Collected
+ra4,4. Source of Information We Collect,Categories of Personal Information Collected
+ra4,"The above information is collected through various sources, including:
+
+Clients
+As mentioned above, clients can upload their own information to our Platform for matching and enhanced targeting purposes.
+Bid requests
+“Bid requests” contain information describing advertising space that is available for purchase on that particular digital property (e.g., website, app, OTT device) and are typically sent by ad exchanges/sell-side platforms (SSPs). The fields within a bid request can depend on the specification (e.g., OpenRTB) but bid requests typically contain information about the particular user or device, such as device ID, geolocation information, content or URL being viewed, device metadata, and demographic information (e.g., age, gender).
+TV/OTT Platforms and App Providers
+These entities may send similar information as those described in bid requests but can also send information regarding what video content is being watched on a device or app or viewership data more broadly.
+Pixels/Cookies/Macros
+Cookies are essentially small files of data that can be stored within a device to collect information across websites. Pixels are pieces of code that are inserted onto pages or ads, which can collect information from a device or read/write cookies.
+Ad macros operate similar conceptually to pixels and also collect similar information in relation to ads that we have served
+Mobile SDKs
+In essence, the mobile version of pixels. These are usually placed by our partners within apps, which collects information that can be provided to us, such as device IDs or geolocation information.
+Data Partners
+We use a variety of partners that provide the information described in this Services Privacy Policy to us, such as consumer panel providers (i.e., provides insights from consumers based on surveys), geolocation providers, ad exchanges/SSPs mentioned above, other DSP or data management platforms (DMPs), measurement partners, address verification providers, point-of-interest (POI) data providers, and segment providers.",Categories of Personal Information Collected
+ra4,5. How We Use Information We Collect,Categories of Personal Information Collected
+ra4,"Ad delivery and personalization
+Delivery of a personalized ad based on your interests or the interests of a household.
+Audience/matching/onboarding
+Matching client-uploaded information, such as device IDs, with household information stored within our identity map to provide a broader range of targetable device IDs.
+Device mapping
+Inferring whether a device is associated to a household or other general location.
+Also includes making correlations between actions on one device (such as a browser on a computer) with actions on another device (such as an app on a phone) to determine whether they belong to the same household or whether devices belong to the same user.
+Segment creation
+Creation of interest-based segments, as further described below.
+Measurement
+Measuring whether a user clicked on an ad, took some action afterwards (e.g., downloaded something, went to a retail store), ad viewability, and other analytics to determine how well an ad performed.
+Attribution
+Inferred determination of whether a user took an action due to seeing an ad (e.g., saw an ad and then purchased something). In other words, trying to reasonably correlate whether an ad prompted the user action, however such action is defined.
+Reporting
+A report on the performance of an ad campaign, based on measurement and attribution and associated analytics.
+Frequency capping and ad analytics
+Tracking how many times an ad was shown to a particular user (and how many times a particular user should be seeing an ad in general), where the ad was displayed, and when.
+Fraud detection
+Preventing invalid or fraudulent ad traffic or malicious activity, such as those caused by bots or malware.
+Anonymization
+Information collected may be de-identified or anonymized and used for any purpose, including marketing or research purposes.",Categories of Personal Information Collected
+ra4,"We make certain inferences about you (on the device level, rather than directly identifying you by name, government identifier, phone number, or similar information) or about your household generally, in either case, based on the information collected above",Categories of Personal Information Collected
+ra4,"For example, we may analyze information associated with your mobile device ID, such as what apps you’ve viewed, what ads you’ve seen and clicked on (and actions you’ve taken afterwards), and where you are located, to determine whether that device, along with other devices, share certain interests, traits, or other demographics",Categories of Personal Information Collected
+ra4,"In many cases, we will look at these device-level characteristics to determine interests, traits, or demographics at the household level and roll those devices into these household-level segments",Categories of Personal Information Collected
+ra4,"We also receive segments from our data partners, including those of the nature described above and similar segments",Categories of Personal Information Collected
+ra4,"Our segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.",Categories of Personal Information Shared / Disclosed
+ra4,"6. How We Share Information We Collect
+The information may be shared as follows:
+
+To clients/data partners
+Clients can export information they have uploaded or matched on our Platform, such as to themselves (in some cases) or to their (or our) partners. Further, clients may wish to receive the reports described above or similar information, such as information collected through macros or other technologies within the ads we serve.
+Our clients or data partners may wish to license our segments or other information we collect or create, such as the information contained within our ID map (e.g., ZIP+4/+11, device IDs).
+We may disclose certain data to facilitate “matching” with our clients or data partners, such as household IDs or ZIP+4/ZIP+11, for communication of segments or other information.
+Data partners, such as measurement providers, may receive “impression logs” (e.g., information about campaign, timestamp, household ID) or similar information, which are received from our other data partners (e.g., exchanges) or through our own technology.
+To our service providers that store or process data or otherwise perform services on our behalf, such as technical or operational services.
+These companies are authorized to use your personal information only as necessary to provide these services to us to assist us in our business activities.
+Examples include technical or customer support, operations, web or data hosting, billing, accounting, security, marketing, data management, validation, enhancement or hygiene, or otherwise assisting us to provide, develop, maintain and improve our services.
+To investigate or prevent potential or actual fraud, fake traffic, malicious activity, or other similar harmful activity.
+In response to lawful requests by public authorities, including to meet national security, law enforcement requirements, or otherwise complying with legal process or regulatory investigations (e.g., a subpoena, court order).
+Where we believe in good faith it is necessary to comply with applicable law, enforce or apply our Terms of Service and other agreements, or protect the rights, property, or safety of Cadent and its employees or others.
+In the event of a merger, dissolution, reorganization, or similar corporate event, or the sale of all or substantially all of our assets, or any due diligence relating thereto.
+In such a case, the information that we have collected may be transferred to, acquired by, or otherwise controlled by a third party.
+In aggregate or otherwise anonymized form to third parties or publicly.",Categories of Personal Information Shared / Disclosed
+ra4,"Right of Access
+
+You may request access to the personal information that we have collected and maintained about you on a device-by-device level.
+
+For purposes of the California Consumer Privacy Act (CCPA), for the personal information we collect from users within the preceding twelve (12) months, and the business and commercial purposes for use of this information (including related disclosures), please see the relevant sections above.",Description of Right to Know PI Collected
+ra4,"Right to Correction
+
+You have the right to request that any inaccuracies in your personal information be corrected, taking into account the nature of the personal data and the purposes of processing your personal information.",Description of Right to Correct Information
+ra4,"Right of Deletion
+
+You have the right to request that we delete the personal information collected and maintained about you on a device-by-device basis. Note that the deletion of your personal information may be subject to certain exceptions (e.g., required for legal purposes, may infringe our or a third party’s rights, have compelling legitimate interests to keep, an exception set forth under applicable U.S. state privacy laws).",Description of Right to Delete
+ra4,"Right to Opt-Out of “Sales” and “Sharing”/Processing of Personal Information for Targeted Advertising
+
+Certain U.S. state privacy laws provide a right to opt-out of “sales” of personal information to third parties. Further, these U.S. state laws provide a form of opt-out right for the processing of personal information for targeted advertising (i.e., under the CCPA, you may opt-out of “sharing” for “cross-context behavioral advertising” while other U.S. state privacy laws provide a right to opt-out of the processing of personal information for “targeted advertising” more generally).",Description of Right to Opt-out of sale of PI
+ra4,"We “sell” or “share” personal information in connection with our targeted advertising-related and identity resolution-related activities (and, more broadly, we process personal information for targeted advertising). More specifically, our services include “selling” and “sharing” the following categories of information to buy-side or sell-side clients (e.g., advertisers, vMVPDs) or data partners (e.g., segment providers) for purposes of ID matching, segment export, and licensing of our data: Device identifiers and associated ZIP+4/+11 and household IDs, along with segments relating thereto. For purposes of the CCPA, these categories of personal information would be considered “identifiers,” “commercial information,” “internet or other network information,” and “sensitive personal information.”",Categories of Personal Information Sold
+ra4,"We “sell” or “share” personal information in connection with our targeted advertising-related and identity resolution-related activities (and, more broadly, we process personal information for targeted advertising). More specifically, our services include “selling” and “sharing” the following categories of information to buy-side or sell-side clients (e.g., advertisers, vMVPDs) or data partners (e.g., segment providers) for purposes of ID matching, segment export, and licensing of our data: Device identifiers and associated ZIP+4/+11 and household IDs, along with segments relating thereto. For purposes of the CCPA, these categories of personal information would be considered “identifiers,” “commercial information,” “internet or other network information,” and “sensitive personal information.”",Categories of Personal Information Shared / Disclosed
+ra4,"Right to Limit the Use and Disclosure of Sensitive Personal Information
+
+We process “sensitive personal information” as defined under certain U.S. state privacy laws. Any obligation on Cadent to obtain consent for processing “sensitive personal information” will be limited to what is required by Cadent under such corresponding U.S. state privacy laws, as such state laws become effective.
+
+You have the right to opt-out of our processing of your “sensitive personal information” as set forth under Exercising Your Rights below. In such cases, we may still be able to process your “sensitive personal information” for reserved purposes as provided under applicable law.",Description of Right to Limit use of PI
+ra4,"Exercising Your Rights
+
+As a U.S. resident, to make requests for access or deletion, as such rights are described above, please submit a request to us by either:
+
+Submitting a request form.
+Emailing us at privacy@cadentdev.wpengine.com.
+For “correction” requests, please email a request to us at privacy@cadentdev.wpengine.com.
+
+For opt-out of “sales” and “shares” (or processing of personal information for “targeted advertising”) or to opt-out of the processing of your “sensitive personal information” (as these rights are further described above), please use the “Your Privacy Choices” link above or, under the CCPA only, send us an email at privacy@cadentdev.wpengine.com requesting these opt-out rights.",Methods to exercise rights
+ra4,"Verifying and Resolving Your Request
+
+For Access, Correction, and Deletion Requests: You must provide your household address and one or more device IDs that belong to you.  To the extent we have associated a device ID with that household address, we will provide access or deletion rights in relation to each such associated device ID.",Methods to exercise rights
+ra4,"For Opt-Out of “Sales”/“Shared” (and Processing for Targeted Advertising) and Sensitive Personal Information Requests: You must provide your household address, after which we will opt-out that household accordingly. You do not need to provide an associated device ID for these requests.",Methods to exercise rights
+ra4,Non-Discrimination and Appeals: You have the right to not receive discriminatory treatment for exercising the rights set forth above.,Description of Right to Non-discrimination on exercising rights
+ra4,"9. Children’s Information
+We do not knowingly collect personal information from those under sixteen (16) years of age via our Platform.  If we are made aware that we have received personal information from someone under sixteen (16), we will use reasonable efforts to remove that information from our records.",Others
+ra4,"10. Security and Retention
+We have implemented security measures intended to protect the information in our care, both during transmission and once we receive it.  This includes, but is not limited to, the use of firewalls and encryption.  No method of transmission over the Internet, or method of electronic storage, is 100% secure, however.  Therefore, while we use commercially acceptable means to protect your information, we cannot guarantee its absolute security.
+
+We will retain your information as long as it serves the purposes for which it was collected as stated in this Services Privacy Policy, after which it may be aggregated or anonymized or otherwise archived.",Others
+ra4,"11. Changes to This Services Privacy Policy
+From time to time, we may revise this Services Privacy Policy to reflect changes to the services or for other reasons. Therefore, it is important to check this Services Privacy Policy periodically. It is the obligation of those visiting this website to learn of changes to this Services Privacy Policy since their last visit. Any change to this Services Privacy Policy shall be effective once the modified Services Privacy Policy is made available on this website (or as otherwise stated by us) and we will update the “Effective Date” accordingly.",Updated Privacy Policy
+ra4,"The cookie is used to calculate visitor, session, campaign data and keep track of site usage for the site's analytics report.",Categories of Personal Information Collected
+ra4,"The cookie is used to store information of how visitors use a website and helps in creating an analytics report of how the website is doing. The data collected including the number visitors, the source where they have come from, and the pages visted in an anonymous form.",Categories of Personal Information Collected
+ra4,Used by Google DoubleClick and stores information about how the user uses the website and any other advertisement before visiting the website.,Categories of Personal Information Collected
+ra4,"The cookie is set by GDPR cookie consent to record the user consent for the cookies in the category ""Functional"".",Categories of Personal Information Collected
+ra4,"This cookie is set by GDPR Cookie Consent plugin. The cookie is used to store the user consent for the cookies in the category ""Other"".",Categories of Personal Information Collected
+ra4,"Our segments, along with segments from our data partners, are made available within our Platform for clients to use to improve the targeting of their ad campaigns.  We also make available our own segments to other data partners, such as other DSPs or data management platforms (DMPs), for use by those partners’ clients.",Categories of Personal Information Sold
+ra4,"6. How We Share Information We Collect
+The information may be shared as follows:
+
+To clients/data partners
+Clients can export information they have uploaded or matched on our Platform, such as to themselves (in some cases) or to their (or our) partners. Further, clients may wish to receive the reports described above or similar information, such as information collected through macros or other technologies within the ads we serve.
+Our clients or data partners may wish to license our segments or other information we collect or create, such as the information contained within our ID map (e.g., ZIP+4/+11, device IDs).
+We may disclose certain data to facilitate “matching” with our clients or data partners, such as household IDs or ZIP+4/ZIP+11, for communication of segments or other information.
+Data partners, such as measurement providers, may receive “impression logs” (e.g., information about campaign, timestamp, household ID) or similar information, which are received from our other data partners (e.g., exchanges) or through our own technology.
+To our service providers that store or process data or otherwise perform services on our behalf, such as technical or operational services.
+These companies are authorized to use your personal information only as necessary to provide these services to us to assist us in our business activities.
+Examples include technical or customer support, operations, web or data hosting, billing, accounting, security, marketing, data management, validation, enhancement or hygiene, or otherwise assisting us to provide, develop, maintain and improve our services.",Categories of Personal Information Sold
+ra4,In aggregate or otherwise anonymized form to third parties or publicly.,Categories of Personal Information Sold
+ra4,"Effective Date: December 22, 2022",Updated Privacy Policy
+ra4,"Right of Access\n\nYou may request access to the personal information that we have collected and maintained about you on a device-by-device level.\n\nFor purposes of the California Consumer Privacy Act (CCPA), for the personal information we collect from users within the preceding twelve (12) months, and the business and commercial purposes for use of this information (including related disclosures), please see the relevant sections above.",Description of Right to Know PI sold / shared
+ra4,This website uses cookies to improve your experience while you navigate through the website.,Categories of Personal Information Collected
