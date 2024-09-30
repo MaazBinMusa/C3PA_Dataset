@@ -27,7 +27,7 @@ If you use this dataset, please cite the following paper:
 ```
 @inproceedings{c3pa,
   title={C3PA: An Open Dataset of Expert-Annotated and Regulation-Aware Privacy Policies to Enable Scalable Regulatory Compliance Audits},
-  author={Maaz Bin Musa, Rishab Nithyanand, Padmini Srinivasan, Mihailis E. Diamantis, Steven M. Winston, Garrison Allen, Jacob Schiller, Kevin Moore, Sean Quick, Johnathan Melvin},
+  author={Maaz Bin Musa, Steven M. Winston, Garrison Allen, Jacob Schiller, Kevin Moore, Sean Quick, Johnathan Melvin,Padmini Srinivasan, Mihailis E. Diamantis, Rishab Nithyanand},
   booktitle={Empirical Methods in Natural Language Processing},
   year={2024}
 }
